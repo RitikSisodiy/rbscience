@@ -4,4 +4,6 @@ urlpatterns = [
     path('', views.article , name='article' ),
     path('submitartical/', views.submitarticle , name='submitarticle' ),
     path('archives/', views.archives , name='archives' ),
+    path('archives/<slug:year>/<slug:vol>/<slug:issue>/articals' , views.articallist , name="listarticals"),
+    path('archives/<slug:slug>/' , views.singleartical , name="singleartical"),
 ]

@@ -21,33 +21,18 @@
         <div class="yearcontainer">
             <div class="col-md-9 row ">
                 <div class="container " style="margin-left: 11px;">
-                    <h3>{{data.year}}</h3>
+                    <h3>{{data.0.0.issue.year}}</h3>
                 </div>
+                {% for d in data %}
                 <div class="col-md-4 ">
                     <center>
-                        <div class="yearbox"><a href="">Vol 1 | Issue 4 | 2017</a></div>
+                        <div class="yearbox"><a href="{% url 'listarticals' d.0.issue.year.year d.0.issue.vol.vol d.0.issue.id %}">{{d.0.issue}}</a>
+                        <p>( {{d.count}} Articals )</p>
+                        </div>
+                        
                     </center>
                 </div>
-                <div class="col-md-4 ">
-                    <center>
-                        <div class="yearbox"><a href="">Vol 1 | Issue 4 | 2017</a></div>
-                    </center>
-                </div>
-                <div class="col-md-4 ">
-                    <center>
-                        <div class="yearbox "><a href="">Vol 1 | Issue 4 | 2017</a></div>
-                    </center>
-                </div>
-                <div class="col-md-4 ">
-                    <center>
-                        <div class="yearbox"><a href="">Vol 1 | Issue 4 | 2017</a></div>
-                    </center>
-                </div>
-                <div class="col-md-4 ">
-                    <center>
-                        <div class="yearbox"><a href="">Vol 1 | Issue 4 | 2017</a></div>
-                    </center>
-                </div>
+                {% endfor %}
             </div>
 
 

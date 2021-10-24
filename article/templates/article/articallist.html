@@ -1,0 +1,28 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}
+{% include  'headertitle.html' with headertitle="Archives" %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="y-4">
+        <h4>
+            <a href="{% url 'archives' %}"> Archives </a>/ {{artical.0.issue}}
+        </h4>
+    </div>
+    <div class="shadow-box p-5">
+        <div class="container" >
+            {% for data in artical %}
+            <h6><strong><a href="{% url 'singleartical' data.id %}">{{data.heading}}</a></strong></h6>
+            <span>{% for d in data.authors.all %}{{d}} , {% endfor %}</span>
+            <div style="margin-top: 20px;">
+                <button class="btn btn-success"><i class="ts-labtechco-icon-eye"></i> View Pdf</button>
+                <button class="btn btn-warning"><i class="ts-labtechco-icon-angle-down"></i> Abstract Pdf</button>
+                <button class="btn btn-primary"><i class="ts-labtechco-icon-quotation"></i> Download Pdf</button>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
