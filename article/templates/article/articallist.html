@@ -16,9 +16,9 @@
             <h6><strong><a href="{% url 'singleartical' data.id %}">{{data.heading}}</a></strong></h6>
             <span>{% for d in data.authors.all %}{{d}} , {% endfor %}</span>
             <div style="margin-top: 20px;">
-                <button class="btn btn-success"><i class="ts-labtechco-icon-eye"></i> View Pdf</button>
-                <button class="btn btn-warning"><i class="ts-labtechco-icon-angle-down"></i> Abstract Pdf</button>
-                <button class="btn btn-primary"><i class="ts-labtechco-icon-quotation"></i> Download Pdf</button>
+                <a href="{{data.pdf.url}}" target="_blank" class="btn btn-success"><i class="ts-labtechco-icon-eye"></i> View Pdf</a>
+                <a class="btn btn-warning"><i class="ts-labtechco-icon-angle-down"></i> Abstract Pdf</a>
+                <a href="{{data.pdf.url}}" target="_blank" class="btn btn-primary"><i class="ts-labtechco-icon-quotation"></i> Download Pdf</a>
                 <hr>
             </div>
             {% endfor %}

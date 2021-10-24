@@ -1469,199 +1469,75 @@
 												</div> <!-- .ts-element-heading-wrapper container -->
 
 												<div class="row multi-columns-row themestek-boxes-row-wrapper">
-													<div
-														class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 gemological-laboratories%e2%80%8e scientific-laboratory">
-														<article
-															class="themestek-box themestek-box-blog ts-blogbox-style-3 themestek-box-style3 themestek-blogbox-format- ">
-															<div class="post-item">
+													
+													{% for blog in blogs %}
+																<div
+																	class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 gemological-laboratories%e2%80%8e scientific-laboratory">
+																	<article
+																		class="themestek-box themestek-box-blog ts-blogbox-style-3 themestek-box-style3 themestek-blogbox-format- ">
+																		<div class="post-item">
 
-																<div class="ts-blog-image-with-meta">
-																	<div
-																		class="ts-featured-wrapper ts-post-featured-wrapper ts-post-format-">
-																		<img width="1200" height="800"
-																			src="{% static "wp-content/uploads/sites/13/2018/08/blog-new-01.jpg" %}"
-																			class="attachment-themestek-img-800x700 size-themestek-img-800x700 wp-post-image"
-																			alt="" /></div>
+																			<div class="ts-blog-image-with-meta">
+																				<div
+																					class="ts-featured-wrapper ts-post-featured-wrapper ts-post-format-">
+																					<img width="1200" height="800"
+																						src="/media/{{blog.img}}"
+																						class="attachment-themestek-img-800x700 size-themestek-img-800x700 wp-post-image"
+																						alt="" /></div>
+																			</div>
+
+																			<div class="themestek-box-content">
+																				<div class="ts-entry-meta-wrapper">
+																					<div
+																						class="entry-meta ts-entry-meta ts-entry-meta-blogbox">
+																						<span
+																							class="ts-meta-line byline">
+																							<span
+																								class="author vcard"><span
+																									class="screen-reader-text ts-hide">Author
+																								</span>By <a
+																									class="url fn n"
+																									href="#">admin</a></span></span><span
+																							class="ts-meta-line posted-on"><span
+																								class="screen-reader-text ts-hide">Posted
+																								on </span><a
+																								href="#"
+																								rel="bookmark"><time
+																									class="entry-date published"
+																									datetime="2018-08-08T10:00:25+00:00">{{blog.date}}</time><time
+																									class="updated ts-hide"
+																									datetime="2021-01-08T08:50:16+00:00">{{blog.date}}</time></a></span>
+																					</div>
+																				</div>
+																				<div class="themestek-box-title">
+																					<h4><a
+																							href="{% url 'singleblog' blog.slug %}">{{blog.title}}</a>
+																					</h4>
+																				</div>
+																				<div class="themestek-box-desc">
+																					<div
+																						class="themestek-box-desc-text">
+																						{{blog.blog_des}}
+																					</div>
+																				</div>
+
+																				<div
+																					class="ts-bottom-meta-wrapper clearfix">
+																					<div class="pull-left">
+																						<div
+																							class="themestek-blogbox-footer-left">
+																							<a
+																								href="{% url 'singleblog' blog.slug %}">Read
+																								More</a></div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</article>
+
 																</div>
 
-																<div class="themestek-box-content">
-																	<div class="ts-entry-meta-wrapper">
-																		<div
-																			class="entry-meta ts-entry-meta ts-entry-meta-blogbox">
-																			<span class="ts-meta-line byline">
-																				<span class="author vcard"><span
-																						class="screen-reader-text ts-hide">Author
-																					</span>By <a class="url fn n"
-																						href="author/admin/index.html">admin</a></span></span><span
-																				class="ts-meta-line posted-on"><span
-																					class="screen-reader-text ts-hide">Posted
-																					on </span><a
-																					href="2018/08/08/testing-food-quality-and-safety/index.html"
-																					rel="bookmark"><time
-																						class="entry-date published"
-																						datetime="2018-08-08T10:00:25+00:00">August
-																						8, 2018</time><time
-																						class="updated ts-hide"
-																						datetime="2021-01-08T08:50:16+00:00">January
-																						8,
-																						2021</time></a></span>
-																		</div>
-																	</div>
-																	<div class="themestek-box-title">
-																		<h4><a
-																				href="2018/08/08/testing-food-quality-and-safety/index.html">Testing
-																				Food quality and safety</a>
-																		</h4>
-																	</div>
-																	<div class="themestek-box-desc">
-																		<div class="themestek-box-desc-text">
-																			We provide complete process
-																			piping capabilities for
-																			industrial from pulp and paper.
-																		</div>
-																	</div>
-
-																	<div class="ts-bottom-meta-wrapper clearfix">
-																		<div class="pull-left">
-																			<div class="themestek-blogbox-footer-left">
-																				<a
-																					href="2018/08/08/testing-food-quality-and-safety/index.html">Read
-																					More</a></div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</article>
-
-													</div>
-													<div
-														class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 scientific-laboratory">
-														<article
-															class="themestek-box themestek-box-blog ts-blogbox-style-3 themestek-box-style3 themestek-blogbox-format- ">
-															<div class="post-item">
-
-																<div class="ts-blog-image-with-meta">
-																	<div
-																		class="ts-featured-wrapper ts-post-featured-wrapper ts-post-format-">
-																		<img width="750" height="500"
-																			src="{% static "wp-content/uploads/sites/13/2018/02/blog.jpg" %}"
-																			class="attachment-themestek-img-800x700 size-themestek-img-800x700 wp-post-image"
-																			alt="" /></div>
-																</div>
-
-																<div class="themestek-box-content">
-																	<div class="ts-entry-meta-wrapper">
-																		<div
-																			class="entry-meta ts-entry-meta ts-entry-meta-blogbox">
-																			<span class="ts-meta-line byline">
-																				<span class="author vcard"><span
-																						class="screen-reader-text ts-hide">Author
-																					</span>By <a class="url fn n"
-																						href="author/admin/index.html">admin</a></span></span><span
-																				class="ts-meta-line posted-on"><span
-																					class="screen-reader-text ts-hide">Posted
-																					on </span><a
-																					href="2018/02/18/industrial-contractor-powerhouse/index.html"
-																					rel="bookmark"><time
-																						class="entry-date published"
-																						datetime="2018-02-18T09:49:46+00:00">February
-																						18, 2018</time><time
-																						class="updated ts-hide"
-																						datetime="2021-01-08T08:50:24+00:00">January
-																						8,
-																						2021</time></a></span>
-																		</div>
-																	</div>
-																	<div class="themestek-box-title">
-																		<h4><a
-																				href="2018/02/18/industrial-contractor-powerhouse/index.html">Biochemistry
-																				research in the Lab</a></h4>
-																	</div>
-																	<div class="themestek-box-desc">
-																		<div class="themestek-box-desc-text">
-																			We provide complete process
-																			piping capabilities for
-																			industrial from pulp and paper.
-																		</div>
-																	</div>
-
-																	<div class="ts-bottom-meta-wrapper clearfix">
-																		<div class="pull-left">
-																			<div class="themestek-blogbox-footer-left">
-																				<a
-																					href="2018/02/18/industrial-contractor-powerhouse/index.html">Read
-																					More</a></div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</article>
-
-													</div>
-													<div
-														class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 forensic-science">
-														<article
-															class="themestek-box themestek-box-blog ts-blogbox-style-3 themestek-box-style3 themestek-blogbox-format- ">
-															<div class="post-item">
-
-																<div class="ts-blog-image-with-meta">
-																	<div
-																		class="ts-featured-wrapper ts-post-featured-wrapper ts-post-format-">
-																		<img width="1200" height="800"
-																			src="{% static "wp-content/uploads/sites/13/2018/01/blog-new-02.jpg" %}"
-																			class="attachment-themestek-img-800x700 size-themestek-img-800x700 wp-post-image"
-																			alt="" /></div>
-																</div>
-
-																<div class="themestek-box-content">
-																	<div class="ts-entry-meta-wrapper">
-																		<div
-																			class="entry-meta ts-entry-meta ts-entry-meta-blogbox">
-																			<span class="ts-meta-line byline">
-																				<span class="author vcard"><span
-																						class="screen-reader-text ts-hide">Author
-																					</span>By <a class="url fn n"
-																						href="author/admin/index.html">admin</a></span></span><span
-																				class="ts-meta-line posted-on"><span
-																					class="screen-reader-text ts-hide">Posted
-																					on </span><a
-																					href="2018/01/21/what-2018-has-in-store-for-the-industry/index.html"
-																					rel="bookmark"><time
-																						class="entry-date published"
-																						datetime="2018-01-21T10:43:28+00:00">January
-																						21, 2018</time><time
-																						class="updated ts-hide"
-																						datetime="2021-01-08T05:50:12+00:00">January
-																						8,
-																						2021</time></a></span>
-																		</div>
-																	</div>
-																	<div class="themestek-box-title">
-																		<h4><a
-																				href="2018/01/21/what-2018-has-in-store-for-the-industry/index.html">Exploring
-																				Anatomy in the Lab</a></h4>
-																	</div>
-																	<div class="themestek-box-desc">
-																		<div class="themestek-box-desc-text">
-																			We provide complete process
-																			piping capabilities for
-																			industrial from pulp and paper.
-																		</div>
-																	</div>
-
-																	<div class="ts-bottom-meta-wrapper clearfix">
-																		<div class="pull-left">
-																			<div class="themestek-blogbox-footer-left">
-																				<a
-																					href="2018/01/21/what-2018-has-in-store-for-the-industry/index.html">Read
-																					More</a></div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</article>
-
-													</div>
+																{% endfor %}
 												</div>
 											</div><!-- .themestek-boxes-inner -->
 										</div><!-- .themestek-boxes -->

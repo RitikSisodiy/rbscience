@@ -45,3 +45,13 @@ def articallist(request , year , vol ,issue):
 def singleartical(request,slug):
     res = {}
     return render(request, 'article/singleartical.html' , res)
+def currentissue(request):
+    res = {}
+    latestartical = artical.objects.all()
+    if latestartical.exists():
+        latestartical = latestartical.order_by('-time')[0]
+        year = latestartical.issue.year.year
+        issue = latestartical.issue
+        vol = latestartical.issue.vol
+        return articallist(request,year , vol , issue)
+    return redirect('home')

@@ -36,6 +36,7 @@ class artical(models.Model):
     keywords = RichTextField()
     do = models.CharField(max_length=1000,blank=True)
     references = RichTextField(blank=True)
+    time = models.DateTimeField(auto_now=True)
 class wp_posts(models.Model):
     post_author	= models.BigIntegerField()
     post_date	= models.DateTimeField(auto_now=True)

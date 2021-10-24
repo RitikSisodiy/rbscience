@@ -6,4 +6,5 @@ urlpatterns = [
     path('archives/', views.archives , name='archives' ),
     path('archives/<slug:year>/<slug:vol>/<slug:issue>/articals' , views.articallist , name="listarticals"),
     path('archives/<slug:slug>/' , views.singleartical , name="singleartical"),
+    path('current/' , views.currentissue , name="currentissue"),
 ]
