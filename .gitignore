@@ -1,0 +1,14 @@
+# Django #
+*.log
+*.pot
+*.pyc
+staticfiles/
+__pycache__
+db.sqlite3
+
+# Backup files # 
+*.bak
+
+# Python # 
+*.py[cod] 
+*$py.class 

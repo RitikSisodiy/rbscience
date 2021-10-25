@@ -1,0 +1,2945 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<!-- Mirrored from labtechco.themestek.com/labtechco-demo7/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Sep 2021 07:35:05 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+
+
+
+
+{% comment %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        'use strict';
+        (function (html) {
+            html.className = html.className.replace(/\bno-js\b/, 'js')
+        })(document.documentElement);
+    </script>
+    <title>Labtechco Demo7 &#8211; Just another LabtechCO site</title>
+    <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+    <link rel='dns-prefetch' href='http://s.w.org/' />
+    <link rel="alternate" type="application/rss+xml" title="Labtechco Demo7 &raquo; Feed" href="feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Labtechco Demo7 &raquo; Comments Feed"
+        href="comments/feed/index.html" />
+    <script>
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/",
+            "svgExt": ".svg",
+            "source": {
+                "concatemoji": "https:\/\/labtechco.themestek.com\/labtechco-demo7\/wp-includes\/js\/wp-emoji-release.min.js"
+            }
+        };
+        ! function (e, a, t) {
+            var n, r, o, i = a.createElement("canvas"),
+                p = i.getContext && i.getContext("2d");
+
+            function s(e, t) {
+                var a = String.fromCharCode;
+                p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);
+                e = i.toDataURL();
+                return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
+            }
+
+            function c(e) {
+                var t = a.createElement("script");
+                t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
+            }
+            for (o = Array("flag", "emoji"), t.supports = {
+                    everything: !0,
+                    everythingExceptFlag: !0
+                }, r = 0; r < o.length; r++) t.supports[o[r]] = function (e) {
+                if (!p || !p.fillText) return !1;
+                switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
+                    case "flag":
+                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([
+                            55356, 56826, 55356, 56819
+                        ], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418,
+                            56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447
+                        ], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203,
+                            56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447
+                        ]);
+                    case "emoji":
+                        return !s([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212])
+                }
+                return !1
+            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t
+                .supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
+            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t
+                .readyCallback = function () {
+                    t.DOMReady = !0
+                }, t.supports.everything || (n = function () {
+                    t.readyCallback()
+                }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load",
+                    n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () {
+                    "complete" === a.readyState && t.readyCallback()
+                })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji),
+                    c(n.wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+    <style>
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='wp-block-library-css'
+        href="{% static "wp-includes/css/dist/block-library/style.min9d3a.css" %}" media='all' />
+    <link rel='stylesheet' id='wc-block-vendors-style-css'
+        href="{% static "wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-style9dff.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='wc-block-style-css'
+        href="{% static "wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style9dff.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='bbp-default-css'
+        href="{% static "wp-content/plugins/bbpress/templates/default/css/bbpress.mind7ad.css" %}" media='all' />
+    <link rel='stylesheet' id='contact-form-7-css'
+        href="{% static "wp-content/plugins/contact-form-7/includes/css/styles9dff.css" %}" media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css'
+        href="{% static "wp-content/plugins/revslider/public/assets/css/rs65c45.css" %}" media='all' />
+    <style id='rs-plugin-settings-inline-css'>
+        #rs-demo-id {}
+    </style>
+    <link rel='stylesheet' id='font-awesome-css'
+        href="{% static "wp-content/plugins/themestek-labtechco-extras/icon-picker/icon-libraries/font-awesome/css/font-awesome.min9d3a.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='themify-css'
+        href="{% static "wp-content/plugins/themestek-labtechco-extras/icon-picker/icon-libraries/themify-icons/themify-icons9d3a.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='sgicon-css'
+        href="{% static "wp-content/plugins/themestek-labtechco-extras/icon-picker/icon-libraries/stroke-gap-icons/style9d3a.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='vc_linecons-css'
+        href="{% static "wp-content/plugins/js_composer/assets/css/lib/vc-linecons/vc_linecons_icons.mine6df.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='ts_labtechco_business_icon-css'
+        href="{% static "wp-content/plugins/themestek-labtechco-extras/icon-picker/icon-libraries/ts-lab-icons/font/flaticon9d3a.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='woocommerce-layout-css'
+        href="{% static "wp-content/plugins/woocommerce/assets/css/woocommerce-layoutd03b.css" %}" media='all' />
+    <link rel='stylesheet' id='woocommerce-smallscreen-css'
+        href="{% static "wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreend03b.css" %}"
+        media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' id='woocommerce-general-css'
+        href="{% static "wp-content/plugins/woocommerce/assets/css/woocommerced03b.css" %}" media='all' />
+    <style id='woocommerce-inline-inline-css'>
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
+    </style>
+    <link rel='stylesheet' id='ts-cs-google-fonts-css'
+        href='http://fonts.googleapis.com/css?family=Work+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7CRoboto+Condensed%3A300%2C300italic%2C400%2Citalic%2C700%2C700italic%7CArimo%3A400%7CRoboto%3A500%7CVollkorn%3A700&amp;ver=1.0.0'
+        media='all' />
+    <link rel='stylesheet' id='ts-base-icons-css'
+        href="{% static "wp-content/themes/labtechco/libraries/ts-labtechco-icons/css/ts-labtechco-icons9d3a.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='perfect-scrollbar-css'
+        href="{% static "wp-content/themes/labtechco/libraries/perfect-scrollbar/perfect-scrollbar.min9d3a.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='chrisbracco-tooltip-css'
+        href="{% static "wp-content/themes/labtechco/libraries/chrisbracco-tooltip/chrisbracco-tooltip.min9d3a.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='multi-columns-row-css'
+        href="{% static "wp-content/themes/labtechco/css/multi-columns-row9d3a.css" %}" media='all' />
+    <link rel='stylesheet' id='ts-select2-css'
+        href="{% static "wp-content/themes/labtechco/libraries/select2/select2.min9d3a.css" %}" media='all' />
+    <link rel='stylesheet' id='flexslider-css'
+        href="{% static "wp-content/plugins/js_composer/assets/lib/bower/flexslider/flexslider.mine6df.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='slick-css'
+        href="{% static "wp-content/themes/labtechco/libraries/slick/slick9d3a.css" %}" media='all' />
+    <link rel='stylesheet' id='slick-theme-css'
+        href="{% static "wp-content/themes/labtechco/libraries/slick/slick-theme9d3a.css" %}" media='all' />
+    <link rel='stylesheet' id='prettyphoto-css'
+        href="{% static "wp-content/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto.mine6df.css" %}"
+        media='all' />
+    <link rel='stylesheet' id='js_composer_front-css'
+        href="{% static "wp-content/plugins/js_composer/assets/css/js_composer.mine6df.css" %}" media='all' />
+    <link rel='stylesheet' id='bootstrap-css'
+        href="{% static "wp-content/themes/labtechco/css/bootstrap.min9d3a.css" %}" media='all' />
+
+    <link rel='stylesheet' id='bootstrap-theme-css'
+        href="{% static "wp-content/themes/labtechco/css/bootstrap-theme.min9d3a.css" %}" media='all' />
+    <link rel='stylesheet' id='labtechco-core-style-css'
+        href="{% static "wp-content/themes/labtechco/css/core9d3a.css" %}" media='all' />
+    <link rel='stylesheet' id='labtechco-master-style-css'
+        href="{% static "wp-content/themes/labtechco/css/master9d3a.css" %}" media='all' />
+    <link rel='stylesheet' id='labtechco-responsive-style-css'
+        href="{% static "wp-content/themes/labtechco/css/responsive9d3a.css" %}" media='all' />
+    <link rel='stylesheet' id='tste-labtechco-theme-style-css' href="{% static 'wp-admin/admin-ajax4f1b.css' %}"
+        media='all' />
+    <script src="{% static "wp-includes/js/jquery/jquery.min9d52.js" %}" id='jquery-core-js'></script>
+    <script src="{% static "wp-includes/js/jquery/jquery-migrate.mind617.js" %}" id='jquery-migrate-js'></script>
+    <script src="{% static "wp-content/plugins/revslider/public/assets/js/rbtools.min5c45.js" %}" id='tp-tools-js'>
+    </script>
+    <script src="{% static "wp-content/plugins/revslider/public/assets/js/rs6.min5c45.js" %}" id='revmin-js'></script>
+    <script src="{% static "wp-content/plugins/themestek-labtechco-extras/js/jquery-resize.min9d3a.js" %}"
+        id='jquery-resize-js'></script>
+    <script src="{% static "wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js" %}"
+        id='jquery-blockui-js'></script>
+    <script id='wc-add-to-cart-js-extra'>
+        /* <![CDATA[ */
+
+        /* ]]> */
+    </script>
+    <script src="{% static "wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.mind03b.js" %}"
+        id='wc-add-to-cart-js'></script>
+    <script src="{% static "wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-carte6df.js" %}"
+        id='vc_woocommerce-add-to-cart-js-js'></script>
+    <link rel="https://api.w.org/" />
+    <link rel="alternate" type="application/json" href="{% static "wp-json/wp/v2/pages/7761.json" %}" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{% static "wp-includes/wlwmanifest.xml" %}" />
+    <meta name="generator" content="WordPress 5.6.5" />
+    <meta name="generator" content="WooCommerce 5.5.1" />
+    <link rel="canonical" href="index.html" />
+    <link rel='shortlink' href='index.html' />
+    <link rel="alternate" type="application/json+oembed" href="{% static "wp-json/oembed/1.0/embed35b3.json" %}" />
+    <link rel="alternate" type="text/xml+oembed" href="{% static "wp-json/oembed/1.0/embede95a" %}" />
+    <!-- Inline CSS Start -->
+    <style>
+        img.wp-post-image {
+            object-fit: contain;
+            height: 322px;
+            width: 322px;
+        }
+
+        .vc_custom_1609922447065>.ts-row-wrapper-bg-layer {
+            padding-top: 100px !important;
+        }
+
+        .vc_custom_1609922447065>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 1200px) {
+            .ts-row.ts-responsive-custom-81278033 {
+                padding-bottom: 30px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-81278033 {
+                padding-top: 90px !important;
+                padding-bottom: 0 !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-81278033 {
+                padding-top: 70px !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .ts-column-inner>.ts-responsive-custom-10989805 {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-column-inner>.ts-responsive-custom-10989805 {
+                margin-top: 15px !important;
+                padding-right: 90px !important;
+                padding-left: 15px !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .ts-column>.ts-responsive-custom-86051825 {
+                padding-right: 145px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-column>.ts-responsive-custom-86051825 {
+                margin-top: 0 !important;
+                padding-top: 70px !important;
+                padding-right: 15px !important;
+            }
+        }
+
+        .vc_custom_1609299319523>.ts-col-wrapper-bg-layer {
+            background-image: url({% static "wp-content/uploads/sites/13/2020/12/new-img-02077e.jpg" %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609299319523>.ts-col-wrapper-bg-layer>.ts-bg-layer-inner {
+            background-image: url({% static 'wp-content/uploads/sites/13/2020/12/new-img-02.jpg' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-image: none !important;
+        }
+
+        .vc_custom_1609923964951>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+            padding-bottom: 110px !important;
+        }
+
+        .vc_custom_1609923964951>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-14662104 {
+                padding-top: 10px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-column-inner>.ts-responsive-custom-76819141 {
+                padding-top: 0 !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-column-inner>.ts-responsive-custom-76819141 {
+                margin-bottom: 10px !important;
+                padding-right: 15px !important;
+                padding-left: 15px !important;
+            }
+        }
+
+        .vc_custom_1609299678348>.ts-row-wrapper-bg-layer {
+            margin-top: -80px !important;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+
+        .vc_custom_1609299678348>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .vc_custom_1609924104150>.ts-row-wrapper-bg-layer {
+            border-bottom-width: 1px !important;
+            padding-bottom: 90px !important;
+            border-bottom-color: #e5e5e5 !important;
+            border-bottom-style: solid !important;
+        }
+
+        .vc_custom_1609924104150>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 1200px) {
+            .ts-row.ts-responsive-custom-61585309 {
+                padding-top: 60px !important;
+                padding-bottom: 70px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-61585309 {
+                padding-top: 50px !important;
+                padding-bottom: 60px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-61585309 {
+                padding-top: 30px !important;
+                padding-bottom: 45px !important;
+            }
+        }
+
+        .vc_custom_1609924170145>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .vc_custom_1609924170145>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-42617191 {
+                padding-top: 90px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-42617191 {
+                padding-top: 70px !important;
+            }
+        }
+
+        .vc_custom_1610171755748>.ts-col-wrapper-bg-layer {
+            background-image: url({% static 'wp-content/uploads/sites/13/2021/01/patten-img-01.png' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1610171755748>.ts-col-wrapper-bg-layer>.ts-bg-layer-inner {
+            background-image: url({% static 'wp-content/uploads/sites/13/2021/01/patten-img-01.png' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-image: none !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-column>.ts-responsive-custom-19716156 {
+                margin-top: -230px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-column>.ts-responsive-custom-19716156 {
+                margin-top: 0 !important;
+            }
+        }
+
+        .vc_custom_1609735295974>.ts-row-wrapper-bg-layer {
+            padding-top: 0px !important;
+            padding-bottom: 130px !important;
+            background-image: url({% static 'wp-content/uploads/sites/13/2020/12/new-bg-03.jpg' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609735295974>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-53379597 {
+                padding-bottom: 80px !important;
+            }
+        }
+
+        .vc_custom_1609390047412>.ts-row-wrapper-bg-layer {
+            padding-top: 40px !important;
+            padding-bottom: 30px !important;
+        }
+
+        .vc_custom_1609390047412>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-57567075 {
+                padding-top: 20px !important;
+                padding-bottom: 10px !important;
+            }
+        }
+
+        .vc_custom_1609923571169>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+            padding-bottom: 90px !important;
+        }
+
+        .vc_custom_1609923571169>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-54676731 {
+                padding-top: 90px !important;
+                padding-bottom: 60px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-54676731 {
+                padding-top: 80px !important;
+                padding-bottom: 50px !important;
+            }
+        }
+
+        .vc_custom_1610104365319>.ts-row-wrapper-bg-layer {
+            padding-bottom: 20px !important;
+            background-image: url({% static 'wp-content/uploads/sites/13/2021/01/patten-img-02.png' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1610104365319>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-10219780 {
+                padding-top: 70px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-10219780 {
+                padding-top: 60px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+
+        .vc_custom_1609740259919>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+        }
+
+        .vc_custom_1609740259919>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-61644444 {
+                padding-top: 90px !important;
+                padding-bottom: 50px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-61644444 {
+                padding-top: 80px !important;
+                padding-bottom: 30px !important;
+            }
+        }
+    </style>
+    <!-- Inline CSS End -->
+    <noscript>
+        <style>
+            .woocommerce-product-gallery {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+    <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." />
+    <meta name="generator"
+        content="Powered by Slider Revolution 6.3.3 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+    <script>
+        function setREVStartSize(e) {
+            //window.requestAnimationFrame(function() {				 
+            window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
+            window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
+            try {
+                var pw = document.getElementById(e.c).parentNode.offsetWidth,
+                    newh;
+                pw = pw === 0 || isNaN(pw) ? window.RSIW : pw;
+                e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
+                e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
+                e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
+                e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
+                e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
+                e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
+                e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
+                if (e.layout === "fullscreen" || e.l === "fullscreen")
+                    newh = Math.max(e.mh, window.RSIH);
+                else {
+                    e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+                    for (var i in e.rl)
+                        if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
+                    e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
+                    e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+                    for (var i in e.rl)
+                        if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
+
+                    var nl = new Array(e.rl.length),
+                        ix = 0,
+                        sl;
+                    e.tabw = e.tabhide >= pw ? 0 : e.tabw;
+                    e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
+                    e.tabh = e.tabhide >= pw ? 0 : e.tabh;
+                    e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
+                    for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
+                    sl = nl[0];
+                    for (var i in nl)
+                        if (sl > nl[i] && nl[i] > 0) {
+                            sl = nl[i];
+                            ix = i;
+                        }
+                    var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
+                    newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
+                }
+                if (window.rs_init_css === undefined) window.rs_init_css = document.head.appendChild(document
+                    .createElement("style"));
+                document.getElementById(e.c).height = newh + "px";
+                window.rs_init_css.innerHTML += "#" + e.c + "_wrapper { height: " + newh + "px }";
+            } catch (e) {
+                console.log("Failure at Presize of Slider:" + e)
+            }
+            //});
+        };
+    </script>
+    <style data-type="vc_shortcodes-custom-css">
+        .vc_custom_1609922447065 {
+            padding-top: 100px !important;
+        }
+
+        .vc_custom_1609923964951 {
+            padding-top: 110px !important;
+            padding-bottom: 110px !important;
+        }
+
+        .vc_custom_1609299678348 {
+            margin-top: -80px !important;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+
+        .vc_custom_1609924104150 {
+            border-bottom-width: 1px !important;
+            padding-bottom: 90px !important;
+            border-bottom-color: #e5e5e5 !important;
+            border-bottom-style: solid !important;
+        }
+
+        .vc_custom_1609924170145 {
+            padding-top: 110px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .vc_custom_1609735295974 {
+            padding-top: 0px !important;
+            padding-bottom: 130px !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609390047412 {
+            padding-top: 40px !important;
+            padding-bottom: 30px !important;
+        }
+
+        .vc_custom_1609923571169 {
+            padding-top: 110px !important;
+            padding-bottom: 90px !important;
+        }
+
+        .vc_custom_1610104365319 {
+            padding-bottom: 20px !important;
+            background-image: url({% static 'wp-content/uploads/sites/13/2021/01/patten-img-02.png' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609740259919 {
+            padding-top: 110px !important;
+        }
+
+        .vc_custom_1609393609633 {
+            margin-bottom: 25px !important;
+        }
+
+        .vc_custom_1609923881641 {
+            margin-top: -90px !important;
+            padding-top: 100px !important;
+            padding-right: 160px !important;
+            padding-bottom: 60px !important;
+        }
+
+        .vc_custom_1609299319523 {
+            margin-bottom: -100px !important;
+            margin-left: -100px !important;
+            background-image: url({% static 'wp-content/uploads/sites/13/2020/12/new-img-02.jpg' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609330773425 {
+            padding-right: 0px !important;
+        }
+
+        .vc_custom_1609394555784 {
+            padding-top: 15px !important;
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+        }
+
+        .vc_custom_1610431168421 {
+            margin-top: 45px !important;
+        }
+
+        .vc_custom_1610171755748 {
+            margin-top: -170px !important;
+            padding-top: 55px !important;
+            padding-right: 40px !important;
+            padding-bottom: 10px !important;
+            padding-left: 40px !important;
+            background-image: url({% static 'wp-content/uploads/sites/13/2021/01/patten-img-01.png' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609329392709 {
+            margin-bottom: 20px !important;
+        }
+    </style>
+    <style>
+        .vc_custom_1609922447065>.ts-row-wrapper-bg-layer {
+            padding-top: 100px !important;
+        }
+
+        .vc_custom_1609922447065>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 1200px) {
+            .ts-row.ts-responsive-custom-81278033 {
+                padding-bottom: 30px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-81278033 {
+                padding-top: 90px !important;
+                padding-bottom: 0 !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-81278033 {
+                padding-top: 70px !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .ts-column-inner>.ts-responsive-custom-10989805 {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-column-inner>.ts-responsive-custom-10989805 {
+                margin-top: 15px !important;
+                padding-right: 90px !important;
+                padding-left: 15px !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .ts-column>.ts-responsive-custom-86051825 {
+                padding-right: 145px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-column>.ts-responsive-custom-86051825 {
+                margin-top: 0 !important;
+                padding-top: 70px !important;
+                padding-right: 15px !important;
+            }
+        }
+
+        .vc_custom_1609299319523>.ts-col-wrapper-bg-layer {
+            background-image: url({ % static "wp-content/uploads/sites/13/2020/12/new-img-02077e.jpg" %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609299319523>.ts-col-wrapper-bg-layer>.ts-bg-layer-inner {
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2020/12/new-img-02.jpg?id=8144) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-image: none !important;
+        }
+
+        .vc_custom_1609923964951>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+            padding-bottom: 110px !important;
+        }
+
+        .vc_custom_1609923964951>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-14662104 {
+                padding-top: 10px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-column-inner>.ts-responsive-custom-76819141 {
+                padding-top: 0 !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-column-inner>.ts-responsive-custom-76819141 {
+                margin-bottom: 10px !important;
+                padding-right: 15px !important;
+                padding-left: 15px !important;
+            }
+        }
+
+        .vc_custom_1609299678348>.ts-row-wrapper-bg-layer {
+            margin-top: -80px !important;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+
+        .vc_custom_1609299678348>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .vc_custom_1609924104150>.ts-row-wrapper-bg-layer {
+            border-bottom-width: 1px !important;
+            padding-bottom: 90px !important;
+            border-bottom-color: #e5e5e5 !important;
+            border-bottom-style: solid !important;
+        }
+
+        .vc_custom_1609924104150>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 1200px) {
+            .ts-row.ts-responsive-custom-61585309 {
+                padding-top: 60px !important;
+                padding-bottom: 70px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-61585309 {
+                padding-top: 50px !important;
+                padding-bottom: 60px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-61585309 {
+                padding-top: 30px !important;
+                padding-bottom: 45px !important;
+            }
+        }
+
+        .vc_custom_1609924170145>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .vc_custom_1609924170145>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-42617191 {
+                padding-top: 90px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-42617191 {
+                padding-top: 70px !important;
+            }
+        }
+
+        .vc_custom_1610171755748>.ts-col-wrapper-bg-layer {
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2021/01/patten-img-01.png?id=8442) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1610171755748>.ts-col-wrapper-bg-layer>.ts-bg-layer-inner {
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2021/01/patten-img-01.png?id=8442) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-image: none !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-column>.ts-responsive-custom-19716156 {
+                margin-top: -230px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-column>.ts-responsive-custom-19716156 {
+                margin-top: 0 !important;
+            }
+        }
+
+        .vc_custom_1609735295974>.ts-row-wrapper-bg-layer {
+            padding-top: 0px !important;
+            padding-bottom: 130px !important;
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2020/12/new-bg-03.jpg?id=8198) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609735295974>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-53379597 {
+                padding-bottom: 80px !important;
+            }
+        }
+
+        .vc_custom_1609390047412>.ts-row-wrapper-bg-layer {
+            padding-top: 40px !important;
+            padding-bottom: 30px !important;
+        }
+
+        .vc_custom_1609390047412>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-57567075 {
+                padding-top: 20px !important;
+                padding-bottom: 10px !important;
+            }
+        }
+
+        .vc_custom_1609923571169>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+            padding-bottom: 90px !important;
+        }
+
+        .vc_custom_1609923571169>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-54676731 {
+                padding-top: 90px !important;
+                padding-bottom: 60px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-54676731 {
+                padding-top: 80px !important;
+                padding-bottom: 50px !important;
+            }
+        }
+
+        .vc_custom_1610104365319>.ts-row-wrapper-bg-layer {
+            padding-bottom: 20px !important;
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2021/01/patten-img-02.png?id=8443) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1610104365319>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-10219780 {
+                padding-top: 70px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-10219780 {
+                padding-top: 60px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+
+        .vc_custom_1609740259919>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+        }
+
+        .vc_custom_1609740259919>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-61644444 {
+                padding-top: 90px !important;
+                padding-bottom: 50px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-61644444 {
+                padding-top: 80px !important;
+                padding-bottom: 30px !important;
+            }
+        }
+    </style>
+
+    <noscript>
+        <style>
+            .wpb_animate_when_almost_visible {
+                opacity: 1;
+            }
+        </style>
+    </noscript>
+
+
+
+
+
+
+</head> {% endcomment %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        'use strict';
+        (function (html) {
+            html.className = html.className.replace(/\bno-js\b/, 'js')
+        })(document.documentElement);
+    </script>
+    <title>Artificial Intelligence &#8211; Labtechco Demo7</title>
+    <style data-type="vc_shortcodes-custom-css">
+       
+
+        .vc_custom_1609923964951 {
+            padding-top: 110px !important;
+            padding-bottom: 110px !important;
+        }
+
+        .vc_custom_1609299678348 {
+            margin-top: -80px !important;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+
+        .vc_custom_1609924104150 {
+            border-bottom-width: 1px !important;
+            padding-bottom: 90px !important;
+            border-bottom-color: #e5e5e5 !important;
+            border-bottom-style: solid !important;
+        }
+
+        .vc_custom_1609924170145 {
+            padding-top: 110px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .vc_custom_1609735295974 {
+            padding-top: 0px !important;
+            padding-bottom: 130px !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609390047412 {
+            padding-top: 40px !important;
+            padding-bottom: 30px !important;
+        }
+
+        .vc_custom_1609923571169 {
+            padding-top: 110px !important;
+            padding-bottom: 90px !important;
+        }
+
+        .vc_custom_1610104365319 {
+            padding-bottom: 20px !important;
+            background-image: url({% static 'wp-content/uploads/sites/13/2021/01/patten-img-02.png' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609740259919 {
+            padding-top: 110px !important;
+        }
+
+        .vc_custom_1609393609633 {
+            margin-bottom: 25px !important;
+        }
+
+        .vc_custom_1609923881641 {
+            margin-top: -90px !important;
+            padding-top: 100px !important;
+            padding-right: 160px !important;
+            padding-bottom: 60px !important;
+        }
+
+        .vc_custom_1609299319523 {
+            margin-bottom: -100px !important;
+            margin-left: -100px !important;
+            background-image: url({% static 'wp-content/uploads/sites/13/2020/12/new-img-02.jpg' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609330773425 {
+            padding-right: 0px !important;
+        }
+
+        .vc_custom_1609394555784 {
+            padding-top: 15px !important;
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+        }
+
+        .vc_custom_1610431168421 {
+            margin-top: 45px !important;
+        }
+
+        .vc_custom_1610171755748 {
+            margin-top: -170px !important;
+            padding-top: 55px !important;
+            padding-right: 40px !important;
+            padding-bottom: 10px !important;
+            padding-left: 40px !important;
+            background-image: url({% static 'wp-content/uploads/sites/13/2021/01/patten-img-01.png' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609329392709 {
+            margin-bottom: 20px !important;
+        }
+    </style>
+    <style>
+        .vc_custom_1609922447065>.ts-row-wrapper-bg-layer {
+            padding-top: 100px !important;
+        }
+
+        .vc_custom_1609922447065>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 1200px) {
+            .ts-row.ts-responsive-custom-81278033 {
+                padding-bottom: 30px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-81278033 {
+                padding-top: 90px !important;
+                padding-bottom: 0 !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-81278033 {
+                padding-top: 70px !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .ts-column-inner>.ts-responsive-custom-10989805 {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-column-inner>.ts-responsive-custom-10989805 {
+                margin-top: 15px !important;
+                padding-right: 90px !important;
+                padding-left: 15px !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .ts-column>.ts-responsive-custom-86051825 {
+                padding-right: 145px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-column>.ts-responsive-custom-86051825 {
+                margin-top: 0 !important;
+                padding-top: 70px !important;
+                padding-right: 15px !important;
+            }
+        }
+
+        .vc_custom_1609299319523>.ts-col-wrapper-bg-layer {
+            background-image: url({ % static "wp-content/uploads/sites/13/2020/12/new-img-02077e.jpg" %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609299319523>.ts-col-wrapper-bg-layer>.ts-bg-layer-inner {
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2020/12/new-img-02.jpg?id=8144) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-image: none !important;
+        }
+
+        .vc_custom_1609923964951>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+            padding-bottom: 110px !important;
+        }
+
+        .vc_custom_1609923964951>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-14662104 {
+                padding-top: 10px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-column-inner>.ts-responsive-custom-76819141 {
+                padding-top: 0 !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-column-inner>.ts-responsive-custom-76819141 {
+                margin-bottom: 10px !important;
+                padding-right: 15px !important;
+                padding-left: 15px !important;
+            }
+        }
+
+        .vc_custom_1609299678348>.ts-row-wrapper-bg-layer {
+            margin-top: -80px !important;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+
+        .vc_custom_1609299678348>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .vc_custom_1609924104150>.ts-row-wrapper-bg-layer {
+            border-bottom-width: 1px !important;
+            padding-bottom: 90px !important;
+            border-bottom-color: #e5e5e5 !important;
+            border-bottom-style: solid !important;
+        }
+
+        .vc_custom_1609924104150>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 1200px) {
+            .ts-row.ts-responsive-custom-61585309 {
+                padding-top: 60px !important;
+                padding-bottom: 70px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-61585309 {
+                padding-top: 50px !important;
+                padding-bottom: 60px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-61585309 {
+                padding-top: 30px !important;
+                padding-bottom: 45px !important;
+            }
+        }
+
+        .vc_custom_1609924170145>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .vc_custom_1609924170145>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-42617191 {
+                padding-top: 90px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-42617191 {
+                padding-top: 70px !important;
+            }
+        }
+
+        .vc_custom_1610171755748>.ts-col-wrapper-bg-layer {
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2021/01/patten-img-01.png?id=8442) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1610171755748>.ts-col-wrapper-bg-layer>.ts-bg-layer-inner {
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2021/01/patten-img-01.png?id=8442) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-image: none !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-column>.ts-responsive-custom-19716156 {
+                margin-top: -230px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-column>.ts-responsive-custom-19716156 {
+                margin-top: 0 !important;
+            }
+        }
+
+        .vc_custom_1609735295974>.ts-row-wrapper-bg-layer {
+            padding-top: 0px !important;
+            padding-bottom: 130px !important;
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2020/12/new-bg-03.jpg?id=8198) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609735295974>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-53379597 {
+                padding-bottom: 80px !important;
+            }
+        }
+
+        .vc_custom_1609390047412>.ts-row-wrapper-bg-layer {
+            padding-top: 40px !important;
+            padding-bottom: 30px !important;
+        }
+
+        .vc_custom_1609390047412>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-57567075 {
+                padding-top: 20px !important;
+                padding-bottom: 10px !important;
+            }
+        }
+
+        .vc_custom_1609923571169>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+            padding-bottom: 90px !important;
+        }
+
+        .vc_custom_1609923571169>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-54676731 {
+                padding-top: 90px !important;
+                padding-bottom: 60px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-54676731 {
+                padding-top: 80px !important;
+                padding-bottom: 50px !important;
+            }
+        }
+
+        .vc_custom_1610104365319>.ts-row-wrapper-bg-layer {
+            padding-bottom: 20px !important;
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2021/01/patten-img-02.png?id=8443) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1610104365319>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-10219780 {
+                padding-top: 70px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-10219780 {
+                padding-top: 60px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+
+        .vc_custom_1609740259919>.ts-row-wrapper-bg-layer {
+            padding-top: 110px !important;
+        }
+
+        .vc_custom_1609740259919>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .ts-row.ts-responsive-custom-61644444 {
+                padding-top: 90px !important;
+                padding-bottom: 50px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .ts-row.ts-responsive-custom-61644444 {
+                padding-top: 80px !important;
+                padding-bottom: 30px !important;
+            }
+        }
+    </style>
+
+    <style>
+        .vc_custom_1610171755748>.ts-col-wrapper-bg-layer>.ts-bg-layer-inner {
+            background-image: url(http://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2021/01/patten-img-01.png?id=8442) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .vc_custom_1609735295974>.ts-row-wrapper-bg-layer {
+            padding-top: 0px !important;
+            padding-bottom: 130px !important;
+            background-image: url({% static 'wp-content/uploads/sites/13/2020/12/new-bg-03.jpg' %}) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+    </style>
+    <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+    <link rel='dns-prefetch' href='http://s.w.org/' />
+    <link rel="alternate" type="application/rss+xml" title="Labtechco Demo7 &raquo; Feed"
+        href="{% static "feed/index.html" %}" />
+    <link rel="alternate" type="application/rss+xml" title="Labtechco Demo7 &raquo; Comments Feed"
+        href="{% static "comments/feed/index.html" %}" />
+    <script>
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/",
+            "svgExt": ".svg",
+            "source": {
+                "concatemoji": "https:\/\/labtechco.themestek.com\/labtechco-demo7\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6.5"
+            }
+        };
+        ! function (e, a, t) {
+            var n, r, o, i = a.createElement("canvas"),
+                p = i.getContext && i.getContext("2d");
+
+            function s(e, t) {
+                var a = String.fromCharCode;
+                p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);
+                e = i.toDataURL();
+                return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
+            }
+
+            function c(e) {
+                var t = a.createElement("script");
+                t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
+            }
+            for (o = Array("flag", "emoji"), t.supports = {
+                    everything: !0,
+                    everythingExceptFlag: !0
+                }, r = 0; r < o.length; r++) t.supports[o[r]] = function (e) {
+                if (!p || !p.fillText) return !1;
+                switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
+                    case "flag":
+                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([
+                            55356, 56826, 55356, 56819
+                        ], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418,
+                            56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447
+                        ], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203,
+                            56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447
+                        ]);
+                    case "emoji":
+                        return !s([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212])
+                }
+                return !1
+            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t
+                .supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
+            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t
+                .readyCallback = function () {
+                    t.DOMReady = !0
+                }, t.supports.everything || (n = function () {
+                    t.readyCallback()
+                }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load",
+                    n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () {
+                    "complete" === a.readyState && t.readyCallback()
+                })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji),
+                    c(n.wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+    {% block css %}{% endblock %}
+    <style>
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+
+        .vc_custom_1609299319523>.ts-col-wrapper-bg-layer {
+            background-image: url(/static/wp-content/uploads/sites/13/2020/12/new-img-02077e.jpg) !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+    </style>
+    <link rel='stylesheet' id='wp-block-library-css'
+        href='{% static "wp-includes/css/dist/block-library/style.min9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='wc-block-vendors-style-css'
+        href='{% static "wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-style9dff.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='wc-block-style-css'
+        href='{% static "wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style9dff.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='bbp-default-css'
+        href='{% static "wp-content/plugins/bbpress/templates/default/css/bbpress.mind7ad.css" %}' media='all' />
+    <link rel='stylesheet' id='contact-form-7-css'
+        href='{% static "wp-content/plugins/contact-form-7/includes/css/styles9dff.css" %}' media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css'
+        href='{% static "wp-content/plugins/revslider/public/assets/css/rs65c45.css" %}' media='all' />
+    <style id='rs-plugin-settings-inline-css'>
+        #rs-demo-id {}
+    </style>
+    <link rel='stylesheet' id='font-awesome-css'
+        href='{% static "wp-content/plugins/themestek-labtechco-extras/icon-picker/icon-libraries/font-awesome/css/font-awesome.min9d3a.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='themify-css'
+        href='{% static "wp-content/plugins/themestek-labtechco-extras/icon-picker/icon-libraries/themify-icons/themify-icons9d3a.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='sgicon-css'
+        href='{% static "wp-content/plugins/themestek-labtechco-extras/icon-picker/icon-libraries/stroke-gap-icons/style9d3a.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='vc_linecons-css'
+        href='{% static "wp-content/plugins/js_composer/assets/css/lib/vc-linecons/vc_linecons_icons.mine6df.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='ts_labtechco_business_icon-css'
+        href='{% static "wp-content/plugins/themestek-labtechco-extras/icon-picker/icon-libraries/ts-lab-icons/font/flaticon9d3a.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='woocommerce-layout-css'
+        href='{% static "wp-content/plugins/woocommerce/assets/css/woocommerce-layoutd03b.css" %}' media='all' />
+    <link rel='stylesheet' id='woocommerce-smallscreen-css'
+        href='{% static "wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreend03b.css" %}'
+        media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' id='woocommerce-general-css'
+        href='{% static "wp-content/plugins/woocommerce/assets/css/woocommerced03b.css" %}' media='all' />
+    <style id='woocommerce-inline-inline-css'>
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
+    </style>
+    <link rel='stylesheet' id='ts-cs-google-fonts-css'
+        href='http://fonts.googleapis.com/css?family=Work+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7CRoboto+Condensed%3A300%2C300italic%2C400%2Citalic%2C700%2C700italic%7CArimo%3A400%7CRoboto%3A500%7CVollkorn%3A700&amp;ver=1.0.0'
+        media='all' />
+    <link rel='stylesheet' id='ts-base-icons-css'
+        href='{% static "wp-content/themes/labtechco/libraries/ts-labtechco-icons/css/ts-labtechco-icons9d3a.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='perfect-scrollbar-css'
+        href='{% static "wp-content/themes/labtechco/libraries/perfect-scrollbar/perfect-scrollbar.min9d3a.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='chrisbracco-tooltip-css'
+        href='{% static "wp-content/themes/labtechco/libraries/chrisbracco-tooltip/chrisbracco-tooltip.min9d3a.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='multi-columns-row-css'
+        href='{% static "wp-content/themes/labtechco/css/multi-columns-row9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='ts-select2-css'
+        href='{% static "wp-content/themes/labtechco/libraries/select2/select2.min9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='flexslider-css'
+        href='{% static "wp-content/plugins/js_composer/assets/lib/bower/flexslider/flexslider.mine6df.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='slick-css'
+        href='{% static "wp-content/themes/labtechco/libraries/slick/slick9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='slick-theme-css'
+        href='{% static "wp-content/themes/labtechco/libraries/slick/slick-theme9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='prettyphoto-css'
+        href='{% static "wp-content/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto.mine6df.css" %}'
+        media='all' />
+    <link rel='stylesheet' id='js_composer_front-css'
+        href='{% static "wp-content/plugins/js_composer/assets/css/js_composer.mine6df.css" %}' media='all' />
+    <link rel='stylesheet' id='bootstrap-css'
+        href='{% static "wp-content/themes/labtechco/css/bootstrap.min9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='bootstrap-theme-css'
+        href='{% static "wp-content/themes/labtechco/css/bootstrap-theme.min9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='labtechco-core-style-css'
+        href='{% static "wp-content/themes/labtechco/css/core9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='labtechco-master-style-css'
+        href='{% static "wp-content/themes/labtechco/css/master9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='labtechco-responsive-style-css'
+        href='{% static "wp-content/themes/labtechco/css/responsive9d3a.css" %}' media='all' />
+    <link rel='stylesheet' id='tste-labtechco-theme-style-css' href='{% static "wp-admin/admin-ajax4f1b.css" %}'
+        media='all' />
+    <script src='{% static "wp-includes/js/jquery/jquery.min9d52.js" %}' id='jquery-core-js'></script>
+    <script src='{% static "wp-includes/js/jquery/jquery-migrate.mind617.js" %}' id='jquery-migrate-js'></script>
+    <script src='{% static "wp-content/plugins/revslider/public/assets/js/rbtools.min5c45.js" %}' id='tp-tools-js'>
+    </script>
+    <script src='{% static "wp-content/plugins/revslider/public/assets/js/rs6.min5c45.js" %}' id='revmin-js'></script>
+    <script src='{% static "wp-content/plugins/themestek-labtechco-extras/js/jquery-resize.min9d3a.js" %}'
+        id='jquery-resize-js'></script>
+    <script src='{% static "wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js" %}'
+        id='jquery-blockui-js'></script>
+    <script id='wc-add-to-cart-js-extra'>
+        /* <![CDATA[ */
+
+        /* ]]> */
+    </script>
+    <script src='{% static "wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.mind03b.js" %}'
+        id='wc-add-to-cart-js'></script>
+    <script src='{% static "wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-carte6df.js" %}'
+        id='vc_woocommerce-add-to-cart-js-js'></script>
+    <link rel="https://api.w.org/" href="{% static "wp-json/index.html" %}" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="{% static "xmlrpc0db0.php?rsd" %}" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{% static "wp-includes/wlwmanifest.xml" %}" />
+    <meta name="generator" content="WordPress 5.6.5" />
+    <meta name="generator" content="WooCommerce 5.5.1" />
+    <link rel="canonical" href="index.html" />
+    <link rel='shortlink' href='{% static "indexe0bc.html?p=5727" %}' />
+    <link rel="alternate" type="application/json+oembed" href="{% static "wp-json/oembed/1.0/embeda003.json" %}" />
+    <link rel="alternate" type="text/xml+oembed" href="{% static "wp-json/oembed/1.0/embed33d1" %}" />
+    <!-- Inline CSS Start -->
+    <style>
+        .shadow-box {
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+            --blue: #007bff;
+            --indigo: #6610f2;
+            --purple: #6f42c1;
+            --pink: #e83e8c;
+            --red: #dc3545;
+            --orange: #fd7e14;
+            --yellow: #ffc107;
+            --green: #28a745;
+            --teal: #20c997;
+            --cyan: #17a2b8;
+            --white: #fff;
+            --gray: #6c757d;
+            --gray-dark: #343a40;
+            --primary: #007bff;
+            --secondary: #6c757d;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --breakpoint-xs: 0;
+            --breakpoint-sm: 576px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 992px;
+            --breakpoint-xl: 1200px;
+            --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            box-sizing: border-box;
+            background-color: #fff !important;
+            border-radius: .25rem !important;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+            margin-bottom: 3rem !important;
+            padding: 1rem !important;
+        }
+
+        .vc_custom_1533894571830>.ts-row-wrapper-bg-layer {
+            border-top-width: 5px !important;
+            border-right-width: 5px !important;
+            border-bottom-width: 5px !important;
+            border-left-width: 5px !important;
+            padding-top: 20px !important;
+            padding-right: 20px !important;
+            padding-bottom: 20px !important;
+            padding-left: 20px !important;
+            border-left-color: #f6faff !important;
+            border-left-style: solid !important;
+            border-right-color: #f6faff !important;
+            border-right-style: solid !important;
+            border-top-color: #f6faff !important;
+            border-top-style: solid !important;
+            border-bottom-color: #f6faff !important;
+            border-bottom-style: solid !important;
+        }
+
+        .vc_custom_1533894571830>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .vc_custom_1530503603170>.ts-row-wrapper-bg-layer {
+            margin-top: 30px !important;
+        }
+
+        .vc_custom_1530503603170>.ts-row-wrapper-bg-layer {
+            background-image: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    </style><!-- Inline CSS End --> <noscript>
+        <style>
+            .woocommerce-product-gallery {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+    <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." />
+    <meta name="generator"
+        content="Powered by Slider Revolution 6.3.3 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+    <script>
+        function setREVStartSize(e) {
+            //window.requestAnimationFrame(function() {				 
+            window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
+            window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
+            try {
+                var pw = document.getElementById(e.c).parentNode.offsetWidth,
+                    newh;
+                pw = pw === 0 || isNaN(pw) ? window.RSIW : pw;
+                e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
+                e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
+                e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
+                e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
+                e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
+                e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
+                e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
+                if (e.layout === "fullscreen" || e.l === "fullscreen")
+                    newh = Math.max(e.mh, window.RSIH);
+                else {
+                    e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+                    for (var i in e.rl)
+                        if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
+                    e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
+                    e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+                    for (var i in e.rl)
+                        if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
+
+                    var nl = new Array(e.rl.length),
+                        ix = 0,
+                        sl;
+                    e.tabw = e.tabhide >= pw ? 0 : e.tabw;
+                    e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
+                    e.tabh = e.tabhide >= pw ? 0 : e.tabh;
+                    e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
+                    for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
+                    sl = nl[0];
+                    for (var i in nl)
+                        if (sl > nl[i] && nl[i] > 0) {
+                            sl = nl[i];
+                            ix = i;
+                        }
+                    var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
+                    newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
+                }
+                if (window.rs_init_css === undefined) window.rs_init_css = document.head.appendChild(document
+                    .createElement("style"));
+                document.getElementById(e.c).height = newh + "px";
+                window.rs_init_css.innerHTML += "#" + e.c + "_wrapper { height: " + newh + "px }";
+            } catch (e) {
+                console.log("Failure at Presize of Slider:" + e)
+            }
+            //});
+        };
+    </script>
+    <style data-type="vc_shortcodes-custom-css">
+        .vc_custom_1533894571830 {
+            border-top-width: 5px !important;
+            border-right-width: 5px !important;
+            border-bottom-width: 5px !important;
+            border-left-width: 5px !important;
+            padding-top: 20px !important;
+            padding-right: 20px !important;
+            padding-bottom: 20px !important;
+            padding-left: 20px !important;
+            border-left-color: #f6faff !important;
+            border-left-style: solid !important;
+            border-right-color: #f6faff !important;
+            border-right-style: solid !important;
+            border-top-color: #f6faff !important;
+            border-top-style: solid !important;
+            border-bottom-color: #f6faff !important;
+            border-bottom-style: solid !important;
+        }
+
+        .vc_custom_1530503603170 {
+            margin-top: 30px !important;
+        }
+    </style><noscript>
+        <style>
+            .wpb_animate_when_almost_visible {
+                opacity: 1;
+            }
+        </style>
+    </noscript>
+</head>
+<div style="text-align: right; font-size: 20px;   background-color: #144154;
+    padding: 10px 0px;
+    color: #ffff;     
+"> <a href="/">JOURNAL OF PHARMACOLOGY AND BIOMEDICINE</a></div>
+
+<body
+    class="{% block bodyclass %}home page-template-default page page-id-7761 theme-labtechco woocommercemestek-page-full-width ts-empty-sidebar wpb-js-composer js-comp-ver-6.5.0 vc_responsive{% endblock %}">
+    <div id="ts-home"></div>
+    <div class="main-holder">
+        <div id="page" class="hfeed site">
+            <header id="masthead" class=" ts-header-style-style-8 themestek-main-menu-total-6">
+                <div class="ts-header-block  ts-mmenu-active-color-custom ts-dmenu-active-color-skin ts-dmenu-sep-grey">
+                    <div class="ts-search-overlay">
+                        <div class="ts-icon-close"></div>
+                        <div class="ts-search-outer">
+                            <div class="ts-search-logo"><img src="{% static 'wp-content/uploads/2018/08/logo.png' %}"
+                                    alt="Labtechco Demo7" /></div>
+                            <form method="get" class="ts-site-searchform" action="">
+                                <input type="search" class="field searchform-s" name="s"
+                                    placeholder="Type Word Then Press Enter" />
+                                <button type="submit"><span class="ts-labtechco-icon-search"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="site-header"
+                        class="site-header ts-bgcolor-custom ts-sticky-bgcolor-white ts-responsive-icon-dark ts-mmmenu-override-yes ts-above-content-yes">
+                        <div class="site-header-main ts-table">
+                            <div class="ts-header-top-wrapper container">
+                                <div class="site-branding">
+                                    <div class="headerlogo themestek-logotype-image ts-stickylogo-yes">
+                                        <h1 class="site-title"><a class="home-link" href="" rel="home">
+                                                <span class="ts-sc-logo ts-sc-logo-type-image">
+                                                    <img class="themestek-logo-img standardlogo" alt="Labtechco Demo7"
+                                                        src="{% static "wp-content/uploads/sites/13/2020/12/logo-b-01.png" %}">
+                                                    <img class="themestek-logo-img crosslogo" alt="Labtechco Demo7"
+                                                        src="{% static "wp-content/uploads/2018/08/logo.png" %}">
+                                                    <img class="themestek-logo-img stickylogo" alt="Labtechco Demo7"
+                                                        src="{% static "wp-content/uploads/sites/13/2020/12/logo-b-01.png" %}">
+                                                </span></a></h1>
+                                        <h2 class="site-description">Just another LabtechCO site</h2>
+                                    </div>
+                                </div>
+                                <!-- .site-branding -->
+                                <div class="ts-infostack-right-content">
+                                    <div class="info-widget">
+                                        <div class="info-widget-inner">
+                                            <div class="media-right">
+                                                <div class="icon"> <i class="ts-labtechco-icon-phone-call"></i></div>
+                                            </div>
+                                            <div class="media-right">
+                                                <h6>Telephone </h6>
+                                                <h3> 9406974835 </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info-widget">
+                                        <div class="info-widget-inner">
+                                            <div class="media-right">
+                                                <div class="icon"> <i class="ts-labtechco-icon-envelope"></i></div>
+                                            </div>
+                                            <div class="media-right">
+                                                <h6>Email Address </h6>
+                                                <h3>rbsciencebhopal@gmail.com </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info-widget">
+                                        <div class="info-widget-inner">
+                                            <div class="media-right">
+                                                <div class="icon"> <i class="ts-labtechco-icon-location-pin"></i></div>
+                                            </div>
+                                            <div class="media-right">
+                                                <h6>Office Address </h6>
+                                                <h3>D-438, New Minaal Residency </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ts-header-text-area ts-header-button-w">
+                                        <div class="ts-vc_btn3-container ts-vc_btn3-inline"><a
+                                                class="ts-vc_general ts-vc_btn3 ts-vc_btn3-size-md ts-vc_btn3-shape-square ts-vc_btn3-style-flat ts-vc_btn3-weight-yes ts-vc_btn3-color-skincolor"
+                                                href="" title="">CONSULTATION</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .ts-header-top-wrapper -->
+                            <div id="ts-stickable-header-w" class="ts-stickable-header-w ts-bgcolor-custom"
+                                style="height:70px">
+                                <div id="site-header-menu" class="site-header-menu container">
+                                    <div
+                                        class="site-header-menu-inner  ts-stickable-header  ts-header-menu-bg-color-gradient ts-bgcolor-gradient ts-sticky-bgcolor-darkgrey">
+                                        <div
+                                            class="site-header-menu-middle  ts-header-menu-bg-color-gradient ts-bgcolor-gradient ts-sticky-bgcolor-darkgrey">
+                                            <div class="container ">
+                                                <div>
+                                                    <nav id="site-navigation" class="main-navigation"
+                                                        aria-label="Primary Menu" data-sticky-height="85">
+                                                        <button id="menu-toggle" class="menu-toggle">
+                                                            <span class="ts-hide">Toggle menu</span><i
+                                                                class="ts-labtechco-icon-bars"></i>
+                                                        </button>
+                                                        <div class="nav-menu">
+                                                            <ul id="menu-main-menu" class="nav-menu">
+
+                                                                <li id="menu-item-8028"
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8028">
+                                                                    <a href="{% url "home" %}">Home</a>
+                                                                </li>
+                                                                <li id="menu-item-8027"
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8027">
+                                                                    <a href="{% url 'about' %}">About Us</a>
+
+                                                                </li>
+                                                                <li id="menu-item-8027"
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8027">
+                                                                    <a href="{% url 'article' %}">Journals</a>
+
+                                                                </li>
+                                                                <li id="menu-item-8061"
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8061">
+                                                                    <a href="#">Services</a>
+                                                                    <ul class="sub-menu">
+                                                                        <li id="menu-item-8068"
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
+                                                                            <a href="{% url 'jpublication' %}">Journal
+                                                                                Publication</a></li>
+                                                                        <li id="menu-item-8069"
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8069">
+                                                                            <a href="{% url 'jpublication' %}">Dissertation
+                                                                                and Manuscript Writing</a></li>
+                                                                        <li id="menu-item-8070"
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8070">
+                                                                            <a href="{% url 'jpublication' %}">Research
+                                                                                Lab and Projects</a></li>
+                                                                        <li id="menu-item-8071"
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8071">
+                                                                            <a href="{% url 'jpublication' %}">Project
+                                                                                Consultancy</a></li>
+                                                                        <li id="menu-item-8072"
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8072">
+                                                                            <a
+                                                                                href="{% url 'jpublication' %}">Trainings</a>
+                                                                        </li>
+                                                                        <!--<li id="menu-item-8073" class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8073"><a href="service/advanced-robotics/index.html">Advanced Robotics</a></li>-->
+                                                                        <!--<li id="menu-item-8074" class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8074"><a href="service/pathology-testing/index.html">Pathology Testing</a></li>-->
+                                                                        <!--<li id="menu-item-8075" class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8075"><a href="service/alternative-energy/index.html">Alternative Energy</a></li>-->
+                                                                    </ul>
+                                                                </li>
+                                                                <li id="menu-item-8027"
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8027">
+                                                                    <a href="{% url 'blogs' %}">Blog</a>
+
+                                                                </li>
+                                                                <li id="menu-item-8027"
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8027">
+                                                                    <a href="{% url 'contactus' %}">Contact Us</a>
+
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </nav>
+                                                    <!-- .main-navigation -->
+                                                </div>
+                                                <div class="ts-phone">
+                                                    <div class="ts-search-overlay">
+                                                        <div class="ts-icon-close"></div>
+                                                        <div class="ts-search-outer">
+                                                            <div class="ts-search-logo"><img
+                                                                    src="{% static "wp-content/uploads/2018/08/logo.png" %}"
+                                                                    alt="Labtechco Demo7" /></div>
+                                                            <form method="get" class="ts-site-searchform" action="">
+                                                                <input type="search" class="field searchform-s" name="s"
+                                                                    placeholder="Type Word Then Press Enter" />
+                                                                <button type="submit"><span
+                                                                        class="ts-labtechco-icon-search"></span></button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ts-header-icons ">
+                                                        <!-- <span class="ts-header-icon ts-header-wc-cart-link"><a href="cart/index.html"><i class="ts-labtechco-icon-shopping-cart"></i><span class="number-cart">0</span></a></span> --><span
+                                                            class="ts-header-icon ts-header-search-link"><a href="#"><i
+                                                                    class="ts-labtechco-icon-search-2"></i></a></span>
+                                                    </div>
+                                                    <div class="themestek-social-links-wrapper">
+                                                        <ul class="social-icons">
+                                                            <li class="ts-social-facebook"><a class=" tooltip-top"
+                                                                    target="_blank"
+                                                                    href="https://www.facebook.com/rbsciencebhopal"
+                                                                    data-tooltip="Facebook"><i
+                                                                        class="ts-labtechco-icon-facebook"></i></a></li>
+
+                                                            <li class="bi bi-instagram"><a class=" tooltip-top"
+                                                                    target="_blank"
+                                                                    href="https://www.instagram.com/rbscience/?hl=en"
+                                                                    data-tooltip="Instagram"><i
+                                                                        class="ts-labtechco-icon-instagram"></i></a>
+                                                            </li>
+
+                                                            <!--  <li class="ts-social-flickr"><a class=" tooltip-top" target="_blank" href="#" data-tooltip="Flickr"><i class="ts-labtechco-icon-flickr"></i></a></li> -->
+
+                                                            <li class="ts-social-linkedin"><a class=" tooltip-top"
+                                                                    target="_blank"
+                                                                    href="https://www.linkedin.com/in/rb-science-28376b1a4/?originalSubdomain=in"
+                                                                    data-tooltip="LinkedIn"><i
+                                                                        class="ts-labtechco-icon-linkedin"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .site-header-menu -->
+                            </div>
+                        </div>
+                        <!-- .site-header-main -->
+                    </div>
+                    {% block slider %}
+                    <div class="themestek-slider-wrapper">
+                        <div class="themestek-slider-wide">
+
+                            <p class="rs-p-wp-fix"></p>
+                            <rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery"
+                                style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+                                <rs-module id="rev_slider_1_1" style="" data-version="6.3.3">
+                                    <rs-slides>
+                                        <rs-slide data-key="rs-1" data-title="Slide"
+                                            data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
+                                            <img src="{% static "wp-content/uploads/sites/13/revslider/home-slider-8/slider8-a.jpg" %}"
+                                                title="slider8-a.jpg" width="1920" height="730" class="rev-slidebg"
+                                                data-no-retina>
+
+                                            <rs-layer id="slider-1-slide-1-layer-6" data-type="text"
+                                                data-color="#000014" data-rsp_ch="on"
+                                                data-xy="xo:40px,30px,32px,47px;yo:390px,379px,320px,107px;"
+                                                data-text="s:17;l:42;fw:600;a:inherit;" data-vbility="t,t,t,f"
+                                                data-frame_0="x:50px;" data-frame_1="st:1600;sp:1000;sR:1600;"
+                                                data-frame_999="o:0;st:w;sR:6400;"
+                                                style="z-index:8;font-family:Work Sans;"> <span class="ts-skincolor">▪
+                                                </span>Knowledge &nbsp; &nbsp;<span class="ts-skincolor">▪ </span>
+                                                Wisdom &nbsp; &nbsp; <span class="ts-skincolor">▪ </span>Excellence
+                                                Service.
+                                            </rs-layer>
+
+                                            <rs-layer id="slider-1-slide-1-layer-7" data-type="text"
+                                                data-color="#000014||#000014||#1b1d1f||#1b1d1f" data-rsp_ch="on"
+                                                data-xy="xo:30px;yo:224px,211px,179px,138px;"
+                                                data-text="s:70,70,60,40;l:80,80,64,44;fw:700;a:inherit;"
+                                                data-frame_0="x:50px;" data-frame_1="st:700;sp:1000;sR:700;"
+                                                data-frame_999="o:0;st:w;sR:7300;"
+                                                style="z-index:9;font-family:Roboto Condensed;">Keeping the
+                                                world's<br /> <span class="ts-skincolor">Surfaces</span>
+                                                Safe
+                                            </rs-layer>
+
+                                            <rs-layer id="slider-1-slide-1-layer-12" class="rev-btn" data-type="button"
+                                                data-color="#000014" data-rsp_ch="on"
+                                                data-xy="xo:210px;yo:461px,446px,386px,248px;"
+                                                data-text="s:14;l:24;ls:1px;fw:700;a:inherit;"
+                                                data-padding="t:10;r:35;b:10;l:35;"
+                                                data-border="bos:solid;boc:#349c4b;bow:2px,2px,2px,2px;"
+                                                data-frame_0="x:50;" data-frame_1="st:2670;sp:1000;sR:2670;"
+                                                data-frame_999="o:0;st:w;sR:5330;"
+                                                data-frame_hover="c:#fff;bgc:#349c4b;boc:#349c4b;bor:0px,0px,0px,0px;bos:solid;bow:2px,2px,2px,2px;oX:50;oY:50;sp:0;"
+                                                style="z-index:10;background-color:rgba(27,29,31,0);font-family:Roboto Condensed;text-transform:uppercase;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
+                                                Contact US
+                                            </rs-layer>
+
+                                        </rs-slide>
+                                        <rs-slide data-key="rs-2" data-title="Slide"
+                                            data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
+                                            <img src="{% static 'wp-content/uploads/sites/13/revslider/home-slider-8/slider8-b.jpg' %}"
+                                                title="slider8-b.jpg" width="1920" height="730" class="rev-slidebg"
+                                                data-no-retina>
+
+                                            <rs-layer id="slider-1-slide-2-layer-6" data-type="text"
+                                                data-color="#000014" data-rsp_ch="on"
+                                                data-xy="xo:40px,30px,32px,47px;yo:390px,379px,320px,107px;"
+                                                data-text="s:17;l:42;fw:600;a:inherit;" data-vbility="t,t,t,f"
+                                                data-frame_0="x:50px;" data-frame_1="st:1600;sp:1000;sR:1600;"
+                                                data-frame_999="o:0;st:w;sR:6400;"
+                                                style="z-index:8;font-family:Work Sans;"> <span class="ts-skincolor">▪
+                                                </span>Knowledge &nbsp; &nbsp;<span class="ts-skincolor">▪ </span>
+                                                Wisdom &nbsp; &nbsp; <span class="ts-skincolor">▪ </span>Excellence
+                                                Service.
+                                            </rs-layer>
+                                            <rs-layer id="slider-1-slide-2-layer-7" data-type="text"
+                                                data-color="#000014||#000014||#1b1d1f||#1b1d1f" data-rsp_ch="on"
+                                                data-xy="xo:30px;yo:224px,211px,179px,138px;"
+                                                data-text="s:70,70,60,40;l:80,80,64,44;fw:700;a:inherit;"
+                                                data-frame_0="x:50px;" data-frame_1="st:700;sp:1000;sR:700;"
+                                                data-frame_999="o:0;st:w;sR:7300;"
+                                                style="z-index:9;font-family:Roboto Condensed;">Keeping the
+                                                world's<br /> <span class="ts-skincolor">Surfaces</span>
+                                                Safe
+                                            </rs-layer>
+
+                                            <rs-layer id="slider-1-slide-2-layer-10" class="rev-btn" data-type="button"
+                                                data-rsp_ch="on" data-xy="xo:30px;yo:461px,446px,386px,249px;"
+                                                data-text="s:14;l:24;ls:1px;fw:700;a:inherit;"
+                                                data-padding="t:12;r:35;b:12;l:35;" data-frame_0="x:50;"
+                                                data-frame_1="st:2330;sp:1000;sR:2330;"
+                                                data-frame_999="o:0;st:w;sR:5670;"
+                                                data-frame_hover="c:#fff;bgc:#349c4b;boc:#000;bor:0px,0px,0px,0px;bos:solid;oX:50;oY:50;sp:0;"
+                                                style="z-index:11;background-color:#000014;font-family:Roboto Condensed;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
+                                                LEARN MORE
+                                            </rs-layer>
+
+                                            <rs-layer id="slider-1-slide-2-layer-12" class="rev-btn" data-type="button"
+                                                data-color="#000014" data-rsp_ch="on"
+                                                data-xy="xo:210px;yo:461px,446px,386px,248px;"
+                                                data-text="s:14;l:24;ls:1px;fw:700;a:inherit;"
+                                                data-padding="t:10;r:35;b:10;l:35;"
+                                                data-border="bos:solid;boc:#349c4b;bow:2px,2px,2px,2px;"
+                                                data-frame_0="x:50;" data-frame_1="st:2670;sp:1000;sR:2670;"
+                                                data-frame_999="o:0;st:w;sR:5330;"
+                                                data-frame_hover="c:#fff;bgc:#349c4b;boc:#349c4b;bor:0px,0px,0px,0px;bos:solid;bow:2px,2px,2px,2px;oX:50;oY:50;sp:0;"
+                                                style="z-index:10;background-color:rgba(27,29,31,0);font-family:Roboto Condensed;text-transform:uppercase;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
+                                                Contact US
+                                            </rs-layer>
+
+                                        </rs-slide>
+                                    </rs-slides>
+                                </rs-module>
+                                <script>
+                                    setREVStartSize({
+                                        c: 'rev_slider_1_1',
+                                        rl: [1240, 1024, 778, 480],
+                                        el: [730, 668, 568, 400],
+                                        gw: [1230, 1024, 778, 480],
+                                        gh: [730, 668, 568, 400],
+                                        type: 'standard',
+                                        justify: '',
+                                        layout: 'fullwidth',
+                                        mh: "0"
+                                    });
+                                    var revapi1,
+                                        tpj;
+
+                                    function revinit_revslider11() {
+                                        jQuery(function () {
+                                            tpj = jQuery;
+                                            revapi1 = tpj("#rev_slider_1_1");
+                                            if (revapi1 == undefined || revapi1.revolution == undefined) {
+                                                revslider_showDoubleJqueryError("rev_slider_1_1");
+                                            } else {
+                                                revapi1.revolution({
+                                                    sliderLayout: "fullwidth",
+                                                    visibilityLevels: "1240,1024,778,480",
+                                                    gridwidth: "1230,1024,778,480",
+                                                    gridheight: "730,668,568,400",
+                                                    spinner: "spinner0",
+                                                    perspective: 600,
+                                                    perspectiveType: "local",
+                                                    editorheight: "730,668,568,400",
+                                                    responsiveLevels: "1240,1024,778,480",
+                                                    progressBar: {
+                                                        disableProgressBar: true
+                                                    },
+                                                    navigation: {
+                                                        onHoverStop: false
+                                                    },
+                                                    fallbacks: {
+                                                        allowHTML5AutoPlayOnAndroid: true
+                                                    },
+                                                });
+                                            }
+
+                                        });
+                                    } // End of RevInitScript
+                                    var once_revslider11 = false;
+                                    if (document.readyState === "loading") {
+                                        document.addEventListener('readystatechange', function () {
+                                            if ((document.readyState === "interactive" || document
+                                                    .readyState === "complete") && !
+                                                once_revslider11) {
+                                                once_revslider11 = true;
+                                                revinit_revslider11();
+                                            }
+                                        });
+                                    } else {
+                                        once_revslider11 = true;
+                                        revinit_revslider11();
+                                    }
+                                </script>
+                                <script>
+                                    var htmlDivCss = unescape(
+                                        ".ts-skincolor%7B%0A%20%20font-style%3A%20italic%3B%0A%7D");
+                                    var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+                                    if (htmlDiv) {
+                                        htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+                                    } else {
+                                        var htmlDiv = document.createElement('div');
+                                        htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+                                        document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+                                    }
+                                </script>
+                            </rs-module-wrap>
+                            <!-- END REVOLUTION SLIDER -->
+                        </div>
+                    </div>
+                    {% endblock %}
+                </div>
+            </header>
+
+
+
+            {% block body %}
+
+            {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <footer id="colophon" class="site-footer ">
+                <div class="footer_inner_wrapper footer ts-bg ts-bgcolor-grey ts-bgimage-no">
+                    <div class="site-footer-bg-layer ts-bg-layer"></div>
+                    <div class="site-footer-w">
+                        <div class="footer-rows">
+                            <div class="footer-rows-inner">
+
+
+
+                                <div id="second-footer"
+                                    class="sidebar-container second-footer ts-bg ts-bgcolor-transparent ts-textcolor-dark ts-bgimage-no"
+                                    role="complementary">
+                                    <div class="second-footer-bg-layer ts-bg-layer"></div>
+                                    <div class="container">
+                                        <div class="second-footer-inner">
+                                            <div class="row multi-columns-row">
+
+                                                <div
+                                                    class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
+                                                    <aside id="enhancedtextwidget-2"
+                                                        class="widget-odd widget-3 widget widget_text enhanced-text-widget">
+                                                        <div class="textwidget widget-text">
+                                                            <div class="footerlogo">
+                                                                <img class="details-image"
+                                                                    src="{% static "wp-content/uploads/sites/13/2020/12/logo-green.png" %}"
+                                                                    draggable="false" alt="" height="64">
+                                                            </div>
+                                                            Laboratories used for scientific research take many forms
+                                                            because of the differing. We provide complete process piping
+                                                            capabilities.
+                                                            <div class="themestek-social-links-wrapper">
+                                                                <ul class="social-icons">
+                                                                    <li class="ts-social-facebook"><a
+                                                                            class=" tooltip-top" target="_blank"
+                                                                            href="#" data-tooltip="Facebook"><i
+                                                                                class="ts-labtechco-icon-facebook"></i></a>
+                                                                    </li>
+                                                                    <li class="ts-social-twitter"><a
+                                                                            class=" tooltip-top" target="_blank"
+                                                                            href="#" data-tooltip="Twitter"><i
+                                                                                class="ts-labtechco-icon-twitter"></i></a>
+                                                                    </li>
+                                                                    <li class="ts-social-flickr"><a class=" tooltip-top"
+                                                                            target="_blank" href="#"
+                                                                            data-tooltip="Flickr"><i
+                                                                                class="ts-labtechco-icon-flickr"></i></a>
+                                                                    </li>
+                                                                    <li class="ts-social-linkedin"><a
+                                                                            class=" tooltip-top" target="_blank"
+                                                                            href="#" data-tooltip="LinkedIn"><i
+                                                                                class="ts-labtechco-icon-linkedin"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </aside>
+                                                </div><!-- .widget-area -->
+                                                <div
+                                                    class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
+                                                    <aside id="nav_menu-1"
+                                                        class="widget-odd widget-3 widget widget_nav_menu">
+                                                        <h3 class="widget-title">USEFUL LINKS</h3>
+                                                        <div class="menu-usefull-link-container">
+                                                            <ul id="menu-usefull-link-1" class="menu">
+                                                                <li
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8066">
+                                                                    <a href="{% static "about-us/index.html" %}">About
+                                                                        Us</a></li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8065">
+                                                                    <a href="{% static "our-services/index.htm" %}">Our
+                                                                        Services</a></li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8064">
+                                                                    <a href="{% static "our-team/index.html" %}">Our
+                                                                        Team</a></li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8067">
+                                                                    <a
+                                                                        href="{% static "contacts/index.html" %}">Contacts</a>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8042">
+                                                                    <a href="#">Research</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </aside>
+                                                    <aside id="nav_menu-2"
+                                                        class="widget-even widget-4 widget widget_nav_menu">
+                                                        <h3 class="widget-title">OUR SERVICES</h3>
+                                                        <div class="menu-footer-servicem-menu-container">
+                                                            <ul id="menu-footer-servicem-menu-1" class="menu">
+                                                                <li
+                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
+                                                                    <a
+                                                                        href="{% static "category/scientific-laboratory/index.html" %}">Scientific</a>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8034">
+                                                                    <a
+                                                                        href="{% static "category/chemistry-laboratories%e2%80%8e/index.html" %}">Chemistry</a>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8035">
+                                                                    <a
+                                                                        href="{% static "category/gemological-laboratories%e2%80%8e/index.html" %}">Gemological</a>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8036">
+                                                                    <a
+                                                                        href="{% static "category/forensic-science/index.html" %}">Forensic
+                                                                        science</a></li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8041">
+                                                                    <a href="#">Immunology</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </aside>
+                                                </div><!-- .widget-area -->
+                                                <div
+                                                    class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
+
+                                                    <aside id="recent-posts-1"
+                                                        class="widget-odd widget-3 widget widget_recent_entries">
+                                                        <h3 class="widget-title">RECENT POST</h3>
+                                                        <ul>
+                                                            <li>
+                                                                <a
+                                                                    href="{% static "2018/08/08/testing-food-quality-and-safety/index.html" %}">Testing
+                                                                    Food quality and safety</a>
+                                                                <span class="post-date">August 8, 2018</span>
+                                                            </li>
+                                                            <li>
+                                                                <a
+                                                                    href="{% static "2018/02/18/industrial-contractor-powerhouse/index.html" %}">Biochemistry
+                                                                    research in the Lab</a>
+                                                                <span class="post-date">February 18, 2018</span>
+                                                            </li>
+                                                        </ul>
+
+                                                    </aside>
+                                                    <aside id="enhancedtextwidget-3"
+                                                        class="ts-mail-chimp widget-even widget-4 widget widget_text enhanced-text-widget">
+                                                        <div class="textwidget widget-text">
+                                                            <script>
+                                                                (function () {
+                                                                    window.mc4wp = window.mc4wp || {
+                                                                        listeners: [],
+                                                                        forms: {
+                                                                            on: function (evt, cb) {
+                                                                                window.mc4wp.listeners
+                                                                                    .push({
+                                                                                        event: evt,
+                                                                                        callback: cb
+                                                                                    });
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                })();
+                                                            </script>
+                                                            <!-- Mailchimp for WordPress v4.8.1 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+                                                            <form id="mc4wp-form-2" class="mc4wp-form mc4wp-form-6870"
+                                                                method="post" data-id="6870" data-name="newslater form">
+                                                                <div class="mc4wp-form-fields">
+                                                                    <p>
+                                                                        <input type="email" name="EMAIL"
+                                                                            placeholder="Your email address" required />
+                                                                    </p>
+
+                                                                    <p>
+                                                                        <button class="btn" type="submit">
+                                                                            <i class="fa fa-arrow-right"></i>
+                                                                        </button>
+                                                                    </p>
+                                                                </div><label style="display: none !important;">Leave
+                                                                    this field empty if you're human: <input type="text"
+                                                                        name="_mc4wp_honeypot" value="" tabindex="-1"
+                                                                        autocomplete="off" /></label><input
+                                                                    type="hidden" name="_mc4wp_timestamp"
+                                                                    value="1631172941" /><input type="hidden"
+                                                                    name="_mc4wp_form_id" value="6870" /><input
+                                                                    type="hidden" name="_mc4wp_form_element_id"
+                                                                    value="mc4wp-form-2" />
+                                                                <div class="mc4wp-response"></div>
+                                                            </form><!-- / Mailchimp for WordPress Plugin -->
+                                                        </div>
+                                                    </aside>
+                                                </div><!-- .widget-area -->
+
+                                            </div><!-- .row.multi-columns-row -->
+                                        </div><!-- .second-footer-inner -->
+                                    </div><!--  -->
+                                </div><!-- #secondary -->
+
+
+                            </div><!-- .footer-inner -->
+                        </div><!-- .footer -->
+
+                        <div id="bottom-footer-text"
+                            class="bottom-footer-text ts-bottom-footer-text site-info  ts-bg ts-bgcolor-transparent ts-textcolor-dark ts-bgimage-no">
+                            <div class="bottom-footer-bg-layer ts-bg-layer"></div>
+                            <div class="container">
+                                <div class="bottom-footer-inner">
+                                    <div class="row multi-columns-row">
+
+
+                                        <div class="col-xs-12 col-sm-12 ts-footer2-left ">
+                                            Copyright © 2018 <a href="http://labtechco.themestek.com/">LabtechCO</a>.
+                                            All rights reserved. </div><!-- footer left -->
+
+
+
+                                    </div><!-- .row.multi-columns-row -->
+                                </div><!-- .bottom-footer-inner -->
+                            </div><!--  -->
+                        </div><!-- .footer-text -->
+                    </div><!-- .footer-inner-wrapper -->
+                </div><!-- .site-footer-inner -->
+            </footer><!-- .site-footer -->
+
+        </div><!-- #page .site -->
+
+    </div><!-- .main-holder -->
+
+    <!-- To Top -->
+    <a id="totop" href="#top"><i class="ts-labtechco-icon-angle-up"></i></a>
+    <script>
+        (function () {
+            function maybePrefixUrlField() {
+                if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                    this.value = "http://" + this.value;
+                }
+            }
+
+            var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+            if (urlFields) {
+                for (var j = 0; j < urlFields.length; j++) {
+                    urlFields[j].addEventListener('blur', maybePrefixUrlField);
+                }
+            }
+        })();
+    </script>
+    <script type="text/html" id="wpb-modifications"></script>
+    <script>
+        (function () {
+            var c = document.body.className;
+            c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+            document.body.className = c;
+        })();
+    </script>
+    <link rel='stylesheet' id='vc_tta_style-css'
+        href='{% static "wp-content/plugins/js_composer/assets/css/js_composer_tta.mine6df.css" %}' media='all' />
+    <link rel='stylesheet' id='ts-footer-gfonts-css'
+        href='http://fonts.googleapis.com/css?family=Abril+Fatface&amp;ver=1.0.0' media='all' />
+    <script id='contact-form-7-js-extra'>
+        /* <![CDATA[ */
+        var wpcf7 = {
+            "apiSettings": {
+                "root": "https:\/\/labtechco.themestek.com\/labtechco-demo7\/wp-json\/contact-form-7\/v1",
+                "namespace": "contact-form-7\/v1"
+            }
+        };
+        /* ]]> */
+    </script>
+    <script src='{% static "wp-content/plugins/contact-form-7/includes/js/scripts9dff.js" %}' id='contact-form-7-js'>
+    </script>
+    <script src='{% static "wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js" %}'
+        id='js-cookie-js'></script>
+    <script id='woocommerce-js-extra'>
+        /* <![CDATA[ */
+
+        /* ]]> */
+    </script>
+    <script src='{% static "wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.mind03b.js" %}'
+        id='woocommerce-js'></script>
+    <script id='wc-cart-fragments-js-extra'>
+        /* <![CDATA[ */
+
+        /* ]]> */
+    </script>
+    <script src='{% static "wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.mind03b.js" %}'
+        id='wc-cart-fragments-js'></script>
+    <script
+        src='{% static "wp-content/themes/labtechco/libraries/perfect-scrollbar/perfect-scrollbar.jquery.min9d3a.js" %}'
+        id='perfect-scrollbar-js'></script>
+    <script src='{% static "wp-content/themes/labtechco/libraries/select2/select2.min9d3a.js" %}' id='ts-select2-js'>
+    </script>
+    <script src='{% static "wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.mine6df.js" %}'
+        id='isotope-js'></script>
+    <script src='{% static "wp-content/themes/labtechco/libraries/jquery-mousewheel/jquery.mousewheel.min9d3a.js" %}'
+        id='jquery-mousewheel-js'></script>
+    <script src='{% static "wp-content/plugins/js_composer/assets/lib/bower/flexslider/jquery.flexslider-mine6df.js" %}'
+        id='flexslider-js'></script>
+    <script src='{% static "wp-content/themes/labtechco/libraries/sticky-kit/jquery.sticky-kit.min9d3a.js" %}'
+        id='sticky-kit-js'></script>
+    <script src='{% static "wp-content/themes/labtechco/libraries/slick/slick.min9d3a.js" %}' id='slick-js'></script>
+    <script src='{% static "wp-content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.mine6df.js" %}'
+        id='prettyphoto-js'></script>
+    <script src='{% static "wp-content/plugins/js_composer/assets/js/dist/js_composer_front.mine6df.js" %}'
+        id='wpb_composer_front_js-js'></script>
+    <script id='labtechco-script-js-extra'>
+        /* <![CDATA[ */
+        /* ]]> */
+    </script>
+    <script src='{% static "wp-content/themes/labtechco/js/scripts5152.js" %}' id='labtechco-script-js'></script>
+    <script src='{% static "wp-includes/js/wp-embed.min9d3a.js" %}' id='wp-embed-js'></script>
+    <script src='{% static "wp-content/plugins/js_composer/assets/lib/vc_accordion/vc-accordion.mine6df.js" %}'
+        id='vc_accordion_script-js'></script>
+    <script src='{% static "wp-content/plugins/js_composer/assets/lib/vc-tta-autoplay/vc-tta-autoplay.mine6df.js" %}'
+        id='vc_tta_autoplay_script-js'></script>
+    <script src='{% static "wp-content/plugins/mailchimp-for-wp/assets/js/forms.mina288.js" %}' id='mc4wp-forms-api-js'>
+    </script>
+    {% block script %}
+    {% endblock %}
+</body>
+
+<!-- Mirrored from labtechco.themestek.com/labtechco-demo7/service/artificial-intelligence/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Sep 2021 07:40:05 GMT -->
+
+</html>
+
+
+
+
+
+
+
+{% comment %} <footer id="colophon" class="site-footer ">
+    <div class="footer_inner_wrapper footer ts-bg ts-bgcolor-grey ts-bgimage-no">
+        <div class="site-footer-bg-layer ts-bg-layer"></div>
+        <div class="site-footer-w">
+            <div class="footer-rows">
+                <div class="footer-rows-inner">
+
+
+
+                    <div id="second-footer"
+                        class="sidebar-container second-footer ts-bg ts-bgcolor-transparent ts-textcolor-dark ts-bgimage-no"
+                        role="complementary">
+                        <div class="second-footer-bg-layer ts-bg-layer">
+
+                        </div>
+                        <div class="container">
+                            <div class="second-footer-inner">
+                                <div class="row multi-columns-row">
+                                    <div class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
+                                        <aside id="enhancedtextwidget-2"
+                                            class="widget-odd widget-3 widget widget_text enhanced-text-widget">
+                                            <div class="textwidget widget-text">
+                                                <div class="footerlogo">
+                                                    <img class="details-image"
+                                                        src="{% static "wp-content/uploads/sites/13/2020/12/logo-b-01.png" %}"
+                                                        draggable="false" alt="" height="64">
+                                                </div>
+                                                RB SCIENCE is a research based consulting and publishing
+                                                organization working in the field of pharmaceutical and
+                                                biological sciences.
+                                                <div class="themestek-social-links-wrapper">
+                                                    <ul class="social-icons">
+                                                        <li class="ts-social-facebook"><a class=" tooltip-top"
+                                                                target="_blank"
+                                                                href="https://www.facebook.com/rbsciencebhopal"
+                                                                data-tooltip="Facebook"><i
+                                                                    class="ts-labtechco-icon-facebook"></i></a>
+                                                        </li>
+
+                                                        <li class="bi bi-instagram"><a class=" tooltip-top"
+                                                                target="_blank"
+                                                                href="https://www.instagram.com/rbscience/?hl=en"
+                                                                data-tooltip="Instagram"><i
+                                                                    class="ts-labtechco-icon-instagram"></i></a>
+                                                        </li>
+
+                                                        <li class="ts-social-linkedin"><a class=" tooltip-top"
+                                                                target="_blank"
+                                                                href="https://www.linkedin.com/in/rb-science-28376b1a4/?originalSubdomain=in"
+                                                                data-tooltip="LinkedIn"><i
+                                                                    class="ts-labtechco-icon-linkedin"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                    </div><!-- .widget-area -->
+                                    <div class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
+                                        <aside id="nav_menu-1" class="widget-odd widget-3 widget widget_nav_menu">
+                                            <h3 class="widget-title">USEFUL LINKS</h3>
+                                            <div class="menu-usefull-link-container">
+                                                <ul id="menu-usefull-link-1" class="menu">
+                                                    <li
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8066">
+                                                        <a href="about">About Us</a></li>
+                                                    <li
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8065">
+                                                        <a href="research-style">Our Services</a></li>
+                                                    <li
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8064">
+                                                        <a href="our-team">Our Team</a></li>
+                                                    <li
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8067">
+                                                        <a href="contact">Contacts</a></li>
+                                                    <li
+                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8042">
+                                                        <a href="{research-style">Research</a></li>
+                                                </ul>
+                                            </div>
+                                        </aside>
+                                        <aside id="nav_menu-2" class="widget-even widget-4 widget widget_nav_menu">
+                                            <h3 class="widget-title">OUR SERVICES</h3>
+                                            <div class="menu-footer-servicem-menu-container">
+                                                <ul id="menu-footer-servicem-menu-1" class="menu">
+                                                    <li
+                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
+                                                        <a href="research/synthesis">Synthesis of
+                                                            molecules</a></li>
+                                                    <li
+                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8034">
+                                                        <a href="research/extraction">Extraction </a></li>
+                                                    <li
+                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8035">
+                                                        <a href="research/drug">Drug Design</a></li>
+                                                    <li
+                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8036">
+                                                        <a href="research/novel">Novel Drug Delivery
+                                                            Systems</a></li>
+                                                    <li
+                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8041">
+                                                        <a href="#">Immunology</a></li>
+                                                </ul>
+                                            </div>
+                                        </aside>
+                                    </div><!-- .widget-area -->
+                                    <div class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
+
+                                        <aside id="recent-posts-1"
+                                            class="widget-odd widget-3 widget widget_recent_entries">
+                                            <h3 class="widget-title">RECENT POST</h3>
+                                            <ul>
+                                                <li>
+                                                    <a href="/testing-food-quality-and-safety">Testing Food
+                                                        quality and safety</a>
+                                                    <span class="post-date">August 8, 2018</span>
+                                                </li>
+                                                <li>
+                                                    <a href="/industrial-contractor-powerhouse">Biochemistry
+                                                        research in the Lab</a>
+                                                    <span class="post-date">February 18, 2018</span>
+                                                </li>
+                                            </ul>
+
+                                        </aside>
+                                        <aside id="enhancedtextwidget-3"
+                                            class="ts-mail-chimp widget-even widget-4 widget widget_text enhanced-text-widget">
+                                            <div class="textwidget widget-text">
+                                                <script>
+                                                    (function () {
+                                                        window.mc4wp = window.mc4wp || {
+                                                            listeners: [],
+                                                            forms: {
+                                                                on: function (evt, cb) {
+                                                                    window.mc4wp.listeners
+                                                                        .push({
+                                                                            event: evt,
+                                                                            callback: cb
+                                                                        });
+                                                                }
+                                                            }
+                                                        }
+                                                    })();
+                                                </script>
+                                                <!-- Mailchimp for WordPress v4.8.1 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+                                                <form id="mc4wp-form-2" class="mc4wp-form mc4wp-form-6870" method="post"
+                                                    data-id="6870" data-name="newslater form">
+                                                    <div class="mc4wp-form-fields">
+                                                        <p>
+                                                            <input type="email" name="EMAIL"
+                                                                placeholder="Your email address" required />
+                                                        </p>
+
+                                                        <p>
+                                                            <button class="btn" type="submit">
+                                                                <i class="fa fa-arrow-right"></i>
+                                                            </button>
+                                                        </p>
+                                                    </div><label style="display: none !important;">Leave
+                                                        this field empty if you're human: <input type="text"
+                                                            name="_mc4wp_honeypot" value="" tabindex="-1"
+                                                            autocomplete="off" /></label><input type="hidden"
+                                                        name="_mc4wp_timestamp" value="1631172904" /><input
+                                                        type="hidden" name="_mc4wp_form_id" value="6870" /><input
+                                                        type="hidden" name="_mc4wp_form_element_id"
+                                                        value="mc4wp-form-2" />
+                                                    <div class="mc4wp-response"></div>
+                                                </form><!-- / Mailchimp for WordPress Plugin -->
+                                            </div>
+                                        </aside>
+                                    </div><!-- .widget-area -->
+
+                                </div><!-- .row.multi-columns-row -->
+                            </div><!-- .second-footer-inner -->
+                        </div><!--  -->
+                    </div><!-- #secondary -->
+
+
+                </div><!-- .footer-inner -->
+            </div><!-- .footer -->
+
+            <div id="bottom-footer-text"
+                class="bottom-footer-text ts-bottom-footer-text site-info  ts-bg ts-bgcolor-transparent ts-textcolor-dark ts-bgimage-no">
+                <div class="bottom-footer-bg-layer ts-bg-layer"></div>
+                <div class="container">
+                    <div class="bottom-footer-inner">
+                        <div class="row multi-columns-row">
+
+
+                            <div class="col-xs-12 col-sm-12 ts-footer2-left ">
+                                Copyright © 2018 <a href="http://labtechco.themestek.com/">LabtechCO</a>.
+                                All rights reserved. </div><!-- footer left -->
+
+
+
+                        </div><!-- .row.multi-columns-row -->
+                    </div><!-- .bottom-footer-inner -->
+                </div><!--  -->
+            </div><!-- .footer-text -->
+        </div><!-- .footer-inner-wrapper -->
+    </div><!-- .site-footer-inner -->
+</footer><!-- .site-footer -->
+
+<!-- </div> -->
+<!-- #page .site -->
+
+<!-- </div> -->
+<!-- .main-holder -->
+
+<!-- To Top -->
+<a id="totop" href="#top"><i class="ts-labtechco-icon-angle-up"></i></a>
+<script>
+    (function () {
+        function maybePrefixUrlField() {
+            if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                this.value = "http://" + this.value;
+            }
+        }
+
+        var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+        if (urlFields) {
+            for (var j = 0; j < urlFields.length; j++) {
+                urlFields[j].addEventListener('blur', maybePrefixUrlField);
+            }
+        }
+    })();
+</script>
+<script type="text/html" id="wpb-modifications"></script>
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:600%7CRoboto+Condensed:700%7CRoboto:400" rel="stylesheet"
+    property="stylesheet" media="all">
+
+<script>
+    (function () {
+        var c = document.body.className;
+        c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+        document.body.className = c;
+    })();
+</script>
+<script>
+    if (typeof revslider_showDoubleJqueryError === "undefined") {
+        function revslider_showDoubleJqueryError(sliderID) {
+            var err = "<div class='rs_error_message_box'>";
+            err += "<div class='rs_error_message_oops'>Oops...</div>";
+            err += "<div class='rs_error_message_content'>";
+            err +=
+                "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
+            err +=
+                "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
+            err += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
+            err += "</div>";
+            err += "</div>";
+            var slider = document.getElementById(sliderID);
+            slider.innerHTML = err;
+            slider.style.display = "block";
+        }
+    }
+</script>
+<link rel='stylesheet' id='ts-footer-gfonts-css'
+    href='http://fonts.googleapis.com/css?family=Abril+Fatface%7CArimo%3A700%7CLato%3A300&amp;ver=1.0.0' media='all' />
+<script id='contact-form-7-js-extra'>
+    /* <![CDATA[ */
+    var wpcf7 = {
+        "apiSettings": {
+            "root": "https:\/\/labtechco.themestek.com\/labtechco-demo7\/wp-json\/contact-form-7\/v1",
+            "namespace": "contact-form-7\/v1"
+        }
+    };
+    /* ]]> */
+</script>
+<script src="{% static "wp-content/plugins/contact-form-7/includes/js/scripts9dff.js" %}" id='contact-form-7-js'>
+</script>
+<script src="{% static "wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js" %}" id='js-cookie-js'>
+</script>
+<script id='woocommerce-js-extra'>
+    /* <![CDATA[ */
+
+    /* ]]> */
+</script>
+<script src="{% static "wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.mind03b.js" %}"
+    id='woocommerce-js'></script>
+<script id='wc-cart-fragments-js-extra'>
+    /* <![CDATA[ */
+
+    /* ]]> */
+</script>
+<script src="{% static "wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.mind03b.js" %}"
+    id='wc-cart-fragments-js'></script>
+<script src="{% static "wp-content/themes/labtechco/libraries/perfect-scrollbar/perfect-scrollbar.jquery.min9d3a.js" %}"
+    id='perfect-scrollbar-js'></script>
+<script src="{% static "wp-content/themes/labtechco/libraries/select2/select2.min9d3a.js" %}" id='ts-select2-js'>
+</script>
+
+<script src="{% static "wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.mine6df.js" %}"
+    id='isotope-js'></script>
+<script src="{% static "wp-content/themes/labtechco/libraries/jquery-mousewheel/jquery.mousewheel.min9d3a.js" %}"
+    id='jquery-mousewheel-js'></script>
+<script src="{% static "wp-content/plugins/js_composer/assets/lib/bower/flexslider/jquery.flexslider-mine6df.js" %}"
+    id='flexslider-js'></script>
+<script src="{% static "wp-content/themes/labtechco/libraries/sticky-kit/jquery.sticky-kit.min9d3a.js" %}"
+    id='sticky-kit-js'></script>
+<script src="{% static "wp-content/themes/labtechco/libraries/slick/slick.min9d3a.js" %}" id='slick-js'>
+</script>
+
+<script src="{% static "wp-content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.mine6df.js" %}"
+    id='prettyphoto-js'></script>
+<script src="{% static "wp-content/plugins/js_composer/assets/js/dist/js_composer_front.mine6df.js" %}"
+    id='wpb_composer_front_js-js'></script>
+<script id='labtechco-script-js-extra'>
+    /* <![CDATA[ */
+    /* ]]> */
+</script>
+<script src="{% static "wp-content/themes/labtechco/js/scripts5152.js" %}" id='labtechco-script-js'>
+</script>
+<script src="{% static "wp-includes/js/wp-embed.min9d3a.js" %}" id='wp-embed-js'></script>
+<script src="{% static "wp-content/plugins/js_composer/assets/lib/vc_waypoints/vc-waypoints.mine6df.js" %}"
+    id='vc_waypoints-js'></script>
+<script src="{% static "wp-content/themes/labtechco/libraries/numinate/numinate.min9d3a.js" %}" id='numinate-js'>
+</script>
+<script src="{% static "wp-content/plugins/mailchimp-for-wp/assets/js/forms.mina288.js" %}" id='mc4wp-forms-api-js'>
+</script>
+</body>
+
+<!-- Mirrored from labtechco.themestek.com/labtechco-demo7/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Sep 2021 07:36:02 GMT -->
+
+</html> {% endcomment %}

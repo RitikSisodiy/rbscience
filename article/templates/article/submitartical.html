@@ -1,0 +1,96 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}
+{% include  'headertitle.html' with headertitle="Submit Article" %}
+{% endblock %}
+{% block body %}
+
+<div class="container shadow-box" style="margin-top:32px;margin-bottom:90px;">
+   
+      {% for message in messages %}
+      <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}" role="alert">
+        {{ message}}
+    </div>
+             {% endfor %}
+    <div class="vc_column-inner  ts-responsive-custom-80978663" style="padding: 38px;">
+        <div class="pb_wrapper">
+            <h3 style="text-align:left;" class="ts-custom-heading ">DROP US A LINE</h3>
+            <div role="form" class="wpcf7" id="wpcf7-f8114-p6602-o2" lang="en-US" dir="ltr">
+                <div class="screen-reader-response">
+                    <p role="status" aria-live="polite" aria-atomic="true"></p>
+                    <ul></ul>
+                </div>
+                <form action="" method="post" class="wpcf7-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div style="display: none;">
+                        <input type="hidden" name="_wpcf7" value="8114">
+                        <input type="hidden" name="_wpcf7_version" value="5.3.2">
+                        <input type="hidden" name="_wpcf7_locale" value="en_US">
+                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f8114-p6602-o2">
+                        <input type="hidden" name="_wpcf7_container_post" value="6602">
+                        <input type="hidden" name="_wpcf7_posted_data_hash" value="">
+                    </div>
+                    <div class="main-form">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group"><span class="wpcf7-form-control-wrap your-name"><input
+                                            type="text" name="name" value="" size="40"
+                                            class="wpcf7-form-control wpcf7-text" aria-invalid="false"
+                                            placeholder="Your Name" required></span></div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group"><span class="wpcf7-form-control-wrap your-email"><input
+                                            type="email" name="email" value="" size="40"
+                                            class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
+                                            aria-required="true" aria-invalid="false" placeholder="Your Email" required></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group"><span class="wpcf7-form-control-wrap your-phone"><input
+                                            type="text" name="phone" value="" size="40"
+                                            class="wpcf7-form-control wpcf7-text" aria-invalid="false"
+                                            placeholder="Your Phone" required></span></div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group"><span class="wpcf7-form-control-wrap subject">
+                                
+                                <label for="file-upload" id="file-upload-label" class="uneditable-input filefieldreplace" >
+    Upload SubmenuScript
+</label>
+<input id="file-upload" type="file"  name="filepdf" style="display:none;" />
+                                
+                                </span></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="input-group input-button"><span class="wpcf7-form-control-wrap area"><input
+                                            type="text" name="remark" value="" size="40"
+                                            class="wpcf7-form-control wpcf7-text" aria-invalid="false"
+                                            placeholder="Remark "></span></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="input-group input-button"><input type="submit" value="SEND MESSAGE"
+                                        class="wpcf7-form-control "><span class="ajax-loader"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wpcf7-response-output" aria-hidden="true" style="display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+  
+    document.getElementById('file-upload').onchange = function() {
+        // fire the upload here
+        var filename = this.value.replace(/.*(\/|\\)/, '');
+        document.getElementById("file-upload-label").innerHTML = filename
+    };
+    </script>
+{% endblock %}

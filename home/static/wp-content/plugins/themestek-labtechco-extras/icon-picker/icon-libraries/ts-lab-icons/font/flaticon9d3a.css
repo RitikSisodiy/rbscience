@@ -1,0 +1,122 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 06/08/2018 06:57
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("Flaticon.eot");
+  src: url("Flaticond41d.eot?#iefix") format("embedded-opentype"),
+       url("Flaticon.woff") format("woff"),
+       url("Flaticon.ttf") format("truetype"),
+       url("Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="ts-labtechco-business-icon-"]:before, [class*=" ts-labtechco-business-icon-"]:before,
+[class^="ts-labtechco-business-icon-"]:after, [class*=" ts-labtechco-business-icon-"]:after {   
+	font-family: Flaticon;
+	font-size: 20px;
+	font-style: normal;
+}
+
+.ts-labtechco-business-icon-dropper:before { content: "\f100"; }
+.ts-labtechco-business-icon-space-capsule:before { content: "\f101"; }
+.ts-labtechco-business-icon-rocket:before { content: "\f102"; }
+.ts-labtechco-business-icon-prism:before { content: "\f103"; }
+.ts-labtechco-business-icon-nuclear:before { content: "\f104"; }
+.ts-labtechco-business-icon-microscope:before { content: "\f105"; }
+.ts-labtechco-business-icon-earth-globe:before { content: "\f106"; }
+.ts-labtechco-business-icon-dropper-1:before { content: "\f107"; }
+.ts-labtechco-business-icon-rocket-launch:before { content: "\f108"; }
+.ts-labtechco-business-icon-bottle:before { content: "\f109"; }
+.ts-labtechco-business-icon-orbit:before { content: "\f10a"; }
+.ts-labtechco-business-icon-burn:before { content: "\f10b"; }
+.ts-labtechco-business-icon-astronaut:before { content: "\f10c"; }
+.ts-labtechco-business-icon-flask:before { content: "\f10d"; }
+.ts-labtechco-business-icon-beaker:before { content: "\f10e"; }
+.ts-labtechco-business-icon-thermometer:before { content: "\f10f"; }
+.ts-labtechco-business-icon-rocket-launch-1:before { content: "\f110"; }
+.ts-labtechco-business-icon-dna:before { content: "\f111"; }
+.ts-labtechco-business-icon-atomic:before { content: "\f112"; }
+.ts-labtechco-business-icon-syringe:before { content: "\f113"; }
+.ts-labtechco-business-icon-nuclear-1:before { content: "\f114"; }
+.ts-labtechco-business-icon-microscope-1:before { content: "\f115"; }
+.ts-labtechco-business-icon-test-tube:before { content: "\f116"; }
+.ts-labtechco-business-icon-bottle-1:before { content: "\f117"; }
+.ts-labtechco-business-icon-poison:before { content: "\f118"; }
+.ts-labtechco-business-icon-microscope-2:before { content: "\f119"; }
+.ts-labtechco-business-icon-test-tube-1:before { content: "\f11a"; }
+.ts-labtechco-business-icon-dna-1:before { content: "\f11b"; }
+.ts-labtechco-business-icon-caduceus:before { content: "\f11c"; }
+.ts-labtechco-business-icon-bacteria:before { content: "\f11d"; }
+.ts-labtechco-business-icon-dna-2:before { content: "\f11e"; }
+.ts-labtechco-business-icon-dna-3:before { content: "\f11f"; }
+.ts-labtechco-business-icon-magnet:before { content: "\f120"; }
+.ts-labtechco-business-icon-thermometer-1:before { content: "\f121"; }
+.ts-labtechco-business-icon-element:before { content: "\f122"; }
+.ts-labtechco-business-icon-rat:before { content: "\f123"; }
+.ts-labtechco-business-icon-molecule:before { content: "\f124"; }
+.ts-labtechco-business-icon-apple:before { content: "\f125"; }
+.ts-labtechco-business-icon-earth:before { content: "\f126"; }
+.ts-labtechco-business-icon-observation:before { content: "\f127"; }
+.ts-labtechco-business-icon-magnifying-glass:before { content: "\f128"; }
+.ts-labtechco-business-icon-petri-dish:before { content: "\f129"; }
+.ts-labtechco-business-icon-compass:before { content: "\f12a"; }
+.ts-labtechco-business-icon-molecular:before { content: "\f12b"; }
+.ts-labtechco-business-icon-telescope:before { content: "\f12c"; }
+.ts-labtechco-business-icon-axis:before { content: "\f12d"; }
+.ts-labtechco-business-icon-calculator:before { content: "\f12e"; }
+.ts-labtechco-business-icon-scientist:before { content: "\f12f"; }
+.ts-labtechco-business-icon-solar-system:before { content: "\f130"; }
+.ts-labtechco-business-icon-satellite:before { content: "\f131"; }
+.ts-labtechco-business-icon-microscope-3:before { content: "\f132"; }
+.ts-labtechco-business-icon-book:before { content: "\f133"; }
+.ts-labtechco-business-icon-clipboard:before { content: "\f134"; }
+.ts-labtechco-business-icon-test-tube-2:before { content: "\f135"; }
+.ts-labtechco-business-icon-cell:before { content: "\f136"; }
+.ts-labtechco-business-icon-dna-structure:before { content: "\f137"; }
+.ts-labtechco-business-icon-earth-globe-1:before { content: "\f138"; }
+.ts-labtechco-business-icon-medicines:before { content: "\f139"; }
+.ts-labtechco-business-icon-statistics:before { content: "\f13a"; }
+.ts-labtechco-business-icon-bacteria-1:before { content: "\f13b"; }
+.ts-labtechco-business-icon-atom:before { content: "\f13c"; }
+.ts-labtechco-business-icon-flasks:before { content: "\f13d"; }
+.ts-labtechco-business-icon-samples:before { content: "\f13e"; }
+.ts-labtechco-business-icon-science:before { content: "\f13f"; }
+.ts-labtechco-business-icon-radiation:before { content: "\f140"; }
+.ts-labtechco-business-icon-suit:before { content: "\f141"; }
+.ts-labtechco-business-icon-shaker:before { content: "\f142"; }
+.ts-labtechco-business-icon-chemistry:before { content: "\f143"; }
+.ts-labtechco-business-icon-chemistry-1:before { content: "\f144"; }
+.ts-labtechco-business-icon-syringe-1:before { content: "\f145"; }
+.ts-labtechco-business-icon-gas-mask:before { content: "\f146"; }
+.ts-labtechco-business-icon-reproduction:before { content: "\f147"; }
+.ts-labtechco-business-icon-experiment:before { content: "\f148"; }
+.ts-labtechco-business-icon-petri-dish-1:before { content: "\f149"; }
+.ts-labtechco-business-icon-cloning:before { content: "\f14a"; }
+.ts-labtechco-business-icon-science-book:before { content: "\f14b"; }
+.ts-labtechco-business-icon-microbiology:before { content: "\f14c"; }
+.ts-labtechco-business-icon-poison-1:before { content: "\f14d"; }
+.ts-labtechco-business-icon-genetic:before { content: "\f14e"; }
+.ts-labtechco-business-icon-scientific:before { content: "\f14f"; }
+.ts-labtechco-business-icon-molecular-1:before { content: "\f150"; }
+.ts-labtechco-business-icon-bacteria-2:before { content: "\f151"; }
+.ts-labtechco-business-icon-research:before { content: "\f152"; }
+.ts-labtechco-business-icon-test-tube-3:before { content: "\f153"; }
+.ts-labtechco-business-icon-hazardous:before { content: "\f154"; }
+.ts-labtechco-business-icon-molecular-2:before { content: "\f155"; }
+.ts-labtechco-business-icon-chromosome:before { content: "\f156"; }
+.ts-labtechco-business-icon-chemical-reaction:before { content: "\f157"; }
+.ts-labtechco-business-icon-microscope-4:before { content: "\f158"; }
+.ts-labtechco-business-icon-cell-1:before { content: "\f159"; }
+.ts-labtechco-business-icon-laboratory:before { content: "\f15a"; }
+.ts-labtechco-business-icon-cell-division:before { content: "\f15b"; }

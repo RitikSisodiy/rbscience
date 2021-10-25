@@ -1,0 +1,179 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}{% endblock %}
+{% block body %}
+
+
+<div id="content-wrapper" class="site-content-wrapper">
+
+
+	<div id="content" class="site-content ">
+		<div id="content-inner" class="site-content-inner ">
+
+			<div id="primary" class="content-area  ">
+				<main id="main" class="site-main">
+
+
+					<article id="post-6642" class="post-6642 page type-page status-publish hentry">
+
+
+						<header class="single-entry-header ts-hide">
+							<h2 class="entry-title">Blog Grid View</h2>
+						</header><!-- .entry-header -->
+
+						<div class="entry-content">
+
+
+
+
+							<div data-vc-full-width="true" data-vc-full-width-init="false"
+								class="ts-row wpb_row vc_row-fluid ts-total-col-1 ts-zindex-0 ts-bgimage-position-center_center">
+
+
+
+								<div class="vc_row container">
+
+
+									<div
+										class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0">
+										<div class="vc_column-inner  ">
+											<div class="wpb_wrapper">
+												<div
+													class="themestek-boxes themestek-boxes-blog themestek-boxes-view-default themestek-boxes-col-three themestek-boxes-sortable-no themestek-boxes-textalign-center themestek-boxes-sortablebutton-">
+													<div
+														class="themestek-boxes-inner themestek-boxes-blog-inner ">
+
+														<div
+															class="row multi-columns-row themestek-boxes-row-wrapper">
+															
+															{% for blog in blog %}
+
+															<div
+																class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 gemological-laboratories%e2%80%8e scientific-laboratory">
+																<article
+																	class="themestek-box themestek-box-blog ts-blogbox-style-1 themestek-box-style1 themestek-blogbox-format- ">
+																	<div class="post-item">
+
+																		<div
+																			class="ts-blog-image-with-meta">
+																			<div
+																				class="ts-post-format-icon-w">
+																				<i
+																					class="ts-labtechco-icon-file"></i>
+																			</div>
+																			<div
+																				class="ts-featured-wrapper ts-post-featured-wrapper ts-post-format-">
+																				<img width="1200"
+																					height="800"
+																					src="/media/{{blog.img}}"
+																					class="attachment-themestek-img-800x700 size-themestek-img-800x700 wp-post-image"
+																					alt="" /></div>
+																		</div>
+
+																		<div class="themestek-box-content">
+
+																			<div
+																				class="ts-entry-meta-wrapper">
+																				<div
+																					class="entry-meta ts-entry-meta ts-entry-meta-blogbox">
+																					<span
+																						class="ts-meta-line byline">
+																						<span
+																							class="author vcard"><span
+																								class="screen-reader-text ts-hide">Author
+																							</span>By <a
+																								class="url fn n"
+																								href="#">admin</a></span></span><span
+																						class="ts-meta-line posted-on"><span
+																							class="screen-reader-text ts-hide">Posted
+																							on </span><a
+																							href="#"
+																							rel="bookmark"><time
+																								class="entry-date published"
+																								datetime="2018-08-08T10:00:25+00:00">{{blog.date}}</time><time
+																								class="updated ts-hide"
+																								datetime="2021-01-08T08:50:16+00:00"></time></a></span>
+																				</div>
+																			</div>
+																			<div
+																				class="themestek-box-title">
+																				<h4><a
+																						href="{% url 'singleblog' blog.slug %}">{{blog.title}}</a></h4>
+																			</div>
+																			<div class="themestek-box-desc">
+																				<div
+																					class="themestek-box-desc-text">
+																					{{blog.blog_des}}.</div>
+																			</div>
+
+																			<div
+																				class="ts-bottom-meta-wrapper clearfix">
+																				<div class="pull-left">
+																					<div
+																						class="themestek-blogbox-footer-left">
+																						<a
+																							href="{% url 'singleblog' blog.slug %}">Read
+																							More</a></div>
+																				</div>
+																				<div
+																					class="themestek-blogbox-footer-commnent pull-right">
+																					<span
+																						class="ts-blogbox-comment-w">
+																						<a
+																							href="../2018/08/08/testing-food-quality-and-safety/index.html">
+																							<i
+																								class="themifyicon ti-comment"></i>
+																							<span
+																								class="comments">0</span>
+																						</a>
+																					</span>
+																				</div>
+
+																			</div>
+
+																		</div>
+
+																	</div>
+																</article>
+
+															</div>
+															
+															{% endfor %}
+															
+														</div>
+													</div><!-- .themestek-boxes-inner -->
+												</div><!-- .themestek-boxes -->
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+
+							<div class="vc_row-full-width vc_clearfix"></div>
+
+
+
+
+
+						</div><!-- .entry-content -->
+
+
+					</article><!-- #post-## -->
+
+				</main><!-- #main .site-main -->
+			</div><!-- #primary .content-area -->
+
+
+
+
+
+		</div><!-- .site-content-inner -->
+	</div><!-- .site-content -->
+</div><!-- .site-content-wrapper -->
+
+
+
+
+{% endblock %}
