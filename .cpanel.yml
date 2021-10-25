@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - source source /home/wt29jctjbes9/virtualenv/rbscience/3.7/bin/activate && cd /home/wt29jctjbes9/rbscience
+    - source source source /home/wt29jctjbes9/virtualenv/rbscience/3.7/bin/activate && cd /home/wt29jctjbes9/rbscience
     - pip install -r requirements.txt
     - python manage.py collectstatic --no-input
     - python manage.py migrate
