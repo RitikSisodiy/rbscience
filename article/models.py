@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.utils.text import slugify
 
 # Create your models here.
 class submenuscripts(models.Model):
@@ -27,6 +28,8 @@ class issue(models.Model):
     vol = models.ForeignKey(vol, on_delete=models.CASCADE,related_name="yearbyvol")
     def __str__(self):
         return  self.year.year +" | "+ str(self.vol) +" | issue " + str(self.issue)
+
+        
 class artical(models.Model):
     issue = models.ForeignKey(issue, on_delete=models.SET_NULL, null=True,related_name="yearbyissue")
     authors = models.ManyToManyField(authors)
@@ -37,6 +40,13 @@ class artical(models.Model):
     do = models.CharField(max_length=1000,blank=True)
     references = RichTextField(blank=True)
     time = models.DateTimeField(auto_now=True)
+    slug = models.SlugField(blank=True,max_length=50)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.heading)[:50]
+        super(artical, self).save(*args, **kwargs)
+
+
 class wp_posts(models.Model):
     post_author	= models.BigIntegerField()
     post_date	= models.DateTimeField(auto_now=True)

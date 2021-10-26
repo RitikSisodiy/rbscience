@@ -1,0 +1,213 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}
+{% include  'headertitle.html' with headertitle="Abstract Article" %}
+{% endblock %}
+{% block body %}
+    <div id="content-wrapper" class="site-content-wrapper">
+
+
+        <div id="content" class="site-content container">
+            <div id="content-inner" class="site-content-inner row multi-columns-row">
+
+
+
+                <div id="primary" class=" col-md-12 col-lg-12 col-xs-12">
+                    <main id="main" class="site-main">
+
+
+
+                        <div class="ts-service-single-content-wrapper">
+
+                            <div class="themestek-common-box-shadow ts-service-single-content-wrapper-innerbox">
+                                <div class="themestek-service-single-content-area">
+                                    <div class="ts-service-description">
+                                        <div
+                                            class="ts-row wpb_row vc_row-fluid ts-total-col-2 ts-zindex-0 vc_row container ts-bgimage-position-center_center">
+                                            <div class="ts-column wpb_column vc_column_container vc_col-sm-6 ts-zindex-0">
+                                                <div class="vc_column-inner  ">
+                                                    <div class="wpb_wrapper">
+
+                                                        <div
+                                                            class="wpb_single_image wpb_content_element vc_align_left">
+
+                                                            <figure class="wpb_wrapper vc_figure">
+                                                                <div
+                                                                    class="vc_single_image-wrapper   vc_box_border_grey">
+                                                                    <img class="vc_single_image-img "
+                                                                        src="{% static "wp-content/new-cover.png" %}"
+                                                                        width="360" height="260" alt="research6"
+                                                                        title="research6" /></div>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ts-column wpb_column vc_column_container vc_col-sm-6 ts-zindex-0">
+                                                <div class="vc_column-inner  ">
+                                                    <div class="wpb_wrapper">
+
+                                                        <div class="wpb_single_image wpb_content_element vc_align_left">
+
+                                                            <div class="journal-btn">
+                                                                <h3>{{absdata.heading}}</h3>
+                                                                <span><b>ONLINE ISSN : </b></span>
+                                                                <b>2456-8244</b><br><br><br>
+                                                                                        <p><a class="ins-to-auth" href="" target="_blank">INSTRUCTIONS TO AUTHORS</a></p>
+                                                                <div class="journal-btns">
+                                                                    
+                                                                            <a href="{{absdata.pdf.url}}" class="btn btn-success">View PDF</a>
+                                                                            <a href="{% url 'abstractarticle' absdata.slug %}" class="btn btn-success">Abstract</a>
+                                                                            <a href="{{absdata.pdf.url}}" class="btn btn-success">Download PDF</a>
+                                                                        <!-- <li>
+                                                                            <a href="#" class="btn">Articles in Press</a>
+                                                                        </li> -->
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ts-row wpb_row vc_row-fluid ts-total-col-1 ts-zindex-0 vc_row container ts-bgimage-position-center_center">
+                                            <div class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0">
+                                                <div class="vc_column-inner">
+                                                    <div class="wpb_wrapper">
+                                                        <h4 style="text-align:left;" class="ts-custom-heading ">
+                                                            ABSTRACT</h4>
+
+                                                        <div class="wpb_text_column wpb_content_element ">
+                                                            <div class="wpb_wrapper">
+                                                                <p> {{absdata.abstract|safe}}
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="ts-row wpb_row vc_row-fluid ts-total-col-1 ts-zindex-0 vc_row container ts-bgimage-position-center_center">
+                                            <div class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0">
+                                                <div class="vc_column-inner">
+                                                    <div class="wpb_wrapper">
+                                                        <h4 style="text-align:left;" class="ts-custom-heading ">
+                                                            KEYWORDS</h4>
+
+                                                        <div class="wpb_text_column wpb_content_element ">
+                                                            <div class="wpb_wrapper">
+                                                                <p>{{absdata.keywords|safe}}</p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ts-row wpb_row vc_row-fluid ts-total-col-1 ts-zindex-0 vc_row container ts-bgimage-position-center_center">
+                                            <div class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0">
+                                                <div class="vc_column-inner">
+                                                    <div class="wpb_wrapper">
+                                                        <h4 style="text-align:left;" class="ts-custom-heading ">
+                                                            REFERENCES</h4>
+
+                                                        <div class="wpb_text_column wpb_content_element ">
+                                                            <div class="wpb_wrapper">
+                                                                <p>{{absdata.references|safe}}</p>
+                                                                
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div><!-- .ts-service-description -->
+                                </div><!-- .themestek-service-single-content-area -->
+
+                            </div>
+
+                        </div>
+
+
+                    </main><!-- .site-main -->
+                </div><!-- .content-area -->
+
+
+
+
+
+                {% comment %} <aside id="sidebar-left" class="widget-area col-md-3 col-lg-3 col-xs-12 sidebar">
+
+
+
+                    <aside id="themestek-list-all-posts-1"
+                        class="widget-even widget-4 widget themestek_widget_list_all_posts">
+
+                        <h3 class="widget-title">Posts</h3>
+                        <div class="ts-all-post-list-w">
+                            <ul class="ts-all-post-list">
+                                <li class=""><a href="../chemical-research/index.html"> Chemical Research </a>
+                                </li>
+                                <li class=""><a href="../pathology-testing-2/index.html"> Pathology Testing </a>
+                                </li>
+                                <li class="ts-post-active"><a href="index.html"> Artificial Intelligence </a>
+                                </li>
+                                <li class=""><a href="../healthcare-labs/index.html"> Healthcare Labs </a></li>
+                                <li class=""><a href="../diabetes-testing/index.html"> Diabetes Testing </a>
+                                </li>
+                                <li class=""><a href="../advanced-robotics/index.html"> Advanced Robotics </a>
+                                </li>
+                                <li class=""><a href="../pathology-testing/index.html"> Pathology Testing </a>
+                                </li>
+                                <li class=""><a href="../alternative-energy/index.html"> Alternative Energy </a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </aside>
+
+                    <aside id="text-1" class="widget-odd widget-5 widget widget_text">
+                        <div class="textwidget">
+                            <div class="download">
+                                <div class="item-download"><a href="#" target="_blank" rel="noopener"><i
+                                            class="fa fa-file-pdf-o" aria-hidden="true"></i>Download.pdf</a>
+                                </div>
+                                <div class="item-download"><a href="#" target="_blank" rel="noopener"><i
+                                            class="fa fa-file-word-o" aria-hidden="true"></i>Download.txt</a>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside id="enhancedtextwidget-1"
+                        class="widget-even widget-6 widget widget_text enhanced-text-widget">
+                        <div class="textwidget widget-text">
+                            <div class="single-service-contact">
+                                <div class="single-service-contact-inner">
+                                    <h3>Contact us for help?</h3>
+                                    <p>Contact with us through our representative or submit a business inquiry
+                                        online.</p>
+                                    <p><a href="#">Contact Us<i class="fa fa-angle-double-right"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </aside><!-- #sidebar-left --> {% endcomment %}
+
+
+
+
+
+            </div><!-- .site-content-inner -->
+        </div><!-- .site-content -->
+    </div>
+{% endblock %}
+
+{% block bodyclass %}ts-service-template-default single single-ts-service postid-5727 theme-labtechco woocommerce-no-js ts-headerstyle-style-8 themestek-wide themestek-sidebar-true themestek-sidebar-left wpb-js-composer js-comp-ver-6.5.0 vc_responsive{% endblock %}
+           
+           

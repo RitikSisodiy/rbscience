@@ -2351,67 +2351,56 @@
                                                     </aside>
                                                 </div><!-- .widget-area -->
                                                 <div
-                                                    class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
-                                                    <aside id="nav_menu-1"
-                                                        class="widget-odd widget-3 widget widget_nav_menu">
-                                                        <h3 class="widget-title">USEFUL LINKS</h3>
-                                                        <div class="menu-usefull-link-container">
-                                                            <ul id="menu-usefull-link-1" class="menu">
-                                                                <li
-                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8066">
-                                                                    <a href="{% static "about-us/index.html" %}">About
-                                                                        Us</a></li>
-                                                                <li
-                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8065">
-                                                                    <a href="{% static "our-services/index.htm" %}">Our
-                                                                        Services</a></li>
-                                                                <li
-                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8064">
-                                                                    <a href="{% static "our-team/index.html" %}">Our
-                                                                        Team</a></li>
-                                                                <li
-                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8067">
-                                                                    <a
-                                                                        href="{% static "contacts/index.html" %}">Contacts</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8042">
-                                                                    <a href="#">Research</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </aside>
-                                                    <aside id="nav_menu-2"
-                                                        class="widget-even widget-4 widget widget_nav_menu">
-                                                        <h3 class="widget-title">OUR SERVICES</h3>
-                                                        <div class="menu-footer-servicem-menu-container">
-                                                            <ul id="menu-footer-servicem-menu-1" class="menu">
-                                                                <li
-                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
-                                                                    <a
-                                                                        href="{% static "category/scientific-laboratory/index.html" %}">Scientific</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8034">
-                                                                    <a
-                                                                        href="{% static "category/chemistry-laboratories%e2%80%8e/index.html" %}">Chemistry</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8035">
-                                                                    <a
-                                                                        href="{% static "category/gemological-laboratories%e2%80%8e/index.html" %}">Gemological</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8036">
-                                                                    <a
-                                                                        href="{% static "category/forensic-science/index.html" %}">Forensic
-                                                                        science</a></li>
-                                                                <li
-                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8041">
-                                                                    <a href="#">Immunology</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </aside>
-                                                </div><!-- .widget-area -->
+                                                class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
+                                                <aside id="nav_menu-1"
+                                                    class="widget-odd widget-3 widget widget_nav_menu">
+                                                    <h3 class="widget-title">USEFUL LINKS</h3>
+                                                    <div class="menu-usefull-link-container">
+                                                        <ul id="menu-usefull-link-1" class="menu">
+                                                            <li
+                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8066">
+                                                                <a href="{% url 'about' %}">About Us</a></li>
+                                                            <li
+                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8065">
+                                                                <a href="{% url 'jpublication' %}">Our Services</a></li>
+                                                            <li
+                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8064">
+                                                                <a href="#">Our Team</a></li>
+                                                            <li
+                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8067">
+                                                                <a href="{% url 'contactus' %}">Contacts</a></li>
+                                                            <li
+                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8042">
+                                                                <a href="#">Research</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </aside>
+                                                <aside id="nav_menu-2"
+                                                    class="widget-even widget-4 widget widget_nav_menu">
+                                                    <h3 class="widget-title">OUR SERVICES</h3>
+                                                    <div class="menu-footer-servicem-menu-container">
+                                                        <ul id="menu-footer-servicem-menu-1" class="menu">
+                                                            <li
+                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
+                                                                <a href="{% url 'jpublication' %}">Synthesis of
+                                                                    molecules</a></li>
+                                                            <li
+                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8034">
+                                                                <a href="{% url 'jpublication' %}">Extraction </a></li>
+                                                            <li
+                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8035">
+                                                                <a href="{% url 'jpublication' %}">Drug Design</a></li>
+                                                            <li
+                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8036">
+                                                                <a href="{% url 'jpublication' %}">Novel Drug Delivery
+                                                                    Systems</a></li>
+                                                            <li
+                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8041">
+                                                                <a href="{% url 'jpublication' %}">Immunology</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </aside>
+                                            </div><!-- .widget-area -->
                                                 <div
                                                     class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
 
@@ -2419,18 +2408,13 @@
                                                         class="widget-odd widget-3 widget widget_recent_entries">
                                                         <h3 class="widget-title">RECENT POST</h3>
                                                         <ul>
+                                                        {% for data in blogs|slice:":4" %}
                                                             <li>
                                                                 <a
-                                                                    href="{% static "2018/08/08/testing-food-quality-and-safety/index.html" %}">Testing
-                                                                    Food quality and safety</a>
-                                                                <span class="post-date">August 8, 2018</span>
+                                                                    href="{% url 'singleblog' data.slug %}">{{data.title}}</a>
+                                                                <span class="post-date">{{data.date}}</span>
                                                             </li>
-                                                            <li>
-                                                                <a
-                                                                    href="{% static "2018/02/18/industrial-contractor-powerhouse/index.html" %}">Biochemistry
-                                                                    research in the Lab</a>
-                                                                <span class="post-date">February 18, 2018</span>
-                                                            </li>
+                                                        {% endfor %}
                                                         </ul>
 
                                                     </aside>

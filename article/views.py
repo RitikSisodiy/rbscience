@@ -37,14 +37,16 @@ def archives(request):
     res['yearsbydata'] = reslist
     return render(request,'article/archives.html', res)
 def articallist(request , year , vol ,issue):
+    absdata = artical.objects.all()
+    # res1 ={'absdata':absdata}
     print(year,vol,issue)
     res = {}
+    res['absdata'] = absdata
     res['artical'] = artical.objects.filter(issue=issue , issue__year__year = year , issue__vol = vol)
     print(res['artical'])
-    return render(request , "article/articallist.html" , res)
-def singleartical(request,slug):
-    res = {}
-    return render(request, 'article/singleartical.html' , res)
+    return render(request ,'article/articallist.html' ,res)
+
+
 def currentissue(request):
     res = {}
     latestartical = artical.objects.all()
@@ -55,3 +57,7 @@ def currentissue(request):
         vol = latestartical.issue.vol
         return articallist(request,year , vol , issue)
     return redirect('home')
+
+def abstractarticle(request,slug1):
+    absdata = artical.objects.get(slug=slug1)
+    return render(request,'article/abstractarticle.html',{'absdata':absdata})
