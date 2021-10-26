@@ -1020,6 +1020,7 @@
 												<div class="themestek-boxes-inner themestek-boxes-team-inner ">
 
 													<div class="row multi-columns-row themestek-boxes-row-wrapper">
+														{% for data in teammember %}
 														<div
 															class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 ">
 															<article
@@ -1029,7 +1030,7 @@
 																	<span class="themestek-item-thumbnail">
 																		<span class="themestek-item-thumbnail-inner">
 																			<img width="768" height="768"
-																				src="{% static "wp-content/uploads/sites/13/2018/07/team-02.jpg" %}"
+																				src="/media/{{data.profile}}"
 																				class="attachment-themestek-img-800x800 size-themestek-img-800x800 wp-post-image"
 																				alt="" />
 																		</span>
@@ -1037,54 +1038,49 @@
 																	<div class="themestek-box-content">
 																		<div class="themestek-box-content-inner">
 																			<div class="themestek-box-team-position">
-																				Laboratory Technician </div>
+																				{{data.position}} </div>
 																			<div class="themestek-pf-box-title">
 																				<div class="themestek-box-title">
 																					<h4><a
-																							href="team/samantha-wood/index.html">Samantha
-																							Wood</a></h4>
+																							href="{% url 'singleteam' data.slug %}">{{data.name}}</a></h4>
 																				</div>
 																			</div>
 																			<div class="themestek-teambox-social-links">
 																				<div
 																					class="ts-team-social-links-wrapper">
 																					<ul class="ts-team-social-links">
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-twitter">
-																								<i
-																									class="ts-labtechco-icon-twitter"></i>
-																								<span
-																									class="ts-hide">Twitter</span>
-																							</a>
-																						</li>
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-facebook">
-																								<i
-																									class="ts-labtechco-icon-facebook"></i>
-																								<span
-																									class="ts-hide">Facebook</span>
-																							</a>
-																						</li>
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-google">
-																								<i
-																									class="ts-labtechco-icon-gplus"></i>
-																								<span
-																									class="ts-hide">Google+</span>
-																							</a>
-																						</li>
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-linkedin">
-																								<i
-																									class="ts-labtechco-icon-linkedin"></i>
-																								<span
-																									class="ts-hide">LinkedIn</span>
-																							</a>
-																						</li>
+																						 {% if data.twiter %}
+																												<li>
+																													<a href="{{data.twiter}}" target="_blank" class="">
+																														<i class="ts-labtechco-icon-twitter"></i>
+																														<span class="ts-hide">Twitter</span>
+																													</a>
+																												</li>
+																												{% endif %}
+																												{% if data.facebook %}
+																												<li>
+																													<a href="{{data.facebook}}" target="_blank" class="">
+																														<i class="ts-labtechco-icon-facebook"></i>
+																														<span class="ts-hide">Facebook</span>
+																													</a>
+																												</li>
+																												{% endif %}
+																												{% if data.google %}
+																												<li>
+																													<a href={{data.google}}" target="_blank" class="">
+																														<i class="ts-labtechco-icon-gplus"></i>
+																														<span class="ts-hide">Google+</span>
+																													</a>
+																												</li>
+																												{% endif %}
+																												{% if data.linkedin %}
+																												<li>
+																													<a href="{{data.linkedin}}" target="_blank" class="">
+																														<i class="ts-labtechco-icon-linkedin"></i>
+																														<span class="ts-hide">LinkedIn</span>
+																													</a>
+																												</li>
+																												{% endif %}
 																					</ul>
 																					<!-- .ts-team-social-links -->
 																				</div>
@@ -1095,157 +1091,7 @@
 																</div>
 															</article>
 														</div>
-														<div
-															class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 ">
-															<article
-																class="themestek-box themestek-box-team ts-teambox-style-5  ts-hover-style-2">
-																<div class="themestek-post-item">
-
-																	<span class="themestek-item-thumbnail">
-																		<span class="themestek-item-thumbnail-inner">
-																			<img width="768" height="768"
-																				src="{% static "wp-content/uploads/sites/13/2018/07/team-01-1.jpg" %}"
-																				class="attachment-themestek-img-800x800 size-themestek-img-800x800 wp-post-image"
-																				alt="" />
-																		</span>
-																	</span>
-																	<div class="themestek-box-content">
-																		<div class="themestek-box-content-inner">
-																			<div class="themestek-box-team-position">
-																				Head microbiologist </div>
-																			<div class="themestek-pf-box-title">
-																				<div class="themestek-box-title">
-																					<h4><a
-																							href="team/alex-mitchell/index.html">Alex
-																							Mitchell</a>
-																					</h4>
-																				</div>
-																			</div>
-																			<div class="themestek-teambox-social-links">
-																				<div
-																					class="ts-team-social-links-wrapper">
-																					<ul class="ts-team-social-links">
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-twitter">
-																								<i
-																									class="ts-labtechco-icon-twitter"></i>
-																								<span
-																									class="ts-hide">Twitter</span>
-																							</a>
-																						</li>
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-facebook">
-																								<i
-																									class="ts-labtechco-icon-facebook"></i>
-																								<span
-																									class="ts-hide">Facebook</span>
-																							</a>
-																						</li>
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-google">
-																								<i
-																									class="ts-labtechco-icon-gplus"></i>
-																								<span
-																									class="ts-hide">Google+</span>
-																							</a>
-																						</li>
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-linkedin">
-																								<i
-																									class="ts-labtechco-icon-linkedin"></i>
-																								<span
-																									class="ts-hide">LinkedIn</span>
-																							</a>
-																						</li>
-																					</ul>
-																					<!-- .ts-team-social-links -->
-																				</div>
-																				<!-- .ts-team-social-links-wrapper -->
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</article>
-														</div>
-														<div
-															class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 head-engineering">
-															<article
-																class="themestek-box themestek-box-team ts-teambox-style-5  ts-hover-style-2">
-																<div class="themestek-post-item">
-
-																	<span class="themestek-item-thumbnail">
-																		<span class="themestek-item-thumbnail-inner">
-																			<img width="768" height="768"
-																				src="{% static "wp-content/uploads/sites/13/2018/07/team-03.jpg" %}"
-																				class="attachment-themestek-img-800x800 size-themestek-img-800x800 wp-post-image"
-																				alt="" />
-																		</span>
-																	</span>
-																	<div class="themestek-box-content">
-																		<div class="themestek-box-content-inner">
-																			<div class="themestek-box-team-position">
-																				Senior Рathologist </div>
-																			<div class="themestek-pf-box-title">
-																				<div class="themestek-box-title">
-																					<h4><a
-																							href="team/matthew-atkins/index.html">Matthew
-																							Atkins</a></h4>
-																				</div>
-																			</div>
-																			<div class="themestek-teambox-social-links">
-																				<div
-																					class="ts-team-social-links-wrapper">
-																					<ul class="ts-team-social-links">
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-twitter">
-																								<i
-																									class="ts-labtechco-icon-twitter"></i>
-																								<span
-																									class="ts-hide">Twitter</span>
-																							</a>
-																						</li>
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-facebook">
-																								<i
-																									class="ts-labtechco-icon-facebook"></i>
-																								<span
-																									class="ts-hide">Facebook</span>
-																							</a>
-																						</li>
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-google">
-																								<i
-																									class="ts-labtechco-icon-gplus"></i>
-																								<span
-																									class="ts-hide">Google+</span>
-																							</a>
-																						</li>
-																						<li>
-																							<a href="#" target="_blank"
-																								class="ts-team-social-linkedin">
-																								<i
-																									class="ts-labtechco-icon-linkedin"></i>
-																								<span
-																									class="ts-hide">LinkedIn</span>
-																							</a>
-																						</li>
-																					</ul>
-																					<!-- .ts-team-social-links -->
-																				</div>
-																				<!-- .ts-team-social-links-wrapper -->
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</article>
-														</div>
+														{% endfor %}
 
 													</div>
 												</div><!-- .themestek-boxes-inner -->

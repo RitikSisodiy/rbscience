@@ -1,0 +1,120 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}{% endblock %}
+{% block bodyclass %}ts-team-member-template-default single single-ts-team-member postid-5974 theme-labtechco
+woocommerce-js ts-headerstyle-style-8 themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer
+js-comp-ver-6.5.0 vc_responsive
+{% endblock %}
+{% block body %}
+{% include  'headertitle.html' with headertitle=membername %}
+<div id="content-wrapper" class="site-content-wrapper">
+
+
+    <div id="content" class="site-content ">
+        <div id="content-inner" class="site-content-inner ">
+
+            <div id="primary" class="content-area  ">
+                <main id="main" class="site-main">
+
+
+                    <article id="post-6691" class="post-6691 page type-page status-publish hentry">
+
+
+                        <header class="single-entry-header ts-hide">
+                            <h2 class="entry-title">Our Team</h2>
+                        </header><!-- .entry-header -->
+
+                        <div class="entry-content">
+
+
+
+
+                            <div data-vc-full-width="true" data-vc-full-width-init="false"
+                                class="ts-row wpb_row vc_row-fluid ts-total-col-1 ts-zindex-0 ts-bgimage-position-center_center">
+
+
+
+                                <div class="vc_row container">
+
+
+                                    <div
+                                        class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0 ts-span ts-left-span">
+                                        <div class="vc_column-inner  ">
+                                            <div class="wpb_wrapper">
+                                                <div
+                                                    class="themestek-boxes themestek-boxes-team themestek-boxes-view-default themestek-boxes-col-four themestek-boxes-sortable-no themestek-boxes-textalign-center themestek-boxes-sortablebutton-">
+                                                    <div class="themestek-boxes-inner themestek-boxes-team-inner ">
+
+                                                        <div class="row multi-columns-row themestek-boxes-row-wrapper">
+                                                           {% for data in teammember %}
+                                                            <div
+                                                                class="ts-box-col-wrapper col-lg-3 col-sm-6 col-md-3 col-xs-12 ">
+                                                                <article
+                                                                    class="themestek-box themestek-box-team ts-teambox-style-1  ts-hover-style-2">
+                                                                    <div class="themestek-post-item">
+
+                                                                        <span class="themestek-item-thumbnail">
+                                                                            <span
+                                                                                class="themestek-item-thumbnail-inner">
+                                                                                <img width="768" height="768"
+                                                                                    src="/media/{{data.profile}}"
+                                                                                    class="attachment-themestek-img-800x800 size-themestek-img-800x800 wp-post-image"
+                                                                                    alt="" />
+                                                                            </span>
+                                                                        </span>
+                                                                        <div class="themestek-box-content">
+                                                                            <div class="themestek-box-content-inner">
+
+                                                                                <div
+                                                                                    class="themestek-box-team-position ts-skincolor">
+                                                                                    {{data.position}} </div>
+                                                                                <div class="themestek-pf-box-title">
+                                                                                    <div class="themestek-box-title">
+                                                                                        <h4><a
+                                                                                                href="{% url 'singleteam' data.slug %}">{{data.name}}</a></h4>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </article>
+                                                            </div>
+                                                           {% endfor %}
+                                                            
+                                                        </div>
+                                                    </div><!-- .themestek-boxes-inner -->
+                                                </div><!-- .themestek-boxes -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="vc_row-full-width vc_clearfix"></div>
+
+
+
+
+
+                        </div><!-- .entry-content -->
+
+
+                    </article><!-- #post-## -->
+
+                </main><!-- #main .site-main -->
+            </div><!-- #primary .content-area -->
+
+
+
+
+
+        </div><!-- .site-content-inner -->
+    </div><!-- .site-content -->
+</div><!-- .site-content-wrapper -->
+{% endblock %}

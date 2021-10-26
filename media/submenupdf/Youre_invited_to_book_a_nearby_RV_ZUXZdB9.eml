@@ -1,0 +1,849 @@
+Delivered-To: ritik.cyberflax@gmail.com
+Received: by 2002:a05:6214:248:0:0:0:0 with SMTP id k8csp1066676qvt;
+        Fri, 22 Oct 2021 04:01:23 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzRSH1J6Ok1JvNkTbDxu1rUh5+D5odX80q/zlJFu7sHIgWng1wm+I44UCdw0Vq1iYamdhj6
+X-Received: by 2002:a5d:47ac:: with SMTP id 12mr14279973wrb.352.1634900483527;
+        Fri, 22 Oct 2021 04:01:23 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1634900483; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ClQuw4Y+STcVcoegKTtPfv4LS+7v/RYRjP/WrZwVrAqasRK02cYDSP2q98hmJz20lq
+         FO6BtouhzVKNE13ZEdqDrq9yYwIWETF9tD48dhTNXsDdNfWhCeszaQ8Q22uMHkHuDUHr
+         g+MUbpI3OeCWRtbf2YTFv9j7/qLxRHHZxqpFqcXpDJOMFJcuTZI/lBRqNTXJt1+52jbi
+         yaA0i3k17R/TynwNY+8dTKfozyV1iXMcsFff4v5FJYsUF1+bhqlrqECA0d+5qRNDyVKl
+         B2wD2ryKS28HKdW0vI3d9wD/lja+3jdjnKWO9mJ1388rtG1nseMk26nmtzx+lG+lwuhV
+         Inpg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=o/GgP6C7FVpZFuaMqDS9TKgHf4ZFZvWGKcQyDVnpSb4=;
+        b=Zi77T0ojU37eTWSy64IhdnP+n34GLEFKwOb8xOxZWfTYuOkYYID0UsmF8+drf2TpcK
+         daplnztGTOT8/0+AldjU9pLnai0UvAVXc1lW3QHv11JOHm9bP+XgvlKP8FoVCeie4wEI
+         /N4RYqA9/y/Zye+KZpSQeLKRYvm/hzWLfKI33VwPM4r1Fqxx5elKZXO+6TAc+2hyRhGJ
+         9cAD7bwwPErcJUzOCyfCjtYhRNRBUeLC8Ars8G9vqDeGUFHUM+TBsW7uh1MDUypd0UFx
+         4uiJpktjK6TT4XzSIM3cYFxLeaKX29jqjkBx2iQiqShz3zjCrjCR6vY8e155XB6vuA3l
+         imHw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@rvshare.com header.s=s1 header.b="Ssv4o/5q";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=lv3ZwhFA;
+       spf=pass (google.com: domain of bounces+870568-7fa3-ritik.cyberflax=gmail.com@em1.mail.rvshare.com designates 192.254.124.37 as permitted sender) smtp.mailfrom="bounces+870568-7fa3-ritik.cyberflax=gmail.com@em1.mail.rvshare.com";
+       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=rvshare.com
+Return-Path: <bounces+870568-7fa3-ritik.cyberflax=gmail.com@em1.mail.rvshare.com>
+Received: from o1.em.mail.rvshare.com (o1.em.mail.rvshare.com. [192.254.124.37])
+        by mx.google.com with ESMTPS id r23si2975065edq.219.2021.10.22.04.01.22
+        for <ritik.cyberflax@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 22 Oct 2021 04:01:23 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+870568-7fa3-ritik.cyberflax=gmail.com@em1.mail.rvshare.com designates 192.254.124.37 as permitted sender) client-ip=192.254.124.37;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@rvshare.com header.s=s1 header.b="Ssv4o/5q";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=lv3ZwhFA;
+       spf=pass (google.com: domain of bounces+870568-7fa3-ritik.cyberflax=gmail.com@em1.mail.rvshare.com designates 192.254.124.37 as permitted sender) smtp.mailfrom="bounces+870568-7fa3-ritik.cyberflax=gmail.com@em1.mail.rvshare.com";
+       dmarc=pass (p=REJECT sp=NONE dis=NONE) header.from=rvshare.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rvshare.com;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to;
+	s=s1; bh=o/GgP6C7FVpZFuaMqDS9TKgHf4ZFZvWGKcQyDVnpSb4=;
+	b=Ssv4o/5qGYBt9YudS/eziX6sznqo0kg1LuX2whb1CP/cEIxq5/R+skY3pTXXqAkoSAU6
+	zsgFpXxpx07ToRrJ66G7SVSbe4oInozR6gkH06Eu4ogxehwE4Y1Mf+u4lNM4Iawob0QQEy
+	Qe6j/vY5jZQqAKIs9fmOOE+dkf2I9Jk8GyBg8h3TweRGOvP9HTo9bvHpfJYC9cm4cu+hfD
+	9b5LNBFSP8QihcRbH3HhQJENZnuNctpma9rb9RBX/5om8IeHuPSRFLjhJopgDdhT4ecKxP
+	VEYiCjOjZH9QaRBPrxZPsMbZVtQFUq6eXaKOOvbuJ9MKe+bGTX6ueRklxjQ0ZXaQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to;
+	s=smtpapi; bh=o/GgP6C7FVpZFuaMqDS9TKgHf4ZFZvWGKcQyDVnpSb4=;
+	b=lv3ZwhFAIuJw2myx22gTcrS3R3Orsz3yeAKMkoiNPKln5y79de4BXvXZMyct7RD6y3iZ
+	0+fUASdGa94Bh9jLmqhauTBRveHe4MRtcIMfEmZeQ1W+xtQZd2FkOQ+MDMSqnJVzy1vzpH
+	nRz9Ka3Aj/LyoFEoDPKhVpclf4goQ8B1Q=
+Received: by filterdrecv-7bc86b958d-jb29x with SMTP id filterdrecv-7bc86b958d-jb29x-1-61729A00-16C
+        2021-10-22 11:01:20.750874637 +0000 UTC m=+4365696.643315523
+Received: from ODcwNTY4 (unknown)
+	by ismtpd0150p1mdw1.sendgrid.net (SG)
+	with HTTP
+	id B57h7ENPTVyTEdKkzdvMNw
+	Fri, 22 Oct 2021 11:01:20.706 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=e7b3da177e567590380bcdcce030b68f35b758d730e242430fc842c38c01
+Date: Fri, 22 Oct 2021 11:01:20 +0000 (UTC)
+From: RVshare <noreply@rvshare.com>
+Mime-Version: 1.0
+Message-ID: <B57h7ENPTVyTEdKkzdvMNw@ismtpd0150p1mdw1.sendgrid.net>
+Subject: =?UTF-8?B?WW914oCZcmU=?= invited to book a nearby RV!
+Reply-To: newsletter@rvshare.com
+X-SWU-RECEIPT-ID: log_3e09df351e8cf00df865ab4bbcc0883d-3
+X-Feedback-ID: 870568:SG
+X-SG-EID: 
+ =?us-ascii?Q?fpXQdnMHixOjyyjNZM67Gyvi1Tq=2FOC1E4CJ+R9xGJu=2F8O4WSFUXlEBnD3EXGsg?=
+ =?us-ascii?Q?nxJkE7IqrY0rJH6yVODcG8slsP8GMvtsgPnewEK?=
+ =?us-ascii?Q?S3uNxo+UXr=2FQYY3r0eQd2a4Q+iZ93+mrV5BMvzN?=
+ =?us-ascii?Q?zJQ78HKHOsKmP1zToRbG92y5KWiDxOUtDmdpw15?=
+ =?us-ascii?Q?YvetgOC7pttptjlhtBIrB8ENkQVrrDoWaIxsJMg?=
+ =?us-ascii?Q?caBamU9lfDIOFS=2FI0IdaZNE2v5Fyna9qSc96od?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FJW+2mOJuMLKrlObgrAN5?=
+ =?us-ascii?Q?Fxdj535fC1T5pmbJrz9bamdpz+4iS7nE9mWni+C?=
+ =?us-ascii?Q?R8nYymt7tEvunJvZxymHGtRrKQk2FYYm4iRfk+g?=
+ =?us-ascii?Q?N=2Fv3hqb=2Fj452sGYtPkKilXg=2FMTXLUTg2jjOMEMq?=
+ =?us-ascii?Q?moqoLclq3pJcSAYI1LpRQUCwjbocsSF8Y5VaScR?=
+ =?us-ascii?Q?5aXJ2h9tF=2FJaPAF6NPG=2FFMyBc4f6Cq47+Jjjopl?=
+ =?us-ascii?Q?Pady=2FzQz9s5reC5sxvwD4+Laqf2dXph5UhTjbOk?=
+ =?us-ascii?Q?gZpfF+CvPPNNZWaDDjFrCBQ+?=
+To: Ritik Sishodiya <ritik.cyberflax@gmail.com>
+X-Entity-ID: pX6p0FtgT0bWDjkqcsfOaw==
+
+--e7b3da177e567590380bcdcce030b68f35b758d730e242430fc842c38c01
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Respond to  by replying directly to this email.
+
+Message From=20
+
+
+=20
+
+
+
+" "
+
+
+
+View 's RV
+[https://rvshare.com/rvs/details/]=20
+Click Here to Book It [https://rvshare.com/rvs/booking/pay/] Contact Owner =
+[https://rvshare.com/panel/#/app/messages/]=20
+
+Who is ?
+
+RVshare helps owners and renters, by allowing owners to bid on your trip. T=
+his means you get the best possible price, so you are saving time and money=
+.=20
+
+
+ saw you're interested in renting a similiar RV and preapproved your trip f=
+or  January 01, 1970 -  January 01, 1970.
+
+
+
+Tip: We recommend you book your rental quickly, as your travel dates are ve=
+ry popular.=20
+
+
+=20
+
+
+
+
+View 's RV
+[https://rvshare.com/rvs/details/]=20
+[https://rvshare.com/rvs/details/]=20
+
+   -=20
+[https://rvshare.com/rvs/details/]=20
+
+
+Pickup Date=20
+ January 01, 1970=20
+
+
+Dropoff Date:=20
+ January 01, 1970=20
+
+
+Travelers=20
+
+
+
+
+It's Important That you Complete Reservations and Pay Through RVshare.com=20
+
+
+Transactions completed outside of RVshare.com may be fraudulent, are not co=
+vered by the RVshare peace of mind guarantee, and do not qualify for 24/7 r=
+oadside assistance or RVshare rewards. Please use RVshare.com for all corre=
+spondence and payments. If you have any questions regarding how to get the =
+most of your RVshare.com experience, contact us [https://rvshare.com/contac=
+t] . We're here to help.=20
+Why Book Your Rental With RVshare? SECURE PAYMENTS Every rental booked thro=
+ugh RVshare=E2=80=99s secure payment system is backed by our peace of mind =
+guarantee. ROADSIDE ASSISTANCE Rent an RV online through RVshare and get 24=
+/7 roadside assistance for your entire trip. REWARDS PROGRAM When you book =
+online throgh RVshare you'll get 5% cash back rewards to use towards your n=
+ext trip.=20
+
+[https://www.facebook.com/rvshare] [https://twitter.com/RVShareOnline] [htt=
+ps://plus.google.com/+Rvshareonline/posts] [https://instagram.com/rvshare/]=
+=20
+
+
+Sent with =E2=99=A5from RVshare HQ=20
+
+
+Terms [http://rvshare.com/terms-of-service] | Privacy [http://rvshare.com/p=
+rivacy-policy]
+--e7b3da177e567590380bcdcce030b68f35b758d730e242430fc842c38c01
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:schemas-microso=
+ft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml">
+<head>
+<!--[if gte mso 9]>
+	<xml>
+		<o:OfficeDocumentSettings>
+			<o:AllowPNG/>
+			<o:PixelsPerInch>96</o:PixelsPerInch>
+		</o:OfficeDocumentSettings>
+	</xml>
+	<![endif]-->
+<title>RVshare</title>
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type"/>
+<meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible"/>
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0 " name=3D"viewpo=
+rt"/>
+<meta content=3D"telephone=3Dno" name=3D"format-detection"/>
+<!--[if !mso]><!-->
+<!--<![endif]-->
+<style type=3D"text/css">
+		body {
+			margin: 0px auto !important;
+			padding: 0;
+			-webkit-text-size-adjust: 100% !important;
+			-ms-text-size-adjust: 100% !important;
+			-webkit-font-smoothing: antialiased !important;
+		}
+		img {
+			border: 0 !important;
+			outline: none !important;
+		}
+		h2 {
+			font-weight: normal;
+			font-size: 22px;
+			color: #000;
+			margin-bottom: 15px;
+			margin-top: 0;
+		}
+		p {
+			font-size: 16px;
+			color: #555555;
+			margin: 0px !important;
+			padding: 0px !important;
+		}
+p.pre{
+	white-space: pre-line
+}
+		a {
+		  text-decoration:none;
+		  color:#197acf;
+		}
+		ul,ol {
+		  color: #555555;
+		}
+		td, a, span {
+			border-collapse: collapse;
+			mso-line-height-rule: exactly;
+		}
+		.em_defaultlink a {
+			color: inherit;
+			text-decoration: none;
+		}
+		a[x-apple-data-detectors], u + .em_body a{
+			color: inherit;
+			text-decoration: none;
+			font-size: inherit !important;
+			font-family: inherit !important;
+			font-weight: inherit !important;
+			line-height: inherit !important;
+		}
+
+		@media only screen and (max-width:600px) {
+
+			.em_main_table,
+			.mb-tab-full {
+				width: 100% !important;
+			}
+			#img_banner img{
+				width:100% !important;
+			}
+			.em_wrapper {
+				width: 100% !important;
+				font-size: 16px !important;
+			}
+			.em_center {
+				text-align: center !important;
+			}
+			.em_aside10 {
+				padding: 0px 10px !important;
+			}
+			.em_h20 {
+				height: 20px !important;
+				font-size: 1px!important;
+				line-height: 1px!important;
+			}
+			.em_p15 {
+				padding: 20px 0 !important;
+			}
+			.em_plrb15 {
+				padding: 0px 15px 20px 15px !important;
+			}
+			/* Padding Left Right Bottom */
+			.em_side20 {
+				width: 35px !important;
+			}
+			.em_side15 {
+				width: 15px !important;
+			}
+			.mb-footer-pd{
+				padding-left:5px !important;
+				padding-right:5px !important;
+			}
+			.height-auto{
+				height: auto!important;
+			}
+
+			.pl-r{
+				padding-left: 20px!important;
+				padding-right: 20px!important;
+			}
+			.w_20{
+				width: 20px!important;
+			}
+
+			.img_100{
+				width: 100%!important;
+			}
+			.pd-top-0{
+				padding-top: 0!important;
+			}
+			.pd-0{
+				padding: 0!important;
+			}
+			.align_left{
+				text-align: left!important;
+			}
+			.border-0{
+				border: 0!important;
+			}
+		}
+	</style>
+</head>
+<body class=3D"em_body" style=3D"padding:0px; -webkit-text-size-adjust:100%=
+ !important; -ms-text-size-adjust:100% !important; -webkit-font-smoothing:a=
+ntialiased !important; margin:0px auto">
+<table bgcolor=3D"#f9f9f9" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ class=3D"em_main_table" style=3D"table-layout:fixed;" width=3D"100%">
+<tr id=3D"header_section">
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table align=3D"center" bgcolor=3D"#f9f9f9" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_main_table" style=3D"width:650px; table-layou=
+t:fixed; background-color:#f9f9f9" width=3D"650">
+<tr><td align=3D"center" class=3D"em_h20" height=3D"17" style=3D"border-col=
+lapse:collapse; mso-line-height-rule:exactly; height:17px; font-size:0px; l=
+ine-height:0px" valign=3D"top"></td></tr>
+<tr>
+<td align=3D"center" class=3D"em_aside10" style=3D"border-collapse:collapse=
+; mso-line-height-rule:exactly; padding:0px 25px" valign=3D"top">
+<table align=3D"center" bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_wrapper" style=3D"font-size:16px !important; =
+width:600px; border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf"=
+ width=3D"600">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly; width:100%" valign=3D"top" width=3D"100%">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_wrapper" style=3D"font-size:16px !important; width:100%" width=3D=
+"100%">
+<tr>
+<td bgcolor=3D"#0F6CB6" height=3D"5" style=3D"border-collapse:collapse; mso=
+-line-height-rule:exactly; height:5px; font-size:0px; line-height:0px; back=
+ground-color:#0F6CB6">
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"border-collapse:collapse; mso-line-height-rule:e=
+xactly; height:30px; font-size:0px; line-height:0px"></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<!-- logo and menu section start -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_wrapper" style=3D"font-size:16px !important; width:541px" width=
+=3D"541">
+<tr>
+<td style=3D"border-collapse:collapse; mso-line-height-rule:exactly" valign=
+=3D"top">
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" clas=
+s=3D"em_wrapper" style=3D"font-size:16px !important; width:inherit" width=
+=3D"inherit">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<div id=3D"Header_logo">
+<a href=3D"https://rvshare.com/" style=3D"border-collapse:collapse; mso-lin=
+e-height-rule:exactly; text-decoration:none; color:#000000" target=3D"_blan=
+k">
+<img alt=3D"RVshare" border=3D"0" src=3D"https://d1pgqke3goo8l6.cloudfront.=
+net/1fOnBsBtSPOlTWOhGyb3_logo_2019.png" style=3D"border:0 !important; outli=
+ne:none !important; display:block; max-width:122px; font-size:16px; line-he=
+ight:20px; color:#000000; font-weight:bold; font-family:Arial, sans-serif" =
+width=3D"122"/>
+</a>
+</div>
+</td>
+</tr>
+</table>
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"em_wrapper" style=3D"font-size:16px !important; width:inherit" width=
+=3D"inherit">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"em_h20" height=3D"10" style=3D"border-collapse:collapse; mso-l=
+ine-height-rule:exactly; height:10px; font-size:0px; line-height:0px">
+<img alt=3D"" border=3D"0" height=3D"1" src=3D"https://d1pgqke3goo8l6.cloud=
+front.net/23WHvD5Qv6BNP00Nwong_spacer.gif" style=3D"border:0 !important; ou=
+tline:none !important; display:block" width=3D"1"/>
+</td>
+</tr>
+<tr>
+<td align=3D"center !important" class=3D"em_center" style=3D"border-collaps=
+e:collapse; mso-line-height-rule:exactly; text-align:center !important; fon=
+t-family:'Source Sans Pro', Arial, sans-serif; font-size:14px; line-height:=
+16px; color:#7e7e7e" valign=3D"top">
+<div class=3D"em_defaultlink">
+<a href=3D"https://rvshare.com/dashboard/favorites" style=3D"border-collaps=
+e:collapse; mso-line-height-rule:exactly; text-decoration:none; color:#7e7e=
+7e" target=3D"_blank">
+																										Favorites
+																									</a>
+<span style=3D"border-collapse:collapse; mso-line-height-rule:exactly">=C2=
+=A0=C2=A0</span>
+<a href=3D"https://rvshare.com/dashboard/trips" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; text-decoration:none; color:#7e7e7e" =
+target=3D"_blank">
+																										Trips
+																									</a>
+<span style=3D"border-collapse:collapse; mso-line-height-rule:exactly">=C2=
+=A0=C2=A0</span>
+<a href=3D"https://rvshare.com/dashboard/inbox/" style=3D"border-collapse:c=
+ollapse; mso-line-height-rule:exactly; text-decoration:none; color:#7e7e7e"=
+ target=3D"_blank">
+																										Inbox
+																									</a>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--logo and menu section end -->
+</td>
+</tr>
+<tr>
+<td height=3D"0" style=3D"border-collapse:collapse; mso-line-height-rule:ex=
+actly; height:0px; font-size:0px; line-height:0px"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table align=3D"center" bgcolor=3D"#f9f9f9" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_main_table" style=3D"width:650px; table-layou=
+t:fixed;" width=3D"650">
+<tr>
+<td align=3D"center" class=3D"em_aside10" style=3D"border-collapse:collapse=
+; mso-line-height-rule:exactly; padding:0px 25px" valign=3D"top">
+<table align=3D"center" bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_wrapper" style=3D"font-size:16px !important; =
+width:600px; border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf"=
+ width=3D"600">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly; width:100%" valign=3D"top" width=3D"100%">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_wrapper" style=3D"font-size:16px !important; width:100%" width=3D=
+"100%">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly; padding:0 20px 0 20px" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_wrapper" style=3D"font-size:16px !important; width:100%" width=3D=
+"100%">
+<tr>
+<td height=3D"30" style=3D"border-collapse:collapse; mso-line-height-rule:e=
+xactly; height:30px; font-size:0px; line-height:0px">
+</td>
+</tr>
+<tr>
+<td style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-f=
+amily:'Source Sans Pro', Arial, sans-serif; line-height:1.4">
+<div style=3D"margin-bottom: 0px;">
+<p style=3D"font-size:16px; color:#555555; margin:0px !important; padding:0=
+px !important">
+  Hi Ritik,<br/><br/>
+  RVshare uses search criteria to help introduce renters to nearby owners w=
+ith available RVs =E2=80=94 connecting our community and enhancing your exp=
+erience. <br/><br/>
+  Adriana has sent you a quote inviting you to book their RV available on y=
+our rental dates.=20
+Click below to review the quote. You=E2=80=99ll have the option to send a m=
+essage to Adriana and accept or decline the offer, which will expire in 10 =
+days.
+</p>
+<br/>
+<table align=3D"center" bgcolor=3D"#197acf" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_wrapper" style=3D"font-size:16px !important; =
+width:390px; border-radius:2px; max-width:390px" width=3D"390">
+<tr>
+<td align=3D"center" height=3D"50" style=3D"border-collapse:collapse; mso-l=
+ine-height-rule:exactly; height:50px; font-family:'Source Sans Pro', Arial,=
+ sans-serif; font-size:16px; color:#ffffff; font-weight:600" valign=3D"midd=
+le"><a href=3D"https://rvshare.com/dashboard/reservations/42767841?booking=
+=3Ddfbabc65-5f3e-4eab-ae45-d3575d16c000" style=3D"border-collapse:collapse;=
+ mso-line-height-rule:exactly; text-decoration:none; display:block; color:#=
+ffffff; line-height:50px" target=3D"_blank">Confirm and Pay</a></td>
+</tr>
+</table>
+<p style=3D"font-size:16px; color:#555555; margin:0px !important; padding:0=
+px !important"><br/>
+  If you have any questions, please contact <a href=3D"https://help-rvshare=
+.force.com/s/article/How-can-I-contact-RVshare" style=3D"text-decoration:no=
+ne; color:#197acf; border-collapse:collapse; mso-line-height-rule:exactly" =
+target=3D"_blank">Customer Support</a>.
+</p>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id=3D"rv-saftey">
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table align=3D"center" bgcolor=3D"#f9f9f9" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_main_table" style=3D"width:650px; table-layou=
+t:fixed;" width=3D"650">
+<tr>
+<td align=3D"center" class=3D"em_aside10" style=3D"border-collapse:collapse=
+; mso-line-height-rule:exactly; padding:0px 25px" valign=3D"top">
+<table align=3D"center" bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_wrapper" style=3D"font-size:16px !important; =
+width:600px; border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf"=
+ width=3D"600">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly; width:100%" valign=3D"top" width=3D"100%">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_wrapper" style=3D"font-size:16px !important; width:100%" width=3D=
+"100%">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly; padding:0 20px 0 20px" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_wrapper" style=3D"font-size:16px !important; width:100%" width=3D=
+"100%">
+<tr>
+<td height=3D"30" style=3D"border-collapse:collapse; mso-line-height-rule:e=
+xactly; height:30px; font-size:0px; line-height:0px">
+</td>
+</tr>
+<tr>
+<td style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-f=
+amily:'Source Sans Pro', Arial, sans-serif; line-height:1.4">
+<div style=3D"margin-bottom: 30px;">
+<h2 style=3D"font-weight:normal; font-size:22px; color:#000; margin-bottom:=
+15px; margin-top:0">Safety</h2>
+<p style=3D"margin:0; padding:0; font-size:16px; color:#555555">Note: RVsha=
+re does not use Bank Wires, Moneygram or Western Union Transfers to collect=
+ payments. Transactions completed outside of RVshare.com may be considered =
+fraudulent, and are not covered by roadside assistance, the RVshare Worry-F=
+ree Rental Guarantee, or RVshare Rewards. It=E2=80=99s important that all c=
+orrespondences and payments go through RVshare.com. </p>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table align=3D"center" bgcolor=3D"#f9f9f9" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_main_table" style=3D"width:650px; table-layou=
+t:fixed;" width=3D"650">
+<tr>
+<td align=3D"center" class=3D"em_aside10" style=3D"border-collapse:collapse=
+; mso-line-height-rule:exactly; padding:0px 25px" valign=3D"top">
+<table align=3D"center" bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_wrapper" style=3D"font-size:16px !important; =
+width:600px; border-bottom:1px solid #dfdfdf; border-left:1px solid #dfdfdf=
+; border-right:1px solid #dfdfdf" width=3D"600">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly; width:100%" valign=3D"top" width=3D"100%">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_wrapper" style=3D"font-size:16px !important; width:100%" width=3D=
+"100%">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly; padding:0 20px 0 20px" valign=3D"top">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr id=3D"footer_section">
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<table align=3D"center" bgcolor=3D"#f9f9f9" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"em_main_table" style=3D"width:650px; table-layou=
+t:fixed;" width=3D"650">
+<tr>
+<td align=3D"center" class=3D"em_aside10" style=3D"border-collapse:collapse=
+; mso-line-height-rule:exactly; padding:0px 25px" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_wrapper" style=3D"font-size:16px !important; width:600px" width=
+=3D"600">
+<tr>
+<td align=3D"center" class=3D"em_p15 mb-footer-pd" style=3D"border-collapse=
+:collapse; mso-line-height-rule:exactly; padding-left:5px !important; paddi=
+ng-right:5px !important; padding:33px 15px 48px" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"middle">
+<!-- Social share icon section start -->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"middle">
+<div id=3D"icon_1">
+<a href=3D"https://www.facebook.com/rvshare" style=3D"border-collapse:colla=
+pse; mso-line-height-rule:exactly; text-decoration:none; color:#000000" tar=
+get=3D"_blank">
+<img alt=3D"fb" border=3D"0" src=3D"https://d1pgqke3goo8l6.cloudfront.net/G=
+L9ZgSfjQjOSllf3E2WG_fb_icon.png" style=3D"border:0 !important; outline:none=
+ !important; display:block; max-width:26px; color:#000000; font-family:Aria=
+l, sans-serif; font-size:12px; line-height:14px" width=3D"26"/>
+</a>
+</div>
+</td>
+<td class=3D"em_side20" style=3D"border-collapse:collapse; mso-line-height-=
+rule:exactly; width:58px" width=3D"58">=C2=A0</td>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"middle">
+<div id=3D"icon_2">
+<a href=3D"https://www.linkedin.com/company/rvshare/" style=3D"border-colla=
+pse:collapse; mso-line-height-rule:exactly; text-decoration:none; color:#00=
+0000" target=3D"_blank">
+<img alt=3D"in" border=3D"0" src=3D"https://d1pgqke3goo8l6.cloudfront.net/7=
+PtUSEZjRv6yzEwXiw53_in_icon.png" style=3D"border:0 !important; outline:none=
+ !important; display:block; max-width:27px; color:#000000; font-family:Aria=
+l, sans-serif; font-size:12px; line-height:14px" width=3D"27"/>
+</a>
+</div>
+</td>
+<td class=3D"em_side20" style=3D"border-collapse:collapse; mso-line-height-=
+rule:exactly; width:58px" width=3D"58">=C2=A0</td>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"middle">
+<div id=3D"icon_3">
+<a href=3D"https://twitter.com/RVshare" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; text-decoration:none; color:#000000" target=
+=3D"_blank">
+<img alt=3D"tw" border=3D"0" src=3D"https://d1pgqke3goo8l6.cloudfront.net/W=
+zCsMpWqTxOVaCcOplc4_tw_icon.png" style=3D"border:0 !important; outline:none=
+ !important; display:block; max-width:28px; color:#000000; font-family:Aria=
+l, sans-serif; font-size:12px; line-height:14px" width=3D"28"/>
+</a>
+</div>
+</td>
+<td class=3D"em_side20" style=3D"border-collapse:collapse; mso-line-height-=
+rule:exactly; width:58px" width=3D"58">=C2=A0</td>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"middle">
+<div id=3D"icon_4">
+<a href=3D"https://www.instagram.com/rvshare/" style=3D"border-collapse:col=
+lapse; mso-line-height-rule:exactly; text-decoration:none; color:#000000" t=
+arget=3D"_blank">
+<img alt=3D"insta" border=3D"0" src=3D"https://d1pgqke3goo8l6.cloudfront.ne=
+t/SZc6e7SGTHGtGeFAemgq_insta_icon.png" style=3D"border:0 !important; outlin=
+e:none !important; display:block; max-width:27px; color:#000000; font-famil=
+y:Arial, sans-serif; font-size:12px; line-height:14px" width=3D"27"/>
+</a>
+</div>
+</td>
+</tr>
+</table>
+<!-- Social share icon section close -->
+</td>
+</tr>
+<tr>
+<td class=3D"em_h20" height=3D"32" style=3D"border-collapse:collapse; mso-l=
+ine-height-rule:exactly; font-size:1px!important; line-height:1px!important=
+; height:32px">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"em_blue" style=3D"border-collapse:collapse; m=
+so-line-height-rule:exactly; font-family:'Source Sans Pro', Arial, sans-ser=
+if; font-size:12px; line-height:20px; color:#818181" valign=3D"top">
+<div>
+													This email was sent to
+
+													<span style=3D"border-collapse:collapse; mso-line-height-rule:=
+exactly; color:#4A90E2"> ritik.cyberflax@gmail.com </span>=C2=A0from:
+													<br/>
+													=C2=A9=C2=A02020 RVshare.com LLC, 155 Montrose W Ave, Akron, O=
+H=C2=A044321
+													<br/>
+<a href=3D"http://rvshare.com/dashboard/account/notifications/" style=3D"te=
+xt-decoration:none; border-collapse:collapse; mso-line-height-rule:exactly;=
+ color:#4A90E2" target=3D"_blank">Unsubscribe</a> from SmartMatch Emails
+
+												</div>
+<div class=3D"em_defaultlink" style=3D"font-size: 12px;">
+<a href=3D"https://rvshare.com/terms-of-service" style=3D"border-collapse:c=
+ollapse; mso-line-height-rule:exactly; text-decoration:none; color:#0E6CB5"=
+ target=3D"_blank">
+														Terms
+													</a>
+<span style=3D"border-collapse:collapse; mso-line-height-rule:exactly">=C2=
+=A0</span> |
+													<span style=3D"border-collapse:collapse; mso-line-height-rule:=
+exactly">=C2=A0</span>
+<a href=3D"https://rvshare.com/privacy-policy" style=3D"border-collapse:col=
+lapse; mso-line-height-rule:exactly; text-decoration:none; color:#0E6CB5" t=
+arget=3D"_blank">
+														Privacy
+													</a>
+</div>
+</td>
+</tr>
+<tr>
+<td class=3D"em_h20" height=3D"26" style=3D"border-collapse:collapse; mso-l=
+ine-height-rule:exactly; font-size:1px!important; line-height:1px!important=
+; height:26px">=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly" valign=3D"top">
+<div>
+<a href=3D"https://www.bbb.org/us/tx/austin/profile/rv-rental/rvshare-0825-=
+1000165281/#sealclick" style=3D"border-collapse:collapse; mso-line-height-r=
+ule:exactly; text-decoration:none; color:#000000" target=3D"_blank">
+<img alt=3D"BBB ACCREDITED BUSINESS" border=3D"0" src=3D"https://d1pgqke3go=
+o8l6.cloudfront.net/PjkETxnRQGCTmFPVZGKZ_ftr_logo.png" style=3D"border:0 !i=
+mportant; outline:none !important; display:block; max-width:40px; color:#00=
+0000; font-family:Arial, sans-serif; font-size:12px; line-height:14px" widt=
+h=3D"40"/>
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td class=3D"em_h20" height=3D"10" style=3D"border-collapse:collapse; mso-l=
+ine-height-rule:exactly; height:10px; font-size:0px; line-height:0px">=C2=
+=A0</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"border-collapse:collapse; mso-line-height-rul=
+e:exactly; font-family:'Source Sans Pro', Arial, sans-serif; font-size:12px=
+; line-height:16px; color:#818181" valign=3D"top">
+<div>Accredited business 2019, A+ Rating</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<img src=3D"http://email.rvshare.com/wf/open?upn=3Dc8fBZR33hJmgkkFkMhWm-2Fu=
+eVLFCwSmL4riCLQnZQOf6m8AjUcHTxcdFtS4HaE-2BwT65yBiYvByAne-2Bs7-2BS7NAZuZ-2F6=
+kOFAvte7ecul8tUntk5J3QJv37qk-2Fa7oQX8ct3ySkBHh76ZobH2YrG88ng8-2B5QQcbYgrT-2=
+BUjA5q4O62LxtFN0fi-2BbsBM2d83uQFJvIuktF8Jeomfo-2F-2FAFKiPjgfdMbXn1Q8b5wokE4=
+V7VZ0hwnwB841KwgEHPNIO-2FOQ-2FF-2Bj90QlxmRg6QVhjPVBELAJWDCZI1fSypYbrE8grwoR=
+SFElO-2Bco-2By1aWU5phTt1bEDHJDmGbANfNtPNGAgMxNqr6brJS39u7jfOsd3PP6qfkrerd04=
+jmke3-2FZTWVr-2FQMAd4mNn319rR5JRHeGwFSWjVmsVnkBBdr4Rv8UnLDWjDjmsWR-2BAJLmVo=
+P502zi08VEMFQvp-2FSyZMo5A7rq11TbkbIK3IZ2ZW7jb8HdMtFg600xw-3D" alt=3D"" widt=
+h=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px =
+!important;border-width:0 !important;margin-top:0 !important;margin-bottom:=
+0 !important;margin-right:0 !important;margin-left:0 !important;padding-top=
+:0 !important;padding-bottom:0 !important;padding-right:0 !important;paddin=
+g-left:0 !important;"/></body>
+</html>
+--e7b3da177e567590380bcdcce030b68f35b758d730e242430fc842c38c01--

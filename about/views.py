@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from team.models import TeamModel
 from . models import *
 from django.conf import settings
 from django.core.mail import message, send_mail, EmailMessage
@@ -8,6 +10,7 @@ from django.utils.html import strip_tags
 # Create your views here.
 def about(request):
     res = {}
+    res['teammember'] = TeamModel.objects.all()
     return render(request,'about/about.html',res)
 
 
@@ -26,7 +29,7 @@ def contactus(request):
         html_message = render_to_string('about/email.html',{'name':name,'phone':phone,'email':email,'subject':subject, 'message':message})
         plain_message = strip_tags(html_message)
         from_email = settings.EMAIL_HOST_USER
-        to = 'ritik.s10120@gmail.com'
+        to = 'surajnaithani70@gmail.com'
         send_mail(subject, plain_message, from_email,[to],
         fail_silently=False,
         )

@@ -1,0 +1,115 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}{% endblock %}
+{% block bodyclass %}page-template-default page page-id-6613 theme-labtechco woocommerce-no-js ts-headerstyle-style-8 themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-comp-ver-6.5.0 vc_responsive
+{% endblock %}
+{% block body %}
+{% include  'headertitle.html' with headertitle=headertitle %}
+
+<div id="content-wrapper" class="site-content-wrapper">
+
+
+    <div id="content" class="site-content ">
+        <div id="content-inner" class="site-content-inner ">
+
+            <div id="primary" class="content-area  ">
+                <main id="main" class="site-main">
+
+
+                    <article id="post-6613" class="post-6613 page type-page status-publish hentry">
+
+
+                        <header class="single-entry-header ts-hide">
+                            <h2 class="entry-title">Research Style 3</h2>
+                        </header><!-- .entry-header -->
+
+                        <div class="entry-content">
+
+
+
+
+                            <div data-vc-full-width="true" data-vc-full-width-init="false"
+                                class="ts-row wpb_row vc_row-fluid ts-total-col-1 ts-zindex-0 ts-bgcolor-white ts-bgimage-position-center_center">
+
+
+
+                                <div class="vc_row container">
+
+
+                                    <div class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0">
+                                        <div class="vc_column-inner  ">
+                                            <div class="wpb_wrapper">
+                                                <div
+                                                    class="themestek-boxes themestek-boxes-portfolio themestek-boxes-view-default themestek-boxes-col-three themestek-boxes-sortable-no themestek-boxes-textalign-center themestek-boxes-sortablebutton-">
+                                                    <div class="themestek-boxes-inner themestek-boxes-portfolio-inner ">
+
+                                                        <div class="row multi-columns-row themestek-boxes-row-wrapper">
+                                                           {% for data in allresearch %}
+                                                            <div
+                                                                class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 oncology">
+                                                                <article
+                                                                    class="themestek-box themestek-box-portfolio ts-portfoliobox-style-3 ts-hover-style-1">
+                                                                    <div class="themestek-post-item">
+
+                                                                        <span class="themestek-item-thumbnail">
+                                                                            <span
+                                                                                class="themestek-item-thumbnail-inner">
+                                                                                <img width="800" height="650"
+                                                                                    src="/media/{{data.img}}"
+                                                                                    class="attachment-themestek-img-800x650 size-themestek-img-800x650 wp-post-image"
+                                                                                    alt="" loading="lazy"
+                                                                                    data-id="8104" />
+                                                                            </span>
+                                                                        </span>
+                                                                        <div class="themestek-box-content">
+                                                                            <div class="themestek-box-content-inner">
+                                                                                <div class="themestek-pf-box-title">
+                                                                                    <div class="themestek-box-category">
+                                                                                        <a href="{% url 'catresearch' data.category.slug %}"
+                                                                                            rel="tag">{{data.category}}</a></div>
+                                                                                    <h3><a
+                                                                                            href="{% url 'singleresearch' data.slug  %}">{{data.heading}}</a></h3>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </article>
+                                                            </div>
+                                                           {% endfor %}
+                                                        </div>
+                                                    </div><!-- .themestek-boxes-inner -->
+                                                </div><!-- .themestek-boxes -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="vc_row-full-width vc_clearfix"></div>
+
+
+
+
+
+                        </div><!-- .entry-content -->
+
+
+                    </article><!-- #post-## -->
+
+                </main><!-- #main .site-main -->
+            </div><!-- #primary .content-area -->
+
+
+
+
+
+        </div><!-- .site-content-inner -->
+    </div><!-- .site-content -->
+</div>
+
+{% endblock %}

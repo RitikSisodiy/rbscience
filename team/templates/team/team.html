@@ -1,0 +1,359 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}{% endblock %}
+{% block bodyclass %}ts-team-member-template-default single single-ts-team-member postid-5974 theme-labtechco
+woocommerce-js ts-headerstyle-style-8 themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer
+js-comp-ver-6.5.0 vc_responsive
+{% endblock %}
+{% block body %}
+{% include  'headertitle.html' with headertitle=membername %}
+<div id="content-wrapper" class="site-content-wrapper">
+
+
+    <div id="content" class="site-content container">
+        <div id="content-inner" class="site-content-inner ">
+
+
+            <div id="primary" class="content-area ">
+                <main id="main" class="site-main">
+
+
+                    <div class="ts-team-member-single-content-wrapper ts-team-member-view-default">
+
+
+
+                        <div class="vc_row container">
+                            <div class="col-md-4 themestek-box-img-left">
+                                <div class="ts-featured-outer-wrapper ts-post-featured-outer-wrapper">
+
+                                    <span class="themestek-item-thumbnail">
+                                        <span class="themestek-item-thumbnail-inner">
+                                            <img width="768" height="768"
+                                                src="/media/{{memberdetail.profile}}"
+                                                class="attachment-full size-full wp-post-image" alt="" />
+                                        </span>
+                                    </span> </div>
+                            </div>
+                            <div class="col-md-8 themestek-box-content">
+                                <div class="ts-team-des ts-bgcolor-grey">
+                                    <h3>{{memberdetail.name}}</h3>
+
+                                    <div class="themestek-box-team-position">
+                                        <h5 class="ts-team-member-single-position">{{memberdetail.position}}</h5>
+                                    </div>
+
+
+
+
+                                    <hr>
+                                    <div class="ts-team-details-wrapper">
+                                        <ul class="ts-team-details-list">
+                                            <li class="ts-team-details-line ts-team-extra-details-line-phone">
+                                                <div class="ts-team-list-title ts-skincolor">Phone</div>
+                                                <div class="ts-team-list-value"><a href="tel:{{memberdetail.phone}}">{{memberdetail.phone}}</a>
+                                                </div>
+                                            </li>
+                                            <li class="ts-team-details-line ts-team-extra-details-line-email">
+                                                <div class="ts-team-list-title ts-skincolor">Email</div>
+                                                <div class="ts-team-list-value"><a
+                                                        href="mailto:{{memberdetail.email}}">{{memberdetail.email}}</a></div>
+                                            </li>
+                                            <li class="ts-team-details-line ts-team-extra-details-line-website">
+                                                <div class="ts-team-list-title ts-skincolor">Website</div>
+                                                <div class="ts-team-list-value"><a target="_blank"
+                                                        href="http://{{memberdetail.website}}/">{{memberdetail.website}}</a></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="ts-team-details-wrapper ts-team-extra-details-wrapper">
+                                        <ul class="ts-team-details-list ts-team-extra-details-list">
+                                            <li class="ts-team-details-line ts-team-extra-details-line-0">
+                                                <div class="ts-team-list-title ts-skincolor">Address Info </div>
+                                                <div class="ts-team-list-value">{{memberdetail.address}}</div>
+                                            </li>
+                                            <li class="ts-team-details-line ts-team-extra-details-line-5">
+                                                <div class="ts-team-list-title ts-skincolor">EDUCATION: </div>
+                                                <div class="ts-team-list-value">{{memberdetail.education}}</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="ts-team-social-links-wrapper">
+                                        <ul class="ts-team-social-links">
+                                            {% if memberdetail.twiter %}
+                                            <li>
+                                                <a href="{{memberdetail.twiter}}" target="_blank" class="">
+                                                    <i class="ts-labtechco-icon-twitter"></i>
+                                                    <span class="ts-hide">Twitter</span>
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                            {% if memberdetail.facebook %}
+                                            <li>
+                                                <a href="{{memberdetail.facebook}}" target="_blank" class="">
+                                                    <i class="ts-labtechco-icon-facebook"></i>
+                                                    <span class="ts-hide">Facebook</span>
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                            {% if memberdetail.google %}
+                                            <li>
+                                                <a href={{memberdetail.google}}" target="_blank" class="">
+                                                    <i class="ts-labtechco-icon-gplus"></i>
+                                                    <span class="ts-hide">Google+</span>
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                            {% if memberdetail.linkedin %}
+                                            <li>
+                                                <a href="{{memberdetail.linkedin}}" target="_blank" class="">
+                                                    <i class="ts-labtechco-icon-linkedin"></i>
+                                                    <span class="ts-hide">LinkedIn</span>
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        </ul> <!-- .ts-team-social-links -->
+                                    </div> <!-- .ts-team-social-links-wrapper -->
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="ts-team-member-single-content row">
+                            <div class="ts-team-member-single-content-innner">
+                                <div class="ts-team-member-content">
+                                    <div data-vc-full-width="true" data-vc-full-width-init="false"
+                                        class="ts-row wpb_row vc_row-fluid vc_custom_1533810885393 ts-total-col-1 ts-zindex-0 ts-bgimage-position-center_center">
+
+
+
+                                        <div class="vc_row container">
+
+
+                                            <div
+                                                class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0 ts-span ts-right-span">
+                                                <div class="vc_column-inner  ts-responsive-custom-73204060">
+                                                    <div class="wpb_wrapper">
+                                                        <h4 style="text-align:left;" class="ts-custom-heading ">PERSONAL
+                                                            EXPERIENCE</h4>
+
+                                                        <div class="wpb_text_column wpb_content_element ">
+                                                            <div class="wpb_wrapper">
+                                                                {{memberdetail.experience|safe}}    
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="vc_row-full-width vc_clearfix"></div>
+
+
+
+
+
+
+
+
+                                    <div data-vc-full-width="true" data-vc-full-width-init="false"
+                                        class="ts-row wpb_row vc_row-fluid vc_custom_1533812109457 ts-total-col-1 ts-zindex-0 ts-bgcolor-grey ts-bgimage-position-center_center">
+
+
+
+                                        <div class="vc_row container">
+
+
+                                            <div
+                                                class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0 ts-span ts-right-span">
+                                                <div class="vc_column-inner  ts-responsive-custom-73204060">
+                                                    <div class="wpb_wrapper">
+
+                                                        <div
+                                                            class="ts-row-inner vc_row wpb_row vc_inner vc_row-fluid ts-zindex-0">
+
+                                                            <div
+                                                                class="ts-column-inner wpb_column vc_column_container vc_col-sm-6 ts-zindex-0">
+                                                                <div class="vc_column-inner  ">
+
+                                                                    <div class="wpb_wrapper">
+                                                                        <h4 style="text-align:left;"
+                                                                            class="ts-custom-heading ">SKILL</h4>
+                                                                        <div
+                                                                            class="themestek-progress-bar vc_progress_bar wpb_content_element vc_progress-bar-color-skincolor vc_progress-bar-color-skincolor">
+                                                                            <div
+                                                                                class="ts-pbar-single-bar-w ts-pbar-icon-false">
+                                                                                <div class="vc_general vc_single_bar">
+                                                                                    <small class="vc_label">
+                                                                                        BIOTECHNOLOGY</small> <span
+                                                                                        class="ts-vc_label_units vc_label_units">80%</span><span
+                                                                                        class="vc_bar "
+                                                                                        data-percentage-value="80"
+                                                                                        data-value="80"></span></div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="ts-pbar-single-bar-w ts-pbar-icon-false">
+                                                                                <div class="vc_general vc_single_bar">
+                                                                                    <small class="vc_label">
+                                                                                        VACCINES</small> <span
+                                                                                        class="ts-vc_label_units vc_label_units">70%</span><span
+                                                                                        class="vc_bar "
+                                                                                        data-percentage-value="70"
+                                                                                        data-value="70"></span></div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="ts-pbar-single-bar-w ts-pbar-icon-false">
+                                                                                <div class="vc_general vc_single_bar">
+                                                                                    <small
+                                                                                        class="vc_label">INTERNATIONAL</small>
+                                                                                    <span
+                                                                                        class="ts-vc_label_units vc_label_units">92%</span><span
+                                                                                        class="vc_bar "
+                                                                                        data-percentage-value="92"
+                                                                                        data-value="92"></span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div
+                                                                class="ts-column-inner wpb_column vc_column_container vc_col-sm-6 ts-zindex-0">
+                                                                <div class="vc_column-inner  ">
+
+                                                                    <div class="wpb_wrapper">
+                                                                        <h4 style="text-align:left;"
+                                                                            class="ts-custom-heading ">CHRONOLOGY</h4>
+
+                                                                        <div
+                                                                            class="wpb_text_column wpb_content_element ">
+                                                                            <div class="wpb_wrapper">
+                                                                                <p><strong>2015-Present</strong><br />
+                                                                                    Nanostructured Materials</p>
+                                                                                <p><strong>2008-2015</strong><br />
+                                                                                    Nuclear Micro-Reactors</p>
+                                                                                <p><strong>2000-2008</strong><br />
+                                                                                    Cell And Molecular Biology</p>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="vc_row-full-width vc_clearfix"></div>
+
+
+
+
+
+
+
+
+                                    <div data-vc-full-width="true" data-vc-full-width-init="false"
+                                        class="ts-row wpb_row vc_row-fluid ts-overlap-row vc_custom_1533811906592 ts-responsive-custom-84716817 ts-total-col-1 ts-zindex-0 ts-bgimage-position-center_center">
+
+
+
+                                        <div class="vc_row container">
+
+
+                                            <div
+                                                class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0">
+                                                <div class="vc_column-inner  ">
+                                                    <div class="wpb_wrapper">
+                                                        <h4 style="text-align:left;" class="ts-custom-heading ">CONTACT
+                                                            ME</h4>
+                                                                <ul class="ts-team-social-links">
+                                                                    {% if memberdetail.twiter %}
+                                                                    <li>
+                                                                        <a href="{{memberdetail.twiter}}" target="_blank" class="">
+                                                                            <i class="ts-labtechco-icon-twitter"></i>
+                                                                            <span class="ts-hide">Twitter</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    {% endif %}
+                                                                    {% if memberdetail.facebook %}
+                                                                    <li>
+                                                                        <a href="{{memberdetail.facebook}}" target="_blank" class="">
+                                                                            <i class="ts-labtechco-icon-facebook"></i>
+                                                                            <span class="ts-hide">Facebook</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    {% endif %}
+                                                                    {% if memberdetail.google %}
+                                                                    <li>
+                                                                        <a href={{memberdetail.google}}" target="_blank" class="">
+                                                                            <i class="ts-labtechco-icon-gplus"></i>
+                                                                            <span class="ts-hide">Google+</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    {% endif %}
+                                                                    {% if memberdetail.linkedin %}
+                                                                    <li>
+                                                                        <a href="{{memberdetail.linkedin}}" target="_blank" class="">
+                                                                            <i class="ts-labtechco-icon-linkedin"></i>
+                                                                            <span class="ts-hide">LinkedIn</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    {% endif %}
+                                                                </ul> <!-- .ts-team-social-links -->
+                                                            
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="vc_row-full-width vc_clearfix"></div>
+                                </div><!-- .ts-team-member-content -->
+                            </div>
+                        </div>
+                    </div>
+
+
+                </main><!-- .site-main -->
+            </div><!-- .content-area -->\
+
+
+
+
+        </div><!-- .site-content-inner -->
+    </div><!-- .site-content -->
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    data = document.getElementsByClassName("vc_bar")
+for(i=0;i<data.length;i++){
+data[i].setAttribute('style',"width:"+data[i].getAttribute('data-value')+"%;")
+}
+}, false);
+
+</script>
+{% endblock %}

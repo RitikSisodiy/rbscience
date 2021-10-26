@@ -1,5 +1,9 @@
 from django.shortcuts import redirect, render
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 from .forms import GenForm
+from django.core.mail import message, send_mail, EmailMessage
+from rbscience import settings
 from django.contrib import messages
 from .models import issue, submenuscripts,artical,year
 # Create your views here.
@@ -13,6 +17,30 @@ def submitarticle(request):
         form = form(request.POST,request.FILES)
         if form.is_valid():
             form.save()
+            res['data'] = form.instance
+            res['host'] = request.get_host()
+            name = request.POST['name']
+            email = request.POST['email']
+            phone = request.POST['phone']
+            message = request.POST['remark']
+            subject = 'RBSCIENCE'
+            html_message = render_to_string('about/submenuscript.html',res)
+            plain_message = html_message
+            from_email = settings.EMAIL_HOST_USER
+            to = 'ritik.s10120@gmail.com'
+            email = EmailMessage(
+            subject,
+            plain_message,
+            from_email,
+            [to],
+            headers={'Reply-To': from_email}
+            )
+            if request.FILES:
+                uploaded_file = request.FILES['filepdf'] # file is the name value which you have provided in form for file field
+                email.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
+            email.content_subtype = 'html' 
+            email.send()
+            
             messages.success(request , "Your Submission is Successfull")
             return redirect(request.get_full_path())
         else:
