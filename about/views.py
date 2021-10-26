@@ -26,7 +26,7 @@ def contactus(request):
         html_message = render_to_string('about/email.html',{'name':name,'phone':phone,'email':email,'subject':subject, 'message':message})
         plain_message = strip_tags(html_message)
         from_email = settings.EMAIL_HOST_USER
-        to = 'surajnaithani70@gmail.com'
+        to = 'ritik.s10120@gmail.com'
         send_mail(subject, plain_message, from_email,[to],
         fail_silently=False,
         )
