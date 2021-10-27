@@ -355,26 +355,15 @@
                         class="widget-even widget-4 widget themestek_widget_list_all_posts">
 
                         <h3 class="widget-title">Posts</h3>
-                        <div class="ts-all-post-list-w">
-                            <ul class="ts-all-post-list">
-                                <li class=""><a href="../chemical-research/index.html"> Chemical Research </a>
-                                </li>
-                                <li class=""><a href="../pathology-testing-2/index.html"> Pathology Testing </a>
-                                </li>
-                                <li class="ts-post-active"><a href="index.html"> Artificial Intelligence </a>
-                                </li>
-                                <li class=""><a href="../healthcare-labs/index.html"> Healthcare Labs </a></li>
-                                <li class=""><a href="../diabetes-testing/index.html"> Diabetes Testing </a>
-                                </li>
-                                <li class=""><a href="../advanced-robotics/index.html"> Advanced Robotics </a>
-                                </li>
-                                <li class=""><a href="../pathology-testing/index.html"> Pathology Testing </a>
-                                </li>
-                                <li class=""><a href="../alternative-energy/index.html"> Alternative Energy </a>
-                                </li>
-                            </ul>
-                        </div>
-
+                       
+                         <div class="ts-all-post-list-w">
+                        <ul class="ts-all-post-list">
+                        {% for s in servall %}
+                            <li class=""><a href="/Services/{{s.slug}}"> {{s.title}} </a>
+                            </li>{% endfor %}
+                            
+                        </ul>
+                    </div>
 
                     </aside>
 

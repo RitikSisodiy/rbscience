@@ -7,4 +7,7 @@ class categoryAdmin(admin.ModelAdmin):
 @admin.register(researchModel)
 class researchModelAdmin(admin.ModelAdmin):
     list_display = ('heading','category')
+@admin.register(process)
+class processAdmin(admin.ModelAdmin):
+    list_display = ('title','researchModel')
     

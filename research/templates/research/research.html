@@ -1,12 +1,11 @@
 {% extends 'basic.html' %}
 {% load static %}
 {% block slider %}{% endblock %}
-{% block bodyclass %}page-template-default page page-id-6613 theme-labtechco woocommerce-no-js ts-headerstyle-style-8
-themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-comp-ver-6.5.0 vc_responsive
+{% block bodyclass %}ts-portfolio-template-default single single-ts-portfolio postid-6896 theme-labtechco woocommerce-no-js ts-headerstyle-style-8 themestek-wide themestek-page-full-width ts-empty-sidebar ts-pf-view-style-3 wpb-js-composer js-comp-ver-6.5.0 vc_responsive
 {% endblock %}
 {% block body %}
 {% include  'headertitle.html' with headertitle=headertitle %}
-<div id="content-wrapper" class="site-content-wrapper">
+<div id="content-wrapper" class="site-content-wrapper" style="padding-top:40px;">
 
 
     <div id="content" class="site-content container">
@@ -28,13 +27,8 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
                                 <div
                                     class="ts-row wpb_row vc_row-fluid vc_row container ts-bgimage-position-center_center">
                                     <div class="vc_row-o-equal-height vc_row-flex">
-
-                                        <div
-                                            class="ts-column wpb_column vc_column_container vc_col-sm-8 themestek-pf-single-short-desc">
-                                            <div class="vc_column-inner">
-                                                <div class="wpb_wrapper">
-
-                                                    <h4 style="text-align:left;" class="ts-custom-heading ">PROJECT
+                                    <div class="vc_column-inner">
+                                        <h4 style="text-align:left;" class="ts-custom-heading ">PROJECT
                                                         OVERVIEW</h4>
                                                     <div class="ts-portfolio-short-desc">
                                                         <p>When faced with a supply chain disruption, proactive and
@@ -47,7 +41,18 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
                                                             incident, and in hindsight, clearly displayed how to and how
                                                             not to handle supply chain disruptions. New Mexico, in 2000,
                                                             which simultaneously affected both Nokia and Ericsson</p>
-                                                    </div><!-- .ts-portfolio-short-desc -->
+                                                    </div>
+                                    </div>
+                                        <div
+                                            class="ts-column wpb_column vc_column_container vc_col-sm-8 themestek-pf-single-short-desc">
+                                            <div class="vc_column-inner">
+                                                <div class="wpb_wrapper">
+
+                                                    <!-- .ts-portfolio-short-desc -->
+                                                     <img height="60%"
+                                                            src="/media/{{research.img}}"
+                                                            class="attachment-themestek-img-1170x575 size-themestek-img-1170x575 wp-post-image"
+                                                            alt="" loading="lazy" data-id="7161" />
                                                 </div>
                                             </div>
                                         </div>
@@ -61,35 +66,7 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
 
                                                     <div class="themestek-pf-detailbox">
                                                         <div class="themestek-pf-detailbox-inner">
-                                                            <ul class="themestek-pf-detailbox-list ">
-                                                                <li class="ts-pf-details-date ">
-                                                                    <span class="ts-pf-details-heading"> Research Name
-                                                                    </span>
-                                                                    <span class="ts-pf-details-content">Translational
-                                                                        Research</span>
-                                                                </li>
-                                                                <li class="ts-pf-details-date ">
-                                                                    <span class="ts-pf-details-heading"> Client </span>
-                                                                    <span class="ts-pf-details-content">Dr Gunita
-                                                                        JOLLY</span>
-                                                                </li>
-                                                                <li class="ts-pf-details-date ">
-                                                                    <span class="ts-pf-details-heading"> Category
-                                                                    </span>
-                                                                    <span class="ts-pf-details-content">Oncology</span>
-                                                                </li>
-                                                                <li class="ts-pf-details-date ">
-                                                                    <span class="ts-pf-details-heading"> Delivery Mode
-                                                                    </span>
-                                                                    <span class="ts-pf-details-content">Stipulated
-                                                                        Price</span>
-                                                                </li>
-                                                                <li class="ts-pf-details-date ">
-                                                                    <span class="ts-pf-details-heading"> Location
-                                                                    </span>
-                                                                    <span class="ts-pf-details-content">USA</span>
-                                                                </li>
-                                                            </ul>
+                                                           {{research.projectDetails|safe}}
                                                         </div><!-- .themestek-pf-detailbox-inner -->
                                                     </div><!-- .themestek-pf-detailbox -->
 
@@ -107,10 +84,7 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
                                             <div class="vc_column-inner">
                                                 <div class="wpb_wrapper">
                                                     <div class="ts-featured-wrapper ts-ts-portfolio-featured-wrapper">
-                                                        <img width="1170" height="575"
-                                                            src="/media/{{research.img}}"
-                                                            class="attachment-themestek-img-1170x575 size-themestek-img-1170x575 wp-post-image"
-                                                            alt="" loading="lazy" data-id="7161" /></div>
+                                                      </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,173 +105,10 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
                                         <div class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0">
                                             <div class="vc_column-inner  ">
                                                 <div class="wpb_wrapper">
-                                                    <h4 style="text-align:left;" class="ts-custom-heading ">Challenge
-                                                        &amp; Solution</h4>
-
-                                                    <div class="wpb_text_column wpb_content_element ">
-                                                        <div class="wpb_wrapper">
-                                                            <p>Being a top us private facility for any kind of
-                                                                scientific research, we are proud of the overall amount
-                                                                of work we`ve done so far. Excepteur sint occaecat
-                                                                cupidatat non dolore magna aliqua. Ut enim ad minim
-                                                                veniam, quis nostrud exercitation ullamco proident, sunt
-                                                                in culpa qui officia deserunt mollit anim id est
-                                                                laborum.</p>
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div
-                                                        class="ts-row-inner vc_row wpb_row vc_inner vc_row-fluid ts-column-pad-0 ts-widht-auto ts-zindex-0">
-
-                                                        <div
-                                                            class="ts-column-inner wpb_column vc_column_container vc_col-sm-1 ts-zindex-0">
-                                                            <div class="vc_column-inner  ">
-
-                                                                <div class="wpb_wrapper">
-                                                                    <div
-                                                                        class="vc_icon_element vc_icon_element-outer vc_custom_1610099526740 vc_icon_element-align-left">
-                                                                        <div
-                                                                            class="vc_icon_element-inner vc_icon_element-color-custom vc_icon_element-size-sm vc_icon_element-style- vc_icon_element-background-color-grey">
-                                                                            <span
-                                                                                class="vc_icon_element-icon vc_li vc_li-like"
-                                                                                style="color:#41a147 !important"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div
-                                                            class="ts-column-inner wpb_column vc_column_container vc_col-sm-11 ts-zindex-0">
-                                                            <div class="vc_column-inner vc_custom_1533817282623 ">
-
-                                                                <div class="wpb_wrapper">
-                                                                    <h6 style="text-align:left;"
-                                                                        class="ts-custom-heading vc_custom_1534845070224">
-                                                                        Exerci tation ullamcorper suscipit lobortis</h6>
-
-                                                                    <div class="wpb_text_column wpb_content_element ">
-                                                                        <div class="wpb_wrapper">
-                                                                            <p>Exerci tation ullamcorper suscipitorens
-                                                                                lobortis nisl ut aliquip ex ea commodo.
-                                                                                Exerci tation ullamcorper suscipitorens.
-                                                                                Ut elit tellus, luctus nec ullamcorper
-                                                                                mattis, pulvinar dapibus leo.</p>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                    <div
-                                                        class="ts-row-inner vc_row wpb_row vc_inner vc_row-fluid ts-column-pad-0 ts-widht-auto ts-zindex-0">
-
-                                                        <div
-                                                            class="ts-column-inner wpb_column vc_column_container vc_col-sm-1 ts-zindex-0">
-                                                            <div class="vc_column-inner  ">
-
-                                                                <div class="wpb_wrapper">
-                                                                    <div
-                                                                        class="vc_icon_element vc_icon_element-outer vc_custom_1610099535704 vc_icon_element-align-left">
-                                                                        <div
-                                                                            class="vc_icon_element-inner vc_icon_element-color-custom vc_icon_element-size-sm vc_icon_element-style- vc_icon_element-background-color-grey">
-                                                                            <span
-                                                                                class="vc_icon_element-icon vc_li vc_li-like"
-                                                                                style="color:#41a147 !important"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div
-                                                            class="ts-column-inner wpb_column vc_column_container vc_col-sm-11 ts-zindex-0">
-                                                            <div class="vc_column-inner vc_custom_1533817282623 ">
-
-                                                                <div class="wpb_wrapper">
-                                                                    <h6 style="text-align:left;"
-                                                                        class="ts-custom-heading vc_custom_1534927535093">
-                                                                        Occaecat sint occaecat suscipit dolore</h6>
-
-                                                                    <div class="wpb_text_column wpb_content_element ">
-                                                                        <div class="wpb_wrapper">
-                                                                            <p>Exerci tation ullamcorper suscipitorens
-                                                                                lobortis nisl ut aliquip ex ea commodo.
-                                                                                Exerci tation ullamcorper suscipitorens.
-                                                                                Ut elit tellus, luctus nec ullamcorper
-                                                                                mattis, pulvinar dapibus leo.</p>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                    <div
-                                                        class="ts-row-inner vc_row wpb_row vc_inner vc_row-fluid ts-column-pad-0 ts-widht-auto ts-zindex-0">
-
-                                                        <div
-                                                            class="ts-column-inner wpb_column vc_column_container vc_col-sm-1 ts-zindex-0">
-                                                            <div class="vc_column-inner  ">
-
-                                                                <div class="wpb_wrapper">
-                                                                    <div
-                                                                        class="vc_icon_element vc_icon_element-outer vc_custom_1610099545626 vc_icon_element-align-left">
-                                                                        <div
-                                                                            class="vc_icon_element-inner vc_icon_element-color-custom vc_icon_element-size-sm vc_icon_element-style- vc_icon_element-background-color-grey">
-                                                                            <span
-                                                                                class="vc_icon_element-icon vc_li vc_li-like"
-                                                                                style="color:#41a147 !important"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div
-                                                            class="ts-column-inner wpb_column vc_column_container vc_col-sm-11 ts-zindex-0">
-                                                            <div class="vc_column-inner vc_custom_1533817282623 ">
-
-                                                                <div class="wpb_wrapper">
-                                                                    <h6 style="text-align:left;"
-                                                                        class="ts-custom-heading vc_custom_1534927565079">
-                                                                        Being a top us private facility for any kind
-                                                                    </h6>
-
-                                                                    <div class="wpb_text_column wpb_content_element ">
-                                                                        <div class="wpb_wrapper">
-                                                                            <p>Exerci tation ullamcorper suscipitorens
-                                                                                lobortis nisl ut aliquip ex ea commodo.
-                                                                                Exerci tation ullamcorper suscipitorens.
-                                                                                Ut elit tellus, luctus nec ullamcorper
-                                                                                mattis, pulvinar dapibus leo.</p>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
+                                                   {{research.content|safe}}
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-
                                     </div>
                                 </div>
 
@@ -327,20 +138,14 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
 
                                                     <div class="wpb_text_column wpb_content_element ">
                                                         <div class="wpb_wrapper">
-                                                            <p>Being a top us private facility for any kind of
-                                                                scientific research, we are proud of the overall amount
-                                                                of work we`ve done so far. Excepteur sint occaecat
-                                                                cupidatat non dolore magna aliqua. Ut enim ad minim
-                                                                veniam, quis nostrud exercitation ullamco proident, sunt
-                                                                in culpa qui officia deserunt mollit anim id est
-                                                                laborum.</p>
+                                                          {{research.processOverview|safe}}
 
                                                         </div>
                                                     </div>
 
                                                     <div
                                                         class="ts-row-inner vc_row wpb_row vc_inner vc_row-fluid vc_custom_1534928764988 ts-zindex-0">
-
+                                                        {% for data in research.process.all %}
                                                         <div
                                                             class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
                                                             <div class="vc_column-inner  ">
@@ -362,7 +167,7 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
                                                                                 class="ts-ihbox-icon ts-large-icon ts-icon-skincolor">
                                                                             </div>
 
-                                                                            <div class="ts-ihbox-big-number-text">01
+                                                                            <div class="ts-ihbox-big-number-text">0{{forloop.counter}}
                                                                             </div>
                                                                             <div class="ts-ihbox-contents">
                                                                                 <div
@@ -376,7 +181,7 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
                                                                                                     class="ts-vc_cta3-headers ts-wrap-cell">
                                                                                                     <h2
                                                                                                         class="ts-custom-heading ">
-                                                                                                        LAB TECHNICIANS
+                                                                                                        {{data.title}}
                                                                                                     </h2>
                                                                                                 </div>
                                                                                             </div>
@@ -384,9 +189,7 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="ts-cta3-content-wrapper">
-                                                                                    This is a case of a patient with a
-                                                                                    history of dementia, worsened with
-                                                                                    an agitation.</div>
+                                                                                    {{data.content}}</div>
                                                                             </div><!-- .ts-ihbox-contents -->
                                                                         </div>
 
@@ -397,122 +200,9 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        {% endfor %}
 
-
-                                                        <div
-                                                            class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
-                                                            <div class="vc_column-inner  ts-responsive-custom-77459766">
-
-                                                                <div class="wpb_wrapper">
-
-
-                                                                    <div
-                                                                        class="ts-ihbox ts-ihbox-style-4 ts-ihbox-itype-none ">
-                                                                        <div
-                                                                            class="ts-sbox-bgimage-layer ts-bgimage-layer">
-                                                                        </div>
-                                                                        <div
-                                                                            class="ts-ihbox-wrapper-bg-layer ts-bg-layer">
-                                                                        </div>
-
-                                                                        <div class="ts-ihbox-inner">
-                                                                            <div
-                                                                                class="ts-ihbox-icon ts-large-icon ts-icon-skincolor">
-                                                                            </div>
-
-                                                                            <div class="ts-ihbox-big-number-text">02
-                                                                            </div>
-                                                                            <div class="ts-ihbox-contents">
-                                                                                <div
-                                                                                    class="ts-vc_general ts-vc_cta3 ts-cta3-only ts-vc_cta3-style-classic ts-vc_cta3-shape-rounded ts-vc_cta3-align-left ts-vc_cta3-color-transparent ts-vc_cta3-icon-size-md ts-vc_cta3-actions-no ts-cta3-without-desc">
-                                                                                    <div
-                                                                                        class="ts-vc_cta3_content-container">
-                                                                                        <div class="ts-vc_cta3-content">
-                                                                                            <div
-                                                                                                class="ts-vc_cta3-content-header ts-wrap">
-                                                                                                <div
-                                                                                                    class="ts-vc_cta3-headers ts-wrap-cell">
-                                                                                                    <h2
-                                                                                                        class="ts-custom-heading ">
-                                                                                                        RESEARCH CENTER
-                                                                                                    </h2>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="ts-cta3-content-wrapper">
-                                                                                    This is a case of a patient with a
-                                                                                    history of dementia, worsened with
-                                                                                    an agitation.</div>
-                                                                            </div><!-- .ts-ihbox-contents -->
-                                                                        </div>
-
-                                                                    </div>
-
-
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div
-                                                            class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
-                                                            <div class="vc_column-inner  ">
-
-                                                                <div class="wpb_wrapper">
-
-
-                                                                    <div
-                                                                        class="ts-ihbox ts-ihbox-style-4 ts-ihbox-itype-none ">
-                                                                        <div
-                                                                            class="ts-sbox-bgimage-layer ts-bgimage-layer">
-                                                                        </div>
-                                                                        <div
-                                                                            class="ts-ihbox-wrapper-bg-layer ts-bg-layer">
-                                                                        </div>
-
-                                                                        <div class="ts-ihbox-inner">
-                                                                            <div
-                                                                                class="ts-ihbox-icon ts-large-icon ts-icon-skincolor">
-                                                                            </div>
-
-                                                                            <div class="ts-ihbox-big-number-text">03
-                                                                            </div>
-                                                                            <div class="ts-ihbox-contents">
-                                                                                <div
-                                                                                    class="ts-vc_general ts-vc_cta3 ts-cta3-only ts-vc_cta3-style-classic ts-vc_cta3-shape-rounded ts-vc_cta3-align-left ts-vc_cta3-color-transparent ts-vc_cta3-icon-size-md ts-vc_cta3-actions-no ts-cta3-without-desc">
-                                                                                    <div
-                                                                                        class="ts-vc_cta3_content-container">
-                                                                                        <div class="ts-vc_cta3-content">
-                                                                                            <div
-                                                                                                class="ts-vc_cta3-content-header ts-wrap">
-                                                                                                <div
-                                                                                                    class="ts-vc_cta3-headers ts-wrap-cell">
-                                                                                                    <h2
-                                                                                                        class="ts-custom-heading ">
-                                                                                                        OUR EXPERIENCE
-                                                                                                    </h2>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="ts-cta3-content-wrapper">
-                                                                                    This is a case of a patient with a
-                                                                                    history of dementia, worsened with
-                                                                                    an agitation.</div>
-                                                                            </div><!-- .ts-ihbox-contents -->
-                                                                        </div>
-
-                                                                    </div>
-
-
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                      
 
                                                     </div>
 
@@ -574,7 +264,7 @@ themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-com
                                 <nav class="navigation post-navigation" role="navigation" aria-label="Posts">
                                     <h2 class="screen-reader-text">Post navigation</h2>
                                     <div class="nav-links">
-                                        <div class="nav-previous"><a href="../cancer-cell-biology/index.html"
+                                        <div class="nav-previous"><a href=""
                                                 rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span>
                                                 <span class="screen-reader-text ts-hide">Previous post:</span> <span
                                                     class="post-title ts-hide">Cancer Cell Biology</span></a></div>

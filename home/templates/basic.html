@@ -1990,36 +1990,26 @@
                                                                 <li id="menu-item-8027"
                                                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8027">
                                                                     <a href="{% url 'article' %}">Journals</a>
-
+                                                                    <ul class="sub-menu">
+                                                                            <li id="menu-item-8068"
+                                                                                class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
+                                                                                <a href="{% url 'submitarticle' %}">submit Artical</a></li> 
+                                                                              <li id="menu-item-8068"
+                                                                                class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
+                                                                                <a href="{% url 'currentissue' %}">Current</a></li> 
+                                                                              <li id="menu-item-8068"
+                                                                                class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
+                                                                                <a href="{% url 'archives' %}">Archives</a></li> 
+                                                                        </ul>
                                                                 </li>
                                                                 <li id="menu-item-8061"
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8061">
                                                                     <a href="#">Services</a>
-                                                                    <ul class="sub-menu">
+                                                                     <ul class="sub-menu">
+                                                                    {% for s in serv %}
                                                                         <li id="menu-item-8068"
                                                                             class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
-                                                                            <a href="{% url 'jpublication' %}">Journal
-                                                                                Publication</a></li>
-                                                                        <li id="menu-item-8069"
-                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8069">
-                                                                            <a href="{% url 'jpublication' %}">Dissertation
-                                                                                and Manuscript Writing</a></li>
-                                                                        <li id="menu-item-8070"
-                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8070">
-                                                                            <a href="{% url 'jpublication' %}">Research
-                                                                                Lab and Projects</a></li>
-                                                                        <li id="menu-item-8071"
-                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8071">
-                                                                            <a href="{% url 'jpublication' %}">Project
-                                                                                Consultancy</a></li>
-                                                                        <li id="menu-item-8072"
-                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8072">
-                                                                            <a
-                                                                                href="{% url 'jpublication' %}">Trainings</a>
-                                                                        </li>
-                                                                        <!--<li id="menu-item-8073" class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8073"><a href="service/advanced-robotics/index.html">Advanced Robotics</a></li>-->
-                                                                        <!--<li id="menu-item-8074" class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8074"><a href="service/pathology-testing/index.html">Pathology Testing</a></li>-->
-                                                                        <!--<li id="menu-item-8075" class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8075"><a href="service/alternative-energy/index.html">Alternative Energy</a></li>-->
+                                                                            <a href="/Services/{{s.slug}}">{{s.title}}</a></li> {% endfor %}
                                                                     </ul>
                                                                 </li>
                                                                 <li id="menu-item-8027"
@@ -2371,9 +2361,6 @@
                                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8066">
                                                                 <a href="{% url 'about' %}">About Us</a></li>
                                                             <li
-                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8065">
-                                                                <a href="{% url 'jpublication' %}">Our Services</a></li>
-                                                            <li
                                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8064">
                                                                 <a href="#">Our Team</a></li>
                                                             <li
@@ -2390,24 +2377,11 @@
                                                     <h3 class="widget-title">OUR SERVICES</h3>
                                                     <div class="menu-footer-servicem-menu-container">
                                                         <ul id="menu-footer-servicem-menu-1" class="menu">
-                                                            <li
+                                                            
+                                                             {% for s in serv %}<li
                                                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
-                                                                <a href="{% url 'jpublication' %}">Synthesis of
-                                                                    molecules</a></li>
-                                                            <li
-                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8034">
-                                                                <a href="{% url 'jpublication' %}">Extraction </a></li>
-                                                            <li
-                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8035">
-                                                                <a href="{% url 'jpublication' %}">Drug Design</a></li>
-                                                            <li
-                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8036">
-                                                                <a href="{% url 'jpublication' %}">Novel Drug Delivery
-                                                                    Systems</a></li>
-                                                            <li
-                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8041">
-                                                                <a href="{% url 'jpublication' %}">Immunology</a></li>
-                                                        </ul>
+                                                                <a href="{% url 'services' s.slug %}">{{s.title}}</a></li>{% endfor %}  
+                                                            </ul>
                                                     </div>
                                                 </aside>
                                             </div><!-- .widget-area -->

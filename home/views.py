@@ -8,5 +8,5 @@ from team.models import TeamModel
 def index(request):
     res = {}
     res['teammember'] = TeamModel.objects.all()
-    res['blogs'] = Blogs.objects.all()
+    
     return render(request, 'index.html',res)

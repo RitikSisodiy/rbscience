@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
 
-    path('JournalPublication/', views.jpublication , name='jpublication' ),
+    path('Services/<slug:slug1>', views.servic , name='services' ),
     
 ]
