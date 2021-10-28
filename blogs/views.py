@@ -33,5 +33,5 @@ def postcomment(request):
     return redirect(f"/singleblog/{blog.slug}")
 from django.conf import settings
 def gethost(request):
-    host = settings.HOST_ADDR
+    host = settings.HOSTNAME
     return HttpResponse(host)
