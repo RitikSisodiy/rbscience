@@ -8,7 +8,7 @@ from django.core.mail import message, send_mail, EmailMessage
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from article.forms import GenForm
-from threading import Thread
+
 
 # Create your views here.
 def about(request):
@@ -33,8 +33,9 @@ def contactus(request):
         plain_message = strip_tags(html_message)
         from_email = settings.EMAIL_HOST_USER
         to = 'ritik.s10120@gmail.com'
-        Thread(target=send_mail , args=(subject, plain_message, from_email,[to],False)).start()
-        
+        send_mail(subject, plain_message, from_email,[to],
+        fail_silently=False,
+        )
     return render(request,'about/contactus.html')
 def servicecontact(request):
     if request.method == "POST":
