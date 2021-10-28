@@ -116,7 +116,22 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+import socket
 
+try:
+    HOSTNAME = socket.gethostname()
+except:pass
+
+if HOSTNAME == 'main.cyberflax.tk':
+    HOST_ADDR = 'http://'+HOSTNAME
+    EMAIL_HOST_USER = 'sales@cyberflax.tk'
+else:
+    HOST_ADDR = 'http://localhost:8000'
+    EMAIL_USE_TLS = True
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = 'ritik.cyberflax@gmail.com'
+    EMAIL_HOST_PASSWORD = 'cqhmcpmptleeeqqz'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -130,11 +145,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ritik.cyberflax@gmail.com'
-EMAIL_HOST_PASSWORD = 'cqhmcpmptleeeqqz'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
