@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from . models import Blogs, Comment, category
 from django.db.models import Count
@@ -30,3 +31,7 @@ def postcomment(request):
         data = Comment(blog=blog,name=name,email=email,website=website,body=body)
         data.save()
     return redirect(f"/singleblog/{blog.slug}")
+from django.conf import settings
+def gethost(request):
+    host = settings.HOST_ADDR
+    return HttpResponse(host)
