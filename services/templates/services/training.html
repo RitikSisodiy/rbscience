@@ -1,10 +1,11 @@
 {% extends 'basic.html' %}
 {% load static %}
-{% block slider %}{% endblock %}
+{% block slider %}
+{% include  'headertitle.html' with headertitle=headertitle %}
+{% endblock %}
 {% block bodyclass %}ts-service-template-default single single-ts-service postid-5724 theme-labtechco woocommerce-no-js ts-headerstyle-style-8 themestek-wide themestek-sidebar-true themestek-sidebar-left wpb-js-composer js-comp-ver-6.5.0 vc_responsive
 {% endblock %}
 {% block body %}
-{% include  'headertitle.html' with headertitle=headertitle %}
 
 <div id="content-wrapper" class="site-content-wrapper">
 

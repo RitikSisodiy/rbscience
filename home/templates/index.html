@@ -64,7 +64,7 @@
 
 											<div
 												class="ts-row-inner vc_row wpb_row vc_inner vc_row-fluid vc_custom_1609393609633 ts-zindex-0">
-
+											{% for data in research %}
 												<div
 													class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
 													<div class="vc_column-inner  ">
@@ -94,12 +94,11 @@
 																							class="ts-vc_cta3-headers ts-wrap-cell">
 																							<h2
 																								class="ts-custom-heading ">
-																								Chemical
-																								Research
+																								{{data.heading}}
 																							</h2>
 																							<h4
 																								class="ts-custom-heading ">
-																								Biosafety
+																								{{data.category.name}}
 																							</h4>
 																						</div>
 																					</div>
@@ -107,13 +106,10 @@
 																			</div>
 																		</div>
 																	</div><!-- .ts-ihbox-contents -->
-																	<div class="ts-cta3-content-wrapper">It
-																		is a long established fact that a
-																		readable content. On the other hand
-																		we denounce with righteous.</div>
+																	<div class="ts-cta3-content-wrapper">{{data.overview|slice:":70"}}</div>
 																	<div class="ts-vc_btn3-container ts-vc_btn3-inline">
 																		<a class="ts-vc_general ts-vc_btn3 ts-vc_btn3-size-md ts-vc_btn3-shape-rounded ts-vc_btn3-style-text ts-vc_btn3-weight-yes ts-vc_btn3-icon-right ts-vc_btn3-color-skincolor"
-																			href="#" title="">Read More <i
+																			href="{% url 'singleresearch' data.slug %}" title="">Read More <i
 																				class="ts-vc_btn3-icon themifyicon ti-arrow-circle-right"></i></a>
 																	</div>
 																</div>
@@ -121,122 +117,7 @@
 														</div>
 													</div>
 												</div>
-
-
-												<div
-													class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
-													<div class="vc_column-inner  ">
-
-														<div class="wpb_wrapper">
-															<div
-																class="ts-ihbox ts-ihbox-style-11 ts-ihbox-itype-icon ">
-																<div class="ts-sbox-bgimage-layer ts-bgimage-layer">
-																</div>
-																<div class="ts-ihbox-wrapper-bg-layer ts-bg-layer">
-																</div>
-																<div class="ts-ihbox-inner">
-																	<div class="ts-ihbox-icon ts-large-icon">
-																		<div class="ts-ihbox-icon-wrapper">
-																			<i
-																				class="ts-labtechco-business-icon ts-labtechco-business-icon-beaker"></i>
-																		</div>
-																	</div>
-																	<div class="ts-ihbox-contents">
-																		<div
-																			class="ts-vc_general ts-vc_cta3 ts-cta3-only ts-vc_cta3-style-classic ts-vc_cta3-shape-rounded ts-vc_cta3-align-left ts-vc_cta3-color-transparent ts-vc_cta3-icon-size-md ts-vc_cta3-actions-no ts-cta3-without-desc">
-																			<div class="ts-vc_cta3_content-container">
-																				<div class="ts-vc_cta3-content">
-																					<div
-																						class="ts-vc_cta3-content-header ts-wrap">
-																						<div
-																							class="ts-vc_cta3-headers ts-wrap-cell">
-																							<h2
-																								class="ts-custom-heading ">
-																								Biological
-																								Research
-																							</h2>
-																							<h4
-																								class="ts-custom-heading ">
-																								Biosafety
-																							</h4>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div><!-- .ts-ihbox-contents -->
-																	<div class="ts-cta3-content-wrapper">It
-																		is a long established fact that a
-																		readable content. On the other hand
-																		we denounce with righteous.</div>
-																	<div class="ts-vc_btn3-container ts-vc_btn3-inline">
-																		<a class="ts-vc_general ts-vc_btn3 ts-vc_btn3-size-md ts-vc_btn3-shape-rounded ts-vc_btn3-style-text ts-vc_btn3-weight-yes ts-vc_btn3-icon-right ts-vc_btn3-color-skincolor"
-																			href="#" title="">Read More <i
-																				class="ts-vc_btn3-icon themifyicon ti-arrow-circle-right"></i></a>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-
-
-												<div
-													class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
-													<div class="vc_column-inner  ">
-
-														<div class="wpb_wrapper">
-															<div
-																class="ts-ihbox ts-ihbox-style-11 ts-ihbox-itype-icon ">
-																<div class="ts-sbox-bgimage-layer ts-bgimage-layer">
-																</div>
-																<div class="ts-ihbox-wrapper-bg-layer ts-bg-layer">
-																</div>
-																<div class="ts-ihbox-inner">
-																	<div class="ts-ihbox-icon ts-large-icon">
-																		<div class="ts-ihbox-icon-wrapper">
-																			<i
-																				class="ts-labtechco-business-icon ts-labtechco-business-icon-microscope-3"></i>
-																		</div>
-																	</div>
-																	<div class="ts-ihbox-contents">
-																		<div
-																			class="ts-vc_general ts-vc_cta3 ts-cta3-only ts-vc_cta3-style-classic ts-vc_cta3-shape-rounded ts-vc_cta3-align-left ts-vc_cta3-color-transparent ts-vc_cta3-icon-size-md ts-vc_cta3-actions-no ts-cta3-without-desc">
-																			<div class="ts-vc_cta3_content-container">
-																				<div class="ts-vc_cta3-content">
-																					<div
-																						class="ts-vc_cta3-content-header ts-wrap">
-																						<div
-																							class="ts-vc_cta3-headers ts-wrap-cell">
-																							<h2
-																								class="ts-custom-heading ">
-																								Physical
-																								research
-																							</h2>
-																							<h4
-																								class="ts-custom-heading ">
-																								Biosafety
-																							</h4>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div><!-- .ts-ihbox-contents -->
-																	<div class="ts-cta3-content-wrapper">It
-																		is a long established fact that a
-																		readable content. On the other hand
-																		we denounce with righteous.</div>
-																	<div class="ts-vc_btn3-container ts-vc_btn3-inline">
-																		<a class="ts-vc_general ts-vc_btn3 ts-vc_btn3-size-md ts-vc_btn3-shape-rounded ts-vc_btn3-style-text ts-vc_btn3-weight-yes ts-vc_btn3-icon-right ts-vc_btn3-color-skincolor"
-																			href="#" title="">Read More <i
-																				class="ts-vc_btn3-icon themifyicon ti-arrow-circle-right"></i></a>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
+											{% endfor %}
 
 											</div>
 
@@ -570,6 +451,7 @@
 													<div class="themestek-boxes-inner themestek-boxes-service-inner ">
 
 														<div class="row multi-columns-row themestek-boxes-row-wrapper">
+															{% for data in serv|slice:":6" %}
 															<div
 																class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 incubator">
 																<article
@@ -578,7 +460,7 @@
 																		<div
 																			class="ts-featured-wrapper ts-ts-service-featured-wrapper">
 																			<img width="800" height="650"
-																				src="{% static "wp-content/uploads/sites/13/2018/08/service-new-01-800x650.jpg" %}"
+																				src="/media/{{data.img1}}"
 																				class="attachment-themestek-img-800x650 size-themestek-img-800x650 wp-post-image"
 																				alt="" loading="lazy" data-id="8081" />
 																		</div>
@@ -586,12 +468,11 @@
 																			<div class="themestek-box-content-inner">
 																				<div class="themestek-pf-box-title">
 																					<div class="themestek-box-category">
-																						<a href="service-category/incubator/index.html"
-																							rel="tag">Incubator</a>
+																						<a 
+																							rel="tag">{{data.category.cat}}</a>
 																					</div>
 																					<h3><a
-																							href="service/chemical-research/index.html">Chemical
-																							Research</a>
+																							href="{% url 'services' data.slug %}">{{data.title}}</a>
 																					</h3>
 																				</div>
 																				<div
@@ -604,173 +485,7 @@
 																	</div>
 																</article>
 															</div>
-															<div
-																class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 biosafety">
-																<article
-																	class="themestek-box themestek-box-service ts-servicebox-style-8">
-																	<div class="themestek-post-item">
-																		<div
-																			class="ts-featured-wrapper ts-ts-service-featured-wrapper">
-																			<img width="800" height="650"
-																				src="{% static "wp-content/uploads/sites/13/2018/08/service-new-02-800x650.jpg" %}"
-																				class="attachment-themestek-img-800x650 size-themestek-img-800x650 wp-post-image"
-																				alt="" loading="lazy" data-id="8082" />
-																		</div>
-																		<div class="themestek-box-content">
-																			<div class="themestek-box-content-inner">
-																				<div class="themestek-pf-box-title">
-																					<div class="themestek-box-category">
-																						<a href="service-category/biosafety/index.html"
-																							rel="tag">Biosafety</a>
-																					</div>
-																					<h3><a
-																							href="service/pathology-testing-2/index.html">Pathology
-																							Testing</a></h3>
-																				</div>
-																				<div
-																					class="ts-ihbox-icon ts-large-icon">
-																					<i
-																						class="ts-labtechco-business-icon ts-labtechco-business-icon-flask"></i>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</article>
-															</div>
-															<div
-																class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 pathology">
-																<article
-																	class="themestek-box themestek-box-service ts-servicebox-style-8">
-																	<div class="themestek-post-item">
-																		<div
-																			class="ts-featured-wrapper ts-ts-service-featured-wrapper">
-																			<img width="800" height="650"
-																				src="{% static "wp-content/uploads/sites/13/2018/06/service-new-03-800x650.jpg" %}"
-																				class="attachment-themestek-img-800x650 size-themestek-img-800x650 wp-post-image"
-																				alt="" loading="lazy" data-id="8083" />
-																		</div>
-																		<div class="themestek-box-content">
-																			<div class="themestek-box-content-inner">
-																				<div class="themestek-pf-box-title">
-																					<div class="themestek-box-category">
-																						<a href="service-category/pathology/index.html"
-																							rel="tag">Pathology</a>
-																					</div>
-																					<h3><a
-																							href="service/artificial-intelligence/index.html">Artificial
-																							Intelligence</a>
-																					</h3>
-																				</div>
-																				<div
-																					class="ts-ihbox-icon ts-large-icon">
-																					<i
-																						class="ts-labtechco-business-icon ts-labtechco-business-icon-dna-structure"></i>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</article>
-															</div>
-															<div
-																class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 oncology">
-																<article
-																	class="themestek-box themestek-box-service ts-servicebox-style-8">
-																	<div class="themestek-post-item">
-																		<div
-																			class="ts-featured-wrapper ts-ts-service-featured-wrapper">
-																			<img width="800" height="650"
-																				src="{% static "wp-content/uploads/sites/13/2018/06/service-new-04-800x650.jpg" %}"
-																				class="attachment-themestek-img-800x650 size-themestek-img-800x650 wp-post-image"
-																				alt="" loading="lazy" data-id="8084" />
-																		</div>
-																		<div class="themestek-box-content">
-																			<div class="themestek-box-content-inner">
-																				<div class="themestek-pf-box-title">
-																					<div class="themestek-box-category">
-																						<a href="service-category/oncology/index.html"
-																							rel="tag">Oncology</a>
-																					</div>
-																					<h3><a
-																							href="service/healthcare-labs/index.html">Healthcare
-																							Labs</a></h3>
-																				</div>
-																				<div
-																					class="ts-ihbox-icon ts-large-icon">
-																					<i
-																						class="ts-labtechco-business-icon ts-labtechco-business-icon-petri-dish"></i>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</article>
-															</div>
-															<div
-																class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 incubator">
-																<article
-																	class="themestek-box themestek-box-service ts-servicebox-style-8">
-																	<div class="themestek-post-item">
-																		<div
-																			class="ts-featured-wrapper ts-ts-service-featured-wrapper">
-																			<img width="800" height="650"
-																				src="{% static "wp-content/uploads/sites/13/2018/06/service-new-05-800x650.jpg" %}"
-																				class="attachment-themestek-img-800x650 size-themestek-img-800x650 wp-post-image"
-																				alt="" loading="lazy" data-id="8085" />
-																		</div>
-																		<div class="themestek-box-content">
-																			<div class="themestek-box-content-inner">
-																				<div class="themestek-pf-box-title">
-																					<div class="themestek-box-category">
-																						<a href="service-category/incubator/index.html"
-																							rel="tag">Incubator</a>
-																					</div>
-																					<h3><a
-																							href="service/diabetes-testing/index.html">Diabetes
-																							Testing</a></h3>
-																				</div>
-																				<div
-																					class="ts-ihbox-icon ts-large-icon">
-																					<i
-																						class="ts-labtechco-business-icon ts-labtechco-business-icon-microscope-4"></i>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</article>
-															</div>
-															<div
-																class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 incubator">
-																<article
-																	class="themestek-box themestek-box-service ts-servicebox-style-8">
-																	<div class="themestek-post-item">
-																		<div
-																			class="ts-featured-wrapper ts-ts-service-featured-wrapper">
-																			<img width="800" height="650"
-																				src="{% static "wp-content/uploads/sites/13/2018/06/service-new-06-800x650.jpg" %}"
-																				class="attachment-themestek-img-800x650 size-themestek-img-800x650 wp-post-image"
-																				alt="" loading="lazy" data-id="8086" />
-																		</div>
-																		<div class="themestek-box-content">
-																			<div class="themestek-box-content-inner">
-																				<div class="themestek-pf-box-title">
-																					<div class="themestek-box-category">
-																						<a href="service-category/incubator/index.html"
-																							rel="tag">Incubator</a>
-																					</div>
-																					<h3><a
-																							href="service/advanced-robotics/index.html">Advanced
-																							Robotics</a>
-																					</h3>
-																				</div>
-																				<div
-																					class="ts-ihbox-icon ts-large-icon">
-																					<i
-																						class="ts-labtechco-business-icon ts-labtechco-business-icon-molecular-1"></i>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</article>
-															</div>
+															{% endfor %}
 														</div>
 													</div><!-- .themestek-boxes-inner -->
 												</div><!-- .themestek-boxes -->
@@ -865,27 +580,22 @@
 														<p role="status" aria-live="polite" aria-atomic="true"></p>
 														<ul></ul>
 													</div>
-													<form
-														action="https://labtechco.themestek.com/labtechco-demo7/#wpcf7-f8184-p7761-o2"
-														method="post" class="wpcf7-form init" novalidate="novalidate"
-														data-status="init">
-														<div style="display: none;">
-															<input type="hidden" name="_wpcf7" value="8184" />
-															<input type="hidden" name="_wpcf7_version" value="5.3.2" />
-															<input type="hidden" name="_wpcf7_locale" value="en_US" />
-															<input type="hidden" name="_wpcf7_unit_tag"
-																value="wpcf7-f8184-p7761-o2" />
-															<input type="hidden" name="_wpcf7_container_post"
-																value="7761" />
-															<input type="hidden" name="_wpcf7_posted_data_hash"
-																value="" />
-														</div>
+													{% for message in messages %}
+													<div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}" role="alert">
+													  {{ message}}
+												  </div>
+														   {% endfor %}
+														
+													<form action="{% url 'servicecontact' %}"
+														method="post" class="wpcf7-form init" 
+														data-status="init">{% csrf_token %}
+														<input name='currenturl' type='hidden' value='{{request.get_full_path}}'>
 														<div class="main-form appointment ts-appointment-form">
 															<div class="row">
 																<div class="col-sm-6">
 																	<div class="input-group"><span
 																			class="wpcf7-form-control-wrap your-name"><input
-																				type="text" name="your-name" value=""
+																				type="text" name="fname" value=""
 																				size="40"
 																				class="wpcf7-form-control wpcf7-text"
 																				aria-invalid="false"
@@ -894,26 +604,34 @@
 																<div class="col-sm-6">
 																	<div class="input-group"><span
 																			class="wpcf7-form-control-wrap your-name"><input
-																				type="text" name="your-name" value=""
+																				type="text" name="lname" value=""
 																				size="40"
 																				class="wpcf7-form-control wpcf7-text"
 																				aria-invalid="false"
 																				placeholder="Last Name" /></span></div>
 																</div>
 																<div class="col-sm-12">
+																	<div class="input-group"><span
+																			class="wpcf7-form-control-wrap your-name"><input
+																				type="text" name="phone" value=""
+																				maxlength="13"
+																				minlength="10"
+																				class="wpcf7-form-control wpcf7-text"
+																				aria-invalid="false"
+																				placeholder="Your Phone" /></span></div>
+																</div>
+																<div class="col-sm-12">
 																	<div class="input-group">
 																		<span class="wpcf7-form-control-wrap Select">
-																			<select name="Select"
+																			<select name="service"
 																				class="wpcf7-form-control wpcf7-select"
 																				aria-invalid="false">
-																				<option value="Choose Service">Choose
+																				<option value="">Choose
 																					Service</option>
-																				<option value="Service 1">Service 1
+																				{% for data in serv %}
+																				<option value="{{data.id}}">{{data.title}}
 																				</option>
-																				<option value="Service 2">Service 2
-																				</option>
-																				<option value="Service 3">Service 3
-																				</option>
+																				{% endfor %}
 																			</select>
 																		</span>
 																	</div>

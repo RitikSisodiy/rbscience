@@ -1,7 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.utils.text import slugify
-
+from blogs.models import unique_slug_generator
 # Create your models here.
 class submenuscripts(models.Model):
     name = models.CharField(max_length=100)
@@ -43,9 +43,10 @@ class artical(models.Model):
     slug = models.SlugField(blank=True,max_length=50)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.heading)[:50]
+        if self.slug == '':
+            self.slug = unique_slug_generator(artical,self.heading)
         super(artical, self).save(*args, **kwargs)
-
+ 
 
 class wp_posts(models.Model):
     post_author	= models.BigIntegerField()

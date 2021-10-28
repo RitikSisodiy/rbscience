@@ -1,16 +1,22 @@
 from django.shortcuts import redirect, render
-from . models import Blogs, Comment
-
+from . models import Blogs, Comment, category
+from django.db.models import Count
 # Create your views here.
 
 def blogs(request):
     blog = Blogs.objects.all()
     return render(request,'blogs/blogs.html',{'blog':blog})
 
-
+def categoryblog(request,slug):
+    res= {}
+    res['blog'] = Blogs.objects.filter(category__slug=slug)
+    return render(request,'blogs/blogs.html',res)
 def singleblog(request,slug1):
-    blog = Blogs.objects.get(slug=slug1)
-    return render(request,'blogs/singleblog.html',{'blog':blog})
+    res = {}
+    res['blog'] = Blogs.objects.get(slug=slug1)
+    res['recentblog'] = Blogs.objects.all().order_by('date')
+    res['cats'] = category.objects.all().annotate(num_posts=Count('Blogs')).order_by('-num_posts')
+    return render(request,'blogs/singleblog.html',res)
 
 def postcomment(request):
     if request.method == 'POST':

@@ -6,6 +6,9 @@ from . models import *
 @admin.register(Blogs)
 class BlogsAdmin(admin.ModelAdmin):
     list_display = ('title','blog_des','date','img')
+@admin.register(category)
+class categoryAdmin(admin.ModelAdmin):
+    list_display = ('cat','slug',)
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):

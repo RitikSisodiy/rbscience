@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from blogs.models import unique_slug_generator
 from ckeditor.fields import RichTextField
 
 # Create your models here.
@@ -22,8 +23,10 @@ class researchModel(models.Model):
     img = models.ImageField(upload_to="research")
     slug = models.SlugField(blank=True)
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.heading)
+        if self.slug == '':
+            self.slug = unique_slug_generator(researchModel,self.cat)
         super(researchModel, self).save(*args, **kwargs)
+ 
     def __str__(self):
         return self.heading
 class process(models.Model):

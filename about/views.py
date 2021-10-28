@@ -1,11 +1,14 @@
-from django.shortcuts import render
-
+from django.http import request
+from django.shortcuts import redirect, render
+from django.contrib import messages
 from team.models import TeamModel
 from . models import *
 from django.conf import settings
 from django.core.mail import message, send_mail, EmailMessage
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from article.forms import GenForm
+
 
 # Create your views here.
 def about(request):
@@ -34,3 +37,29 @@ def contactus(request):
         fail_silently=False,
         )
     return render(request,'about/contactus.html')
+def servicecontact(request):
+    if request.method == "POST":
+        res = {}
+        form = GenForm(servicesContact)
+        form = form(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request , "Thanks For Contacting Us We Will Get Back To You Soon :)")
+        else:
+            messages.error(request,'please make sure you enter the correct Information..:)')
+        res['form'] = form
+        currenturl = request.POST.get('currenturl')
+        currenturl = currenturl if currenturl is not None else "home"
+        return redirect(currenturl)
+        
+def subscribe(request):
+    if request.method == "POST":
+        form= GenForm(subscriber)
+        form = form(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"thanks for subscribing We Will nortify you soon :)")   
+        currenturl = request.POST.get('currenturl')
+        currenturl = currenturl if currenturl is not None else "home"        
+        return redirect(currenturl)
+    return redirect('home')

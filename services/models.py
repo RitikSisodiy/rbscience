@@ -1,10 +1,14 @@
 from django.db import models
+from django.db.models.fields import CharField
+from blogs.models import unique_slug_generator
 from ckeditor.fields import RichTextField
 from django.utils.text import slugify
-
+from blogs.models import category
 # Create your models here.
 
 class services(models.Model):
+    category = models.ForeignKey(category,on_delete=models.CASCADE,related_name='services')
+    type = models.CharField(max_length=10,choices=(('service','service'),('training','training'),))
     title = models.CharField(max_length=100)
     img1 = models.ImageField(upload_to = "services")
     img2 = models.ImageField(upload_to = "services", blank=True)
@@ -14,9 +18,10 @@ class services(models.Model):
     slug = models.SlugField(blank=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        if self.slug == '':
+            self.slug = unique_slug_generator(services,self.title)
         super(services, self).save(*args, **kwargs)
-
+ 
     def __str__(self):
         return str(self.title)
 

@@ -2009,7 +2009,17 @@
                                                                     {% for s in serv %}
                                                                         <li id="menu-item-8068"
                                                                             class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
-                                                                            <a href="/Services/{{s.slug}}">{{s.title}}</a></li> {% endfor %}
+                                                                            <a href="{% url 'services' s.slug %}">{{s.title}}</a></li> {% endfor %}
+                                                                    </ul>
+                                                                </li>
+                                                                <li id="menu-item-8061"
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8061">
+                                                                    <a href="#">Training</a>
+                                                                     <ul class="sub-menu">
+                                                                    {% for s in training %}
+                                                                        <li id="menu-item-8068"
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
+                                                                            <a href="{% url 'training' s.slug %}">{{s.title}}</a></li> {% endfor %}
                                                                     </ul>
                                                                 </li>
                                                                 <li id="menu-item-8027"
@@ -2378,12 +2388,16 @@
                                                     <div class="menu-footer-servicem-menu-container">
                                                         <ul id="menu-footer-servicem-menu-1" class="menu">
                                                             
-                                                             {% for s in serv %}<li
+                                                             {% for s in serv|slice:":3" %}<li
+                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
+                                                                <a href="{% url 'services' s.slug %}">{{s.title}}</a></li>{% endfor %}  
+                                                            {% for s in training|slice:":3" %}<li
                                                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
                                                                 <a href="{% url 'services' s.slug %}">{{s.title}}</a></li>{% endfor %}  
                                                             </ul>
                                                     </div>
                                                 </aside>
+                                                
                                             </div><!-- .widget-area -->
                                                 <div
                                                     class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
@@ -2423,11 +2437,13 @@
                                                             </script>
                                                             <!-- Mailchimp for WordPress v4.8.1 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
                                                             <form id="mc4wp-form-2" class="mc4wp-form mc4wp-form-6870"
-                                                                method="post" data-id="6870" data-name="newslater form">
+                                                                method="post" action="{% url 'subscribe' %}" data-id="6870" data-name="newslater form">
                                                                 <div class="mc4wp-form-fields">
-                                                                    <p>
-                                                                        <input type="email" name="EMAIL"
+                                                                    <p> {% csrf_token %}
+                                                                        <input type="email" name="email"
                                                                             placeholder="Your email address" required />
+                                                                         <input type="hidden" 
+                                                                            name='currenturl' value="{{request.get_full_path}}" />
                                                                     </p>
 
                                                                     <p>

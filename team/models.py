@@ -1,4 +1,5 @@
 from django.db import models
+from blogs.models import unique_slug_generator
 from ckeditor.fields import RichTextField
 from django.utils.text import slugify
 
@@ -17,8 +18,9 @@ class TeamModel(models.Model):
     address = models.CharField(max_length=150)
     education = models.CharField(max_length=100)
     slug = models.SlugField(blank=True)
-
     experience = RichTextField()
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        if self.slug == '':
+            self.slug = unique_slug_generator(TeamModel,self.cat)
         super(TeamModel, self).save(*args, **kwargs)
+ 
