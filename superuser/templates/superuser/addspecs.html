@@ -1,0 +1,114 @@
+{% extends 'superuser/basic.html' %}
+{% block body %}
+ <div class="card card-primary">
+                <div class="card-header  bg-primary text-light">
+                    <h3 class="card-title">Add Specifications and more</h3>
+                </div>
+                  <div class="card-body">
+                      <h1 class="my-4">{{product.name}}({{product.color}})</h1>
+                        <form method="POST" action= '{% url "addspecs"  id=product.id %}'>{% csrf_token %}
+                        <div class="container" >
+                            <div id ="form1">
+                            <div class="mb-3 ">
+                                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="example: Specification , Keyfeatures ">
+                              </div>
+                              <div class="mb-3 row">
+                               <div class="col">
+                                <label class="form-label">Key</label>   
+                                <input type="text" class="form-control" name="key" id="exampleFormControlInput3">
+                                 </div>
+                               <div class="col">
+                                <label  class="form-label">Details</label>   
+                                <input type="text" class="form-control" name="value" id="exampleFormControlInput3">
+                               </div>
+                              </div>
+                            </div>
+                              <input type="button" class="btn btn-primary" onclick="addfield('form1');" value="Add-More">
+                              <input type="Submit" class="btn btn-primary" value="submit">
+                        </div>
+                      </form>
+                </div>
+<div>
+    <hr>
+
+ <center>   <div class="my-5"><h1>Available Specification</h1></div></center>
+ {% for spec in specs %}
+ {% for k,v in spec.jsondata.items %}
+<div class="card card-primary">
+        <div class="card-header  bg-primary text-light">
+        <div class="col">
+            <div class='left'><h3></h3></div>
+          </div>
+          <div class="second">
+                    <div class="left">
+                        <h3>{{k}}</h3>
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+        </div>
+          <div class="card-body">
+                <form method="POST"  action= '{% url "updatespecs" id=product.id %}'>{% csrf_token %}
+                <div class="container" >
+                    <div id ="updataform{{forloop.counter}}">
+                    <div class="mb-3 ">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="example: Specification , Keyfeatures " value="{{k}}">
+                        <input type="hidden" class="form-control" id="exampleFormControlInput1" name="oldtitle" placeholder="example: Specification , Keyfeatures " value="{{k}}">
+                      </div>
+                      {% for data in v %}
+                      <div class="mb-3 row">
+                       <div class="col">
+                        <label class="form-label">Key</label>   
+                        <input type="text" class="form-control" name="key" id="exampleFormControlInput3" value="{{data.0}}">
+                         </div>
+                       <div class="col">
+                        <label  class="form-label">Details</label>   
+                        <input type="text" class="form-control" name="value" id="exampleFormControlInput3" value="{{data.1}}">
+                       </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                      <input type="button" class="btn btn-primary" onclick="addfield('updataform{{forloop.counter}}');" value="Add-More">
+                      <input type="Submit" class="btn btn-primary" value="update">
+                      <a href="{% url 'deletespecs' id=product.id %}?deltitle={{k}}" class="btn btn-danger" onclick="return confirm('Are you sure?')" class="btn btn-danger" name="remove_levels">Delete</a>
+
+                </div>
+              </form>
+        </div>
+<div>
+{% endfor %}
+{% endfor %}
+<script>
+function addfield(id){
+    $("#"+id).append(`
+    <div class="mb-3 row">
+                               <div class="col">
+                                <label class="form-label">Key</label>   
+                                <input type="text" class="form-control" name="key" id="exampleFormControlInput3">
+                                 </div>
+                               <div class="col">
+                                <label  class="form-label">Details</label>   
+                                <input type="text" class="form-control" name="value" id="exampleFormControlInput3">
+                               </div>
+                              </div>
+    `)
+}
+$('button[name="remove_levels"]').on('click', function(e) {
+      var $form = $(this).closest('form');
+      e.preventDefault();
+      $('#confirm').modal({
+          backdrop: 'static',
+          keyboard: false
+      })
+      .on('click', '#delete', function(e) {
+          $form.trigger('submit');
+        });
+      $("#cancel").on('click',function(e){
+       e.preventDefault();
+       $('#confirm').modal.model('hide');
+      });
+    });
+</script>
+{% endblock %}

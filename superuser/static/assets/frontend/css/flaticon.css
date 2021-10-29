@@ -1,0 +1,1043 @@
+/*
+  Flaticon icon font: Flaticon
+  Creation date: 25/08/2019 15:18
+  */
+
+@font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.eot");
+    src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"), url("../fonts/Flaticon.woff2") format("woff2"), url("../fonts/Flaticon.woff") format("woff"), url("../fonts/Flaticon.ttf") format("truetype"), url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+        font-family: "Flaticon";
+        src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    }
+}
+
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+    font-family: Flaticon;
+    font-style: normal;
+}
+
+.flaticon-clock:before {
+    content: "\f100";
+}
+
+.flaticon-eat:before {
+    content: "\f101";
+}
+
+.flaticon-first-aid-kit-outline:before {
+    content: "\f102";
+}
+
+.flaticon-dentist-date-for-personal-care:before {
+    content: "\f103";
+}
+
+.flaticon-apple-and-water-bottle:before {
+    content: "\f104";
+}
+
+.flaticon-herbal:before {
+    content: "\f105";
+}
+
+.flaticon-pharmaceutical:before {
+    content: "\f106";
+}
+
+.flaticon-drug:before {
+    content: "\f107";
+}
+
+.flaticon-pharmacy-delivery:before {
+    content: "\f108";
+}
+
+.flaticon-pressure:before {
+    content: "\f109";
+}
+
+.flaticon-plus:before {
+    content: "\f10a";
+}
+
+.flaticon-drugs-bottle:before {
+    content: "\f10b";
+}
+
+.flaticon-pharmaceutical-1:before {
+    content: "\f10c";
+}
+
+.flaticon-medicine-and-health:before {
+    content: "\f10d";
+}
+
+.flaticon-speech-bubbles-with-a-heart-with-a-lifeline:before {
+    content: "\f10e";
+}
+
+.flaticon-acid:before {
+    content: "\f10f";
+}
+
+.flaticon-medicine-and-health-1:before {
+    content: "\f110";
+}
+
+.flaticon-handicapped-sign:before {
+    content: "\f111";
+}
+
+.flaticon-male:before {
+    content: "\f112";
+}
+
+.flaticon-diet:before {
+    content: "\f113";
+}
+
+.flaticon-orthodontist:before {
+    content: "\f114";
+}
+
+.flaticon-drug-1:before {
+    content: "\f115";
+}
+
+.flaticon-drug-2:before {
+    content: "\f116";
+}
+
+.flaticon-tooth:before {
+    content: "\f117";
+}
+
+.flaticon-time-for-bicycle-exercise:before {
+    content: "\f118";
+}
+
+.flaticon-lifeline:before {
+    content: "\f119";
+}
+
+.flaticon-heart:before {
+    content: "\f11a";
+}
+
+.flaticon-pair:before {
+    content: "\f11b";
+}
+
+.flaticon-dentist:before {
+    content: "\f11c";
+}
+
+.flaticon-shield:before {
+    content: "\f11d";
+}
+
+.flaticon-medicine-and-health-2:before {
+    content: "\f11e";
+}
+
+.flaticon-celsius:before {
+    content: "\f11f";
+}
+
+.flaticon-medicine-and-health-3:before {
+    content: "\f120";
+}
+
+.flaticon-ear:before {
+    content: "\f121";
+}
+
+.flaticon-syringe-pointing-down:before {
+    content: "\f122";
+}
+
+.flaticon-drugs-on-a-pharmacy-truck-for-delivery:before {
+    content: "\f123";
+}
+
+.flaticon-dentist-tool-and-a-tooth-outline:before {
+    content: "\f124";
+}
+
+.flaticon-localization:before {
+    content: "\f125";
+}
+
+.flaticon-heart-1:before {
+    content: "\f126";
+}
+
+.flaticon-umbrella:before {
+    content: "\f127";
+}
+
+.flaticon-medicine-and-health-4:before {
+    content: "\f128";
+}
+
+.flaticon-syringes:before {
+    content: "\f129";
+}
+
+.flaticon-carrot:before {
+    content: "\f12a";
+}
+
+.flaticon-drug-3:before {
+    content: "\f12b";
+}
+
+.flaticon-pharmacy:before {
+    content: "\f12c";
+}
+
+.flaticon-medical-assistance:before {
+    content: "\f12d";
+}
+
+.flaticon-medical-laboratory:before {
+    content: "\f12e";
+}
+
+.flaticon-eye:before {
+    content: "\f12f";
+}
+
+.flaticon-tooth-and-dentist-tool-outlines:before {
+    content: "\f130";
+}
+
+.flaticon-healthy-heart:before {
+    content: "\f131";
+}
+
+.flaticon-dental:before {
+    content: "\f132";
+}
+
+.flaticon-beaker-symbol:before {
+    content: "\f133";
+}
+
+.flaticon-teeth:before {
+    content: "\f134";
+}
+
+.flaticon-capsule:before {
+    content: "\f135";
+}
+
+.flaticon-fitness:before {
+    content: "\f136";
+}
+
+.flaticon-test:before {
+    content: "\f137";
+}
+
+.flaticon-flask:before {
+    content: "\f138";
+}
+
+.flaticon-frequency:before {
+    content: "\f139";
+}
+
+.flaticon-red-cross:before {
+    content: "\f13a";
+}
+
+.flaticon-fitness-1:before {
+    content: "\f13b";
+}
+
+.flaticon-smile-emot:before {
+    content: "\f13c";
+}
+
+.flaticon-health:before {
+    content: "\f13d";
+}
+
+.flaticon-rescue:before {
+    content: "\f13e";
+}
+
+.flaticon-mortar:before {
+    content: "\f13f";
+}
+
+.flaticon-red-cross-1:before {
+    content: "\f140";
+}
+
+.flaticon-fitness-2:before {
+    content: "\f141";
+}
+
+.flaticon-health-1:before {
+    content: "\f142";
+}
+
+.flaticon-spa:before {
+    content: "\f143";
+}
+
+.flaticon-blood:before {
+    content: "\f144";
+}
+
+.flaticon-cancer:before {
+    content: "\f145";
+}
+
+.flaticon-blood-type-b:before {
+    content: "\f146";
+}
+
+.flaticon-blood-type-ab:before {
+    content: "\f147";
+}
+
+.flaticon-medicine-with-cup:before {
+    content: "\f148";
+}
+
+.flaticon-drug-4:before {
+    content: "\f149";
+}
+
+.flaticon-checkup:before {
+    content: "\f14a";
+}
+
+.flaticon-asthma:before {
+    content: "\f14b";
+}
+
+.flaticon-tablet-pad:before {
+    content: "\f14c";
+}
+
+.flaticon-blood-type:before {
+    content: "\f14d";
+}
+
+.flaticon-slice:before {
+    content: "\f14e";
+}
+
+.flaticon-helicopter:before {
+    content: "\f14f";
+}
+
+.flaticon-treatment:before {
+    content: "\f150";
+}
+
+.flaticon-sex:before {
+    content: "\f151";
+}
+
+.flaticon-test-1:before {
+    content: "\f152";
+}
+
+.flaticon-treatment-1:before {
+    content: "\f153";
+}
+
+.flaticon-red-cross-2:before {
+    content: "\f154";
+}
+
+.flaticon-shield-1:before {
+    content: "\f155";
+}
+
+.flaticon-skills:before {
+    content: "\f156";
+}
+
+.flaticon-session:before {
+    content: "\f157";
+}
+
+.flaticon-plate:before {
+    content: "\f158";
+}
+
+.flaticon-cardiac:before {
+    content: "\f159";
+}
+
+.flaticon-shape:before {
+    content: "\f15a";
+}
+
+.flaticon-caduceus:before {
+    content: "\f15b";
+}
+
+.flaticon-medical-assistance-24-hours-a-day:before {
+    content: "\f15c";
+}
+
+.flaticon-prescription:before {
+    content: "\f15d";
+}
+
+.flaticon-tooth-with-mouthwash:before {
+    content: "\f15e";
+}
+
+.flaticon-drugs:before {
+    content: "\f15f";
+}
+
+.flaticon-graph:before {
+    content: "\f160";
+}
+
+.flaticon-clock-beside-apple:before {
+    content: "\f161";
+}
+
+.flaticon-energy-symbol:before {
+    content: "\f162";
+}
+
+.flaticon-medicine:before {
+    content: "\f163";
+}
+
+.flaticon-heartbeat:before {
+    content: "\f164";
+}
+
+.flaticon-no-smoking:before {
+    content: "\f165";
+}
+
+.flaticon-red-cross-3:before {
+    content: "\f166";
+}
+
+.flaticon-sun-glass:before {
+    content: "\f167";
+}
+
+.flaticon-wheelchair-symbol:before {
+    content: "\f168";
+}
+
+.flaticon-red-cross-4:before {
+    content: "\f169";
+}
+
+.flaticon-health-2:before {
+    content: "\f16a";
+}
+
+.flaticon-liver:before {
+    content: "\f16b";
+}
+
+.flaticon-wavy:before {
+    content: "\f16c";
+}
+
+.flaticon-three:before {
+    content: "\f16d";
+}
+
+.flaticon-oil:before {
+    content: "\f16e";
+}
+
+.flaticon-leaf:before {
+    content: "\f16f";
+}
+
+.flaticon-health-3:before {
+    content: "\f170";
+}
+
+.flaticon-band-aids-cross:before {
+    content: "\f171";
+}
+
+.flaticon-cost:before {
+    content: "\f172";
+}
+
+.flaticon-sparkling-drink-on-glass-with-straw-and-lemon:before {
+    content: "\f173";
+}
+
+.flaticon-male-and-female-gender-symbols:before {
+    content: "\f174";
+}
+
+.flaticon-red-cross-5:before {
+    content: "\f175";
+}
+
+.flaticon-archive:before {
+    content: "\f176";
+}
+
+.flaticon-helicopter-1:before {
+    content: "\f177";
+}
+
+.flaticon-medicine-and-health-5:before {
+    content: "\f178";
+}
+
+.flaticon-dentist-1:before {
+    content: "\f179";
+}
+
+.flaticon-medicine-and-health-6:before {
+    content: "\f17a";
+}
+
+.flaticon-medicine-and-health-7:before {
+    content: "\f17b";
+}
+
+.flaticon-medicine-and-health-8:before {
+    content: "\f17c";
+}
+
+.flaticon-diet-1:before {
+    content: "\f17d";
+}
+
+.flaticon-medicine-and-health-9:before {
+    content: "\f17e";
+}
+
+.flaticon-medical-control:before {
+    content: "\f17f";
+}
+
+.flaticon-medicines:before {
+    content: "\f180";
+}
+
+.flaticon-medical-assistance-24-hours:before {
+    content: "\f181";
+}
+
+.flaticon-intravenous-medicines:before {
+    content: "\f182";
+}
+
+.flaticon-sperm:before {
+    content: "\f183";
+}
+
+.flaticon-diet-2:before {
+    content: "\f184";
+}
+
+.flaticon-gender:before {
+    content: "\f185";
+}
+
+.flaticon-medical-graphic-with-descendant-line:before {
+    content: "\f186";
+}
+
+.flaticon-immunity:before {
+    content: "\f187";
+}
+
+.flaticon-clinic-history-folder-with-plus-sign:before {
+    content: "\f188";
+}
+
+.flaticon-medicine-and-health-10:before {
+    content: "\f189";
+}
+
+.flaticon-numeral:before {
+    content: "\f18a";
+}
+
+.flaticon-phone:before {
+    content: "\f18b";
+}
+
+.flaticon-medical-heart-health-check:before {
+    content: "\f18c";
+}
+
+.flaticon-insurance:before {
+    content: "\f18d";
+}
+
+.flaticon-dentist-assistance-24-hours-a-day:before {
+    content: "\f18e";
+}
+
+.flaticon-drugs-discount:before {
+    content: "\f18f";
+}
+
+.flaticon-medicine-and-health-11:before {
+    content: "\f190";
+}
+
+.flaticon-hospital:before {
+    content: "\f191";
+}
+
+.flaticon-dropper-for-liquid-drugs-dosage-in-drops:before {
+    content: "\f192";
+}
+
+.flaticon-medicine-tablets-and-a-glass:before {
+    content: "\f193";
+}
+
+.flaticon-dentist-chat:before {
+    content: "\f194";
+}
+
+.flaticon-ambulance:before {
+    content: "\f195";
+}
+
+.flaticon-herbs:before {
+    content: "\f196";
+}
+
+.flaticon-plate-1:before {
+    content: "\f197";
+}
+
+.flaticon-note:before {
+    content: "\f198";
+}
+
+.flaticon-drug-5:before {
+    content: "\f199";
+}
+
+.flaticon-mortar-1:before {
+    content: "\f19a";
+}
+
+.flaticon-24-hours-medical-assistance-by-phone:before {
+    content: "\f19b";
+}
+
+.flaticon-nurse:before {
+    content: "\f19c";
+}
+
+.flaticon-drug-6:before {
+    content: "\f19d";
+}
+
+.flaticon-element:before {
+    content: "\f19e";
+}
+
+.flaticon-tooth-outline-and-toothpaste-variants:before {
+    content: "\f19f";
+}
+
+.flaticon-medical-equipment:before {
+    content: "\f1a0";
+}
+
+.flaticon-radish-outline:before {
+    content: "\f1a1";
+}
+
+.flaticon-asterisk:before {
+    content: "\f1a2";
+}
+
+.flaticon-doctor:before {
+    content: "\f1a3";
+}
+
+.flaticon-water-droplet:before {
+    content: "\f1a4";
+}
+
+.flaticon-magnifying-glass:before {
+    content: "\f1a5";
+}
+
+.flaticon-shopping-bag:before {
+    content: "\f1a6";
+}
+
+.flaticon-right-quote:before {
+    content: "\f1a7";
+}
+
+.flaticon-map:before {
+    content: "\f1a8";
+}
+
+.flaticon-shopping-cart:before {
+    content: "\f1a9";
+}
+
+.flaticon-mail:before {
+    content: "\f1aa";
+}
+
+.flaticon-search:before {
+    content: "\f1ab";
+}
+
+.flaticon-search-1:before {
+    content: "\f1ac";
+}
+
+.flaticon-booking:before {
+    content: "\f1ad";
+}
+
+.flaticon-quote:before {
+    content: "\f1ae";
+}
+
+.flaticon-phone-1:before {
+    content: "\f1af";
+}
+
+.flaticon-right-quote-1:before {
+    content: "\f1b0";
+}
+
+.flaticon-shopping-cart-1:before {
+    content: "\f1b1";
+}
+
+.flaticon-map-1:before {
+    content: "\f1b2";
+}
+
+.flaticon-map-2:before {
+    content: "\f1b3";
+}
+
+.flaticon-appointment:before {
+    content: "\f1b4";
+}
+
+.flaticon-map-3:before {
+    content: "\f1b5";
+}
+
+.flaticon-mail-1:before {
+    content: "\f1b6";
+}
+
+.flaticon-call:before {
+    content: "\f1b7";
+}
+
+.flaticon-twitter:before {
+    content: "\f1b8";
+}
+
+.flaticon-medicine-1:before {
+    content: "\f1b9";
+}
+
+.flaticon-pills:before {
+    content: "\f1ba";
+}
+
+.flaticon-tablet:before {
+    content: "\f1bb";
+}
+
+.flaticon-tablet-1:before {
+    content: "\f1bc";
+}
+
+.flaticon-cream:before {
+    content: "\f1bd";
+}
+
+.flaticon-pills-1:before {
+    content: "\f1be";
+}
+
+.flaticon-syrup:before {
+    content: "\f1bf";
+}
+
+.flaticon-powder:before {
+    content: "\f1c0";
+}
+
+.flaticon-syringe:before {
+    content: "\f1c1";
+}
+
+.flaticon-bandage:before {
+    content: "\f1c2";
+}
+
+.flaticon-medicine-2:before {
+    content: "\f1c3";
+}
+
+.flaticon-antiseptic:before {
+    content: "\f1c4";
+}
+
+.flaticon-mouthwash:before {
+    content: "\f1c5";
+}
+
+.flaticon-dropper:before {
+    content: "\f1c6";
+}
+
+.flaticon-pill:before {
+    content: "\f1c7";
+}
+
+.flaticon-test-tube:before {
+    content: "\f1c8";
+}
+
+.flaticon-flask-1:before {
+    content: "\f1c9";
+}
+
+.flaticon-nasal-spray:before {
+    content: "\f1ca";
+}
+
+.flaticon-medicine-3:before {
+    content: "\f1cb";
+}
+
+.flaticon-pills-2:before {
+    content: "\f1cc";
+}
+
+.flaticon-medicine-4:before {
+    content: "\f1cd";
+}
+
+.flaticon-tea:before {
+    content: "\f1ce";
+}
+
+.flaticon-enema:before {
+    content: "\f1cf";
+}
+
+.flaticon-cream-1:before {
+    content: "\f1d0";
+}
+
+.flaticon-saline:before {
+    content: "\f1d1";
+}
+
+.flaticon-vial:before {
+    content: "\f1d2";
+}
+
+.flaticon-gauze:before {
+    content: "\f1d3";
+}
+
+.flaticon-cottons:before {
+    content: "\f1d4";
+}
+
+.flaticon-effervescent:before {
+    content: "\f1d5";
+}
+
+.flaticon-effervescent-1:before {
+    content: "\f1d6";
+}
+
+.flaticon-powder-1:before {
+    content: "\f1d7";
+}
+
+.flaticon-gloves:before {
+    content: "\f1d8";
+}
+
+.flaticon-stethoscope:before {
+    content: "\f1d9";
+}
+
+.flaticon-mask:before {
+    content: "\f1da";
+}
+
+.flaticon-first-aid-kit:before {
+    content: "\f1db";
+}
+
+.flaticon-ampoule:before {
+    content: "\f1dc";
+}
+
+.flaticon-spray:before {
+    content: "\f1dd";
+}
+
+.flaticon-pills-3:before {
+    content: "\f1de";
+}
+
+.flaticon-vaccine:before {
+    content: "\f1df";
+}
+
+.flaticon-band-aid:before {
+    content: "\f1e0";
+}
+
+.flaticon-microscope:before {
+    content: "\f1e1";
+}
+
+.flaticon-vitamins:before {
+    content: "\f1e2";
+}
+
+.flaticon-alcohol:before {
+    content: "\f1e3";
+}
+
+.flaticon-calcium:before {
+    content: "\f1e4";
+}
+
+.flaticon-suppositories:before {
+    content: "\f1e5";
+}
+
+.flaticon-drops:before {
+    content: "\f1e6";
+}
+
+.flaticon-drugs-1:before {
+    content: "\f1e7";
+}
+
+.flaticon-thermometer:before {
+    content: "\f1e8";
+}
+
+.flaticon-inhaler:before {
+    content: "\f1e9";
+}
+
+.flaticon-medicine-5:before {
+    content: "\f1ea";
+}
+
+.flaticon-information:before {
+    content: "\f1eb";
+}
+
+.flaticon-shopping-cart-2:before {
+    content: "\f1ec";
+}
+
+.flaticon-calendar:before {
+    content: "\f1ed";
+}
+
+.flaticon-map-4:before {
+    content: "\f1ee";
+}
+
+.flaticon-shopping-cart-3:before {
+    content: "\f1ef";
+}
+
+.flaticon-online-service:before {
+    content: "\f1f0";
+}
+
+.flaticon-place:before {
+    content: "\f1f1";
+}
+
+.flaticon-communications:before {
+    content: "\f1f2";
+}
+
+.flaticon-play-button:before {
+    content: "\f1f3";
+}
+
+.flaticon-clock-1:before {
+    content: "\f1f4";
+}
+
+.flaticon-newsletter:before {
+    content: "\f1f5";
+}
+
+.flaticon-schedule:before {
+    content: "\f1f6";
+}
+
+.flaticon-electronics:before {
+    content: "\f1f7";
+}
+
+.flaticon-calendar-1:before {
+    content: "\f1f8";
+}
+
+.flaticon-treasure:before {
+    content: "\f1f9";
+}
+
+.flaticon-verified:before {
+    content: "\f1fa";
+}
+
+.flaticon-speech-bubble:before {
+    content: "\f1fb";
+}
+
+.flaticon-send:before {
+    content: "\f1fc";
+}
+
+.flaticon-pin:before {
+    content: "\f1fd";
+}

@@ -1,0 +1,18 @@
+{% extends 'superuser/basic.html' %}
+{% block body %}
+<div class="card card-primary ">
+    <div class="card-header  bg-primary text-light">
+        <h3 class="card-title">Add Orders</h3>
+    </div>
+    <div class="card-body ">
+    <div class=" shadow-lg p-3 mb-5 bg-white rounded">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.media}}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-primary my-3" />
+            <a href='{% url "editproduct" id=form.instance.product.id task='edit' %}'  class="btn btn-secondary my-3" />View Product</a>
+    </div>
+    </div>
+</div>
+{% endblock %}

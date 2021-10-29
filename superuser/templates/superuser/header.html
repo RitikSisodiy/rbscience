@@ -1,0 +1,353 @@
+{% load static %}
+{% load custumfilter %}
+<nav>
+    <ul class="metismenu" id="menu">
+        <li class="active">
+            <a href="/superuser" aria-expanded="true">
+                <i class="ti-dashboard"></i>
+                <span>dashboard</span>
+            </a>
+        </li>
+        {% with ''|sidebardata as modelslist %}
+        {% for key,val in modelslist.items %}
+        <li class="main_dropdown
+                            ">
+            <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true"><i class="ti-user"></i>
+                <span>{{key}}</span> <span class="badge">{{allprods.count}}</span></a>
+            <ul class="collapse">
+            {% for da in val %}
+                <li class=""><a href="{% url 'showdatamodel' key da %}">{{da}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+        {% endwith %}
+        {% comment %} <li class="main_dropdown
+                            ">
+            <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true"><i class="ti-user"></i>
+                <span>Users</span> <span class="badge">{{allusers.count}}</span></a>
+            <ul class="collapse">
+                <li class=""><a href="  ">All Users </a>
+                </li>
+                <li class=""><a href="  ">Add New
+                        User</a></li>
+            </ul>
+        </li>
+        <li class="main_dropdown
+                            ">
+            <a href="#" aria-expanded="true"><i class="ti-book"></i>
+                <span>Test Drive Bookings</span><span class="badge">{{allbookings.count}}</span></a>
+            <ul class="collapse">
+                <li class=""><a href="  ">All Booking </a>
+                </li>
+                <li class=""><a href="   ">Add New
+                        Booking</a></li>
+            </ul>
+        </li>
+        <li class="main_dropdown
+                            ">
+            <a href="#" aria-expanded="true"><i class="ti-book"></i>
+                <span>Orders</span><span class="badge">{{allorders.count}}</span></a>
+            <ul class="collapse">
+                <li class=""><a href="  ">All Orders </a>
+                </li>
+                <li class=""><a href="   ">Add New
+                        Order</a></li>
+            </ul>
+        </li>
+        <li class="main_dropdown
+                            ">
+            <a href="#" aria-expanded="true"><i class="ti-book"></i>
+                <span>Contacts</span><span class="badge">{{allContact.count}}</span></a>
+            <ul class="collapse">
+                <li class=""><a href="  ">All Contacts </a>
+                </li>
+                <li class=""><a href="  ">Add New
+                        Contact</a></li>
+            </ul>
+        </li>
+
+
+        <li class="main_dropdown
+                            ">
+            <a href="  " aria-expanded="true"><i class="ti-files"></i>
+                <span>About</span></a>
+
+        </li>
+
+        <li class="main_dropdown
+                            ">
+            <a href="  " aria-expanded="true"><i class="ti-files"></i>
+                <span>Info</span></a>
+
+        </li>
+        </li> {% endcomment %}
+        <!-- <li class="main_dropdown  ">
+            <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true">
+                <i class="ti-timer"></i><span>Appointments <span class="badge">1</span></span></a>
+            <ul class="collapse">
+                <li class="    ">
+                    <a href=" {% static '/admin-home/appointment/all' %} ">All Doctors</a></li>
+
+                <li class="    ">
+                    <a href=" {% static '/admin-home/appointment/packall' %} ">All Package</a></li>
+
+                <li class="">
+                    <a href=" {% static '/admin-home/appointment/new' %} ">New Doctor</a></li>
+                <li class="">
+                <li class="">
+                    <a href=" {% static '/admin-home/appointment/appointment-search' %} ">Search
+                        Doctor</a></li>
+                <li class="">
+                    <a href=" {% static '/admin-home/appointment/category' %} ">Doctors Category</a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/appointment/booking-time' %} ">Booking Time</a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/appointment/booking' %} ">All Booking <span
+                            class="badge">1</span></a></li>
+                <li class="">
+                    <a href=" {% static '/admin-home/appointment/review' %} ">All Reviews</a></li>
+                <li class="">
+                    <a href=" {% static '/admin-home/appointment/form-builder' %} ">Booking Form
+                        Builder</a></li>
+                <li class="">
+                    <a href=" {% static '/admin-home/appointment/settings' %} ">Settings</a></li>
+            </ul>
+        </li>
+        <li class="main_dropdown">
+            <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true">
+                <i class="ti-files"></i>
+                <span>Prescriptions <span class="badge">10</span></span>
+            </a>
+            <ul class="collapse">
+                <li class="">
+                    <a href=" {% static '/admin-home/prescription/all' %} ">All Prescription <span
+                            class="badge">10</span></a></li>
+                <li class="">
+                    <a href=" {% static '/admin-home/appointment/contactall' %} ">All Contacts <span
+                            class="badge">10</span></a></li>
+                <li class="">
+                    <a href=" {% static '/admin-home/prescription/settings' %} ">Settings</a></li>
+            </ul>
+        </li> -->
+        <!--<li class="main_dropdown
+                    ">
+            <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true">
+                <i class="ti-headphone-alt"></i>
+                <span>Services</span>
+            </a>
+            <ul class="collapse">
+                <li class=""><a href=" {% static '/admin-home/services' %} ">All Services</a></li>
+                <li class=""><a href=" {% static '/admin-home/services/new' %} ">New Service</a>
+                </li>
+                <li class=""><a href=" {% static '/admin-home/services/category' %} ">Category</a>
+                </li>
+                <li class=""><a href=" {% static '/admin-home/services/page-settings' %} ">Service
+                        Page</a></li>
+                <li class=""><a
+                        href=" {% static '/admin-home/services/single-page-settings' %} ">Service
+                        Single Page</a></li>
+            </ul>
+        </li>
+        <li class="main_dropdown
+    
+                                    ">
+            <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true"><i
+                    class="ti-write"></i>
+                <span>Image Gallery</span></a>
+            <ul class="collapse">
+                <li class="">
+                    <a href=" {% static '/admin-home/gallery-page' %} ">Image Gallery</a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/gallery-page/category' %} ">Category</a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/gallery-page/page-settings' %} ">Page
+                        Settings</a>
+                </li>
+            </ul>
+        </li>
+   
+
+        <li class="main_dropdown ">
+            <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true"><i
+                    class="ti-palette"></i>
+                <span>Appearance Settings</span></a>
+            <ul class="collapse">
+                <li class="">
+                    <a href=" {% static '/admin-home/topbar-settings' %} ">
+                        Topbar Settings
+                    </a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/infobar-settings' %} ">
+                        Infobar Settings
+                    </a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/navbar-settings' %} " aria-expanded="true">
+                        Nabvar Settings
+                    </a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/media-upload/page' %} " aria-expanded="true">
+                        Media Images Manage
+                    </a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/home-variant' %} " aria-expanded="true">
+                        Home Variant
+                    </a>
+                </li>
+                <li class="main_dropdown ">
+                    <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true">
+                        Form Builder</a>
+                    <ul class="collapse">
+                        <li class="">
+                            <a href=" {% static '/admin-home/form-builder/contact-form' %} ">Contact
+                                Form</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=""><a href=" {% static '/admin-home/widgets' %} ">Widget Builder</a></li>
+                <li class="
+        ">
+                    <a href=" {% static '/admin-home/menu' %} ">Menu Manage</a></li>
+                <li class="">
+                    <a href=" {% static '/admin-home/popup-builder/all' %} ">Popup Builder</a></li>
+            </ul>
+        </li>
+        <li class="main_dropdown
+     ">
+            <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true"><i
+                    class="ti-panel"></i>
+                <span>All Page Settings</span></a>
+            <ul class="collapse">
+                <li class="main_dropdown  ">
+                    <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true">Home Page
+                        Manage
+                    </a>
+                    <ul class="collapse">
+
+                        <li class="">
+                            <a href=" {% static '/admin-home/home-page/header-slider-static' %} ">Header
+                                Slider</a>
+                        </li>
+                        <li class="">
+                            <a href=" {% static '/admin-home/home-page/header-bottom' %} ">Header
+                                Bottom Area</a>
+                        </li>
+                        <li class="">
+                            <a
+                                href=" {% static '/admin-home/home-page/testimonial-area-settings' %} ">Testimonial
+                                Area</a>
+                        </li>
+                        <li class="">
+                            <a href=" {% static '/admin-home/home-page/concern-area-settings' %} ">Concern
+                                Area</a>
+                        </li>
+                        <li class="">
+                            <a href=" {% static '/admin-home/home-page/latest-blog-settings' %} ">Latest
+                                Blog Area</a>
+                        </li>
+                        <li class="">
+                            <a
+                                href=" {% static '/admin-home/home-page/appointment-area-settings' %} ">Appointment
+                                Area</a>
+                        </li>
+                        <li class="">
+                            <a href=" {% static '/admin-home/home-page/what-we-do-settings' %} ">What
+                                We Do Area</a>
+                        </li>
+                        <li class="">
+                            <a href=" {% static '/admin-home/home-page/expert-area-settings' %} ">Expert
+                                Area</a>
+                        </li>
+                        <li class="">
+                            <a href=" {% static '/admin-home/home-page/call-to-us-settings' %} ">Call
+                                to Us Area</a>
+                        </li>
+                        <li class="">
+                            <a
+                                href=" {% static '/admin-home/home-page/special-offer-area-settings' %} ">Special
+                                Offer Area</a>
+                        </li>
+                        <li class="">
+                            <a
+                                href=" {% static '/admin-home/home-page/product-by-category-area-settings' %} ">Product
+                                Category</a>
+                        </li>
+                        <li class="">
+                            <a
+                                href=" {% static '/admin-home/home-page/popular-product-area-settings' %} ">Popular
+                                Product</a>
+                        </li>
+                        <li class="">
+                            <a
+                                href=" {% static '/admin-home/home-page/featured-product-area-settings' %} ">Featured
+                                Product</a>
+                        </li>
+                        <li class="">
+                            <a
+                                href=" {% static '/admin-home/home-page/best-seller-product-area-settings' %} ">Best
+                                Seller Product</a>
+                        </li>
+                        <li class="">
+                            <a href=" {% static '/admin-home/home-page/section-manage' %} ">Section
+                                Manage</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="main_dropdown  ">
+                    <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true">
+                        About Page Manage
+                    </a>
+                    <ul class="collapse">
+
+                        <li class="">
+                            <a href=" {% static '/admin-home/about-page/concern-area-settings' %} ">Concern
+                                Area</a></li>
+                        <li class=""><a
+                                href=" {% static '/admin-home/about-page/progressbar' %} ">Progressbar
+                                Section</a></li>
+                        <li class=""><a
+                                href=" {% static '/admin-home/about-page/section-manage' %} ">Section
+                                Manage</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="main_dropdown ">
+                    <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true">
+                        Contact Page Manage
+                    </a>
+                    <ul class="collapse">
+                        <li class="">
+                            <a href=" {% static '/admin-home/contact-page/settings' %} ">Contact
+                                Page</a>
+                        </li>
+                        <li class="">
+                            <a href=" {% static '/admin-home/contact-page/section-manage' %} ">Section
+                                Manage</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/faq-page-settings' %} ">Faq Page</a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/404-page-manage' %} ">404 Page Manage</a>
+                </li>
+                <li class="">
+                    <a href=" {% static '/admin-home/maintains-page/settings' %} ">Maintain Page
+                        Manage</a>
+                </li>
+            </ul>
+        </li> -->
+
+    </ul>
+</nav>

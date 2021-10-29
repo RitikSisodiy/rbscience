@@ -1,0 +1,45 @@
+{% extends 'superuser/basic.html' %}
+{% block body %}
+{% load custumfilter %}
+<div class=" smart-card">
+    <h4 class="title">Product</h4>
+    <div class="table-responsive">
+     <div class=" shadow-lg p-3 mb-5 bg-white rounded">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                {% for data in fields %}
+                    <th>{{data}}</th>
+                {% endfor %}
+                    <th>edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in modeldata %}
+                <tr class="">
+                    {% for field in fields %}
+                    <td>{{data|getattribute:field|slice:':25'|safe}}</td>
+                    {% endfor %}
+                    <td><a class="btn btn-primary btn-xs mb-3 mr-1" href="{{data.id}}/edit/"><i class="ti-pencil"></i></a>
+                    <a tabindex="0" class="btn btn-danger btn-xs mb-3 mr-1" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="" data-content="
+   <h6>Are you sure to delete this?</h6>
+   <form method='get' action='{{data.id}}/delete/'>
+   <input type='hidden' name='_token' value='bPNE5oytXkawNyfrysxJphne7BbyGiUJN13nlenR'>
+   <br>
+    <input type='submit' class='btn btn-danger btn-xs' value='Yes,Please'>
+    </form>
+   " data-original-title="">
+    <i class="ti-trash"></i>
+</a>
+                    
+                    </td>
+                </tr>
+                   {% endfor %}
+                   
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

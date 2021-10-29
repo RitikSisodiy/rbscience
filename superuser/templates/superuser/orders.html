@@ -1,0 +1,49 @@
+{% extends 'superuser/basic.html' %}
+{% block body %}
+     <div class="card card-primary">
+                <div class="card-header  bg-primary text-light">
+                    <h3 class="card-title">About</h3>
+                </div>
+                  <div class="card-body">
+                   <div class=" shadow-lg p-3 mb-5 bg-white rounded">
+                   <div class="col-md-3 my-4">
+                   <select onchange="location = this.value;">
+                        <option>Choose Filter</option>
+                        {% for data in choices %}
+                        <option value="{% url 'catorders' data.0 %}">{{data.1}}</option>
+                        {% endfor %}
+                   </select>
+                   </div>
+                <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>Product</th>
+                    <th>quantity</th>
+                    <th>price</th>
+                    <th>Time</th>
+                    <th>status</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in orders %}
+                <tr class="{% if forloop.counter|divisibleby:2 == False %}bg-light{% endif %}">
+                    <td>{{data.order_id}}</td>
+                    <td>{{data.user}}</td>
+                    <td>{{data.product}}</td>
+                    <td>{{data.quantity}} </td>
+                    <td>{{data.price}}</td>
+                    <td>{{data.order_date}}</td>
+                    <td>{{data.status}}</td>
+                    <td><a href="{% url 'editorders' data.id %}" class='btn btn-sm btn-primary'><i class="bi bi-pencil-fill"></i></a></td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+                  </div>
+                  </div>
+    </div>
+{% endblock %}

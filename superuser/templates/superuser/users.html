@@ -1,0 +1,46 @@
+{% extends 'superuser/basic.html' %}
+{% block body %}
+
+<div class=" smart-card">
+    <h4 class="title">All Users</h4>
+    <div class="table-responsive">
+     <div class=" shadow-lg p-3 mb-5 bg-white rounded">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>SN</th>
+                    <th>Name</th>
+                    <th>username</th>
+                    <th>prod.email</th>
+                    <th>Superuser</th>
+                    <th>last login</th>
+                    <th>join on</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prod in users %}
+                <tr class="{% if forloop.counter|divisibleby:2 == False %}bg-light{% endif %}">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{prod.first_name}} {{prod.last_name}}</td>
+                    <td>{{prod.username}}</td>
+                    <td>{{prod.email}}.. </td>
+                    <td>{% if prod.is_superuser %}Yes{% else %} No{% endif %}
+                    </td>
+                    <td>{{prod.last_login}} </td>
+                    <td>{{prod.date_joined|date}} </td>
+                    <td><a href="{% url "editproduct" id=prod.id task='edit' %}"
+                            class="btn btn-outline-secondary btn-sm">edit</a></td>
+                    <td><a href="{% url "editproduct" id=prod.id task='del' %}"
+                            class="btn btn-outline-danger btn-sm">Delete</a></td>
+
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+{% endblock %}

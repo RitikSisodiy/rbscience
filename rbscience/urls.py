@@ -24,6 +24,7 @@ urlpatterns = [
     path('jounrals/',include('article.urls')),
     path('team/',include('team.urls')),
     path('research/',include('research.urls')),
+    path('dashboard/',include('superuser.urls')),
     path('',include('blogs.urls')),
     path('',include('services.urls')),
 ] +  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

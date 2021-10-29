@@ -1,0 +1,42 @@
+{% extends 'superuser/basic.html' %}
+{% block body %}
+     <div class="card card-primary">
+                <div class="card-header  bg-primary text-light">
+                    <h3 class="card-title">About</h3>
+                </div>
+                  <div class="card-body">
+                   <div class=" shadow-lg p-3 mb-5 bg-white rounded">
+                <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>SN</th>
+                    <th>email</th>
+                    <th>Model</th>
+                    <th>Address</th>
+                    <th>Zipcode</th>
+                    <th>Question</th>
+                    <th>Time</th>
+                    <th>Call</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in testdrives %}
+                <tr class="{% if forloop.counter|divisibleby:2 == False %}bg-light{% endif %}">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.bikemodel}} </td>
+                    <td>{{data.address}}
+                    </td>
+                    <td>{{data.zipcode}}</td>
+                    <td>{{data.question}}</td>
+                    <td>{{data.time}}</td>
+                    <td><a href="tel:{{data.phone}}" class="rounded-circle btn-success btn-sm"><i class="bi bi-telephone-outbound-fill"></i></a>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+                  </div>
+                  </div>
+    </div>
+{% endblock %}

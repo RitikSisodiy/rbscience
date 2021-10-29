@@ -1,0 +1,211 @@
+/* write your own custom css, this will load at header */
+.header-style-01{
+       background: #1ebeb6 !important;
+    height: 117px;
+}
+.btn.active, .btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgb(0 0 0 / 3%)!important;
+    box-shadow: inset 0 3px 5px rgb(0 0 0 / 2%) !important;
+}
+.mainpopularpkg h2 a {
+    font-weight: 800;
+    color: #00a0a8;
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 28px;
+    margin-left: 0px;
+}
+.btn-primary {
+    padding: 10px 30px !important;
+    font-size: 15px !important;
+    background: #1ebeb6 !important;
+    border-radius: 20px !important;
+    border: solid #fff !important;
+    color: #fff !important;
+}
+.discounts {
+   border: 1px solid #1ebeb6;
+    border-radius: 0px 0px 10px 0px;
+    color: #1ebeb6;
+    font-size: 20px;
+    padding: 6px 18px;
+    display: inline-block;
+    margin-bottom: 16px;
+    font-weight: 6
+}
+.mp_packages {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    padding: 0rem;
+    border: 1px solid #eaeaea;
+   
+    border-radius: 6px;
+    box-shadow: 0 1rem 1.2rem rgb(0 0 0 / 15%);
+    margin-bottom: 30px;
+   
+}
+.pptestinfo {
+    margin: 10px 0px;
+    background: #EDFEFF;
+    padding: 2px 12px;
+    text-align: left;
+   
+    float: left;
+    font-size: 26px;
+    font-weight: 800;
+    color: #1ebeb6;
+    border-radius: 0px 5px 5px 0px;
+   
+}
+.pack-box{
+ height: 500px;
+  position: relative;
+}
+.pack-box ul{
+	margin-left:12px !important;
+}
+.product-footer{
+      position: absolute;
+    bottom: 28px;
+    left: 22px;
+}
+.btn-medheal {
+    background-color: #1ebeb6;
+    color: #f8f9fa;
+}
+.team-single-item:hover .thumb .btn-medheal:hover {
+    background-color: #1ebeb6;
+    color: #fff;
+}
+.product-single-item ul{
+  text-align:left;
+  margin-left: 15px !important;
+}
+.product-single-item .title{
+   text-align:left;
+}
+.product-single-item {
+   text-align:left;
+  height:450px;
+      position: relative;
+}
+.product-single-item .product-wrap {
+    bottom: 0;
+    left: 25px;
+    margin-bottom: 13px;
+    font-size: 16px;
+    line-height: 50px;
+    position: absolute;
+    font-weight: 700;
+    color: var(--main-color-two);
+}
+.breadcrumb-area .breadcrumb-inner {
+    padding: 10px 0 20px 0;
+    text-align: center;
+}
+.search-form-small.navbar-search .form-group:focus, .search-form-small.navbar-search .form-group:hover {
+    width: 776px !important;
+}
+.carousel-inner-login .item{
+    padding: 75px 100px 100px 100px;
+   
+}
+.carousel-inner-login {   
+    width: 100%;   
+    height: 440px;
+  background:url('https://foundation.cyberflax.com/sequael/assets/uploads/media-uploader/left-div-background1626730481.jpg');
+}
+.hight{
+height: 450px;
+}
+.login-container {
+    border: 1px solid #c2c2c2;
+    box-shadow: 0px 0px 6px #c2c2c2;
+}
+.navbar-area .nav-container .navbar-collapse .navbar-nav li {
+   
+    line-height: 72px;
+}
+.navbar-nav li a {
+color:#fff !important;
+   line-height: 75px !important;
+}
+.navbar-area.nav-style-02.has-topbar {
+    top: 50px;
+}
+.nav-container{
+
+    display: inline-flex;
+    width: 100%;
+    margin: 0;
+    background: #1ebeb6 !important;
+}
+.logo-wrapper{
+  width:175px;
+}
+.logo-wrapper img{
+  width:87%;
+}
+.secondbutton {
+    border: none;
+    background: #115278;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: 0.4s;
+    margin: 0px 0px 0px 10px;
+    padding: 15px 20px 15px 20px;
+    outline: none;
+}
+.title {
+  color:#1a9ca6;
+}
+.m-auto{
+  width:100px !important;
+}
+.btn-wrapper a:hover{
+  background: #1ebeb6 !important;
+  color:#fff;
+}
+.contact p{
+  color:#fff;
+}
+.health-card a{
+text-align: center!important;
+}
+.bg-grey {
+    background-color: #2bcbc3;
+}
+.navbar-area.nav-style-02 {
+    background-color: #1ebeb6 !important;
+}
+.footer-top {
+    background-color: #1ebeb6 !important;
+    border-bottom: 1px solid rgba(114, 108, 148, 0.2);
+}
+.footer-nav li a{
+  padding:10px;
+  color:#fff;
+}
+.copyright-area {
+    background-color: #1ebeb6;
+}
+.info-items li a{
+      padding: 2px 16px;
+    border: 2px solid #f3ae4dbf;
+    background: #f3ae4dbf;
+    color: #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+.search-form-small.navbar-search .form-group {
+    width: 776px;
+    transition: all 300ms;
+}
+.team-single-item{
+    border: solid 1px #ddd;
+}

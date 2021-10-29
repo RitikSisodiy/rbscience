@@ -1,0 +1,31 @@
+{% extends 'superuser/basic.html' %}
+{% block body %}
+{% load i18n admin_urls static %}   
+<div class=" smart-card">
+    <h4 class="title">Product</h4>
+    <div class="table-responsive">
+     <div class=" shadow-lg p-3 mb-5 bg-white rounded">
+
+        <h2>Are You Sure ??</h2>
+        <h6>Your Deletion will affect below records</h6>
+        <div class="continaer my-4">
+            {% include "admin/includes/object_delete_summary.html" %}
+            <h2>{% translate "Objects" %}</h2>
+            <ul>{{ deletedata|unordered_list }}</ul>
+
+            <ul>
+                <li>Coffee</li>
+                <li>Tea
+                  <ul>
+                    <li>Black tea</li>
+                    <li>Green tea</li>
+                  </ul>
+                </li>
+                <li>Milk</li>
+              </ul>
+        </div>
+         
+    </div>
+    </div>
+</div>
+{% endblock %}

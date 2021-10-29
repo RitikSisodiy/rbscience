@@ -1,0 +1,312 @@
+<!doctype html>
+<html class="no-js" lang="en_GB" dir="ltr">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>
+        SEQUEL -
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href=" {% static '' %} " type="image/png">
+
+    <link rel="stylesheet" href=" {% static 'assets/common/css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/common/css/font-awesome.min.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/common/css/themify-icons.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/common/css/toastr.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/metisMenu.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/slicknav.min.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/frontend/css/flaticon.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/typography.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/default-css.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/styles.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/responsive.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/fontawesome-iconpicker.min.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/fontawesome.min.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/flaticon.css' %} ">
+    <link rel="stylesheet" href=" {% static 'assets/backend/css/custom-style.css' %} ">
+    <!-- modernizr css -->
+    <script src=" {% static 'assets/common/vendor/modernizr-2.8.3.min.js' %} "></script>
+</head>
+
+<body>
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href=" {% static '/admin-home' %} ">
+                        <img src=" {% static 'assets/uploads/media-uploader/logo1626597048.png' %} " alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    {% include 'superuser/header.html' %}
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                        <ul class="notification-area pull-right">
+                            <li><label class="switch yes">
+                                    <input id="darkmode" type="checkbox" data-mode=off>
+                                    <span class="slider-color-mode onff"></span>
+                                </label></li>
+                            <li id="full-view"><i class="ti-fullscreen"></i></li>
+                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
+                            <li><a class="btn  btn-primary " target="_blank" href=" {% static 'ael' %} "><i
+                                        class="fas fa-external-link-alt mr-1"></i> View Site </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left"> Dashboard
+                            </h4>
+                            <ul class="breadcrumbs pull-left">
+                                <li><a href=" {% static '/admin-home' %} ">Home</a></li>
+                                <li><span> Dashboard
+                                    </span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">admin <i
+                                    class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href=" {% static '/admin-home/profile-update' %} ">Edit
+                                    Profile</a>
+                                <a class="dropdown-item" href=" {% static '/admin-home/password-change' %} ">Password
+                                    Change</a>
+                                <a class="dropdown-item" href=" {% static 'logout/admin' %} ">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content-inner">
+                <div class="row">
+                    <!-- seo fact area start -->
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-md-4 mt-5 mb-3">
+                                <div class="card card-hover">
+                                    <div class="dash-box text-white">
+                                        <h1 class="dash-icon">
+                                            <i class="fas fa-user-secret mb-1 font-16"></i>
+                                        </h1>
+                                        <div class="dash-content">
+                                            <h5 class="mb-0 mt-1">1</h5>
+                                            <small class="font-light">Total Admin</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-5 mb-3">
+                                <div class="card card-hover">
+                                    <div class="dash-box text-white">
+                                        <h1 class="dash-icon">
+                                            <i class="fas fa-user mb-1 font-16"></i>
+                                        </h1>
+                                        <div class="dash-content">
+                                            <h5 class="mb-0 mt-1">10</h5>
+                                            <small class="font-light">Total User</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-5 mb-3">
+                                <div class="card card-hover">
+                                    <div class="dash-box text-white">
+                                        <h1 class="dash-icon">
+                                            <i class="fas fa-blog mb-1 font-16"></i>
+                                        </h1>
+                                        <div class="dash-content">
+                                            <h5 class="mb-0 mt-1">4</h5>
+                                            <small class="font-light">Total Blogs</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-5 mb-3">
+                                <div class="card card-hover">
+                                    <div class="dash-box text-white">
+                                        <h1 class="dash-icon">
+                                            <i class="fas fa-key mb-1 font-16"></i>
+                                        </h1>
+                                        <div class="dash-content">
+                                            <h5 class="mb-0 mt-1">6</h5>
+                                            <small class="font-light">Total Key Feature</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-5 mb-3">
+                                <div class="card card-hover">
+                                    <div class="dash-box text-white">
+                                        <h1 class="dash-icon">
+                                            <i class="fas fa-comments mb-1 font-16"></i>
+                                        </h1>
+                                        <div class="dash-content">
+                                            <h5 class="mb-0 mt-1">4</h5>
+                                            <small class="font-light">Total Testimonial</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-5 mb-3">
+                                <div class="card card-hover">
+                                    <div class="dash-box text-white">
+                                        <h1 class="dash-icon">
+                                            <i class="fas fa-tags mb-1 font-16"></i>
+                                        </h1>
+                                        <div class="dash-content">
+                                            <h5 class="mb-0 mt-1">0</h5>
+                                            <small class="font-light">Total Products</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-5 mb-3">
+                                <div class="card card-hover">
+                                    <div class="dash-box text-white">
+                                        <h1 class="dash-icon">
+                                            <i class="fas fa-shopping-cart mb-1 font-16"></i>
+                                        </h1>
+                                        <div class="dash-content">
+                                            <h5 class="mb-0 mt-1">0</h5>
+                                            <small class="font-light">Total Products Order</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-5 mb-3">
+                                <div class="card card-hover">
+                                    <div class="dash-box text-white">
+                                        <h1 class="dash-icon">
+                                            <i class="fas fa-calendar-check mb-1 font-16"></i>
+                                        </h1>
+                                        <div class="dash-content">
+                                            <h5 class="mb-0 mt-1">5</h5>
+                                            <small class="font-light">Total Doctor Appointments</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-5 mb-3">
+                                <div class="card card-hover">
+                                    <div class="dash-box text-white">
+                                        <h1 class="dash-icon">
+                                            <i class="fas fa-headset mb-1 font-16"></i>
+                                        </h1>
+                                        <div class="dash-content">
+                                            <h5 class="mb-0 mt-1">7</h5>
+                                            <small class="font-light">Total Services</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card margin-top-40">
+                            <div class="smart-card">
+                                <h4 class="title">Recent Product Order</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <th>Order ID</th>
+                                            <th>Amount</th>
+                                            <th>Payment Gateway</th>
+                                            <th>Payment Status</th>
+                                            <th>Date</th>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-area">
+                <p>
+                    &copy; Copyright 2021 . All Right Reserved By <a href="#">SEQUEL</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src=" {% static 'assets/common/js/jquery-3.6.0.min.js' %} "></script>
+    <script src=" {% static 'assets/common/js/jquery-migrate-3.3.2.min.js' %} "></script>
+    <script src=" {% static 'assets/common/js/popper.min.js' %} "></script>
+    <script src=" {% static 'assets/common/js/bootstrap.min.js' %} "></script>
+    <script src=" {% static 'assets/backend/js/metisMenu.min.js' %} "></script>
+    <script src=" {% static 'assets/backend/js/jquery.slimscroll.min.js' %} "></script>
+    <script src=" {% static 'assets/backend/js/jquery.slicknav.min.js' %} "></script>
+    <script src=" {% static 'assets/backend/js/fontawesome-iconpicker.min.js' %} "></script>
+    <script src=" {% static 'assets/common/js/toastr.min.js' %} "></script>
+    <script src=" {% static 'assets/backend/js/plugins.js' %} "></script>
+    <script src=" {% static 'assets/backend/js/scripts.js' %} "></script>
+    <script>
+        (function ($) {
+            "use strict";
+
+            $('#reload').on('click', function () {
+                location.reload();
+            })
+            $('#darkmode').on('click', function () {
+                var el = $(this)
+                var mode = el.data('mode')
+                $.ajax({
+                    type: 'GET',
+                    url: {
+                        % static '  ' / admin - home / dark - mode - toggle ',' %
+                    }
+                    data: {
+                        mode: mode
+                    },
+                    success: function () {
+                        location.reload();
+                    },
+                    error: function () {}
+                });
+            })
+        })(jQuery);
+    </script>
+</body>
+
+</html>
