@@ -2,29 +2,25 @@
 {% block body %}
 {% load i18n admin_urls static %}   
 <div class=" smart-card">
-    <h4 class="title">Product</h4>
+    <h4 class="title">
+    {{modelname}}</h4>
     <div class="table-responsive">
      <div class=" shadow-lg p-3 mb-5 bg-white rounded">
 
-        <h2>Are You Sure ??</h2>
+        <h2>Are You Sure ??</h2> 
+        <p> you want to delete <a href="{% url 'editdatamodel' appname modelname currentmodel.id 'edit' %}" >{{currentmodel}}</a></p>
         <h6>Your Deletion will affect below records</h6>
         <div class="continaer my-4">
             {% include "admin/includes/object_delete_summary.html" %}
             <h2>{% translate "Objects" %}</h2>
             <ul>{{ deletedata|unordered_list }}</ul>
 
-            <ul>
-                <li>Coffee</li>
-                <li>Tea
-                  <ul>
-                    <li>Black tea</li>
-                    <li>Green tea</li>
-                  </ul>
-                </li>
-                <li>Milk</li>
-              </ul>
         </div>
-         
+        <form method="get" >
+            <input type="hidden" name='confirm' value='delete'>
+            <button type="submit" class='btn btn-danger'> Yes </button>
+            <a class='btn btn-secondary' href="{% url 'showdatamodel' appname modelname  %}"> No, Take Me Back </a>
+          </form>
     </div>
     </div>
 </div>

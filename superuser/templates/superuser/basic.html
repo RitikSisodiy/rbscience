@@ -27,10 +27,63 @@
     <link rel="stylesheet" href=" {% static 'assets/backend/css/flaticon.css' %} ">
     <link rel="stylesheet" href=" {% static 'assets/backend/css/custom-style.css' %} ">
     <!-- modernizr css -->
+    <style>
+    .django-ckeditor-widget{
+  width: 100%;
+}
+    </style>
     <script src=" {% static 'assets/common/vendor/modernizr-2.8.3.min.js' %} "></script>
 </head>
 
 <body>
+{% if messages %}
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        {% comment %} <div class="modal-body">
+            {% for message in messages %}
+                 {% if message.tags == 'error' %}
+                 <h3 class="text-danger">
+                 {% else %}
+                 <h3 class="text-success">
+                {% endif %}
+                {{message}}
+                </h3>{% endfor %}
+        </div>
+        {% endcomment %}
+        <div class="modal-body">
+                  <center>     
+						<div class="thank-you-pop">
+                {% for message in messages %}
+                 {% if message.tags == 'error' %}
+                 <img src="/static/Red-Cross-Mark-Download-PNG.png" style="height:175px;" alt="">
+							<h1 class="my-4"1>Eroor</h1>
+							<p>{{message}}</p>
+                 {% else %}
+                <img src="/static/Green-Round-Tick.png" style="height:175px;" alt="">
+							<h1 class="my-4"1>Success</h1>
+							<p>{{message}}</p>
+                {% endif %}
+                </h3>
+                
+                {% endfor %}
+
+
+ 						</div>
+                    </center>     
+                    </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-{% for message in messages %}{% if message.tags == 'error' %}danger{% else %}success{% endif %}{% endfor %}" data-dismiss="modal" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+     {% endif %}             
+
+
+
+
     <!-- preloader area start -->
     <div id="preloader">
         <div class="loader"></div>
@@ -87,11 +140,11 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left"> Dashboard
+                            <h4 class="page-title pull-left"> {{appname|title}}{{dashboardheading}}
                             </h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href=" {% static '/admin-home' %} ">Home</a></li>
-                                <li><span> Dashboard
+                                <li><a href="#">{{appname|title}}{{dashboardheading}}</a></li>
+                                <li><span> {{modelname|title}}
                                     </span></li>
                             </ul>
                         </div>
@@ -144,11 +197,26 @@
                 {% block body %}
                 {% endblock %}
             </div>
-
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">{% block formtitle %}{% endblock %}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                {% block addform %}
+                {% endblock %}
+            </div>
+          </div>
+      </div>
+  </div>
             <footer>
                 <div class="footer-area">
                     <p>
-                        &copy; Copyright 2021 . All Right Reserved By <a href="/">EVEX</a>
+                        &copy; Copyright 2021 . All Right Reserved By <a href="/">RBscience</a>
                     </p>
                 </div>
             </footer>

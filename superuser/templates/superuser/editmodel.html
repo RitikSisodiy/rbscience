@@ -11,7 +11,14 @@
             {{form.media}}
             {{form.as_p}}
             <input type="submit" class="btn btn-primary my-3" />
+
+             <div class='row container'>
+    {% for data in relateddata %}
+        <a href="{% url 'relatedmodel' appname=appname modelname=modelname objectid=objectid relatedfield=data.related_name %}" class ="btn btn-primary {% if forloop.counter > 1 %}mx-2{% endif %}">{{data.related_name}}</a>
+    {% endfor %}
     </div>
     </div>
+    </div>
+   
 </div>
 {% endblock %}

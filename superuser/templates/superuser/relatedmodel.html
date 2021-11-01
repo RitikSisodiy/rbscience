@@ -2,9 +2,13 @@
 {% block body %}
 {% load custumfilter %}
 <div class=" smart-card">
-    <h4 class="title">{{modelname|title}}</h4>
+    <h4 class="title">Available {{appname}}s in <a href="{% url 'editdatamodel' appname modelname currentmodel.id 'edit' %}" >{{currentmodel}}</a> </h4>
     <div class="table-responsive">
      <div class=" shadow-lg p-3 mb-5 bg-white rounded">
+     <div class="my-3" >
+     <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+        data-backdrop='static' data-keyboard='false'>+Add New {{appname}}  </button>
+     </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -15,15 +19,15 @@
                 </tr>
             </thead>
             <tbody>
-                {% for data in modeldata %}
+                {% for data in availbledata %}
                 <tr class="">
                     {% for field in fields %}
                     <td>{{data|getattribute:field|slice:':25'|safe}}</td>
                     {% endfor %}
-                    <td><a class="btn btn-primary btn-xs mb-3 mr-1" href="{% url 'editdatamodel' appname modelname data.id 'edit' %}"><i class="ti-pencil"></i></a>
+                    <td><a class="btn btn-primary btn-xs mb-3 mr-1" href="{% url 'editdatamodel' appname modelname objectid 'edit' %}"><i class="ti-pencil"></i></a>
                     <a tabindex="0" class="btn btn-danger btn-xs mb-3 mr-1" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="" data-content="
    <h6>Are you sure to delete this?</h6>
-   <form method='get' action='{% url 'editdatamodel' appname modelname data.id 'delete' %}'>
+   <form method='get' action='{% url 'editdatamodel' appname modelname objectid 'edit' %}'>
    <input type='hidden' name='_token' value='bPNE5oytXkawNyfrysxJphne7BbyGiUJN13nlenR'>
    <br>
     <input type='submit' class='btn btn-danger btn-xs' value='Yes,Please'>
@@ -42,4 +46,9 @@
     </div>
 </div>
 
+{% endblock %}
+{% block formtitle %}+Add New {{appname}}{% endblock %}
+{% block addform %}
+{{form.as_p}}
+{{form.media}}
 {% endblock %}

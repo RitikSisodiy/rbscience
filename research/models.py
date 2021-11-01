@@ -13,7 +13,7 @@ class category(models.Model):
     def __str__(self):
         return self.name
 class researchModel(models.Model):
-    category= models.ForeignKey(category , on_delete= models.CASCADE)
+    category= models.ForeignKey(category , on_delete= models.CASCADE,related_name="researchModel")
     heading = models.CharField(max_length=300)
     projectDetails = RichTextField(default="<p><strong>RESEARCH NAME</strong> : enter here..</p><p><strong>CLIENT </strong>: enter here..</p><p><strong>CATEGORY :</strong>enter here..</p><p><strong>DELIVERY MODE :</strong>enter here..</p><p><strong>LOCATION :</strong>enter here..</p>")
     overview = models.TextField()

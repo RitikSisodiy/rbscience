@@ -1,11 +1,11 @@
 # from django.http import request
 # from django.http.response import HttpResponse
-from django.core.checks import messages
+from django.contrib import messages
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 
 from superuser.templatetags.custumfilter import sidebardata
-from .dashboardsettings import appmodels , appslist , getappmodelbyname
+from .dashboardsettings import appmodels , appslist , getObjectbyAppModelName , getmodelbyappname
 from django.core import serializers
 from article.forms import GenForm
 # from django.apps import apps
@@ -44,41 +44,94 @@ def get_all_fields(self):
     return fields
 def index(request):
     res = {}
-    
+    res['dashboardheading'] = 'Dashboard'
     # for data in res['modelslist']:
     #     print(res['modelslist'][data])
     #     break
     # for app in allapps:
     #     res.append({app:apps.all_models[app]})
     return render(request,'superuser/index.html',res)
-def showmodel(request,appname,modelname):
+def showmodels(request,appname):
     res = {}
-    mymodel = getappmodelbyname(appname,modelname)
+    res['modelname'] ="Home"
+    res['appname'] =appname
+    res['models'] = getmodelbyappname(appname)
+    return render(request,'superuser/listmodels.html',res)
+def showObject(request,appname,modelname):
+    res = {}
+    mymodel = getObjectbyAppModelName(appname,modelname)
     res['modeldata'] = mymodel.objects.all()
     res['fields'] = [f.name for f in mymodel._meta.fields]
     # res['fields'] = [f.name for f in mymodel._meta.get_fields()]
     res['modeldata'] = mymodel.objects.all()
+    res['appname'] =appname
+    res['modelname'] =modelname
     return render(request , 'superuser/modeldatatable.html' ,res)
 def editmodel(request,appname=None,modelname=None,objectid=None,opration=None):
     res = {}
-    mymodel = getappmodelbyname(appname,modelname)
+    mymodel = getObjectbyAppModelName(appname,modelname)
     form = GenForm(mymodel)
+    res['appname'] =appname
+    res['modelname'] =modelname
     if objectid is not None:
         singledata = mymodel.objects.get(pk=objectid)
     if opration == 'add':
         res['form'] = form()
     elif opration == 'edit':
         res['form'] = form(instance=singledata)
+        res['relateddata'] = type(singledata)._meta.related_objects
+        res['appname'] = appname
+        res['modelname'] = modelname
+        res['objectid'] = objectid
+        if request.method == "POST":
+            res['form'] = form(request.POST,request.FILES,instance=singledata)
+            if res['form'].is_valid():
+                res['form'].save()
+                messages.success(request,str(res['form'].instance) + " is saved successfully")
+                return redirect(request.get_full_path())
+            messages.error(request,str(res['form'].instance) + " data is invalid Check your form")
+            
     elif opration == 'delete':
-        return alertdelete(request,singledata)
+        confirm = request.GET.get('confirm')
+        return alertdelete(request,singledata,confirm)
     return render(request,'superuser/editmodel.html',res)
+
+def relatedmodel(request,appname=None,modelname=None,objectid=None,relatedfield=None):
+    res= {}
+    mymodel = getObjectbyAppModelName(appname,modelname)
+    singledata = mymodel.objects.get(pk=objectid)
+    relatedfieldobject = getattr(singledata,relatedfield)
+    res['availbledata'] = relatedfieldobject.all()
+    relmodel = relatedfieldobject.model
+    if relmodel is not None:
+        res['fields'] = [f.name for f in relmodel._meta.fields]
+    print(relmodel)
+    res['appname'] = appname
+    res['modelname'] = modelname
+    res['objectid'] = objectid
+    res['currentmodel'] = singledata
+    res['form'] = GenForm(relmodel,)(initial={'category': singledata.id})
+    return render(request,'superuser/relatedmodel.html',res)
+
+
+
 from django.contrib.admin.utils import NestedObjects
-def alertdelete(request,singledata):
+def alertdelete(request,singledata,confirm="None"):
+    appname = type(singledata)._meta.app_label
+    modelname = singledata._meta.model_name
+    if confirm == "delete":
+        name = str(singledata)
+        singledata.delete()
+        messages.success(request,name + " is deleted successfully")
+        return redirect('showdatamodel',appname=appname,modelname=modelname )
     res = {}
     using = 'default'
     nested_object = NestedObjects(using)
     nested_object.collect([singledata])
     res['deletedata'] = nested_object.nested()
+    res['appname'] = appname
+    res['modelname'] = modelname
+    res['currentmodel'] = singledata
     return render(request , 'superuser/confirmdelete.html',res)
 # def allproducts(request):
 #     prods = Product.objects.all()

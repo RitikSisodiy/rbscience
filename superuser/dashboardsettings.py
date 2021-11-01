@@ -15,9 +15,17 @@ def appmodels(listofappname:list):
             resli[name] = Modellist
     return resli
 # add appname is sequence you want to see in dashboard  
-def getappmodelbyname(appname , modelname):
+def getObjectbyAppModelName(appname , modelname):
     app_models = apps.get_app_config(appname).get_model(modelname)
     return app_models
+#get model list by app name
+def getmodelbyappname(appname):
+    app_models = apps.get_app_config(appname).get_models()
+    Modellist = [mod.__name__ for mod in app_models]
+    return Modellist
+
+
+#get app list
 appslist = []
 for data in INSTALLED_APPS:
     if '.' not in data:

@@ -78,7 +78,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'rbscience.wsgi.application'
-
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': '100%',
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
