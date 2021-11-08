@@ -58,11 +58,11 @@
                  {% if message.tags == 'error' %}
                  <img src="/static/Red-Cross-Mark-Download-PNG.png" style="height:175px;" alt="">
 							<h1 class="my-4"1>Eroor</h1>
-							<p>{{message}}</p>
+							<p>{{message|safe}}</p>
                  {% else %}
                 <img src="/static/Green-Round-Tick.png" style="height:175px;" alt="">
 							<h1 class="my-4"1>Success</h1>
-							<p>{{message}}</p>
+							<p>{{message|safe}}</p>
                 {% endif %}
                 </h3>
                 

@@ -3,7 +3,7 @@
 from django.contrib import messages
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
-
+from .custumfunction import getobjecturl
 from superuser.templatetags.custumfilter import sidebardata
 from .dashboardsettings import appmodels , appslist , getObjectbyAppModelName , getmodelbyappname
 from django.core import serializers
@@ -70,13 +70,20 @@ def showObject(request,appname,modelname):
 def editmodel(request,appname=None,modelname=None,objectid=None,opration=None):
     res = {}
     mymodel = getObjectbyAppModelName(appname,modelname)
-    form = GenForm(mymodel)
+    form = GenForm(mymodel,['slug'])
     res['appname'] =appname
     res['modelname'] =modelname
-    if objectid is not None:
+    if objectid is not None and objectid != "newmodel":
         singledata = mymodel.objects.get(pk=objectid)
     if opration == 'add':
         res['form'] = form()
+        if request.method == "POST":
+            res['form'] = form(request.POST,request.FILES)
+            if res['form'].is_valid():
+                res['form'].save()
+                messages.success(request,str(res['form'].instance) + " is saved successfully")
+                return redirect(request.get_full_path())
+            messages.error(request,str(getobjecturl(res['form'].instance)) + " data is invalid Check your form")
     elif opration == 'edit':
         res['form'] = form(instance=singledata)
         res['relateddata'] = type(singledata)._meta.related_objects
@@ -87,7 +94,9 @@ def editmodel(request,appname=None,modelname=None,objectid=None,opration=None):
             res['form'] = form(request.POST,request.FILES,instance=singledata)
             if res['form'].is_valid():
                 res['form'].save()
-                messages.success(request,str(res['form'].instance) + " is saved successfully")
+                messages.success(request,str(getobjecturl(res['form'].instance))  + " is saved successfully")
+                if request.GET.get('next') is not None:
+                    return redirect(request.GET.get('next'))
                 return redirect(request.get_full_path())
             messages.error(request,str(res['form'].instance) + " data is invalid Check your form")
             
@@ -103,14 +112,27 @@ def relatedmodel(request,appname=None,modelname=None,objectid=None,relatedfield=
     relatedfieldobject = getattr(singledata,relatedfield)
     res['availbledata'] = relatedfieldobject.all()
     relmodel = relatedfieldobject.model
+    relatedfieldobjectFieldname = relatedfieldobject.field.name
+    form = GenForm(relmodel,[relatedfieldobjectFieldname,'slug'])
+    res['currentmodelname'] = relatedfieldobject.model._meta.verbose_name
+    res['currentappname'] = relatedfieldobject.model._meta.app_label
+    res['currentmodelfieldname'] = relatedfieldobject.model._meta.model_name
+    if request.method == "POST":
+        form = form(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"new "+ res['currentmodelname'] + "is added in "+modelname +" Successfully"  )
+            return redirect(request.get_full_path())
+        else:
+            messages.error(request,'Invalid data please cheack your form')
     if relmodel is not None:
         res['fields'] = [f.name for f in relmodel._meta.fields]
-    print(relmodel)
     res['appname'] = appname
     res['modelname'] = modelname
     res['objectid'] = objectid
     res['currentmodel'] = singledata
-    res['form'] = GenForm(relmodel,)(initial={'category': singledata.id})
+    res['currentmodelobjectid'] = singledata.pk
+    res['form'] = form(initial={relatedfieldobjectFieldname: singledata.pk})
     return render(request,'superuser/relatedmodel.html',res)
 
 

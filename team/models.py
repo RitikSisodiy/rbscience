@@ -23,4 +23,6 @@ class TeamModel(models.Model):
         if self.slug == '':
             self.slug = unique_slug_generator(TeamModel,self.cat)
         super(TeamModel, self).save(*args, **kwargs)
+    def __str__(self):
+        return self.name + " ("+ self.position + " )"
  

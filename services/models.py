@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.fields import CharField
 from blogs.models import unique_slug_generator
 from ckeditor.fields import RichTextField
+from team.models import TeamModel
 from django.utils.text import slugify
 from blogs.models import category
 # Create your models here.
@@ -15,7 +16,9 @@ class services(models.Model):
     tagline = models.CharField(max_length=500,blank=True,null=True,default='')
     details = RichTextField(blank=True, null=True)
     ourresearch = RichTextField(blank=True, null=True)
+    associatedfaculty = models.ManyToManyField(TeamModel,blank=True)
     slug = models.SlugField(blank=True)
+
 
     def save(self, *args, **kwargs):
         if self.slug == '':

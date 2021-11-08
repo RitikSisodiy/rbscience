@@ -216,7 +216,8 @@
                     <div class="ts-all-post-list-w">
                         <ul class="ts-all-post-list">
                         {% for s in servall %}
-                            <li class=""><a href="/Services/{{s.slug}}"> {{s.title}} </a>
+                                {% url 'services' s.slug as serviceurl %}
+                            <li class="{% if request.path == serviceurl %} ts-post-active {% endif %}"><a href="{{serviceurl}}"> {{s.title}} </a>
                             </li>{% endfor %}
                             
                         </ul>
