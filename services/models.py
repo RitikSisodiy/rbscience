@@ -21,7 +21,7 @@ class services(models.Model):
 
 
     def save(self, *args, **kwargs):
-        if self.slug == '':
+        if len(self.slug) < 1:
             self.slug = unique_slug_generator(services,self.title)
         super(services, self).save(*args, **kwargs)
  

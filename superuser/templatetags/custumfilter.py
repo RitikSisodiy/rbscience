@@ -8,6 +8,10 @@ def sidebardata(value):
 @register.filter(name='getattribute')
 def getattribute(value,arg):
     try:    
-        return getattr(value , arg)
+        data = getattr(value , arg)
+        if len(str(data))>1:
+            return data
+        else:
+            return "-"
     except Exception as e:
         return "-"
