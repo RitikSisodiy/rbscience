@@ -6,7 +6,7 @@ woocommerce-js ts-headerstyle-style-8 themestek-wide themestek-page-full-width t
 js-comp-ver-6.5.0 vc_responsive
 {% endblock %}
 {% block body %}
-{% include  'headertitle.html' with headertitle=membername %}
+{% include  'headertitle.html' with headertitle=memberdetail.name %}
 <div id="content-wrapper" class="site-content-wrapper">
 
 
@@ -30,7 +30,7 @@ js-comp-ver-6.5.0 vc_responsive
                                         <span class="themestek-item-thumbnail-inner">
                                             <img width="768" height="768"
                                                 src="/media/{{memberdetail.profile}}"
-                                                class="attachment-full size-full wp-post-image" alt="" />
+                                                class="attachment-full size-full wp-post-image" style="object-fit: contain;" alt="" />
                                         </span>
                                     </span> </div>
                             </div>

@@ -33,6 +33,7 @@ class issue(models.Model):
 class artical(models.Model):
     issue = models.ForeignKey(issue, on_delete=models.SET_NULL, null=True,related_name="yearbyissue")
     authors = models.ManyToManyField(authors)
+    otherauthors = models.CharField(max_length=1000,blank=True)
     pdf = models.FileField(upload_to="achivesPdf")
     heading = models.CharField(max_length=500)
     abstract = RichTextField()
@@ -48,25 +49,3 @@ class artical(models.Model):
         super(artical, self).save(*args, **kwargs)
  
 
-class wp_posts(models.Model):
-    post_author	= models.BigIntegerField()
-    post_date	= models.DateTimeField(auto_now=True)
-    post_date_gmt = models.DateTimeField(auto_now=True)
-    post_content = RichTextField()
-    post_title	= models.CharField(max_length = 500)
-    post_excerpt = models.CharField(max_length= 500)
-    post_status = models.CharField(max_length=30 )
-    comment_status = models.CharField(max_length=20)
-    ping_status = models.CharField(max_length=20)
-    post_password = models.TextField()
-    pinged = models.TextField()
-    post_modified = models.DateTimeField()
-    post_modified_gmt = models.DateTimeField()
-    post_content_filtered = models.TextField()
-    post_parent = models.BigIntegerField()
-    guid = models.CharField(max_length=255)
-    menu_order = models.CharField(max_length=200)
-    post_type = models.CharField(max_length=20)
-    post_mime_type = models.CharField(max_length=100)
-    menu_order = models.CharField(max_length=200)
-    comment_count = models.BigIntegerField()

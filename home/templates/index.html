@@ -459,10 +459,10 @@
 																	<div class="themestek-post-item">
 																		<div
 																			class="ts-featured-wrapper ts-ts-service-featured-wrapper">
-																			<img width="800" height="650"
+																			<img
 																				src="/media/{{data.img1}}"
 																				class="attachment-themestek-img-800x650 size-themestek-img-800x650 wp-post-image"
-																				alt="" loading="lazy" data-id="8081" />
+																				alt="" loading="lazy" data-id="8081" style="height: 350px;" />
 																		</div>
 																		<div class="themestek-box-content">
 																			<div class="themestek-box-content-inner">
@@ -472,7 +472,7 @@
 																							rel="tag">{{data.category.cat}}</a>
 																					</div>
 																					<h3><a
-																							href="{% url 'services' data.slug %}">{{data.title}}</a>
+																							href="{% url 'services' data.slug %}">{{data.title|title|slice:":22"}}</a>
 																					</h3>
 																				</div>
 																				<div
@@ -746,11 +746,11 @@
 																<div class="themestek-post-item">
 
 																	<span class="themestek-item-thumbnail">
-																		<span class="themestek-item-thumbnail-inner">
-																			<img width="768" height="768"
+																		<span class="themestek-item-thumbnail-inner" style="text-align: center;">
+																			<img
 																				src="/media/{{data.profile}}"
 																				class="attachment-themestek-img-800x800 size-themestek-img-800x800 wp-post-image"
-																				alt="" />
+																				alt="" style="border-radius: 50%;" />
 																		</span>
 																	</span>
 																	<div class="themestek-box-content">

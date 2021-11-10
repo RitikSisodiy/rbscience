@@ -23,7 +23,3 @@ class articalAdmin(admin.ModelAdmin):
 @admin.register(authors)
 class authorsAdmin(admin.ModelAdmin):
     list_display = ('name',)
-@admin.register(wp_posts)
-class wp_postsAdmin(admin.ModelAdmin):
-    list_display = ('id',)
-    

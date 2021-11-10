@@ -5,7 +5,7 @@ from .forms import GenForm
 from django.core.mail import message, send_mail, EmailMessage
 from rbscience import settings
 from django.contrib import messages
-from .models import issue, submenuscripts,artical,year
+from .models import issue, submenuscripts,artical, vol,year
 # Create your views here.
 def article(request):
     res = {}
@@ -49,15 +49,15 @@ def submitarticle(request):
 def archives(request):
     res = {}
     yeardata = year.objects.filter()
-    years  = issue.objects.values_list('year','vol').order_by("year__year").distinct()
+    years  = issue.objects.values_list('year','vol','issue').order_by("year__year").distinct()
     yearsvol = {d[0] : [] for d in years}
     for data in years:
-        yearsvol[data[0]].append(data[1])
+        yearsvol[data[0]].append([data[1],data[2]])
     reslist = []
     for k,v in yearsvol.items():
         liap = []
         for d in v:
-            articaldata = artical.objects.filter(issue__year = k , issue__vol = d)
+            articaldata = artical.objects.filter(issue__year = k , issue__vol = d[0],issue__issue = d[1])
             if len(articaldata)>0:
                 liap.append(articaldata)
         if len(liap)>0:
@@ -89,3 +89,27 @@ def currentissue(request):
 def abstractarticle(request,slug1):
     absdata = artical.objects.get(slug=slug1)
     return render(request,'article/abstractarticle.html',{'absdata':absdata})
+
+
+
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.html import strip_tags
+@csrf_exempt
+def addartical(request):
+    if request.method == "POST":
+        pdata = request.POST
+        fdata = request.FILES
+        yearob, created = year.objects.get_or_create(year=pdata['year'])
+        volob, created = vol.objects.get_or_create(vol=pdata['vol'])
+        issueob, created = issue.objects.get_or_create(issue=pdata['issue'],year=yearob,vol=volob)
+        articalob, created = artical.objects.get_or_create(
+            issue=issueob,
+            otherauthors=strip_tags(pdata['otherauthors']),
+            pdf=fdata['pdf'],
+            abstract=pdata['abstract'],
+            keywords=pdata['keywords'],
+            do=pdata['do'],
+            references=pdata['references'],
+            heading=pdata['heading'],
+            )
+    return render(request,'article/addartical.html')

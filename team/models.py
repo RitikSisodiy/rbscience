@@ -20,8 +20,8 @@ class TeamModel(models.Model):
     slug = models.SlugField(blank=True)
     experience = RichTextField()
     def save(self, *args, **kwargs):
-        if self.slug == '':
-            self.slug = unique_slug_generator(TeamModel,self.cat)
+        if len(self.slug)<1:
+            self.slug = unique_slug_generator(TeamModel,self.name)
         super(TeamModel, self).save(*args, **kwargs)
     def __str__(self):
         return self.name + " ("+ self.position + " )"
