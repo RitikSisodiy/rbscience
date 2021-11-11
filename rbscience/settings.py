@@ -38,15 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'ckeditor_uploader',
     'home',
     'about',
-    'article',
+    'artical',
     'blogs',
     'services',
     'team',
     'research',
     'superuser',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -83,6 +86,7 @@ CKEDITOR_CONFIGS = {
         'width': '100%',
     },
 }
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -157,8 +161,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT =  BASE_DIR / 'staticfiles'
-MEDIA_ROOT =  BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+CKEDITOR_UPLOAD_PATH = 'uploads/' 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -6,7 +6,7 @@
     <div class="table-responsive">
      <div class=" shadow-lg p-3 mb-5 bg-white rounded">
      <div class="my-3" >
-     <a class="btn btn-primary" href="{% url 'editdatamodel' appname modelname 'newmodel' 'add' %}" >+Add New {{modelname|title}}  </a>
+     <a class="btn btn-primary" href="{% url 'editdatamodel' appname modelname 'newmodel' 'add' %}" >+Add New {{modelname|cemelcase|title}}  </a>
      </div>
         <table class="table table-striped">
             <thead>

@@ -1,0 +1,58 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}
+{% include  'headertitle.html' with headertitle="Editorial Board" %}
+{% endblock %}
+
+<!-- {% block bodyclass %}
+page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-headerstyle-style-8 themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-comp-ver-6.5.0 vc_responsive
+{% endblock %} -->
+
+{% block body %}
+
+<div class="container shadow-box" style="margin-top:32px;margin-bottom:90px;">
+
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}" role="alert">
+        {{ message}}
+    </div>
+    {% endfor %}
+    <div class="vc_column-inner  ts-responsive-custom-80978663" style="padding: 38px;">
+        <div class="pb_wrapper">
+            <div role="form" class="wpcf7" id="wpcf7-f8114-p6602-o2" lang="en-US" dir="ltr">
+                <div class="screen-reader-response">
+                    <p role="status" aria-live="polite" aria-atomic="true"></p>
+                    <ul></ul>
+                </div>
+                <div class="row">
+                    <div class="wpcf7-form col-md-8">
+                        {% for key,value in board.items  %}
+                        <div>
+                            <h2>{{key}}</h2>
+                            {% for data in value %}
+                            <strong><span>{{data.name}}</span></strong><br>
+                            <span>{{data.position}}</span><br>
+                            <span>{{data.address}}</span><br><br><br>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                        <div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img src="/static/img/new-cover.png" width="100%">
+                                    <div>
+                                        <h4><b>Online ISSN: 2456-8244</b></h4>
+                                    </div>
+                           
+                                <h2 class="">Visitor Counter</h2>
+                                    <h3>7022</h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

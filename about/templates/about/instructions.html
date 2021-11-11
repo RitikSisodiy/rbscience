@@ -1,0 +1,23 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}
+{% include  'headertitle.html' with headertitle="Instructions To Authors" %}
+{% endblock %}
+
+<!-- {% block bodyclass %}
+page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-headerstyle-style-8 themestek-wide themestek-page-full-width ts-empty-sidebar wpb-js-composer js-comp-ver-6.5.0 vc_responsive
+{% endblock %} -->
+{% block body %}
+<div class="container">
+{% for data in instructions %}
+<h1>{{data.title}}</h1>
+<br>
+<br>
+<div>
+{{data.content|safe}}
+</div>
+
+
+{% endfor %}
+</div>
+{% endblock %}

@@ -7,7 +7,7 @@ from .custumfunction import getobjecturl
 from superuser.templatetags.custumfilter import sidebardata
 from .dashboardsettings import appmodels , appslist , getObjectbyAppModelName , getmodelbyappname
 from django.core import serializers
-from article.forms import GenForm
+from artical.forms import GenForm
 # from django.apps import apps
 # from onlineshop.models import *
 # from django.contrib import messages

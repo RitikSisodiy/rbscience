@@ -2,21 +2,23 @@
 {% load custumfilter %}
 <nav>
     <ul class="metismenu" id="menu">
-        <li class="active">
-            <a href="{% url "dashboardindex" %}" aria-expanded="true">
+    {% url "dashboardindex" as dashboardurl %}
+        <li class="{% if request.path == dashboardurl %}active{% endif %}">
+            <a href="{{dashboardurl}}" aria-expanded="true">
                 <i class="ti-dashboard"></i>
                 <span>dashboard</span>
             </a>
         </li>
         {% with ''|sidebardata as modelslist %}
         {% for key,val in modelslist.items %}
-        <li class="main_dropdown
-                            ">
-            <a href=" {% static 'javascript:void(0)' %} " aria-expanded="true"><i class="ti-user"></i>
-                <span>{{key}}</span> <span class="badge">{{allprods.count}}</span></a>
+        {% url "showapp" key as showappurl %}
+        <li class="main_dropdown {% if showappurl in request.path %}active{% endif %}">
+            <a href="{{showappurl}}" aria-expanded="true"><i class="ti-user"></i>
+                <span>{{key|cemelcase}}</span> <span class="badge">{{val|length}}</span></a>
             <ul class="collapse">
             {% for da in val %}
-                <li class=""><a href="{% url 'showdatamodel' key da %}">{{da}}</a>
+                {% url 'showdatamodel' key da as showdatamodelurl %}
+                <li class="{% if showdatamodelurl == request.path %}active{% endif %}"><a href="{{showdatamodelurl}}">{{da|cemelcase}}</a>
                 </li>
                 {% endfor %}
             </ul>

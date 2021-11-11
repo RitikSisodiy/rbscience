@@ -7,8 +7,8 @@ from django.conf import settings
 from django.core.mail import message, send_mail, EmailMessage
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
-from article.forms import GenForm
-
+from artical.forms import GenForm
+from .models import InstuctionsToAuthors
 
 # Create your views here.
 def about(request):
@@ -63,3 +63,13 @@ def subscribe(request):
         currenturl = currenturl if currenturl is not None else "home"        
         return redirect(currenturl)
     return redirect('home')
+
+def instructions(request):
+    res= {}
+    res['instructions'] = InstuctionsToAuthors.objects.all().order_by('id')
+    return render(request , 'about/instructions.html',res)
+def auditorialboard(request):
+    res= {}
+    res['board'] = {"Chief Editor":auditorialBoard.objects.filter(type='1').order_by('id'),'Editors':auditorialboardModel.objects.filter(type='2').order_by('id')}
+    
+    return render(request , 'about/auditorialboard.html',res)

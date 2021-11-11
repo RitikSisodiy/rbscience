@@ -1,8 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from blogs.models import unique_slug_generator
-from ckeditor.fields import RichTextField
-
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 class category(models.Model):
     name = models.CharField(max_length=70)
@@ -15,10 +14,10 @@ class category(models.Model):
 class researchModel(models.Model):
     category= models.ForeignKey(category , on_delete= models.CASCADE,related_name="researchModel")
     heading = models.CharField(max_length=300)
-    projectDetails = RichTextField(default="<p><strong>RESEARCH NAME</strong> : enter here..</p><p><strong>CLIENT </strong>: enter here..</p><p><strong>CATEGORY :</strong>enter here..</p><p><strong>DELIVERY MODE :</strong>enter here..</p><p><strong>LOCATION :</strong>enter here..</p>")
+    projectDetails = RichTextUploadingField(default="<p><strong>RESEARCH NAME</strong> : enter here..</p><p><strong>CLIENT </strong>: enter here..</p><p><strong>CATEGORY :</strong>enter here..</p><p><strong>DELIVERY MODE :</strong>enter here..</p><p><strong>LOCATION :</strong>enter here..</p>")
     overview = models.TextField()
-    content = RichTextField()
-    processOverview = RichTextField()
+    content = RichTextUploadingField()
+    processOverview = RichTextUploadingField()
     time = models.DateTimeField(auto_now=True)
     img = models.ImageField(upload_to="research")
     slug = models.SlugField(blank=True)

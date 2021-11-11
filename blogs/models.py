@@ -2,7 +2,7 @@ from django.db import models
 from django.db.models import fields
 from django.db.models.fields import TextField
 from django.utils.text import slugify
-from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 import random ,string
 def get_random_string(size):
@@ -37,7 +37,7 @@ class Blogs(models.Model):
     category = models.ForeignKey(category,on_delete=models.CASCADE,related_name="Blogs")
     title = models.CharField(max_length=100)
     blog_des = models.CharField(max_length=200)
-    blog_detail = RichTextField(blank=True, null=True)
+    blog_detail = RichTextUploadingField(blank=True, null=True)
     date = models.DateTimeField(auto_now=True)
     img =models.ImageField(upload_to="img")
     slug = models.SlugField(blank=True)

@@ -24,7 +24,7 @@
             html.className = html.className.replace(/\bno-js\b/, 'js')
         })(document.documentElement);
     </script>
-    <title>Labtechco Demo7 &#8211; Just another LabtechCO site</title>
+    <title>{{title}}</title>
     <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
     <link rel='dns-prefetch' href='http://s.w.org/' />
     <link rel="alternate" type="application/rss+xml" title="Labtechco Demo7 &raquo; Feed" href="feed/index.html" />
@@ -1053,12 +1053,30 @@
             html.className = html.className.replace(/\bno-js\b/, 'js')
         })(document.documentElement);
     </script>
-    <title>Artificial Intelligence &#8211; Labtechco Demo7</title>
+    <title>{{title}}</title>
+    <style>
+            
+            .wpb_animate_when_almost_visible {
+                opacity: 1;
+            }
+            div.row.upper-header-div.text-right.ts-bgcolor-gradient a {
+                text-decoration: none;
+                color: white;
+                font-weight: 500;
+                margin-right:20px;
+                transition: color .3s ease-out;
+                transition: font-size .3s ease-out;
+            } 
+            div.row.upper-header-div.text-right.ts-bgcolor-gradient a:hover {
+                color: black;
+                font-size:17px;
+            }   
+        </style>
     <style data-type="vc_shortcodes-custom-css">
-       
         div.ts-featured-wrapper img {
             object-fit: contain;
-}
+        }
+
         .vc_custom_1609923964951 {
             padding-top: 110px !important;
             padding-bottom: 110px !important;
@@ -1305,13 +1323,15 @@
                 padding-bottom: 60px !important;
             }
         }
+
         span.themestek-item-thumbnail-inner img {
             width: 100%;
             height: 300px;
             object-fit: cover;
             object-position: top;
-            
+
         }
+
         @media (max-width: 767px) {
             .ts-row.ts-responsive-custom-61585309 {
                 padding-top: 30px !important;
@@ -1695,6 +1715,7 @@
     <meta name="generator" content="WordPress 5.6.5" />
     <meta name="generator" content="WooCommerce 5.5.1" />
     <link rel="canonical" href="index.html" />
+    <link rel="icon" href="/static/img/logo-b-01.png" />
     <link rel='shortlink' href='{% static "indexe0bc.html?p=5727" %}' />
     <link rel="alternate" type="application/json+oembed" href="{% static "wp-json/oembed/1.0/embeda003.json" %}" />
     <link rel="alternate" type="text/xml+oembed" href="{% static "wp-json/oembed/1.0/embed33d1" %}" />
@@ -1732,7 +1753,6 @@
             --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 1rem;
             font-weight: 400;
             line-height: 1.5;
             color: #212529;
@@ -1866,12 +1886,9 @@
         .vc_custom_1530503603170 {
             margin-top: 30px !important;
         }
+       
     </style><noscript>
-        <style>
-            .wpb_animate_when_almost_visible {
-                opacity: 1;
-            }
-        </style>
+        
     </noscript>
 </head>
 
@@ -1880,8 +1897,15 @@
     <div id="ts-home"></div>
     <div class="main-holder">
         <div id="page" class="hfeed site">
+            
             <header id="masthead" class=" ts-header-style-style-8 themestek-main-menu-total-6">
-                <div class="ts-header-block  ts-mmenu-active-color-custom ts-dmenu-active-color-skin ts-dmenu-sep-grey">
+                <div class="ts-header-block  ts-mmenu-active-color-custom ts-dmenu-active-color-skin ts-dmenu-sep-grey" >
+                    <div class="row upper-header-div text-right ts-bgcolor-gradient" style="padding: 22px;">
+				<a href="{% url 'rbsciencehome' %}" {% if request.session.jounral  %}{% else %}style="color:black;font-size:17px;"{% endif %} >HOME</a>
+				
+				<a href="{% url 'changenav' %}" {% if request.session.jounral  %}style="color:black;font-size:17px;"{% else %}{% endif %}>JOURNAL OF PHARMACOLOGY AND BIOMEDICINE</a>
+				
+			</div>
                     <div class="ts-search-overlay">
                         <div class="ts-icon-close"></div>
                         <div class="ts-search-outer">
@@ -1894,220 +1918,25 @@
                             </form>
                         </div>
                     </div>
-                    <div id="site-header"
-                        class="site-header ts-bgcolor-custom ts-sticky-bgcolor-white ts-responsive-icon-dark ts-mmmenu-override-yes ts-above-content-yes">
-                        <div class="site-header-main ts-table">
-                            <div class="ts-header-top-wrapper container">
-                                <div class="site-branding">
-                                    <div class="headerlogo themestek-logotype-image ts-stickylogo-yes">
-                                        <h1 class="site-title"><a class="home-link" href="" rel="home">
-                                                <span class="ts-sc-logo ts-sc-logo-type-image">
-                                                    <img class="themestek-logo-img standardlogo" alt="Labtechco Demo7"
-                                                        src="{% static "wp-content/uploads/sites/13/2020/12/logo-b-01.png" %}">
-                                                    <img class="themestek-logo-img crosslogo" alt="Labtechco Demo7"
-                                                        src="{% static "wp-content/uploads/2018/08/logo.png" %}">
-                                                    <img class="themestek-logo-img stickylogo" alt="Labtechco Demo7"
-                                                        src="{% static "wp-content/uploads/sites/13/2020/12/logo-b-01.png" %}">
-                                                </span></a></h1>
-                                        <h2 class="site-description">Just another LabtechCO site</h2>
-                                    </div>
-                                </div>
-                                <!-- .site-branding -->
-                                <div class="ts-infostack-right-content">
-                                    <div class="info-widget">
-                                        <div class="info-widget-inner">
-                                            <div class="media-right">
-                                                <div class="icon"> <i class="ts-labtechco-icon-phone-call"></i></div>
-                                            </div>
-                                            <div class="media-right">
-                                                <h6>Telephone </h6>
-                                                <h3> 9406974835 </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="info-widget">
-                                        <div class="info-widget-inner">
-                                            <div class="media-right">
-                                                <div class="icon"> <i class="ts-labtechco-icon-envelope"></i></div>
-                                            </div>
-                                            <div class="media-right">
-                                                <h6>Email Address </h6>
-                                                <h3>rbsciencebhopal@gmail.com </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="info-widget">
-                                        <div class="info-widget-inner">
-                                            <div class="media-right">
-                                                <div class="icon"> <i class="ts-labtechco-icon-location-pin"></i></div>
-                                            </div>
-                                            <div class="media-right">
-                                                <h6>Office Address </h6>
-                                                <h3>D-438, New Minaal Residency </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ts-header-text-area ts-header-button-w">
-                                        <div class="ts-vc_btn3-container ts-vc_btn3-inline">
-                                        <img src="/static/msme-logo-png-7.png" width="135px" alt="" srcset="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- .ts-header-top-wrapper -->
-                            <div id="ts-stickable-header-w" class="ts-stickable-header-w ts-bgcolor-custom"
-                                style="height:70px">
-                                <div id="site-header-menu" class="site-header-menu container">
-                                    <div
-                                        class="site-header-menu-inner  ts-stickable-header  ts-header-menu-bg-color-gradient ts-bgcolor-gradient ts-sticky-bgcolor-darkgrey">
-                                        <div
-                                            class="site-header-menu-middle  ts-header-menu-bg-color-gradient ts-bgcolor-gradient ts-sticky-bgcolor-darkgrey">
-                                            <div class="container ">
-                                                <div>
-                                                    <nav id="site-navigation" class="main-navigation"
-                                                        aria-label="Primary Menu" data-sticky-height="85">
-                                                        <button id="menu-toggle" class="menu-toggle">
-                                                            <span class="ts-hide">Toggle menu</span><i
-                                                                class="ts-labtechco-icon-bars"></i>
-                                                        </button>
-                                                        <div class="nav-menu">
-                                                            <ul id="menu-main-menu" class="nav-menu">
-
-                                                                <li id="menu-item-8028"
-                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8028">
-                                                                    <a href="{% url "home" %}">Home</a>
-                                                                </li>
-                                                                <li id="menu-item-8027"
-                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8027">
-                                                                    <a href="{% url 'about' %}">About Us</a>
-                                                                    <ul class="sub-menu">
-                                                                        <li id="menu-item-8068"
-                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
-                                                                            <a href="{% url 'team' %}">Our Team</a></li>
-                                                                       <li id="menu-item-8068"
-                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
-                                                                            <a href="{% url 'research' %}">Our Research</a></li>
-                                                                        <!--<li id="menu-item-8073" class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8073"><a href="service/advanced-robotics/index.html">Advanced Robotics</a></li>-->
-                                                                        <!--<li id="menu-item-8074" class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8074"><a href="service/pathology-testing/index.html">Pathology Testing</a></li>-->
-                                                                        <!--<li id="menu-item-8075" class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8075"><a href="service/alternative-energy/index.html">Alternative Energy</a></li>-->
-                                                                    </ul>
-                                                                </li>
-                                                                <li id="menu-item-8027"
-                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8027">
-                                                                    <a href="{% url 'article' %}">Journals</a>
-                                                                    <ul class="sub-menu">
-                                                                            <li id="menu-item-8068"
-                                                                                class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
-                                                                                <a href="{% url 'submitarticle' %}">submit Artical</a></li> 
-                                                                              <li id="menu-item-8068"
-                                                                                class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
-                                                                                <a href="{% url 'currentissue' %}">Current</a></li> 
-                                                                              <li id="menu-item-8068"
-                                                                                class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
-                                                                                <a href="{% url 'archives' %}">Archives</a></li> 
-                                                                        </ul>
-                                                                </li>
-                                                                <li id="menu-item-8061"
-                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8061">
-                                                                    <a href="#">Services</a>
-                                                                     <ul class="sub-menu">
-                                                                    {% for s in serv %}
-                                                                        <li id="menu-item-8068"
-                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
-                                                                            <a href="{% url 'services' s.slug %}">{{s.title}}</a></li> {% endfor %}
-                                                                    </ul>
-                                                                </li>
-                                                                <li id="menu-item-8061"
-                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8061">
-                                                                    <a href="#">Training</a>
-                                                                     <ul class="sub-menu">
-                                                                    {% for s in training %}
-                                                                        <li id="menu-item-8068"
-                                                                            class="menu-item menu-item-type-post_type menu-item-object-ts-service menu-item-8068">
-                                                                            <a href="{% url 'training' s.slug %}">{{s.title}}</a></li> {% endfor %}
-                                                                    </ul>
-                                                                </li>
-                                                                <li id="menu-item-8027"
-                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8027">
-                                                                    <a href="{% url 'blogs' %}">Blog</a>
-
-                                                                </li>
-                                                                <li id="menu-item-8027"
-                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8027">
-                                                                    <a href="{% url 'contactus' %}">Contact Us</a>
-
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </nav>
-                                                    <!-- .main-navigation -->
-                                                </div>
-                                                <div class="ts-phone">
-                                                    <div class="ts-search-overlay">
-                                                        <div class="ts-icon-close"></div>
-                                                        <div class="ts-search-outer">
-                                                            <div class="ts-search-logo"><img
-                                                                    src="{% static "wp-content/uploads/2018/08/logo.png" %}"
-                                                                    alt="Labtechco Demo7" /></div>
-                                                            <form method="get" class="ts-site-searchform" action="">
-                                                                <input type="search" class="field searchform-s" name="s"
-                                                                    placeholder="Type Word Then Press Enter" />
-                                                                <button type="submit"><span
-                                                                        class="ts-labtechco-icon-search"></span></button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ts-header-icons ">
-                                                        <!-- <span class="ts-header-icon ts-header-wc-cart-link"><a href="cart/index.html"><i class="ts-labtechco-icon-shopping-cart"></i><span class="number-cart">0</span></a></span> --><span
-                                                            class="ts-header-icon ts-header-search-link"><a href="#"><i
-                                                                    class="ts-labtechco-icon-search-2"></i></a></span>
-                                                    </div>
-                                                    <div class="themestek-social-links-wrapper">
-                                                        <ul class="social-icons">
-                                                            <li class="ts-social-facebook"><a class=" tooltip-top"
-                                                                    target="_blank"
-                                                                    href="https://www.facebook.com/rbsciencebhopal"
-                                                                    data-tooltip="Facebook"><i
-                                                                        class="ts-labtechco-icon-facebook"></i></a></li>
-
-                                                            <li class="bi bi-instagram"><a class=" tooltip-top"
-                                                                    target="_blank"
-                                                                    href="https://www.instagram.com/rbscience/?hl=en"
-                                                                    data-tooltip="Instagram"><i
-                                                                        class="ts-labtechco-icon-instagram"></i></a>
-                                                            </li>
-
-                                                            <!--  <li class="ts-social-flickr"><a class=" tooltip-top" target="_blank" href="#" data-tooltip="Flickr"><i class="ts-labtechco-icon-flickr"></i></a></li> -->
-
-                                                            <li class="ts-social-linkedin"><a class=" tooltip-top"
-                                                                    target="_blank"
-                                                                    href="https://www.linkedin.com/in/rb-science-28376b1a4/?originalSubdomain=in"
-                                                                    data-tooltip="LinkedIn"><i
-                                                                        class="ts-labtechco-icon-linkedin"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- .site-header-menu -->
-                            </div>
-                        </div>
-                        <!-- .site-header-main -->
-                    </div>
+                   {% if request.session.jounral %}
+                    {% include 'headernav2.html' %}
+                    {% else %}
+                    {% include 'headernav.html' %}
+                    {% endif %}
                     {% block slider %}
                     <div class="themestek-slider-wrapper">
                         <div class="themestek-slider-wide">
+{% load custumfilter %}
 
                             <p class="rs-p-wp-fix"></p>
                             <rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery"
                                 style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
                                 <rs-module id="rev_slider_1_1" style="" data-version="6.3.3">
                                     <rs-slides>
-                                        <rs-slide data-key="rs-1" data-title="Slide"
+                                        {% for data in slider %}
+                                        <rs-slide data-key="rs-{{forloop.counter}}" data-title="Slide"
                                             data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
-                                            <img src="{% static "wp-content/uploads/sites/13/revslider/home-slider-8/slider8-a.jpg" %}"
+                                            <img src="/media/{{data.slider_image}}" %}"
                                                 title="slider8-a.jpg" width="1920" height="730" class="rev-slidebg"
                                                 data-no-retina>
 
@@ -2117,26 +1946,32 @@
                                                 data-text="s:17;l:42;fw:600;a:inherit;" data-vbility="t,t,t,f"
                                                 data-frame_0="x:50px;" data-frame_1="st:1600;sp:1000;sR:1600;"
                                                 data-frame_999="o:0;st:w;sR:6400;"
-                                                style="z-index:8;font-family:Work Sans;"> <span class="ts-skincolor">▪
-                                                </span>Knowledge &nbsp; &nbsp;<span class="ts-skincolor">▪ </span>
-                                                Wisdom &nbsp; &nbsp; <span class="ts-skincolor">▪ </span>Excellence
-                                                Service.
+                                                style="z-index:8;font-family:Work Sans;">{% for key in data.keys|split:"," %} <span class="ts-skincolor">▪
+                                                </span>{{key}} &nbsp; &nbsp;{% endfor %}
                                             </rs-layer>
-
                                             <rs-layer id="slider-1-slide-1-layer-7" data-type="text"
                                                 data-color="#000014||#000014||#1b1d1f||#1b1d1f" data-rsp_ch="on"
                                                 data-xy="xo:30px;yo:224px,211px,179px,138px;"
                                                 data-text="s:70,70,60,40;l:80,80,64,44;fw:700;a:inherit;"
                                                 data-frame_0="x:50px;" data-frame_1="st:700;sp:1000;sR:700;"
                                                 data-frame_999="o:0;st:w;sR:7300;"
-                                                style="z-index:9;font-family:Roboto Condensed;">Keeping the
-                                                world's<br /> <span class="ts-skincolor">Surfaces</span>
-                                                Safe
+                                                style="z-index:9;font-family:Roboto Condensed;">{% for w in data.title|split:" " %} {% if forloop.counter|divisibleby:'4' %}<br /> <span class="ts-skincolor">{{w}}</span> {% else %}{{w}}{% endif %}{% endfor %}
+                                            </rs-layer>
+                                             <rs-layer id="slider-1-slide-2-layer-10" class="rev-btn" data-type="button"
+                                             onclick="location.href='{{data.learnMoreurl}}';"
+                                                data-rsp_ch="on" data-xy="xo:30px;yo:461px,446px,386px,249px;"
+                                                data-text="s:14;l:24;ls:1px;fw:700;a:inherit;"
+                                                data-padding="t:12;r:35;b:12;l:35;" data-frame_0="x:50;"
+                                                data-frame_1="st:2330;sp:1000;sR:2330;"
+                                                data-frame_999="o:0;st:w;sR:5670;"
+                                                data-frame_hover="c:#fff;bgc:#349c4b;boc:#000;bor:0px,0px,0px,0px;bos:solid;oX:50;oY:50;sp:0;"
+                                                style="z-index:11;background-color:#000014;font-family:Roboto Condensed;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
+                                                LEARN MORE
                                             </rs-layer>
 
-                                            <rs-layer id="slider-1-slide-1-layer-12" class="rev-btn" data-type="button" onclick="location.href='{% url 'contactus' %}';" 
-                                                data-color="#000014" data-rsp_ch="on"
-                                                data-xy="xo:210px;yo:461px,446px,386px,248px;"
+                                            <rs-layer id="slider-1-slide-1-layer-12" class="rev-btn" data-type="button"
+                                                onclick="location.href='{% url 'contactus' %}';" data-color="#000014"
+                                                data-rsp_ch="on" data-xy="xo:210px;yo:461px,446px,386px,248px;"
                                                 data-text="s:14;l:24;ls:1px;fw:700;a:inherit;"
                                                 data-padding="t:10;r:35;b:10;l:35;"
                                                 data-border="bos:solid;boc:#349c4b;bow:2px,2px,2px,2px;"
@@ -2148,7 +1983,8 @@
                                             </rs-layer>
 
                                         </rs-slide>
-                                        <rs-slide data-key="rs-2" data-title="Slide"
+                                        {% endfor %}
+                                        {% comment %} <rs-slide data-key="rs-2" data-title="Slide"
                                             data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
                                             <img src="{% static 'wp-content/uploads/sites/13/revslider/home-slider-8/slider8-b.jpg' %}"
                                                 title="slider8-b.jpg" width="1920" height="730" class="rev-slidebg"
@@ -2200,7 +2036,7 @@
                                                 Contact US
                                             </rs-layer>
 
-                                        </rs-slide>
+                                        </rs-slide> {% endcomment %}
                                     </rs-slides>
                                 </rs-module>
                                 <script>
@@ -2284,8 +2120,6 @@
                 </div>
             </header>
 
-
-
             {% block body %}
 
             {% endblock %}
@@ -2366,44 +2200,48 @@
                                                     </aside>
                                                 </div><!-- .widget-area -->
                                                 <div
-                                                class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
-                                                <aside id="nav_menu-1"
-                                                    class="widget-odd widget-3 widget widget_nav_menu">
-                                                    <h3 class="widget-title">USEFUL LINKS</h3>
-                                                    <div class="menu-usefull-link-container">
-                                                        <ul id="menu-usefull-link-1" class="menu">
-                                                            <li
-                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8066">
-                                                                <a href="{% url 'about' %}">About Us</a></li>
-                                                            <li
-                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8064">
-                                                                <a href="{% url 'team' %}">Our Team</a></li>
-                                                            <li
-                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8067">
-                                                                <a href="{% url 'contactus' %}">Contacts</a></li>
-                                                            <li
-                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8042">
-                                                                <a href="#">Research</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </aside>
-                                                <aside id="nav_menu-2"
-                                                    class="widget-even widget-4 widget widget_nav_menu">
-                                                    <h3 class="widget-title">OUR SERVICES</h3>
-                                                    <div class="menu-footer-servicem-menu-container">
-                                                        <ul id="menu-footer-servicem-menu-1" class="menu">
-                                                            
-                                                             {% for s in serv|slice:":2" %}<li
-                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
-                                                                <a href="{% url 'services' s.slug %}">{{s.title|title|slice:":17"}}..</a></li>{% endfor %}  
-                                                            {% for s in training|slice:":2" %}<li
-                                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
-                                                                <a href="{% url 'services' s.slug %}">{{s.title|title|slice:":17"}}..</a></li>{% endfor %}  
+                                                    class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
+                                                    <aside id="nav_menu-1"
+                                                        class="widget-odd widget-3 widget widget_nav_menu">
+                                                        <h3 class="widget-title">USEFUL LINKS</h3>
+                                                        <div class="menu-usefull-link-container">
+                                                            <ul id="menu-usefull-link-1" class="menu">
+                                                                <li
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8066">
+                                                                    <a href="{% url 'about' %}">About Us</a></li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8064">
+                                                                    <a href="{% url 'team' %}">Our Team</a></li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8067">
+                                                                    <a href="{% url 'contactus' %}">Contacts</a></li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8042">
+                                                                    <a href="#">Research</a></li>
                                                             </ul>
-                                                    </div>
-                                                </aside>
-                                                
-                                            </div><!-- .widget-area -->
+                                                        </div>
+                                                    </aside>
+                                                    <aside id="nav_menu-2"
+                                                        class="widget-even widget-4 widget widget_nav_menu">
+                                                        <h3 class="widget-title">OUR SERVICES</h3>
+                                                        <div class="menu-footer-servicem-menu-container">
+                                                            <ul id="menu-footer-servicem-menu-1" class="menu">
+
+                                                                {% for s in serv|slice:":2" %}<li
+                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
+                                                                    <a
+                                                                        href="{% url 'services' s.slug %}">{{s.title|title|slice:":17"}}..</a>
+                                                                </li>{% endfor %}
+                                                                {% for s in training|slice:":2" %}<li
+                                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8033">
+                                                                    <a
+                                                                        href="{% url 'services' s.slug %}">{{s.title|title|slice:":17"}}..</a>
+                                                                </li>{% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                    </aside>
+
+                                                </div><!-- .widget-area -->
                                                 <div
                                                     class="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 second-widget-area">
 
@@ -2411,13 +2249,13 @@
                                                         class="widget-odd widget-3 widget widget_recent_entries">
                                                         <h3 class="widget-title">RECENT POST</h3>
                                                         <ul>
-                                                        {% for data in blogs|slice:":4" %}
+                                                            {% for data in blogs|slice:":4" %}
                                                             <li>
                                                                 <a
                                                                     href="{% url 'singleblog' data.slug %}">{{data.title}}</a>
                                                                 <span class="post-date">{{data.date}}</span>
                                                             </li>
-                                                        {% endfor %}
+                                                            {% endfor %}
                                                         </ul>
 
                                                     </aside>
@@ -2442,13 +2280,14 @@
                                                             </script>
                                                             <!-- Mailchimp for WordPress v4.8.1 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
                                                             <form id="mc4wp-form-2" class="mc4wp-form mc4wp-form-6870"
-                                                                method="post" action="{% url 'subscribe' %}" data-id="6870" data-name="newslater form">
+                                                                method="post" action="{% url 'subscribe' %}"
+                                                                data-id="6870" data-name="newslater form">
                                                                 <div class="mc4wp-form-fields">
                                                                     <p> {% csrf_token %}
                                                                         <input type="email" name="email"
                                                                             placeholder="Your email address" required />
-                                                                         <input type="hidden" 
-                                                                            name='currenturl' value="{{request.get_full_path}}" />
+                                                                        <input type="hidden" name='currenturl'
+                                                                            value="{{request.get_full_path}}" />
                                                                     </p>
 
                                                                     <p>
