@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'superuser.middleware.simple_middleware'
+    'superuser.middleware.simple_middleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 

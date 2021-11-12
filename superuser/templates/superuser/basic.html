@@ -160,11 +160,11 @@
                             <h4 class="user-name dropdown-toggle" data-toggle="dropdown">admin <i
                                     class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href=" {% static '/admin-home/profile-update' %} ">Edit
+                                {% comment %} <a class="dropdown-item" href=" {% static '/admin-home/profile-update' %} ">Edit
                                     Profile</a>
                                 <a class="dropdown-item" href=" {% static '/admin-home/password-change' %} ">Password
-                                    Change</a>
-                                <a class="dropdown-item" href=" {% static 'logout/admin' %} ">Logout</a>
+                                    Change</a> {% endcomment %}
+                                <a class="dropdown-item" href=" {% url 'dashboardlogout' %} ">Logout</a>
                             </div>
                         </div>
                     </div>

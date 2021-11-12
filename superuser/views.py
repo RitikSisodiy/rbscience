@@ -8,6 +8,7 @@ from superuser.templatetags.custumfilter import sidebardata
 from .dashboardsettings import appmodels , appslist , getObjectbyAppModelName , getmodelbyappname
 from django.core import serializers
 from artical.forms import GenForm
+from django.contrib.auth import logout
 # from django.apps import apps
 # from onlineshop.models import *
 # from django.contrib import messages
@@ -155,6 +156,12 @@ def alertdelete(request,singledata,confirm="None"):
     res['modelname'] = modelname
     res['currentmodel'] = singledata
     return render(request , 'superuser/confirmdelete.html',res)
+def Logout(request):
+    try:
+        logout(request)
+    except Exception as e:
+        return redirect('home')
+    return redirect('home')
 # def allproducts(request):
 #     prods = Product.objects.all()
 #     return render(request,'superuser/products.html',{'prods':prods,'title':"View Product"})

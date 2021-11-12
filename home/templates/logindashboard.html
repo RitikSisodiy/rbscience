@@ -1,0 +1,128 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Admin Login - SEQUEL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'assets/uploads/site-favicon.127" type="image/png' %}">
+    <link rel="stylesheet" href="{% static 'assets/common/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/common/css/themify-icons.css' %}">
+    <!-- others css -->
+    <link rel="stylesheet" href="{% static 'assets/backend/css/typography.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/backend/css/default-css.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/backend/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/backend/css/responsive.css' %}">
+    <!-- modernizr css -->
+    <script src="{% static 'assets/common/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+        <div class="login-area">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form method="POST" action="" id="dashboardloginform">
+                {% csrf_token %}
+                    <input type="hidden" name="_token" value="GLkgsIppCYkg1uyP9Z039Na0S6DL1vnxuleDoJRb">                    <div class="login-form-head">
+                        <div class="logo-wrapper" style="margin-bottom: 40px;">
+                            
+                        </div>
+                        <h4>Admin Login</h4>
+                        <p>Hello there, Sign in and start managing your website</p>
+                    </div>
+                                        <div class="error-message"></div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username">
+                            <i class="ti-email"></i>
+                        </div>
+
+                        <div class="form-gp">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" >
+                            <i class="ti-lock"></i>
+                        </div>
+                        <div class="row mb-4 rmber-area">
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" name="remember" class="custom-control-input" id="remember">
+                                    <label class="custom-control-label" for="remember">Remember Me</label>
+                                </div>
+                            </div>
+                            <div class="col-6 text-right">
+                            </div>
+                        </div>
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit">Login <i class="ti-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jquery latest version -->
+    <script src="{% static 'assets/common/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/common/js/jquery-migrate-3.3.2.min.js' %}"></script>
+    <!-- bootstrap 4 js -->
+    <script src="{% static 'assets/common/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/common/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/backend/js/metisMenu.min.js' %}"></script>
+    <script src="{% static 'assets/backend/js/jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'assets/backend/js/jquery.slicknav.min.js' %}"></script>
+
+    <!-- others plugins -->
+    <script src="{% static 'assets/backend/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/backend/js/scripts.js' %}"></script>
+        <script>
+        (function($){
+        "use strict";
+
+            $(document).ready(function ($){
+
+                $(document).on('click','#form_submit',function (e){
+                    e.preventDefault();
+                    var el = $(this);
+                    var erContainer = $(".error-message");
+                    erContainer.html('');
+                    el.text('Please Wait..');
+                    var formData =  $('#dashboardloginform').serializeArray().reduce(function(obj, item) {
+                    obj[item.name] = item.value;
+                    return obj;
+                    }, {});
+                    console.log(formData)
+                    $.ajax({
+                        url: "{% url 'logindashboard' %}",
+                        type: "POST",
+                        data: formData,
+                        error:function(data){
+                            var errors = data.responseJSON;
+                            erContainer.html('<div class="alert alert-danger"></div>');
+                            $.each(errors.errors, function(index,value){
+                                erContainer.find('.alert.alert-danger').append('<p>'+value+'</p>');
+                            });
+                            el.text('Login');
+                        },
+                        success:function (data){
+                            $('.alert.alert-danger').remove();
+                            if (data.status == 'ok'){
+                                el.text('Redirecting..');
+                                erContainer.html('<div class="alert alert-'+data.type+'">'+data.msg+'</div>');
+                                location.reload();
+                            }else{
+                                erContainer.html('<div class="alert alert-'+data.type+'">'+data.msg+'</div>');
+                                el.text('Login');
+                            }
+                        }
+                    });
+                });
+
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

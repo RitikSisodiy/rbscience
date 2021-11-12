@@ -10,7 +10,7 @@ def simple_middleware(get_response):
             if request.user.is_superuser:
                 response = get_response(request)
             else:
-                response = redirect('index')
+                response = redirect('logindashboard')
         else:
             response = get_response(request)
         return response
