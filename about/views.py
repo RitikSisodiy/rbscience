@@ -70,6 +70,6 @@ def instructions(request):
     return render(request , 'about/instructions.html',res)
 def auditorialboard(request):
     res= {}
-    res['board'] = {"Chief Editor":auditorialBoard.objects.filter(type='1').order_by('id'),'Editors':auditorialboardModel.objects.filter(type='2').order_by('id')}
+    res['board'] = {"Chief Editor":auditorialBoard.objects.filter(type='1').order_by('id'),'Editors':auditorialBoard.objects.filter(type='2').order_by('id')}
     
     return render(request , 'about/auditorialboard.html',res)
