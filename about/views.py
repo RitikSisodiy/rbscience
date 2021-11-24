@@ -14,6 +14,7 @@ from .models import InstuctionsToAuthors
 def about(request):
     res = {}
     res['teammember'] = TeamModel.objects.all()
+    res['certifications'] = certificates.objects.all()
     return render(request,'about/about.html',res)
 
 

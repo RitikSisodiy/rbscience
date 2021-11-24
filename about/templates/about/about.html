@@ -94,8 +94,7 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 														<div class="vc_single_image-wrapper   vc_box_border_grey">
 															<img width="1200" height="800" src="{% static "
 																wp-content/uploads/sites/13/2018/08/service-new-02.jpg"
-																%}" class="vc_single_image-img attachment-full" alt=""
-																loading="lazy"
+																%}" class="vc_single_image-img attachment-full" alt="" loading="lazy"
 																srcset="https://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2018/08/service-new-02.jpg 1200w, https://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2018/08/service-new-02-300x200.jpg 300w, https://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2018/08/service-new-02-1024x683.jpg 1024w, https://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2018/08/service-new-02-768x512.jpg 768w, https://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2018/08/service-new-02-600x400.jpg 600w"
 																sizes="(max-width: 1200px) 100vw, 1200px"
 																data-id="8082" />
@@ -177,9 +176,8 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 													<figure class="wpb_wrapper vc_figure">
 														<div class="vc_single_image-wrapper   vc_box_border_grey">
 															<img width="570" height="607" src="{% static "
-																wp-content/uploads/sites/13/2020/12/new-img-02.jpg" %}"
-																class="vc_single_image-img attachment-full" alt=""
-																loading="lazy"
+																wp-content/uploads/sites/13/2020/12/new-img-02.jpg" %}" class="vc_single_image-img attachment-full"
+																alt="" loading="lazy"
 																srcset="https://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2020/12/new-img-02.jpg 570w, https://labtechco.themestek.com/labtechco-demo7/wp-content/uploads/sites/13/2020/12/new-img-02-282x300.jpg 282w"
 																sizes="(max-width: 570px) 100vw, 570px"
 																data-id="8144" />
@@ -359,8 +357,8 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 																		<div class="ts-vc_cta3-headers ts-wrap-cell">
 																			<h2 class="ts-custom-heading ">
 																				ABOUT US WE ARE
-																				<strong>THE<br />
-																					TRUSTED EXPERTS</strong>
+																				<strong>OUR<br />
+																					CERTIFICATIONS </strong>
 																			</h2>
 																		</div>
 																	</div>
@@ -371,7 +369,7 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 												</div> <!-- .ts-element-heading-wrapper container -->
 												<div
 													class="ts-row-inner vc_row wpb_row vc_inner vc_row-fluid ts-zindex-0">
-
+													{% for data in certifications %}
 													<div
 														class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
 														<div class="vc_column-inner  ">
@@ -390,8 +388,10 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 																		<div
 																			class="ts-ihbox-icon ts-large-icon ts-icon-skincolor">
 																			<div class="ts-ihbox-icon-wrapper">
-																				<i
-																					class="ts-labtechco-business-icon ts-labtechco-business-icon-microscope-2"></i>
+																				<i class="ts-labtechco-business-icon">
+																					<img src="{{data.logo.url}}"
+																						style="height:150px;">
+																				</i>
 																			</div>
 																		</div>
 
@@ -407,10 +407,7 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 																								class="ts-vc_cta3-headers ts-wrap-cell">
 																								<h2
 																									class="ts-custom-heading ">
-																									BLOOD
-																									BANK
-																									&amp;
-																									CHEMISTRY
+																									{{data.name}}
 																								</h2>
 																							</div>
 																						</div>
@@ -418,12 +415,7 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 																				</div>
 																			</div>
 																			<div class="ts-cta3-content-wrapper">
-																				RB SCIENCE is a research
-																				based consulting and
-																				publishing organization
-																				working in the field of
-																				pharmaceutical and
-																				biological sciences..</div>
+																				{{data.shortdes}}</div>
 																		</div><!-- .ts-ihbox-contents -->
 																	</div>
 																</div>
@@ -433,9 +425,10 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 															</div>
 														</div>
 													</div>
+													{% endfor %}
 
 
-													<div
+													{% comment %} <div
 														class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
 														<div class="vc_column-inner  ">
 
@@ -445,7 +438,9 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 																<div
 																	class="ts-ihbox ts-ihbox-style-3 ts-ihbox-itype-icon ">
 																	<div class="ts-sbox-bgimage-layer ts-bgimage-layer">
+
 																	</div>
+
 																	<div class="ts-ihbox-wrapper-bg-layer ts-bg-layer">
 																	</div>
 
@@ -556,7 +551,7 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 
 															</div>
 														</div>
-													</div>
+													</div> {% endcomment %}
 
 												</div>
 
@@ -682,35 +677,51 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 																											class="ts-team-social-links-wrapper">
 																											<ul
 																												class="ts-team-social-links">
-																												  {% if data.twiter %}
+																												{% if data.twiter %}
 																												<li>
-																													<a href="{{data.twiter}}" target="_blank" class="">
-																														<i class="ts-labtechco-icon-twitter"></i>
-																														<span class="ts-hide">Twitter</span>
+																													<a href="{{data.twiter}}"
+																														target="_blank"
+																														class="">
+																														<i
+																															class="ts-labtechco-icon-twitter"></i>
+																														<span
+																															class="ts-hide">Twitter</span>
 																													</a>
 																												</li>
 																												{% endif %}
 																												{% if data.facebook %}
 																												<li>
-																													<a href="{{data.facebook}}" target="_blank" class="">
-																														<i class="ts-labtechco-icon-facebook"></i>
-																														<span class="ts-hide">Facebook</span>
+																													<a href="{{data.facebook}}"
+																														target="_blank"
+																														class="">
+																														<i
+																															class="ts-labtechco-icon-facebook"></i>
+																														<span
+																															class="ts-hide">Facebook</span>
 																													</a>
 																												</li>
 																												{% endif %}
 																												{% if data.google %}
 																												<li>
-																													<a href="{{data.google}}" target="_blank" class="">
-																														<i class="ts-labtechco-icon-gplus"></i>
-																														<span class="ts-hide">Google+</span>
+																													<a href="{{data.google}}"
+																														target="_blank"
+																														class="">
+																														<i
+																															class="ts-labtechco-icon-gplus"></i>
+																														<span
+																															class="ts-hide">Google+</span>
 																													</a>
 																												</li>
 																												{% endif %}
 																												{% if data.linkedin %}
 																												<li>
-																													<a href="{{data.linkedin}}" target="_blank" class="">
-																														<i class="ts-labtechco-icon-linkedin"></i>
-																														<span class="ts-hide">LinkedIn</span>
+																													<a href="{{data.linkedin}}"
+																														target="_blank"
+																														class="">
+																														<i
+																															class="ts-labtechco-icon-linkedin"></i>
+																														<span
+																															class="ts-hide">LinkedIn</span>
 																													</a>
 																												</li>
 																												{% endif %}
@@ -878,57 +889,56 @@ page-template-default page page-id-6669 theme-labtechco woocommerce-no-js ts-hea
 	</div><!-- .site-content -->
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    data = document.getElementsByClassName("vc_bar")
-for(i=0;i<data.length;i++){
-data[i].setAttribute('style',"width:"+data[i].getAttribute('data-value')+"%;")
-}
-}, false);
-
+	document.addEventListener('DOMContentLoaded', function () {
+		data = document.getElementsByClassName("vc_bar")
+		for (i = 0; i < data.length; i++) {
+			data[i].setAttribute('style', "width:" + data[i].getAttribute('data-value') + "%;")
+		}
+	}, false);
 </script>
 {% endblock %}
 {% block css %}
 <style data-type="vc_shortcodes-custom-css">
-		.vc_custom_1535171682818 {
-			padding-bottom: 50px !important;
-		}
+	.vc_custom_1535171682818 {
+		padding-bottom: 50px !important;
+	}
 
-		.vc_custom_1533893514163 {
-			padding-top: 0px !important;
-			padding-bottom: 40px !important;
-		}
+	.vc_custom_1533893514163 {
+		padding-top: 0px !important;
+		padding-bottom: 40px !important;
+	}
 
-		.vc_custom_1533285607880 {
-			padding-bottom: 100px !important;
-		}
+	.vc_custom_1533285607880 {
+		padding-bottom: 100px !important;
+	}
 
-		.vc_custom_1533536933706 {
-			padding-right: 15% !important;
-		}
+	.vc_custom_1533536933706 {
+		padding-right: 15% !important;
+	}
 
-		.vc_custom_1534659576627 {
-			margin-bottom: 10px !important;
-		}
+	.vc_custom_1534659576627 {
+		margin-bottom: 10px !important;
+	}
 
-		.vc_custom_1534659427495 {
-			padding-right: 50px !important;
-			padding-bottom: 10px !important;
-			padding-left: 50px !important;
-		}
+	.vc_custom_1534659427495 {
+		padding-right: 50px !important;
+		padding-bottom: 10px !important;
+		padding-left: 50px !important;
+	}
 
-		.vc_custom_1535171890113 {
-			margin-top: -200px !important;
-			padding-right: 15% !important;
-		}
+	.vc_custom_1535171890113 {
+		margin-top: -200px !important;
+		padding-right: 15% !important;
+	}
 
-		.vc_custom_1535458380496 {
-			margin-top: -150px !important;
+	.vc_custom_1535458380496 {
+		margin-top: -150px !important;
+	}
+</style><noscript>
+	<style>
+		.wpb_animate_when_almost_visible {
+			opacity: 1;
 		}
-	</style><noscript>
-		<style>
-			.wpb_animate_when_almost_visible {
-				opacity: 1;
-			}
-		</style>
-	</noscript>
-	{% endblock %}
+	</style>
+</noscript>
+{% endblock %}

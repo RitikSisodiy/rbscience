@@ -32,3 +32,9 @@ class auditorialBoard(models.Model):
     name = models.CharField(max_length=100)
     position = models.CharField(max_length=300)
     address = models.CharField(max_length=300)
+
+class certificates(models.Model):
+    name = models.CharField(max_length=100)
+    shortdes = models.TextField(max_length=300)
+    logo = models.ImageField(upload_to="certificatelogo")
+    Certificate = models.FileField(upload_to="certificates",blank=True)
