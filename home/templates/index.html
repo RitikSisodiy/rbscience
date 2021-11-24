@@ -64,7 +64,7 @@
 
 											<div
 												class="ts-row-inner vc_row wpb_row vc_inner vc_row-fluid vc_custom_1609393609633 ts-zindex-0">
-											{% for data in research %}
+												{% for data in research %}
 												<div
 													class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
 													<div class="vc_column-inner  ">
@@ -106,10 +106,12 @@
 																			</div>
 																		</div>
 																	</div><!-- .ts-ihbox-contents -->
-																	<div class="ts-cta3-content-wrapper">{{data.overview|slice:":70"}}</div>
+																	<div class="ts-cta3-content-wrapper">
+																		{{data.overview|slice:":70"}}</div>
 																	<div class="ts-vc_btn3-container ts-vc_btn3-inline">
 																		<a class="ts-vc_general ts-vc_btn3 ts-vc_btn3-size-md ts-vc_btn3-shape-rounded ts-vc_btn3-style-text ts-vc_btn3-weight-yes ts-vc_btn3-icon-right ts-vc_btn3-color-skincolor"
-																			href="{% url 'singleresearch' data.slug %}" title="">Read More <i
+																			href="{% url 'singleresearch' data.slug %}"
+																			title="">Read More <i
 																				class="ts-vc_btn3-icon themifyicon ti-arrow-circle-right"></i></a>
 																	</div>
 																</div>
@@ -117,7 +119,7 @@
 														</div>
 													</div>
 												</div>
-											{% endfor %}
+												{% endfor %}
 
 											</div>
 
@@ -125,7 +127,7 @@
 											<div class="wpb_text_column wpb_content_element  text-center">
 												<div class="wpb_wrapper">
 													<p>Best Outcome For Every Patient Every Time or contact
-														us via <u><a href="#">support@labtechco.com</a></u>
+														us via <u><a href="mailto:rbsciencebhopal@gmail.com">rbsciencebhopal@gmail.com</a></u>
 													</p>
 
 												</div>
@@ -459,16 +461,16 @@
 																	<div class="themestek-post-item">
 																		<div
 																			class="ts-featured-wrapper ts-ts-service-featured-wrapper">
-																			<img
-																				src="/media/{{data.img1}}"
+																			<img src="/media/{{data.img1}}"
 																				class="attachment-themestek-img-800x650 size-themestek-img-800x650 wp-post-image"
-																				alt="" loading="lazy" data-id="8081" style="height: 350px;" />
+																				alt="" loading="lazy" data-id="8081"
+																				style="height: 350px;" />
 																		</div>
 																		<div class="themestek-box-content">
 																			<div class="themestek-box-content-inner">
 																				<div class="themestek-pf-box-title">
 																					<div class="themestek-box-category">
-																						<a 
+																						<a
 																							rel="tag">{{data.category.cat}}</a>
 																					</div>
 																					<h3><a
@@ -513,7 +515,7 @@
 
 
 
-							<div
+							{% comment %} <div
 								class="ts-row wpb_row vc_row-fluid vc_custom_1609924170145 ts-responsive-custom-42617191 ts-total-col-2 ts-zindex-0 vc_row container ts-bgimage-position-center_center">
 								<div class="ts-column wpb_column vc_column_container vc_col-sm-6 ts-zindex-0">
 									<div class="vc_column-inner  ">
@@ -558,8 +560,8 @@
 										<div class="vc_column-inner  ">
 											<div class="wpb_wrapper">
 											</div>
-											<img src="/static/img/01-min-61623180200.jpg"
-												height="60%" width="100%                              ">
+											<img src="/static/img/01-min-61623180200.jpg" height="60%"
+												width="100%                              ">
 										</div>
 									</div>
 									<div
@@ -581,15 +583,16 @@
 														<ul></ul>
 													</div>
 													{% for message in messages %}
-													<div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}" role="alert">
-													  {{ message}}
-												  </div>
-														   {% endfor %}
-														
-													<form action="{% url 'servicecontact' %}"
-														method="post" class="wpcf7-form init" 
-														data-status="init">{% csrf_token %}
-														<input name='currenturl' type='hidden' value='{{request.get_full_path}}'>
+													<div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}"
+														role="alert">
+														{{ message}}
+													</div>
+													{% endfor %}
+
+													<form action="{% url 'servicecontact' %}" method="post"
+														class="wpcf7-form init" data-status="init">{% csrf_token %}
+														<input name='currenturl' type='hidden'
+															value='{{request.get_full_path}}'>
 														<div class="main-form appointment ts-appointment-form">
 															<div class="row">
 																<div class="col-sm-6">
@@ -614,8 +617,7 @@
 																	<div class="input-group"><span
 																			class="wpcf7-form-control-wrap your-name"><input
 																				type="text" name="phone" value=""
-																				maxlength="13"
-																				minlength="10"
+																				maxlength="13" minlength="10"
 																				class="wpcf7-form-control wpcf7-text"
 																				aria-invalid="false"
 																				placeholder="Your Phone" /></span></div>
@@ -629,7 +631,8 @@
 																				<option value="">Choose
 																					Service</option>
 																				{% for data in serv %}
-																				<option value="{{data.id}}">{{data.title}}
+																				<option value="{{data.id}}">
+																					{{data.title}}
 																				</option>
 																				{% endfor %}
 																			</select>
@@ -667,7 +670,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> {% endcomment %}
 
 
 
@@ -680,7 +683,7 @@
 
 
 
-							
+
 
 
 
@@ -746,9 +749,9 @@
 																<div class="themestek-post-item">
 
 																	<span class="themestek-item-thumbnail">
-																		<span class="themestek-item-thumbnail-inner" style="text-align: center;">
-																			<img
-																				src="/media/{{data.profile}}"
+																		<span class="themestek-item-thumbnail-inner"
+																			style="text-align: center;">
+																			<img src="/media/{{data.profile}}"
 																				class="attachment-themestek-img-800x800 size-themestek-img-800x800 wp-post-image"
 																				alt="" style="border-radius: 50%;" />
 																		</span>
@@ -760,45 +763,62 @@
 																			<div class="themestek-pf-box-title">
 																				<div class="themestek-box-title">
 																					<h4><a
-																							href="{% url 'singleteam' data.slug %}">{{data.name}}</a></h4>
+																							href="{% url 'singleteam' data.slug %}">{{data.name}}</a>
+																					</h4>
 																				</div>
 																			</div>
 																			<div class="themestek-teambox-social-links">
 																				<div
 																					class="ts-team-social-links-wrapper">
 																					<ul class="ts-team-social-links">
-																						 {% if data.twiter %}
-																												<li>
-																													<a href="{{data.twiter}}" target="_blank" class="">
-																														<i class="ts-labtechco-icon-twitter"></i>
-																														<span class="ts-hide">Twitter</span>
-																													</a>
-																												</li>
-																												{% endif %}
-																												{% if data.facebook %}
-																												<li>
-																													<a href="{{data.facebook}}" target="_blank" class="">
-																														<i class="ts-labtechco-icon-facebook"></i>
-																														<span class="ts-hide">Facebook</span>
-																													</a>
-																												</li>
-																												{% endif %}
-																												{% if data.google %}
-																												<li>
-																													<a href={{data.google}}" target="_blank" class="">
-																														<i class="ts-labtechco-icon-gplus"></i>
-																														<span class="ts-hide">Google+</span>
-																													</a>
-																												</li>
-																												{% endif %}
-																												{% if data.linkedin %}
-																												<li>
-																													<a href="{{data.linkedin}}" target="_blank" class="">
-																														<i class="ts-labtechco-icon-linkedin"></i>
-																														<span class="ts-hide">LinkedIn</span>
-																													</a>
-																												</li>
-																												{% endif %}
+																						{% if data.twiter %}
+																						<li>
+																							<a href="{{data.twiter}}"
+																								target="_blank"
+																								class="">
+																								<i
+																									class="ts-labtechco-icon-twitter"></i>
+																								<span
+																									class="ts-hide">Twitter</span>
+																							</a>
+																						</li>
+																						{% endif %}
+																						{% if data.facebook %}
+																						<li>
+																							<a href="{{data.facebook}}"
+																								target="_blank"
+																								class="">
+																								<i
+																									class="ts-labtechco-icon-facebook"></i>
+																								<span
+																									class="ts-hide">Facebook</span>
+																							</a>
+																						</li>
+																						{% endif %}
+																						{% if data.google %}
+																						<li>
+																							<a href={{data.google}}"
+																								target="_blank"
+																								class="">
+																								<i
+																									class="ts-labtechco-icon-gplus"></i>
+																								<span
+																									class="ts-hide">Google+</span>
+																							</a>
+																						</li>
+																						{% endif %}
+																						{% if data.linkedin %}
+																						<li>
+																							<a href="{{data.linkedin}}"
+																								target="_blank"
+																								class="">
+																								<i
+																									class="ts-labtechco-icon-linkedin"></i>
+																								<span
+																									class="ts-hide">LinkedIn</span>
+																							</a>
+																						</li>
+																						{% endif %}
 																					</ul>
 																					<!-- .ts-team-social-links -->
 																				</div>
@@ -1033,75 +1053,68 @@
 												</div> <!-- .ts-element-heading-wrapper container -->
 
 												<div class="row multi-columns-row themestek-boxes-row-wrapper">
-													
+
 													{% for blog in blogs %}
-																<div
-																	class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 gemological-laboratories%e2%80%8e scientific-laboratory">
-																	<article
-																		class="themestek-box themestek-box-blog ts-blogbox-style-3 themestek-box-style3 themestek-blogbox-format- ">
-																		<div class="post-item">
+													<div
+														class="ts-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12 gemological-laboratories%e2%80%8e scientific-laboratory">
+														<article
+															class="themestek-box themestek-box-blog ts-blogbox-style-3 themestek-box-style3 themestek-blogbox-format- ">
+															<div class="post-item">
 
-																			<div class="ts-blog-image-with-meta">
-																				<div
-																					class="ts-featured-wrapper ts-post-featured-wrapper ts-post-format-">
-																					<img width="1200" height="800"
-																						src="/media/{{blog.img}}"
-																						class="attachment-themestek-img-800x700 size-themestek-img-800x700 wp-post-image"
-																						alt="" /></div>
-																			</div>
-
-																			<div class="themestek-box-content">
-																				<div class="ts-entry-meta-wrapper">
-																					<div
-																						class="entry-meta ts-entry-meta ts-entry-meta-blogbox">
-																						<span
-																							class="ts-meta-line byline">
-																							<span
-																								class="author vcard"><span
-																									class="screen-reader-text ts-hide">Author
-																								</span>By <a
-																									class="url fn n"
-																									href="#">admin</a></span></span><span
-																							class="ts-meta-line posted-on"><span
-																								class="screen-reader-text ts-hide">Posted
-																								on </span><a
-																								href="#"
-																								rel="bookmark"><time
-																									class="entry-date published"
-																									datetime="2018-08-08T10:00:25+00:00">{{blog.date}}</time><time
-																									class="updated ts-hide"
-																									datetime="2021-01-08T08:50:16+00:00">{{blog.date}}</time></a></span>
-																					</div>
-																				</div>
-																				<div class="themestek-box-title">
-																					<h4><a
-																							href="{% url 'singleblog' blog.slug %}">{{blog.title}}</a>
-																					</h4>
-																				</div>
-																				<div class="themestek-box-desc">
-																					<div
-																						class="themestek-box-desc-text">
-																						{{blog.blog_des}}
-																					</div>
-																				</div>
-
-																				<div
-																					class="ts-bottom-meta-wrapper clearfix">
-																					<div class="pull-left">
-																						<div
-																							class="themestek-blogbox-footer-left">
-																							<a
-																								href="{% url 'singleblog' blog.slug %}">Read
-																								More</a></div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</article>
-
+																<div class="ts-blog-image-with-meta">
+																	<div
+																		class="ts-featured-wrapper ts-post-featured-wrapper ts-post-format-">
+																		<img width="1200" height="800"
+																			src="/media/{{blog.img}}"
+																			class="attachment-themestek-img-800x700 size-themestek-img-800x700 wp-post-image"
+																			alt="" /></div>
 																</div>
 
-																{% endfor %}
+																<div class="themestek-box-content">
+																	<div class="ts-entry-meta-wrapper">
+																		<div
+																			class="entry-meta ts-entry-meta ts-entry-meta-blogbox">
+																			<span class="ts-meta-line byline">
+																				<span class="author vcard"><span
+																						class="screen-reader-text ts-hide">Author
+																					</span>By <a class="url fn n"
+																						href="#">admin</a></span></span><span
+																				class="ts-meta-line posted-on"><span
+																					class="screen-reader-text ts-hide">Posted
+																					on </span><a href="#"
+																					rel="bookmark"><time
+																						class="entry-date published"
+																						datetime="2018-08-08T10:00:25+00:00">{{blog.date}}</time><time
+																						class="updated ts-hide"
+																						datetime="2021-01-08T08:50:16+00:00">{{blog.date}}</time></a></span>
+																		</div>
+																	</div>
+																	<div class="themestek-box-title">
+																		<h4><a
+																				href="{% url 'singleblog' blog.slug %}">{{blog.title}}</a>
+																		</h4>
+																	</div>
+																	<div class="themestek-box-desc">
+																		<div class="themestek-box-desc-text">
+																			{{blog.blog_des}}
+																		</div>
+																	</div>
+
+																	<div class="ts-bottom-meta-wrapper clearfix">
+																		<div class="pull-left">
+																			<div class="themestek-blogbox-footer-left">
+																				<a
+																					href="{% url 'singleblog' blog.slug %}">Read
+																					More</a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</article>
+
+													</div>
+
+													{% endfor %}
 												</div>
 											</div><!-- .themestek-boxes-inner -->
 										</div><!-- .themestek-boxes -->
