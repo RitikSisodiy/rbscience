@@ -48,5 +48,10 @@ class artical(models.Model):
         if self.slug == '':
             self.slug = unique_slug_generator(artical,self.heading)
         super(artical, self).save(*args, **kwargs)
- 
-
+    def getViews(self, *args, **kwargs):
+        return blogviews.objects.filter(articalid=self.id).count()
+class blogviews(models.Model):
+	articalid = models.ForeignKey(artical,on_delete=models.CASCADE)
+	ip = models.GenericIPAddressField()
+	class Meta:
+		unique_together = ['articalid', 'ip']

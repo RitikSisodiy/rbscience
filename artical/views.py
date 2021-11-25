@@ -5,8 +5,20 @@ from .forms import GenForm
 from django.core.mail import message, send_mail, EmailMessage
 from rbscience import settings
 from django.contrib import messages
-from .models import issue, submenuscripts,artical, vol,year
+from .models import issue, submenuscripts,artical, vol,year,blogviews
 # Create your views here.
+
+
+def visitor_ip_address(request):
+
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
 def articleview(request):
     res = {}
     return render(request , "article/journals.html" , res)
@@ -89,7 +101,10 @@ def currentissue(request):
 
 def abstractarticle(request,slug1):
     absdata = artical.objects.get(slug=slug1)
-    return render(request,'article/abstractarticle.html',{'absdata':absdata})
+    viewupdate = blogviews.objects.get_or_create(articalid=absdata,ip = visitor_ip_address(request))
+    res = {'absdata':absdata}
+    res['views'] = blogviews.objects.filter(articalid=absdata.id).count()
+    return render(request,'article/abstractarticle.html',res)
 
 
 

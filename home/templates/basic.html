@@ -1053,9 +1053,12 @@
             html.className = html.className.replace(/\bno-js\b/, 'js')
         })(document.documentElement);
     </script>
-    <title>{{title}}</title>
+    <title>RBScience | {{title}}</title>
     <style>
-            
+             img.vc_single_image-img {
+    height: 241px !important;
+    object-fit: cover !important;
+}
             .wpb_animate_when_almost_visible {
                 opacity: 1;
             }
@@ -1073,6 +1076,7 @@
             }   
         </style>
     <style data-type="vc_shortcodes-custom-css">
+   
         div.ts-featured-wrapper img {
             object-fit: contain;
         }
@@ -1931,9 +1935,8 @@
                                         {% for data in slider %}
                                         <rs-slide data-key="rs-{{forloop.counter}}" data-title="Slide"
                                             data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
-                                            <img src="/media/{{data.slider_image}}" %}"
-                                                title="slider8-a.jpg" width="1920" height="730" class="rev-slidebg"
-                                                data-no-retina>
+                                            <img src="/media/{{data.slider_image}}"
+                                                title="slider8-a.jpg" width="1920" height="730" class="rev-slidebg">
 
                                             <rs-layer id="slider-1-slide-1-layer-6" data-type="text"
                                                 data-color="#000014" data-rsp_ch="on"

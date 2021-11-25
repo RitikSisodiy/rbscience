@@ -36,7 +36,7 @@
                                                                     class="vc_single_image-wrapper   vc_box_border_grey">
                                                                     <img class="vc_single_image-img "
                                                                         src="/media/{{absdata.boardimg}}"
-                                                                        width="360" height="260" alt="research6"
+                                                                         height="360" alt="research6"
                                                                         title="research6" /></div>
                                                             </figure>
                                                         </div>
@@ -54,12 +54,15 @@
                                                                 <p>{% for auth in absdata.authors.all %}
                                                                     <a href={% url 'singleteam' 'auth' %} >{{auth.name}}</a> ,
                                                                     {% endfor %}
+                                                                   
                                                                 {{absdata.otherauthors|safe}}</p>
                                                                 <span><b>ONLINE ISSN : </b></span>
                                                                 <b>2456-8244</b><br><br><br>
                                                                                         <p><a class="ins-to-auth" href="{% url "instructions" %}" target="_blank">INSTRUCTIONS TO AUTHORS</a></p>
                                                                 <div class="journal-btns">
-                                                                    
+                                                                     <div>
+                                                                    <p> <a herf="/#"><i class="ts-labtechco-icon-eye" ></i>{{absdata.getViews}}</a> </p>
+                                                                    </div>
                                                                             <a href="{{absdata.pdf.url}}" class="btn btn-success">View PDF</a>
                                                                             <a href="{% url 'abstractarticle' absdata.slug %}" class="btn btn-success">Abstract</a>
                                                                             <a href="{{absdata.pdf.url}}" class="btn btn-success">Download PDF</a>

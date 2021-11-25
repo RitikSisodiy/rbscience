@@ -74,3 +74,8 @@ def auditorialboard(request):
     res['board'] = {"Chief Editor":auditorialBoard.objects.filter(type='1').order_by('id'),'Editors':auditorialBoard.objects.filter(type='2').order_by('id')}
     
     return render(request , 'about/auditorialboard.html',res)
+def cetifications(request):
+    res = {}
+    res['title'] = "Our Certifications"
+    res['certificates'] = certificates.objects.all().order_by('id')
+    return render(request,'about/certifications.html',res)
