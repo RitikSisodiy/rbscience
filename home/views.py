@@ -35,6 +35,6 @@ def logindashboard(request):
         if USER is not None:
             login(request, USER)
             if request.user.is_superuser:
-                return JsonResponse({'status':'ok','msg':'Login Success','next':request.GET.get('next')})
-            return JsonResponse({"status":'invaliduser','msg':'invalid user'})
+                return JsonResponse({'status':'ok','msg':'Login Success','next':request.GET.get('next'),'type':'success'})
+            return JsonResponse({"status":'invaliduser','msg':'invalid user','type':'danger'})
     return render(request,'logindashboard.html')

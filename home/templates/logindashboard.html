@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{% static 'assets/backend/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'assets/backend/css/responsive.css' %}">
     <!-- modernizr css -->
-    <script src="{% static 'assets/common/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{% static 'assets/common/vendor/modernizr-2.8.3.min.js' %}"></script>
 </head>
 
 <body>
@@ -96,7 +96,7 @@
                     }, {});
                     console.log(formData)
                     $.ajax({
-                        url: "{% url 'logindashboard' %}",
+                        url: "{{request.get_full_path}}",
                         type: "POST",
                         data: formData,
                         error:function(data){
@@ -112,7 +112,8 @@
                             if (data.status == 'ok'){
                                 el.text('Redirecting..');
                                 erContainer.html('<div class="alert alert-'+data.type+'">'+data.msg+'</div>');
-                                location.reload();
+                                console.log(data)
+                                window.location.href = data.next;
                             }else{
                                 erContainer.html('<div class="alert alert-'+data.type+'">'+data.msg+'</div>');
                                 el.text('Login');
