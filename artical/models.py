@@ -50,8 +50,17 @@ class artical(models.Model):
         super(artical, self).save(*args, **kwargs)
     def getViews(self, *args, **kwargs):
         return blogviews.objects.filter(articalid=self.id).count()
+    def getDownloads(self, *args, **kwargs):
+        try:
+            return downloadcount.objects.get(articalid=self.id).dcount
+        except Exception as e:
+            print("exception is",e)
+            return 0
 class blogviews(models.Model):
 	articalid = models.ForeignKey(artical,on_delete=models.CASCADE)
 	ip = models.GenericIPAddressField()
 	class Meta:
 		unique_together = ['articalid', 'ip']
+class downloadcount(models.Model):
+	articalid = models.ForeignKey(artical,on_delete=models.CASCADE)
+	dcount = models.BigIntegerField(default=0)

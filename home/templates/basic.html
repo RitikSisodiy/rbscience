@@ -1055,28 +1055,31 @@
     </script>
     <title>RBScience | {{title}}</title>
     <style>
-             img.vc_single_image-img {
-    height: 241px !important;
-    object-fit: cover !important;
-}
-            .wpb_animate_when_almost_visible {
-                opacity: 1;
-            }
-            div.row.upper-header-div.text-right.ts-bgcolor-gradient a {
-                text-decoration: none;
-                color: white;
-                font-weight: 500;
-                margin-right:20px;
-                transition: color .3s ease-out;
-                transition: font-size .3s ease-out;
-            } 
-            div.row.upper-header-div.text-right.ts-bgcolor-gradient a:hover {
-                color: black;
-                font-size:17px;
-            }   
-        </style>
+        img.vc_single_image-img {
+            height: 241px !important;
+            object-fit: cover !important;
+        }
+
+        .wpb_animate_when_almost_visible {
+            opacity: 1;
+        }
+
+        div.row.upper-header-div.text-right.ts-bgcolor-gradient a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            margin-right: 20px;
+            transition: color .3s ease-out;
+            transition: font-size .3s ease-out;
+        }
+
+        div.row.upper-header-div.text-right.ts-bgcolor-gradient a:hover {
+            color: black;
+            font-size: 17px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <style data-type="vc_shortcodes-custom-css">
-   
         div.ts-featured-wrapper img {
             object-fit: contain;
         }
@@ -1890,9 +1893,8 @@
         .vc_custom_1530503603170 {
             margin-top: 30px !important;
         }
-       
     </style><noscript>
-        
+
     </noscript>
 </head>
 
@@ -1901,15 +1903,19 @@
     <div id="ts-home"></div>
     <div class="main-holder">
         <div id="page" class="hfeed site">
-            
+
             <header id="masthead" class=" ts-header-style-style-8 themestek-main-menu-total-6">
-                <div class="ts-header-block  ts-mmenu-active-color-custom ts-dmenu-active-color-skin ts-dmenu-sep-grey" >
+                <div class="ts-header-block  ts-mmenu-active-color-custom ts-dmenu-active-color-skin ts-dmenu-sep-grey">
                     <div class="row upper-header-div text-right ts-bgcolor-gradient" style="padding: 22px;">
-				<a href="{% url 'rbsciencehome' %}" {% if request.session.jounral  %}{% else %}style="color:black;font-size:17px;"{% endif %} >HOME</a>
-				
-				<a href="{% url 'changenav' %}" {% if request.session.jounral  %}style="color:black;font-size:17px;"{% else %}{% endif %}>JOURNAL OF PHARMACOLOGY AND BIOMEDICINE</a>
-				
-			</div>
+                        <a href="{% url 'rbsciencehome' %}"
+                            {% if request.session.jounral  %}{% else %}style="color:black;font-size:17px;"
+                            {% endif %}>HOME</a>
+
+                        <a href="{% url 'changenav' %}"
+                            {% if request.session.jounral  %}style="color:black;font-size:17px;"
+                            {% else %}{% endif %}>JOURNAL OF PHARMACOLOGY AND BIOMEDICINE</a>
+
+                    </div>
                     <div class="ts-search-overlay">
                         <div class="ts-icon-close"></div>
                         <div class="ts-search-outer">
@@ -1917,7 +1923,7 @@
                                     alt="Labtechco Demo7" /></div>
                         </div>
                     </div>
-                   {% if request.session.jounral %}
+                    {% if request.session.jounral %}
                     {% include 'headernav2.html' %}
                     {% else %}
                     {% include 'headernav.html' %}
@@ -1925,7 +1931,7 @@
                     {% block slider %}
                     <div class="themestek-slider-wrapper">
                         <div class="themestek-slider-wide">
-{% load custumfilter %}
+                            {% load custumfilter %}
 
                             <p class="rs-p-wp-fix"></p>
                             <rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery"
@@ -1935,8 +1941,8 @@
                                         {% for data in slider %}
                                         <rs-slide data-key="rs-{{forloop.counter}}" data-title="Slide"
                                             data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
-                                            <img src="/media/{{data.slider_image}}"
-                                                title="slider8-a.jpg" width="1920" height="730" class="rev-slidebg">
+                                            <img src="/media/{{data.slider_image}}" title="slider8-a.jpg" width="1920"
+                                                height="730" class="rev-slidebg">
 
                                             <rs-layer id="slider-1-slide-1-layer-6" data-type="text"
                                                 data-color="#000014" data-rsp_ch="on"
@@ -1944,7 +1950,8 @@
                                                 data-text="s:17;l:42;fw:600;a:inherit;" data-vbility="t,t,t,f"
                                                 data-frame_0="x:50px;" data-frame_1="st:1600;sp:1000;sR:1600;"
                                                 data-frame_999="o:0;st:w;sR:6400;"
-                                                style="z-index:8;font-family:Work Sans;">{% for key in data.keys|split:"," %} <span class="ts-skincolor">▪
+                                                style="z-index:8;font-family:Work Sans;">
+                                                {% for key in data.keys|split:"," %} <span class="ts-skincolor">▪
                                                 </span>{{key}} &nbsp; &nbsp;{% endfor %}
                                             </rs-layer>
                                             <rs-layer id="slider-1-slide-1-layer-7" data-type="text"
@@ -1953,11 +1960,15 @@
                                                 data-text="s:70,70,60,40;l:80,80,64,44;fw:700;a:inherit;"
                                                 data-frame_0="x:50px;" data-frame_1="st:700;sp:1000;sR:700;"
                                                 data-frame_999="o:0;st:w;sR:7300;"
-                                                style="z-index:9;font-family:Roboto Condensed;">{% for w in data.title|split:" " %} {% if forloop.counter|divisibleby:'4' %}<br /> <span class="ts-skincolor">{{w}}</span> {% else %}{{w}}{% endif %}{% endfor %}
+                                                style="z-index:9;font-family:Roboto Condensed;">
+                                                {% for w in data.title|split:" " %}
+                                                {% if forloop.counter|divisibleby:'4' %}<br /> <span
+                                                    class="ts-skincolor">{{w}}</span>
+                                                {% else %}{{w}}{% endif %}{% endfor %}
                                             </rs-layer>
-                                             <rs-layer id="slider-1-slide-2-layer-10" class="rev-btn" data-type="button"
-                                             onclick="location.href='{{data.learnMoreurl}}';"
-                                                data-rsp_ch="on" data-xy="xo:30px;yo:461px,446px,386px,249px;"
+                                            <rs-layer id="slider-1-slide-2-layer-10" class="rev-btn" data-type="button"
+                                                onclick="location.href='{{data.learnMoreurl}}';" data-rsp_ch="on"
+                                                data-xy="xo:30px;yo:461px,446px,386px,249px;"
                                                 data-text="s:14;l:24;ls:1px;fw:700;a:inherit;"
                                                 data-padding="t:12;r:35;b:12;l:35;" data-frame_0="x:50;"
                                                 data-frame_1="st:2330;sp:1000;sR:2330;"
@@ -2326,7 +2337,8 @@
 
 
                                         <div class="col-xs-12 col-sm-12 ts-footer2-left ">
-                                            Copyright © {% now "Y" %} <a href="http://www.cyberflax.com" target="_blank">CyberFlax PVT. LTD.</a>.
+                                            Copyright © {% now "Y" %} <a href="http://www.cyberflax.com"
+                                                target="_blank">CyberFlax PVT. LTD.</a>.
                                             All rights reserved. </div><!-- footer left -->
 
 

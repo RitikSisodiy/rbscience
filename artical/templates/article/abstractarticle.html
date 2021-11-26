@@ -61,11 +61,11 @@
                                                                                         <p><a class="ins-to-auth" href="{% url "instructions" %}" target="_blank">INSTRUCTIONS TO AUTHORS</a></p>
                                                                 <div class="journal-btns">
                                                                      <div>
-                                                                    <p> <a herf="/#"><i class="ts-labtechco-icon-eye" ></i>{{absdata.getViews}}</a> </p>
+                                                                    <p> <a herf="/#"><i class="ts-labtechco-icon-eye" ></i>&nbsp;{{absdata.getViews}}</a> &nbsp;&nbsp; <a herf="/#"><i class="bi bi-download"></i>&nbsp;{{absdata.getDownloads}}</a> </p>
                                                                     </div>
-                                                                            <a href="{{absdata.pdf.url}}" class="btn btn-success">View PDF</a>
+                                                                            <a href="{{absdata.pdf.url}}" target="_blank" class="btn btn-success">View PDF</a>
                                                                             <a href="{% url 'abstractarticle' absdata.slug %}" class="btn btn-success">Abstract</a>
-                                                                            <a href="{{absdata.pdf.url}}" class="btn btn-success">Download PDF</a>
+                                                                            <a href="{% url 'downloadpdf' absdata.slug 'download' %}"  class="btn btn-success">Download PDF</a>
                                                                         <!-- <li>
                                                                             <a href="#" class="btn">Articles in Press</a>
                                                                         </li> -->

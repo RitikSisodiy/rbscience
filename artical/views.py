@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
@@ -5,14 +6,12 @@ from .forms import GenForm
 from django.core.mail import message, send_mail, EmailMessage
 from rbscience import settings
 from django.contrib import messages
-from .models import issue, submenuscripts,artical, vol,year,blogviews
+from .models import downloadcount, issue, submenuscripts,artical, vol,year,blogviews
 # Create your views here.
 
 
 def visitor_ip_address(request):
-
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-
     if x_forwarded_for:
         ip = x_forwarded_for.split(',')[0]
     else:
@@ -99,14 +98,29 @@ def currentissue(request):
         return articallist(request,year , vol , issue)
     return redirect('home')
 
-def abstractarticle(request,slug1):
+def abstractarticle(request,slug1,download=None):
     absdata = artical.objects.get(slug=slug1)
+    if download == 'download':
+        return downloadartical(absdata)
     viewupdate = blogviews.objects.get_or_create(articalid=absdata,ip = visitor_ip_address(request))
     res = {'absdata':absdata}
     res['views'] = blogviews.objects.filter(articalid=absdata.id).count()
     return render(request,'article/abstractarticle.html',res)
-
-
+from wsgiref.util import FileWrapper
+from django.utils.encoding import smart_str
+import urllib, mimetypes,os
+def downloadartical(file_name):
+    file_path = str(settings.MEDIA_ROOT) +'/'+ file_name.pdf.name
+    file_wrapper = FileWrapper(open(file_path,'rb'))
+    file_mimetype = mimetypes.guess_type(file_path)
+    response = HttpResponse(file_wrapper, content_type=file_mimetype )
+    response['X-Sendfile'] = file_path
+    response['Content-Length'] = os.stat(file_path).st_size
+    response['Content-Disposition'] = 'attachment; filename=%s/' % smart_str(file_name) 
+    downcount,created = downloadcount.objects.get_or_create(articalid=file_name)
+    downcount.dcount += 1
+    downcount.save()
+    return response
 
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.html import strip_tags

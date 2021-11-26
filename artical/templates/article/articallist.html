@@ -15,11 +15,14 @@
             {% for data in artical %}
             <h6><strong><a href="{% url 'abstractarticle' data.slug %}">{{data.heading}}</a></strong></h6>
             <span>{% for d in data.authors.all %}{{d}} , {% endfor %}</span>
+            <div>
+            <a herf="/#"><i class="ts-labtechco-icon-eye" ></i>&nbsp;{{data.getViews}}</a>
+                &nbsp;&nbsp; <a herf="/#"><i class="bi bi-download"></i>&nbsp;&nbsp;{{data.getDownloads}}</a>
+            </div>
             <div style="margin-top: 20px;">
                 <a href="{{data.pdf.url}}" target="_blank" class="btn btn-success"><i class="ts-labtechco-icon-eye"></i> View Pdf</a>
                 <a href="{% url 'abstractarticle' data.slug %}" class="btn btn-warning"><i class="ts-labtechco-icon-angle-down"></i> Abstract Pdf</a>
-                <a href="{{data.pdf.url}}" target="_blank" class="btn btn-primary"><i class="ts-labtechco-icon-quotation"></i> Download Pdf</a>
-                <a herf="/#"><i class="ts-labtechco-icon-eye" ></i>{{data.getViews}}</a>
+                <a href="{% url 'downloadpdf' data.slug 'download' %}"  class="btn btn-success">Download PDF</a>
                 <hr>
             </div>
             {% endfor %}
