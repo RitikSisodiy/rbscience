@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xb6$@(*o1q#+^*fxfzs4!@of9(#x627_5m4+q(7jf!9*)w!36r
 # SECURITY WARNING: don't run with debug turned on in production!
 
 # DEBUG = False
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -135,17 +135,17 @@ try:
     HOSTNAME = socket.gethostname()
 except:pass
 
-if 'desktop' in HOSTNAME.lower():
-    HOST_ADDR = 'http://localhost:8000'
-    EMAIL_USE_TLS = True
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_PORT = 587
-    EMAIL_HOST_USER = 'ritik.cyberflax@gmail.com'
-    EMAIL_HOST_PASSWORD = 'cqhmcpmptleeeqqz'
-else:
-    HOST_ADDR = 'http://'+HOSTNAME
-    EMAIL_HOST_USER = 'sales@rbscience.co.in'
-    EMAIL_HOST_PASSWORD = 'Flax@2021'
+# if 'desktop' in HOSTNAME.lower():
+#     HOST_ADDR = 'http://localhost:8000'
+#     EMAIL_USE_TLS = True
+#     EMAIL_HOST = 'smtp.gmail.com'
+#     EMAIL_PORT = 587
+#     EMAIL_HOST_USER = 'ritik.cyberflax@gmail.com'
+#     EMAIL_HOST_PASSWORD = 'cqhmcpmptleeeqqz'
+# else:
+#     HOST_ADDR = 'http://'+HOSTNAME
+#     EMAIL_HOST_USER = 'sales@rbscience.co.in'
+#     EMAIL_HOST_PASSWORD = 'Flax@2021'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

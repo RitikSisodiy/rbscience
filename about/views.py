@@ -14,9 +14,11 @@ from rbscience.settings import HOSTNAME
 from django.core.mail.backends.smtp import EmailBackend
 
 from about.models import emailSetup
-config = emailSetup.objects.get(activate=True)
-backend = EmailBackend(host=config.host, port=config.port, username=config.email, 
+def getEmailBackend():
+    config = emailSetup.objects.get(activate=True)
+    backend = EmailBackend(host=config.host, port=config.port, username=config.email, 
                        password=config.password, use_tls=config.tsl )
+    return backend
 # Create your views here.
 def about(request):
     res = {}
@@ -45,9 +47,12 @@ def contactus(request):
         plain_message = strip_tags(html_message)
         from_email = settings.EMAIL_HOST_USER
         to = 'ritik.s10120@gmail.com'
+        # print(backend)
+        backend = getEmailBackend()
         send_mail(subject, plain_message, from_email,[to],
         fail_silently=False,connection=backend
         )
+        
     return render(request,'about/contactus.html',res)
 def servicecontact(request):
     res = {}
