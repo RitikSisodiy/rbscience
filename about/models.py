@@ -1,13 +1,28 @@
 from django.core.mail import message
 from django.db import models
 from django.db.models.fields import EmailField
+from django.utils.translation import activate
 from services.models import services
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 
-
+class emailSetup(models.Model):
+    host = models.CharField(max_length=100)
+    port = models.IntegerField(max_length=10)
+    email = models.CharField(max_length=100)
+    tsl = models.BooleanField()
+    ssl = models.BooleanField()
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    activate = models.BooleanField(help_text="other mail is automatically disabled")
+    def save(self, *args, **kwargs):
+        if self.activate:
+            data=emailSetup.objects.all().exclude(id=self.id)
+            data.update(activate=False)
+        super(emailSetup, self).save(*args, **kwargs)
+    
 class ContactUs(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField(max_length=50)

@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+from django.utils.translation import activate
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -144,9 +146,13 @@ if 'desktop' in HOSTNAME.lower():
     EMAIL_HOST_USER = 'ritik.cyberflax@gmail.com'
     EMAIL_HOST_PASSWORD = 'cqhmcpmptleeeqqz'
 else:
+    from about.models import emailSetup
+    emailob = emailSetup.objects.get(activate=True)
     HOST_ADDR = 'http://'+HOSTNAME
-    EMAIL_HOST_USER = 'sales@rbscience.co.in'
-    EMAIL_HOST_PASSWORD = 'Flax@2021'
+    EMAIL_HOST_USER = emailob.email
+    EMAIL_HOST_PASSWORD = emailob.password
+    EMAIL_PORT = emailob.port
+    EMAIL_USE_TLS = emailob.tsl
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
