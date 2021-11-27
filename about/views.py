@@ -18,7 +18,7 @@ def getEmailBackend():
     config = emailSetup.objects.get(activate=True)
     backend = EmailBackend(host=config.host, port=config.port, username=config.email, 
                        password=config.password, use_tls=config.tsl )
-    return backend
+    return backend , config
 # Create your views here.
 def about(request):
     res = {}
@@ -45,10 +45,10 @@ def contactus(request):
         subject = 'RBSCIENCE'
         html_message = render_to_string('about/email.html',{'name':name,'phone':phone,'email':email,'subject':subject, 'message':message})
         plain_message = strip_tags(html_message)
-        from_email = settings.EMAIL_HOST_USER
+        backend , config= getEmailBackend()
+        from_email = config.email
         to = 'ritik.s10120@gmail.com'
         # print(backend)
-        backend = getEmailBackend()
         send_mail(subject, plain_message, from_email,[to],
         fail_silently=False,connection=backend
         )
