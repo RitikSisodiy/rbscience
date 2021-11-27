@@ -142,6 +142,7 @@ if HOSTNAME == 'main.cyberflax.tk':
 elif 'rbscience' in HOSTNAME:
     HOST_ADDR = 'http://'+HOSTNAME
     EMAIL_HOST_USER = 'sales@rbscience.co.in'
+    EMAIL_HOST_PASSWORD = 'Flax@2021'
 else:
     HOST_ADDR = 'http://localhost:8000'
     EMAIL_USE_TLS = True
