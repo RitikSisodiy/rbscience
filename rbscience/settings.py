@@ -132,9 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 import socket
 
-try:
-    HOSTNAME = socket.gethostname()
-except:pass
+HOSTNAME = socket.gethostname()
 
 if HOSTNAME == 'main.cyberflax.tk':
     HOST_ADDR = 'http://'+HOSTNAME
