@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-xb6$@(*o1q#+^*fxfzs4!@of9(#x627_5m4+q(7jf!9*)w!36r
 
 # DEBUG = False
 import os
-if os.environ.get('enviorment') == 'production':
+print(os.environ.get('enviorment'))
+if os.environ.get('enviorment') is not None:
     DEBUG = False
 else:
     DEBUG = True
