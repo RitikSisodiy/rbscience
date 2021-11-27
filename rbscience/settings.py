@@ -139,6 +139,9 @@ except:pass
 if HOSTNAME == 'main.cyberflax.tk':
     HOST_ADDR = 'http://'+HOSTNAME
     EMAIL_HOST_USER = 'sales@cyberflax.tk'
+elif 'rbscience' in HOSTNAME:
+    HOST_ADDR = 'http://'+HOSTNAME
+    EMAIL_HOST_USER = 'sales@rbscience.co.in'
 else:
     HOST_ADDR = 'http://localhost:8000'
     EMAIL_USE_TLS = True
