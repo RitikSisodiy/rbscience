@@ -9,7 +9,7 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from artical.forms import GenForm
 from .models import InstuctionsToAuthors
-from rbscience.settings import HOST_ADDR
+from rbscience.settings import HOSTNAME
 # Create your views here.
 def about(request):
     res = {}
@@ -23,7 +23,7 @@ def about(request):
 def contactus(request):
     res= {}
     res['title'] = "Contact US" 
-    res['contect'] = HOST_ADDR
+    res['contect'] = HOSTNAME
     if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
