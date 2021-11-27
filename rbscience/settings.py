@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'livereload.middleware.LiveReloadScript',
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 ROOT_URLCONF = 'rbscience.urls'
 
 TEMPLATES = [
