@@ -38,3 +38,5 @@ def logindashboard(request):
                 return JsonResponse({'status':'ok','msg':'Login Success','next':request.GET.get('next'),'type':'success'})
             return JsonResponse({"status":'invaliduser','msg':'invalid user','type':'danger'})
     return render(request,'logindashboard.html')
+def page_not_found_view(request, exception):
+    return render(request, '404.html',context={"title":"page not found"} , status=404)

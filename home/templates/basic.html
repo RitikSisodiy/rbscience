@@ -1053,7 +1053,7 @@
             html.className = html.className.replace(/\bno-js\b/, 'js')
         })(document.documentElement);
     </script>
-    <title>RBScience | {{title}}</title>
+    <title>{% block title %}RBScience | {{title}}{% endblock %}</title>
     <style>
         img.vc_single_image-img {
             height: 241px !important;
