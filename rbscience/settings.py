@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
-from django.utils.translation import activate
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +25,7 @@ SECRET_KEY = 'django-insecure-xb6$@(*o1q#+^*fxfzs4!@of9(#x627_5m4+q(7jf!9*)w!36r
 # SECURITY WARNING: don't run with debug turned on in production!
 
 # DEBUG = False
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -146,13 +144,9 @@ if 'desktop' in HOSTNAME.lower():
     EMAIL_HOST_USER = 'ritik.cyberflax@gmail.com'
     EMAIL_HOST_PASSWORD = 'cqhmcpmptleeeqqz'
 else:
-    from about.models import emailSetup
-    emailob = emailSetup.objects.get(activate=True)
     HOST_ADDR = 'http://'+HOSTNAME
-    EMAIL_HOST_USER = emailob.email
-    EMAIL_HOST_PASSWORD = emailob.password
-    EMAIL_PORT = emailob.port
-    EMAIL_USE_TLS = emailob.tsl
+    EMAIL_HOST_USER = 'sales@rbscience.co.in'
+    EMAIL_HOST_PASSWORD = 'Flax@2021'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

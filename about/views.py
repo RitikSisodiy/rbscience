@@ -1,3 +1,4 @@
+from django.db import connection
 from django.http import request
 from django.shortcuts import redirect, render
 from django.contrib import messages
@@ -10,6 +11,12 @@ from django.utils.html import strip_tags
 from artical.forms import GenForm
 from .models import InstuctionsToAuthors
 from rbscience.settings import HOSTNAME
+from django.core.mail.backends.smtp import EmailBackend
+
+from about.models import emailSetup
+config = emailSetup.objects.get(activate=True)
+backend = EmailBackend(host=config.host, port=config.port, username=config.email, 
+                       password=config.password, use_tls=config.tsl )
 # Create your views here.
 def about(request):
     res = {}
@@ -39,7 +46,7 @@ def contactus(request):
         from_email = settings.EMAIL_HOST_USER
         to = 'ritik.s10120@gmail.com'
         send_mail(subject, plain_message, from_email,[to],
-        fail_silently=False,
+        fail_silently=False,connection=backend
         )
     return render(request,'about/contactus.html',res)
 def servicecontact(request):
