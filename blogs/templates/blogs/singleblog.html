@@ -349,3 +349,14 @@ post-template-default single single-post postid-6941 single-format-standard them
     </div><!-- .site-content -->
 </div><!-- .site-content-wrapper -->
 {% endblock %}
+  {% block css %}
+<style>
+#primary,sidebar-left {
+    max-height: 150vh ;
+    overflow: scroll !important;
+}
+#primary::-webkit-scrollbar,sidebar-left::-webkit-scrollbar {
+    display: none !important;
+}
+</style>
+{% endblock %}

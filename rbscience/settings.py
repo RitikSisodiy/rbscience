@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'team',
     'research',
     'superuser',
+    'livereload',
 ]
 
 
@@ -62,6 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'superuser.middleware.simple_middleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'rbscience.urls'

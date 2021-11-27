@@ -14,7 +14,7 @@
 
 
 
-            <div id="primary" class="content-area col-md-9 col-lg-9 col-xs-12">
+            <div id="primary" class="content-area col-md-9 col-lg-9 col-xs-12 slide">
                 <main id="main" class="site-main">
 
 
@@ -205,7 +205,7 @@
 
 
 
-            <aside id="sidebar-left" class="widget-area col-md-3 col-lg-3 col-xs-12 sidebar">
+            <div id="sidebar-left" class="widget-area col-md-3 col-lg-3 col-xs-12 sidebar slide">
 
 
 
@@ -251,7 +251,7 @@
                         </div>
                     </div>
                 </aside>
-            </aside><!-- #sidebar-left -->
+            </div><!-- #sidebar-left -->
 
 
 
@@ -305,3 +305,14 @@ ul.parentElement.insertAdjacentHTML( 'afterend', mystr )
 
 </script>
     {% endblock %}
+    {% block css %}
+<style>
+#primary,sidebar-left {
+    max-height: 150vh ;
+    overflow: scroll !important;
+}
+#primary::-webkit-scrollbar,sidebar-left::-webkit-scrollbar {
+    display: none !important;
+}
+</style>
+{% endblock %}

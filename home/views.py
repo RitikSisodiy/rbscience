@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 from django.http.response import HttpResponse, JsonResponse
 from blogs.models import Blogs
 from team.models import TeamModel
-from .models import homeSlider
+from .models import abstratingAndIndexing, homeSlider
 from research.models import researchModel
 # Create your views here.
 from django.contrib.auth import authenticate,login
@@ -15,7 +15,7 @@ def index(request):
     res['slider'] = homeSlider.objects.filter(type=typ)
     res['title'] = "RBscience : Home "
     res['teammember'] = TeamModel.objects.all()
-
+    res['absindex'] = abstratingAndIndexing.objects.all().order_by('id')
     res['research'] = researchModel.objects.all()
     return render(request, 'index.html',res)
 def changenav(request):

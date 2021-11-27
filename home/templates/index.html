@@ -15,9 +15,7 @@
 					<article id="post-7761" class="post-7761 page type-page status-publish hentry">
 
 
-						<header class="single-entry-header ts-hide">
-							<h2 class="entry-title">Homepage 8</h2>
-						</header><!-- .entry-header -->
+						<!-- .entry-header -->
 
 						<div class="entry-content">
 							<div
@@ -28,6 +26,120 @@
 
 
 
+								<div class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0">
+									<div class="vc_column-inner  ">
+										<div class="wpb_wrapper">
+											<div
+												class="ts-element-heading-wrapper ts-heading-inner ts-element-align-center ts-seperator-none ">
+												<section class="ts-vc_cta3-container">
+													<div
+														class="ts-vc_general ts-vc_cta3 ts-cta3-only ts-vc_cta3-style-classic ts-vc_cta3-shape-rounded ts-vc_cta3-align-center ts-vc_cta3-color-transparent ts-vc_cta3-icon-size-md ts-vc_cta3-actions-no ts-cta3-without-desc">
+														<div class="ts-vc_cta3_content-container">
+															<div class="ts-vc_cta3-content">
+																<div class="ts-vc_cta3-content-header ts-wrap">
+																	<div class="ts-vc_cta3-headers ts-wrap-cell">
+																		<h4 class="ts-custom-heading "></h4>
+																		<h2 class="ts-custom-heading ">Abstracting and
+																			Indexing</h2>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</section>
+											</div> <!-- .ts-element-heading-wrapper container -->
+											<div class="wpb_text_column wpb_content_element  text-center">
+												<div class="wpb_wrapper">
+													<marquee width="100%" scrollamount='10' direction="left" style="
+															padding: 14px;
+															font-size: 25px;
+															color: black;
+															background: #f4fafa;
+															font-weight: 500;
+															font-family: system-ui;
+														">
+														{% for data in absindex %}
+														<img src="{{data.logo.url}}" border="0">	
+														{% endfor %}
+													</marquee>
+
+												</div>
+											</div>
+
+											<div
+												class="ts-row-inner vc_row wpb_row vc_inner vc_row-fluid vc_custom_1609393609633 ts-zindex-0">
+												{% for data in research %}
+												<div
+													class="ts-column-inner wpb_column vc_column_container vc_col-sm-4 ts-zindex-0">
+													<div class="vc_column-inner  ">
+
+														<div class="wpb_wrapper">
+															<div
+																class="ts-ihbox ts-ihbox-style-11 ts-ihbox-itype-icon ">
+																<div class="ts-sbox-bgimage-layer ts-bgimage-layer">
+																</div>
+																<div class="ts-ihbox-wrapper-bg-layer ts-bg-layer">
+																</div>
+																<div class="ts-ihbox-inner">
+																	<div class="ts-ihbox-icon ts-large-icon">
+																		<div class="ts-ihbox-icon-wrapper">
+																			<i
+																				class="ts-labtechco-business-icon ts-labtechco-business-icon-bottle"></i>
+																		</div>
+																	</div>
+																	<div class="ts-ihbox-contents">
+																		<div
+																			class="ts-vc_general ts-vc_cta3 ts-cta3-only ts-vc_cta3-style-classic ts-vc_cta3-shape-rounded ts-vc_cta3-align-left ts-vc_cta3-color-transparent ts-vc_cta3-icon-size-md ts-vc_cta3-actions-no ts-cta3-without-desc">
+																			<div class="ts-vc_cta3_content-container">
+																				<div class="ts-vc_cta3-content">
+																					<div
+																						class="ts-vc_cta3-content-header ts-wrap">
+																						<div
+																							class="ts-vc_cta3-headers ts-wrap-cell">
+																							<h2
+																								class="ts-custom-heading ">
+																								{{data.heading}}
+																							</h2>
+																							<h4
+																								class="ts-custom-heading ">
+																								{{data.category.name}}
+																							</h4>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div><!-- .ts-ihbox-contents -->
+																	<div class="ts-cta3-content-wrapper">
+																		{{data.overview|slice:":70"}}</div>
+																	<div class="ts-vc_btn3-container ts-vc_btn3-inline">
+																		<a class="ts-vc_general ts-vc_btn3 ts-vc_btn3-size-md ts-vc_btn3-shape-rounded ts-vc_btn3-style-text ts-vc_btn3-weight-yes ts-vc_btn3-icon-right ts-vc_btn3-color-skincolor"
+																			href="{% url 'singleresearch' data.slug %}"
+																			title="">Read More <i
+																				class="ts-vc_btn3-icon themifyicon ti-arrow-circle-right"></i></a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												{% endfor %}
+
+											</div>
+
+
+											<div class="wpb_text_column wpb_content_element  text-center">
+												<div class="wpb_wrapper">
+													<p>Best Outcome Every Time , contact
+														us via <u><a
+																href="mailto:rbsciencebhopal@gmail.com">rbsciencebhopal@gmail.com</a></u>
+													</p>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 								<div class="ts-column wpb_column vc_column_container vc_col-sm-12 ts-zindex-0">
 									<div class="vc_column-inner  ">
 										<div class="wpb_wrapper">
@@ -127,7 +239,8 @@
 											<div class="wpb_text_column wpb_content_element  text-center">
 												<div class="wpb_wrapper">
 													<p>Best Outcome Every Time , contact
-														us via <u><a href="mailto:rbsciencebhopal@gmail.com">rbsciencebhopal@gmail.com</a></u>
+														us via <u><a
+																href="mailto:rbsciencebhopal@gmail.com">rbsciencebhopal@gmail.com</a></u>
 													</p>
 
 												</div>
@@ -248,7 +361,7 @@
 																				data-from="0" data-to="30"
 																				data-interval="5">
 																				20 </span>
-																			 </h3>
+																		</h3>
 																		<h6 class="ts-fid-title"><span>Years
 																				of Experience<br></span>
 																		</h6>
@@ -323,8 +436,8 @@
 																class="wpb_single_image wpb_content_element vc_align_left">
 
 																<figure class="wpb_wrapper vc_figure">
-																	<div
-																		class="vc_single_image-wrapper vc_box_circle  vc_box_border_grey" style="min-height:55px">
+																	<div class="vc_single_image-wrapper vc_box_circle  vc_box_border_grey"
+																		style="min-height:55px">
 																	</div>
 																</figure>
 															</div>
@@ -338,7 +451,7 @@
 													class="ts-column-inner wpb_column vc_column_container vc_col-sm-6 ts-zindex-0">
 													<div class="vc_column-inner  ">
 
-														
+
 													</div>
 												</div>
 
@@ -408,11 +521,8 @@
 												</div> <!-- .ts-element-heading-wrapper container -->
 												<div class="wpb_text_column wpb_content_element  text-center">
 													<div class="wpb_wrapper">
-														<p>There are many variations of passages of Lorem
-															Ipsum available. On the other hand we denounce
-															with<br />
-															righteous indignation and dislike men who are so
-															beguiled.</p>
+														<p>Browse through our most popular services to ensure best
+															output</p>
 
 													</div>
 												</div>
@@ -765,7 +875,7 @@
 																						{% endif %}
 																						{% if data.google %}
 																						<li>
-																							<a href={{data.google}}"
+																							<a href="{{data.google}}"
 																								target="_blank"
 																								class="">
 																								<i
@@ -854,7 +964,7 @@
 																			data-from="0" data-to="10+"
 																			data-interval="5">
 																			10+</span>
-																		 </h3>
+																	</h3>
 																	<h6 class="ts-fid-title">
 																		<span>Professional Staff<br></span>
 																	</h6>
@@ -883,7 +993,7 @@
 																			data-from="0" data-to="10"
 																			data-interval="5">
 																			10+ </span>
-																		 </h3>
+																	</h3>
 																	<h6 class="ts-fid-title">
 																		<span>Experienced Team<br></span>
 																	</h6>
@@ -912,7 +1022,7 @@
 																			data-from="0" data-to="100"
 																			data-interval="5">
 																			100+</span>
-																		 </h3>
+																	</h3>
 																	<h6 class="ts-fid-title">
 																		<span>Projects
 																			Completed<br></span></h6>
@@ -938,10 +1048,9 @@
 																<div class="ts-fld-contents">
 																	<h3 class="ts-fid-inner">
 																		<span data-appear-animation="animateDigits"
-																			data-from="0" data-to="5"
-																			data-interval="5">
+																			data-from="0" data-to="5" data-interval="5">
 																			5+ </span>
-																		 </h3>
+																	</h3>
 																	<h6 class="ts-fid-title">
 																		<span>Technicians Staff<br></span>
 																	</h6>

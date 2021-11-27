@@ -14,6 +14,7 @@ def categoryblog(request,slug):
     return render(request,'blogs/blogs.html',res)
 def singleblog(request,slug1):
     res = {}
+    print('hello')
     res['blog'] = Blogs.objects.get(slug=slug1)
     res['recentblog'] = Blogs.objects.all().order_by('date')
     res['cats'] = category.objects.all().annotate(num_posts=Count('Blogs')).order_by('-num_posts')

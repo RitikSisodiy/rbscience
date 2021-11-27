@@ -7,3 +7,6 @@ class homeSlider(models.Model):
     title = models.CharField(max_length=50)
     keys = models.CharField(max_length=200,default="-,-,-")
     learnMoreurl = models.CharField(max_length=500)
+class abstratingAndIndexing(models.Model):
+    title = models.CharField(max_length=60)
+    logo = models.ImageField(upload_to="abstractIndexing")
