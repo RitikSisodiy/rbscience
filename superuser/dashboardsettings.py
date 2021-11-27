@@ -27,7 +27,18 @@ def getmodelbyappname(appname):
 
 #get app list
 appslist = []
+#exclude app name
+exclude = (
+
+)
+#write in string like "appname.modelname"
+showRelatedOnEditPage=(
+    'gallary.Gallery',
+)
+
 for data in INSTALLED_APPS:
-    if '.' not in data:
+    if '.' not in data and data not in exclude:
         appslist.append(data)
 appslist.insert(0,'auth')
+
+getTitle = '' #add your admin app title

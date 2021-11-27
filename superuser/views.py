@@ -7,8 +7,9 @@ from .custumfunction import getobjecturl
 from superuser.templatetags.custumfilter import sidebardata
 from .dashboardsettings import appmodels , appslist , getObjectbyAppModelName , getmodelbyappname
 from django.core import serializers
-from artical.forms import GenForm
+from .forms import GenForm
 from django.contrib.auth import logout
+from superuser.dashboardsettings import exclude as excludeapps
 # from django.apps import apps
 # from onlineshop.models import *
 # from django.contrib import messages
@@ -45,6 +46,7 @@ def get_all_fields(self):
     return fields
 def index(request):
     res = {}
+    res['title'] = 'Dashboard'
     res['dashboardheading'] = 'Dashboard'
     # for data in res['modelslist']:
     #     print(res['modelslist'][data])
@@ -52,22 +54,27 @@ def index(request):
     # for app in allapps:
     #     res.append({app:apps.all_models[app]})
     return render(request,'superuser/index.html',res)
+
 def showmodels(request,appname):
     res = {}
     res['modelname'] ="Home"
     res['appname'] =appname
+    res['title'] =appname
     res['models'] = getmodelbyappname(appname)
     return render(request,'superuser/listmodels.html',res)
+
 def showObject(request,appname,modelname):
     res = {}
     mymodel = getObjectbyAppModelName(appname,modelname)
     res['modeldata'] = mymodel.objects.all()
-    res['fields'] = [f.name for f in mymodel._meta.fields]
+    res['fields'] = [[f.name,str(type(f))] for f in mymodel._meta.fields]
     # res['fields'] = [f.name for f in mymodel._meta.get_fields()]
     res['modeldata'] = mymodel.objects.all()
     res['appname'] =appname
     res['modelname'] =modelname
+    res['title'] =modelname
     return render(request , 'superuser/modeldatatable.html' ,res)
+from .dashboardsettings import showRelatedOnEditPage
 def editmodel(request,appname=None,modelname=None,objectid=None,opration=None):
     res = {}
     mymodel = getObjectbyAppModelName(appname,modelname)
@@ -78,7 +85,9 @@ def editmodel(request,appname=None,modelname=None,objectid=None,opration=None):
         singledata = mymodel.objects.get(pk=objectid)
     if opration == 'add':
         res['form'] = form()
+        res['title'] = "add " + modelname
         if request.method == "POST":
+            print(request.POST)
             res['form'] = form(request.POST,request.FILES)
             if res['form'].is_valid():
                 res['form'].save()
@@ -86,6 +95,9 @@ def editmodel(request,appname=None,modelname=None,objectid=None,opration=None):
                 return redirect(request.get_full_path())
             messages.error(request,str(getobjecturl(res['form'].instance)) + " data is invalid Check your form")
     elif opration == 'edit':
+        res['title'] = "edit " + modelname
+        if f"{appname}.{modelname}" in showRelatedOnEditPage:
+            res['showrelated'] = True
         res['form'] = form(instance=singledata)
         res['relateddata'] = type(singledata)._meta.related_objects
         res['appname'] = appname
@@ -108,6 +120,7 @@ def editmodel(request,appname=None,modelname=None,objectid=None,opration=None):
 
 def relatedmodel(request,appname=None,modelname=None,objectid=None,relatedfield=None):
     res= {}
+    res['title'] = modelname+" | " + relatedfield
     mymodel = getObjectbyAppModelName(appname,modelname)
     singledata = mymodel.objects.get(pk=objectid)
     relatedfieldobject = getattr(singledata,relatedfield)
@@ -127,7 +140,7 @@ def relatedmodel(request,appname=None,modelname=None,objectid=None,relatedfield=
         else:
             messages.error(request,'Invalid data please cheack your form')
     if relmodel is not None:
-        res['fields'] = [f.name for f in relmodel._meta.fields]
+        res['fields'] = [[f.name,str(type(f))] for f in relmodel._meta.fields]
     res['appname'] = appname
     res['modelname'] = modelname
     res['objectid'] = objectid
@@ -148,6 +161,7 @@ def alertdelete(request,singledata,confirm="None"):
         messages.success(request,name + " is deleted successfully")
         return redirect('showdatamodel',appname=appname,modelname=modelname )
     res = {}
+    res['title'] = "delete " + modelname
     using = 'default'
     nested_object = NestedObjects(using)
     nested_object.collect([singledata])
@@ -162,6 +176,12 @@ def Logout(request):
     except Exception as e:
         return redirect('home')
     return redirect('home')
+
+
+
+
+
+
 # def allproducts(request):
 #     prods = Product.objects.all()
 #     return render(request,'superuser/products.html',{'prods':prods,'title':"View Product"})

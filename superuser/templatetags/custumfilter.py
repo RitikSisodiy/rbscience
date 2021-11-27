@@ -1,5 +1,5 @@
 from django import template
-from superuser.dashboardsettings import appslist,appmodels
+from superuser.dashboardsettings import appslist,appmodels,getTitle
 register = template.Library()
 @register.filter(name='sidebardata')
 def sidebardata(value):
@@ -27,3 +27,18 @@ def getattribute(value,arg):
 @register.filter(name='split')
 def splitdata(value,args):
     return value.split(args)
+@register.filter(name="getpercent")
+def getpercent(value,arg):
+    value = float(value)
+    arg = float(arg)
+    percent = (arg*100)/value
+    return str(percent)[:5]
+@register.filter(name="showrelated")
+def showrelated(value,args):
+    return "showing related"
+@register.filter(name="getTitle")
+def showrelated(value):
+    if len(getTitle)>0:
+        return getTitle
+    else:
+        return "Admin"

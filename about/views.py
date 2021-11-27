@@ -13,6 +13,7 @@ from .models import InstuctionsToAuthors
 # Create your views here.
 def about(request):
     res = {}
+    res['title'] = "About us" 
     res['teammember'] = TeamModel.objects.all()
     res['certifications'] = certificates.objects.all()
     return render(request,'about/about.html',res)
@@ -20,6 +21,8 @@ def about(request):
 
 
 def contactus(request):
+    res= {}
+    res['title'] = "Contact US" 
     if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
@@ -37,8 +40,10 @@ def contactus(request):
         send_mail(subject, plain_message, from_email,[to],
         fail_silently=False,
         )
-    return render(request,'about/contactus.html')
+    return render(request,'about/contactus.html',res)
 def servicecontact(request):
+    res = {}
+    res['title'] = "Services" 
     if request.method == "POST":
         res = {}
         form = GenForm(servicesContact)
@@ -67,12 +72,13 @@ def subscribe(request):
 
 def instructions(request):
     res= {}
+    res['title'] = "Instuctions To Authors"
     res['instructions'] = InstuctionsToAuthors.objects.all().order_by('id')
     return render(request , 'about/instructions.html',res)
 def auditorialboard(request):
     res= {}
+    res['title'] = "Board"
     res['board'] = {"Chief Editor":auditorialBoard.objects.filter(type='1').order_by('id'),'Editors':auditorialBoard.objects.filter(type='2').order_by('id')}
-    
     return render(request , 'about/auditorialboard.html',res)
 def cetifications(request):
     res = {}

@@ -1,12 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="en_GB" dir="ltr">
 {% load static %}
-
+{% load custumfilter %}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>
-        SEQUEL -
+        {{""|getTitle|title}} | {{title|title}}
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -272,7 +272,7 @@
             if (ele[i].className == '' && ele[i].getAttribute('type') != 'checkbox') {
                 ele[i].setAttribute('class', 'form-control col')
             }
-            if (ele[i].className == 'vTimeField') {
+            if (ele[i].className == 'self.fields[f.name].') {
                 ele[i].setAttribute('type', 'time')
             }
         }
@@ -300,6 +300,11 @@
                 ele[i].setAttribute('type', 'date')
                 ele[i].setAttribute('class', 'form-control')
             }
+            if (ele[i].className == 'vDateTime') {
+                ele[i].setAttribute('value', ele[i].value.replace(" ","T"))
+                ele[i].setAttribute('type', 'datetime-local')
+                ele[i].setAttribute('class', 'form-control')
+            }
         }
         var sel = document.getElementsByTagName('select')
         for (var i = 0; i < sel.length; i++) {
@@ -322,6 +327,10 @@
         $('input[name=table_search]').keyup(function () {
             dTable.search($(this).val())
         .draw(); // this  is for customized searchbox with datatable search feature.
+        })
+        $("a.related-widget-wrapper-link").on('click',function(){
+             window.open(this.href, "yyyyy", "width=480,height=360,resizable=no,toolbar=no,menubar=no,location=no,status=no");
+            return false
         })
     </script>
 

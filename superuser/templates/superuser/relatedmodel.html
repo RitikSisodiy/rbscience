@@ -2,47 +2,17 @@
 {% block body %}
 {% load custumfilter %}
 <div class=" smart-card">
-    <h4 class="title">Available {{currentmodelname|title}}s in <a href="{% url 'editdatamodel' appname modelname currentmodel.pk 'edit' %}" >{{currentmodel}}</a> </h4>
+    <h4 class="title">Available {{currentmodelname|title}}s in <a
+            href="{% url 'editdatamodel' appname modelname currentmodel.pk 'edit' %}">{{currentmodel}}</a> </h4>
     <div class="table-responsive">
-     <div class=" shadow-lg p-3 mb-5 bg-white rounded">
-     <div class="my-3" >
-     <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-        data-backdrop='static' data-keyboard='false'>+Add New {{currentmodelname|title}}  </button>
-     </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                {% for data in fields %}
-                    <th>{{data|title}}</th>
-                {% endfor %}
-                    <th>edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for data in availbledata %}
-                <tr class="">
-                    {% for field in fields %}
-                    <td>{{data|getattribute:field|slice:':25'|safe}}</td>
-                    {% endfor %}
-                    <td><a class="btn btn-primary btn-xs mb-3 mr-1" href="{% url 'editdatamodel' currentappname currentmodelfieldname data.pk 'edit' %}"><i class="ti-pencil"></i></a>
-                    <a tabindex="0" class="btn btn-danger btn-xs mb-3 mr-1" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="" data-content="
-   <h6>Are you sure to delete this?</h6>
-   <form method='get' action='{% url 'editdatamodel' currentappname currentmodelfieldname data.pk 'delete' %}'>
-   <input type='hidden' name='_token' value='bPNE5oytXkawNyfrysxJphne7BbyGiUJN13nlenR'>
-   <br>
-    <input type='submit' class='btn btn-danger btn-xs' value='Yes,Please'>
-    </form>
-   " data-original-title="">
-    <i class="ti-trash"></i>
-</a>
-                    
-                    </td>
-                </tr>
-                   {% endfor %}
-                   
-            </tbody>
-        </table>
-    </div>
+        <div class=" shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="my-3">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-backdrop='static'
+                    data-keyboard='false'>+Add New {{currentmodelname|title}} </button>
+            </div>
+           {% include 'superuser/componets/datatable.html' with modeldata=availbledata fields=fields %}
+            
+        </div>
     </div>
 </div>
 
@@ -51,8 +21,8 @@
 {% block addform %}
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-{{form.as_p}}
-{{form.media}}
-<input type="submit" class="btn btn-primary my-3"  value="submit">
+    {{form.as_p}}
+    {{form.media}}
+    <input type="submit" class="btn btn-primary my-3" value="submit">
 </form>
 {% endblock %}

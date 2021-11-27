@@ -1,7 +1,6 @@
 from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.shortcuts import redirect
 from django.urls import resolve
-from django.urls import reverse
 def simple_middleware(get_response):
     # One-time configuration and initialization.
 
@@ -11,8 +10,7 @@ def simple_middleware(get_response):
             if request.user.is_superuser:
                 response = get_response(request)
             else:
-                rev = reverse('logindashboard') + "?next="+request.get_full_path()
-                response = redirect(rev)
+                response = redirect('logindashboard')
         else:
             response = get_response(request)
         return response

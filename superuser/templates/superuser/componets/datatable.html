@@ -1,0 +1,43 @@
+{% load custumfilter %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            {% for data,type in fields|slice:":5" %}
+            <th>{{data|title}}</th>
+            {% endfor %}
+            <th>edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for data in modeldata %}
+
+        <tr class="">
+            {% for field,type in fields|slice:":5" %}
+            {% if "ImageField" in type %}
+            <td> <img src="/media/{{data|getattribute:field|slice:':25'}}" style="max-height:100px;"></td>
+            {% else %}
+            <td>{{data|getattribute:field|slice:':25'}}</td>
+            {% endif %}
+            {% endfor %}
+            <td><a class="btn btn-primary btn-xs mb-3 mr-1"
+                    href="{% url 'editdatamodel' appname modelname data.pk 'edit' %}?next={{request.get_full_path}}"><i
+                        class="ti-pencil"></i></a>
+                <a tabindex="0" class="btn btn-danger btn-xs mb-3 mr-1" role="button" data-toggle="popover"
+                    data-trigger="focus" data-html="true" title="" data-content="
+                                <h6>Are you sure to delete this?</h6>
+                                <form method='get' action='{% url 'editdatamodel' appname modelname data.pk 'delete' %}'>
+                                <input type='hidden' name='_token' value='bPNE5oytXkawNyfrysxJphne7BbyGiUJN13nlenR'>
+                                <br>
+                                    <input type='submit' class='btn btn-danger btn-xs' value='Yes,Please'>
+                                    </form>
+                                " data-original-title="">
+                    <i class="ti-trash"></i>
+                </a>
+
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>

@@ -233,22 +233,22 @@
                                         <ul>
                                             <li class="ts-social-share ts-social-share-facebook">
                                                 <a href="javascript:void(0)"
-                                                    onClick="TSSocialWindow=window.open('http://web.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flabtechco.themestek.com%2Flabtechco-demo7%2Fportfolio%2Ftranslational-research%2F&amp;_rdr','TSSocialWindow',width=600,height=100); return false;"><i
+                                                    onClick="TSSocialWindow=window.open('http://web.facebook.com/sharer/sharer.php?u={{request.get_host}}{{request.get_full_path}}&amp;_rdr','TSSocialWindow',width=600,height=100); return false;"><i
                                                         class="ts-labtechco-icon-facebook"></i></a>
                                             </li>
                                             <li class="ts-social-share ts-social-share-twitter">
                                                 <a href="javascript:void(0)"
-                                                    onClick="TSSocialWindow=window.open('http://twitter.com/share?url=https://labtechco.themestek.com/labtechco-demo7/portfolio/translational-research/','TSSocialWindow',width=600,height=100); return false;"><i
+                                                    onClick="TSSocialWindow=window.open('http://twitter.com/share?url={{request.get_host}}{{request.get_full_path}}','TSSocialWindow',width=600,height=100); return false;"><i
                                                         class="ts-labtechco-icon-twitter"></i></a>
                                             </li>
                                             <li class="ts-social-share ts-social-share-gplus">
                                                 <a href="javascript:void(0)"
-                                                    onClick="TSSocialWindow=window.open('http://plus.google.com/share?url=https://labtechco.themestek.com/labtechco-demo7/portfolio/translational-research/','TSSocialWindow',width=600,height=100); return false;"><i
+                                                    onClick="TSSocialWindow=window.open('http://plus.google.com/share?url={{request.get_host}}{{request.get_full_path}}','TSSocialWindow',width=600,height=100); return false;"><i
                                                         class="ts-labtechco-icon-gplus"></i></a>
                                             </li>
                                             <li class="ts-social-share ts-social-share-pinterest">
                                                 <a href="javascript:void(0)"
-                                                    onClick="TSSocialWindow=window.open('http://www.pinterest.com/pin/create/button/?url=https://labtechco.themestek.com/labtechco-demo7/portfolio/translational-research/','TSSocialWindow',width=600,height=100); return false;"><i
+                                                    onClick="TSSocialWindow=window.open('http://www.pinterest.com/pin/create/button/?url={{request.get_host}}{{request.get_full_path}}','TSSocialWindow',width=600,height=100); return false;"><i
                                                         class="ts-labtechco-icon-pinterest"></i></a>
                                             </li>
                                         </ul>
@@ -264,12 +264,14 @@
                                 <nav class="navigation post-navigation" role="navigation" aria-label="Posts">
                                     <h2 class="screen-reader-text">Post navigation</h2>
                                     <div class="nav-links">
-                                        <div class="nav-previous"><a href=""
+                                        <div class="nav-previous"><a {% if prevblog %} href="{% url 'singleresearch' prevblog.slug  %}" {% else %}style="pointer-events:none;corsor:default;"{% endif %}"
                                                 rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span>
                                                 <span class="screen-reader-text ts-hide">Previous post:</span> <span
                                                     class="post-title ts-hide">Cancer Cell Biology</span></a></div>
-                                        <div class="nav-next"><a href="../catalysis-processes/index.html"
-                                                rel="next"><span class="meta-nav" aria-hidden="true">Next</span> <span
+
+
+                                        <div class="nav-next"><a {% if nextblog %} href="{% url 'singleresearch' nextblog.slug  %}" {% else %}style="pointer-events:none;corsor:default;"{% endif %}
+                                                rel="next" ><span class="meta-nav" aria-hidden="true">Next</span> <span
                                                     class="screen-reader-text ts-hide">Next post:</span> <span
                                                     class="post-title ts-hide">Catalysis Processes</span></a></div>
                                     </div>

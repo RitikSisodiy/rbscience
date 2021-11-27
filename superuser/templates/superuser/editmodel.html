@@ -1,4 +1,5 @@
 {% extends 'superuser/basic.html' %}
+{% load custumfilter %}
 {% block body %}
 <div class="card card-primary ">
     <div class="card-header  bg-primary text-light">
@@ -14,11 +15,17 @@
 
              <div class='row container'>
     {% for data in relateddata %}
-        <a href="{% url 'relatedmodel' appname=appname modelname=modelname objectid=objectid relatedfield=data.related_name %}" class ="btn btn-primary {% if forloop.counter > 1 %}mx-2{% endif %}">{{data.related_name}}</a>
+        <a href="{% url 'relatedmodel' appname=appname modelname=modelname objectid=objectid relatedfield=data.related_name %}" class ="btn btn-primary {% if forloop.counter > 1 %}mx-2{% endif %}">Available {{data.related_name}}s</a>
+        {% if showrelated %}
+            <div>  
+            {{data|showrelated:objectid}}
+            </div>
+        {% endif %}
     {% endfor %}
     </div>
     </div>
     </div>
    
 </div>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
 {% endblock %}

@@ -23,6 +23,7 @@ def articleview(request):
     return render(request , "article/journals.html" , res)
 def submitarticle(request):
     res = {}
+    res['title'] = "Submit Article" 
     if request.method == "POST":
         form = GenForm(submenuscripts)
         form = form(request.POST,request.FILES)
@@ -59,6 +60,7 @@ def submitarticle(request):
     return render(request , 'article/submitartical.html', res)
 def archives(request):
     res = {}
+    res['title'] = "Archives"
     yeardata = year.objects.filter()
     years  = issue.objects.values_list('year','vol','issue').order_by("year__year").distinct()
     yearsvol = {d[0] : [] for d in years}
@@ -82,6 +84,7 @@ def articallist(request , year , vol ,issue):
     res = {}
     res['absdata'] = absdata
     res['artical'] = artical.objects.filter(issue=issue , issue__year__year = year , issue__vol = vol)
+    res['title'] = res['artical'][0].issue
     print(res['artical'])
     return render(request ,'article/articallist.html' ,res)
 
@@ -92,6 +95,7 @@ def currentissue(request):
     print(latestartical)
     if latestartical.exists():
         latestartical = latestartical.order_by('-time')[0]
+        res['title'] = latestartical.issue
         year = latestartical.issue.year.year
         issue = latestartical.issue
         vol = latestartical.issue.vol
@@ -99,11 +103,13 @@ def currentissue(request):
     return redirect('home')
 
 def abstractarticle(request,slug1,download=None):
+    
     absdata = artical.objects.get(slug=slug1)
     if download == 'download':
         return downloadartical(absdata)
     viewupdate = blogviews.objects.get_or_create(articalid=absdata,ip = visitor_ip_address(request))
     res = {'absdata':absdata}
+    res['title'] = absdata.heading
     res['views'] = blogviews.objects.filter(articalid=absdata.id).count()
     return render(request,'article/abstractarticle.html',res)
 from wsgiref.util import FileWrapper
