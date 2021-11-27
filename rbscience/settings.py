@@ -62,7 +62,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'superuser.middleware.simple_middleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'livereload.middleware.LiveReloadScript',
 ]
 

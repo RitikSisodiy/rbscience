@@ -32,4 +32,4 @@ urlpatterns = [
     path('',include('blogs.urls')),
     path('',include('services.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-] +  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 

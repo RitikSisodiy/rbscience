@@ -1,0 +1,45 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block slider %}{% endblock %}
+{% include  'headertitle.html' with headertitle="PAGE NOT FOUND" %}
+{% block body %}
+<div id="content-wrapper" class="site-content-wrapper" style="
+    background-image: url('/static/404.jpg');
+    background-position: right bottom;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;">
+
+    <div class="ts-bg-layer"></div>
+
+    <div id="content" class="site-content container">
+        <div id="content-inner" class="site-content-inner ">
+
+            <div id="primary" class="content-area ">
+                <main id="main" class="site-main">
+
+                    <section class="error-404 not-found" style="padding:20px;">
+
+                        <div class="ts-big-icon"><i class="fa fa-thumbs-o-down"></i></div>
+                        <header class="page-header">
+                            <h1 class="page-title">PAGE NOT FOUND</h1>
+                        </header><!-- .page-header -->
+                        <div class="page-content">
+                            <p>Sorry, but the page you are looking for does not exist or removed. Please use search
+                                given below to find what you are looking or use the main menu.</p>
+                        </div><!-- .page-content -->
+                        <div class="ts-404-search-form">
+                           <a href="/"><button>Back to Home</button></a>
+                        </div><!-- .ts-404-search-form -->
+
+                    </section><!-- .error-404 -->
+
+                </main><!-- .site-main -->
+            </div><!-- .content-area -->
+
+
+        </div><!-- .site-content-inner -->
+    </div><!-- .site-content -->
+</div>
+
+{% endblock %}
