@@ -136,20 +136,17 @@ try:
     HOSTNAME = socket.gethostname()
 except:pass
 
-if HOSTNAME == 'main.cyberflax.tk':
-    HOST_ADDR = 'http://'+HOSTNAME
-    EMAIL_HOST_USER = 'sales@cyberflax.tk'
-elif 'rbscience' in HOSTNAME:
-    HOST_ADDR = 'http://'+HOSTNAME
-    EMAIL_HOST_USER = 'sales@rbscience.co.in'
-    EMAIL_HOST_PASSWORD = 'Flax@2021'
-else:
+if 'desktop' in HOSTNAME.lower():
     HOST_ADDR = 'http://localhost:8000'
     EMAIL_USE_TLS = True
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
     EMAIL_HOST_USER = 'ritik.cyberflax@gmail.com'
     EMAIL_HOST_PASSWORD = 'cqhmcpmptleeeqqz'
+else:
+    HOST_ADDR = 'http://'+HOSTNAME
+    EMAIL_HOST_USER = 'sales@rbscience.co.in'
+    EMAIL_HOST_PASSWORD = 'Flax@2021'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
