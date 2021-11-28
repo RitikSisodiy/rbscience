@@ -1,7 +1,11 @@
+from django.db import connection
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from about.models import nortificationMail
+
+from about.views import getEmailBackend
 from .forms import GenForm
 from django.core.mail import message, send_mail, EmailMessage
 from rbscience import settings
@@ -39,13 +43,16 @@ def submitarticle(request):
             html_message = render_to_string('about/submenuscript.html',res)
             plain_message = html_message
             from_email = settings.EMAIL_HOST_USER
-            to = 'ritik.s10120@gmail.com'
+            to = [data.email for data in nortificationMail.objects.all()]
+            backend , config= getEmailBackend()
+            from_email = config.email
             email = EmailMessage(
             subject,
             plain_message,
             from_email,
-            [to],
-            headers={'Reply-To': from_email}
+            to,
+            headers={'Reply-To': from_email},
+            connection=backend
             )
             if request.FILES:
                 uploaded_file = request.FILES['filepdf'] # file is the name value which you have provided in form for file field

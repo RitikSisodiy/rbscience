@@ -47,9 +47,9 @@ def contactus(request):
         plain_message = strip_tags(html_message)
         backend , config= getEmailBackend()
         from_email = config.email
-        to = 'ritik.s10120@gmail.com'
+        to = [data.email for data in nortificationMail.objects.all()]
         # print(backend)
-        send_mail(subject, plain_message, from_email,[to],
+        send_mail(subject, plain_message, from_email,to,
         fail_silently=False,connection=backend
         )
         

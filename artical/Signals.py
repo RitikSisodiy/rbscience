@@ -1,7 +1,10 @@
 
 # code
+from django.db import connection
 from django.db.models.signals import post_save, pre_delete
 from django.http import request
+
+from about.views import getEmailBackend
 from .models import artical
 from about.models import subscriber
 from blogs.models import Blogs
@@ -36,14 +39,16 @@ def sendmail(instance,request):
     subject = 'RBSCIENCE'
     html_message = render_to_string('blognortification.html',res)
     plain_message = html_message
-    from_email = settings.EMAIL_HOST_USER
     to = 'ritik.s10120@gmail.com'
+    backend , config= getEmailBackend()
+    from_email = config.email
     email = EmailMessage(
             subject,
             plain_message,
             from_email,
             emailli,
-            headers={'Reply-To': from_email}
+            headers={'Reply-To': from_email},
+            connection=backend
     )
     email.content_subtype = 'html' 
     email.send()

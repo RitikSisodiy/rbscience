@@ -22,7 +22,10 @@ class emailSetup(models.Model):
             data=emailSetup.objects.all().exclude(id=self.id)
             data.update(activate=False)
         super(emailSetup, self).save(*args, **kwargs)
-    
+class nortificationMail(models.Model):
+    email = models.EmailField()
+    def __str__(self) :
+        return self.email
 class ContactUs(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField(max_length=50)
