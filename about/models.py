@@ -10,7 +10,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class emailSetup(models.Model):
     host = models.CharField(max_length=100)
-    port = models.IntegerField(max_length=10)
+    port = models.IntegerField()
     email = models.CharField(max_length=100)
     tsl = models.BooleanField()
     ssl = models.BooleanField()

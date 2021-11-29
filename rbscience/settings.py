@@ -101,18 +101,26 @@ CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db1.sqlite3',
-    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db1.sqlite3',
+    # },
     # 'default':{
-    #     'ENGINE': 'django.db.backends.mysql',
+    #     'ENGINE': 'mysql.connector.django',
     #     'NAME': 'rbscience',
     #     'USER': 'root',
     #     'PASSWORD': '',
     #     'HOST': 'localhost',
     #     'PORT': '3306',
     # }
+    'default':{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Rbscience',
+        'USER': 'rbscience',
+        'PASSWORD': 'Flax@2021',
+        'HOST': '184.168.112.236',
+        'PORT': '3306',
+    }
 }
 
 

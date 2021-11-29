@@ -16,19 +16,19 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
 import inspect, os
-@receiver(post_save, sender=artical)
-def create_profile(sender, instance, created, **kwargs):
-    if created:
-        for entry in reversed(inspect.stack()):
-                try:
-                    request = entry[0].f_locals['request']
-                    if str(type(request))=="<class 'django.core.handlers.wsgi.WSGIRequest'>":
-                        break
-                except:
-                    request = None
-        print(request.get_host())
-        print('thread is working')
-        Thread(target=sendmail, args=(instance,request,)).start()
+# @receiver(post_save, sender=artical)
+# def create_profile(sender, instance, created, **kwargs):
+#     if created:
+#         for entry in reversed(inspect.stack()):
+#                 try:
+#                     request = entry[0].f_locals['request']
+#                     if str(type(request))=="<class 'django.core.handlers.wsgi.WSGIRequest'>":
+#                         break
+#                 except:
+#                     request = None
+#         print(request.get_host())
+#         print('thread is working')
+#         Thread(target=sendmail, args=(instance,request,)).start()
 def sendmail(instance,request):
     emailli = subscriber.objects.values_list('email')
     emailli = [data[0] for data in emailli]
