@@ -101,10 +101,10 @@ CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db1.sqlite3',
-    # },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db1.sqlite3',
+    },
     # 'default':{
     #     'ENGINE': 'mysql.connector.django',
     #     'NAME': 'rbscience',
@@ -113,14 +113,6 @@ DATABASES = {
     #     'HOST': 'localhost',
     #     'PORT': '3306',
     # }
-    'default':{
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Rbscience',
-        'USER': 'rbscience',
-        'PASSWORD': 'Flax@2021',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
     # 'default':{
     #     'ENGINE': 'django.db.backends.mysql',
     #     'NAME': 'Rbscience',
@@ -130,7 +122,17 @@ DATABASES = {
     #     'PORT': '3306',
     # }
 }
-
+if os.environ.get('enviorment') == 'production':
+    DATABASES['default'] = {
+        
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Rbscience',
+        'USER': 'rbscience',
+        'PASSWORD': 'Flax@2021',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
