@@ -2182,28 +2182,39 @@
                                                             because of the differing. We provide complete process piping
                                                             capabilities.
                                                             <div class="themestek-social-links-wrapper">
-                                                                <ul class="social-icons">
-                                                                    <li class="ts-social-facebook"><a
-                                                                            class=" tooltip-top" target="_blank"
-                                                                            href="#" data-tooltip="Facebook"><i
-                                                                                class="ts-labtechco-icon-facebook"></i></a>
-                                                                    </li>
-                                                                    <li class="ts-social-twitter"><a
-                                                                            class=" tooltip-top" target="_blank"
-                                                                            href="#" data-tooltip="Twitter"><i
-                                                                                class="ts-labtechco-icon-twitter"></i></a>
-                                                                    </li>
-                                                                    <li class="ts-social-flickr"><a class=" tooltip-top"
-                                                                            target="_blank" href="#"
-                                                                            data-tooltip="Flickr"><i
-                                                                                class="ts-labtechco-icon-flickr"></i></a>
-                                                                    </li>
-                                                                    <li class="ts-social-linkedin"><a
-                                                                            class=" tooltip-top" target="_blank"
-                                                                            href="#" data-tooltip="LinkedIn"><i
-                                                                                class="ts-labtechco-icon-linkedin"></i></a>
-                                                                    </li>
-                                                                </ul>
+                                                                 <ul class="social-icons">
+                                        {% if aboutcontact.facebook %}
+                                        <li class="ts-social-facebook"><a class=" tooltip-top" target="_blank"
+                                                href="{{aboutcontact.facebook}}"
+                                                data-tooltip="Facebook"><i class="ts-labtechco-icon-facebook"></i></a>
+                                        </li>
+                                        {% endif %}
+                                        {% if aboutcontact.instagram %}
+                                        <li class="ts-social-instagram"><a class=" tooltip-top" target="_blank"
+                                                href="{{aboutcontact.instagram}}"
+                                                data-tooltip="Instagram"><i class="ts-labtechco-icon-instagram"></i></a>
+                                        </li>
+
+                                         {% endif %}
+                                        {% if aboutcontact.linkedin %}
+                                        <li class="ts-social-linkedin"><a class=" tooltip-top" target="_blank"
+                                                href="https://www.linkedin.com/in/rb-science-28376b1a4/?originalSubdomain=in"
+                                                data-tooltip="LinkedIn"><i class="ts-labtechco-icon-linkedin"></i></a>
+                                        </li>
+                                         {% endif %}
+                                        {% if aboutcontact.fliker %}
+                                        <li class="ts-social-flickr"><a class=" tooltip-top" target="_blank"
+                                                href="{{aboutcontact.fliker}}"
+                                                data-tooltip="LinkedIn"><i class="ts-labtechco-icon-ts-labtechco-icon-flickr"></i></a>
+                                        </li>
+                                         {% endif %}
+                                        {% if aboutcontact.twiter %}
+                                        <li class="ts-social-twitter"><a class=" tooltip-top" target="_blank"
+                                                href="{{aboutcontact.twiter}}"
+                                                data-tooltip="LinkedIn"><i class="ts-labtechco-icon-twitter"></i></a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
                                                             </div>
                                                         </div>
                                                     </aside>
