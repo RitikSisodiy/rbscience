@@ -118,9 +118,17 @@ DATABASES = {
         'NAME': 'Rbscience',
         'USER': 'rbscience',
         'PASSWORD': 'Flax@2021',
-        'HOST': '184.168.112.236',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
+    # 'default':{
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'Rbscience',
+    #     'USER': 'rbscience',
+    #     'PASSWORD': 'Flax@2021',
+    #     'HOST': '184.168.112.236',
+    #     'PORT': '3306',
+    # }
 }
 
 
