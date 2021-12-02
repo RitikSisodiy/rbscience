@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - source /home/qg4j6rda9kl2/virtualenv/rbscience/3.6/bin/activate && cd /home/qg4j6rda9kl2/rbscience
+    - source /home/ztlzpllpqetq/virtualenv/foundationfund/3.7/bin/activate && cd /home/ztlzpllpqetq/foundationfund
     - pip install --upgrade pip
     - pip install -r requirements.txt
     - python manage.py collectstatic --no-input
