@@ -23,6 +23,4 @@ class articalAdmin(admin.ModelAdmin):
 @admin.register(authors)
 class authorsAdmin(admin.ModelAdmin):
     list_display = ('name',)
-@admin.register(downloadcount)
-class authorsAdmin(admin.ModelAdmin):
-    list_display = ('dcount',)
+
