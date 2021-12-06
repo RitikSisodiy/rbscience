@@ -10,7 +10,7 @@ from .forms import GenForm
 from django.core.mail import message, send_mail, EmailMessage
 from rbscience import settings
 from django.contrib import messages
-from .models import  issue, submenuscripts,artical, vol,year,blogviews
+from .models import downloadcount, issue, submenuscripts,artical, vol,year,blogviews
 # Create your views here.
 
 

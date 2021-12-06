@@ -61,3 +61,6 @@ class blogviews(models.Model):
 	ip = models.GenericIPAddressField()
 	class Meta:
 		unique_together = ['articalid', 'ip']
+class downloadcount(models.Model):
+    articalid = models.OneToOneField(artical,on_delete=models.CASCADE)
+    dcount = models.BigIntegerField(default=0)
