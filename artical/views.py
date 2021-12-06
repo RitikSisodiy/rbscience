@@ -129,7 +129,6 @@ def downloadartical(file_name):
     response = HttpResponse(file_wrapper, content_type=file_mimetype )
     response['X-Sendfile'] = file_path
     response['Content-Length'] = os.stat(file_path).st_size
-    print(file_name.pdf.name)
     response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(file_name.pdf.name) 
     downcount,created = downloadcount.objects.get_or_create(articalid=file_name)
     downcount.dcount += 1
