@@ -122,17 +122,17 @@ DATABASES = {
     #     'PORT': '3306',
     # }
 }
-if os.environ.get('enviorment') == 'production':
-    DATABASES['default'] = {
+# if os.environ.get('enviorment') == 'production':
+#     DATABASES['default'] = {
         
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Rbscience',
-        'USER': 'rbscience',
-        'PASSWORD': 'Flax@2021',
-        'HOST': 'localhost',
-        'PORT': '3306',
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Rbscience',
+#         'USER': 'rbscience',
+#         'PASSWORD': 'Flax@2021',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
     
-    }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
