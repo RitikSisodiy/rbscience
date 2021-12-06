@@ -62,6 +62,6 @@ class blogviews(models.Model):
 	class Meta:
 		unique_together = ['articalid', 'ip']
 class downloadcount(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.BigAutoField(auto_created=True,primary_key=True,verbose_name='ID')
     articalid = models.OneToOneField(artical,on_delete=models.CASCADE)
     dcount = models.BigIntegerField(default=0)
