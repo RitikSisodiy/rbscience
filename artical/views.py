@@ -130,7 +130,8 @@ def downloadartical(file_name):
     response['X-Sendfile'] = file_path
     response['Content-Length'] = os.stat(file_path).st_size
     response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(file_name.pdf.name) 
-    downcount,created = downloadcount.objects.get_or_create(articalid=file_name)
+    downcount = downloadcount.objects.filter(articalid = file_name.id)
+    downcount = downcount[0] if downcount.exists() else downloadcount(articalid=file_name)
     downcount.dcount += 1
     downcount.save()
     return response
