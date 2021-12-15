@@ -19,10 +19,12 @@ from django.conf.urls import url
 from django.conf import settings
 from django.views.static import serve
 from django.conf.urls.static import static
+from about import views
 urlpatterns = [
     url(r"^media/(?P<path>.*)$",serve,{'document_root':settings.MEDIA_ROOT}),
     url(r"^static/(?P<path>.*)$",serve,{'document_root':settings.STATIC_ROOT}),
     path('admin/', admin.site.urls),
+    path('contact_us01/', views.contactus , name='contactus' ),
     path('',include('home.urls')),
     path('about/',include('about.urls')),
     path('jounrals/',include('artical.urls')),
