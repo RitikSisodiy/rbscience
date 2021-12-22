@@ -56,3 +56,6 @@ class certificates(models.Model):
     shortdes = models.TextField(max_length=300)
     logo = models.ImageField(upload_to="certificatelogo")
     Certificate = models.FileField(upload_to="certificates",blank=True)
+class openAccessPolicy(models.Model):
+    title  = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
