@@ -11,6 +11,8 @@ from django.core.mail import message, send_mail, EmailMessage
 from rbscience import settings
 from django.contrib import messages
 from .models import downloadcount, issue, submenuscripts,artical, vol,year,blogviews
+
+from django.db.models import Q
 # Create your views here.
 
 
@@ -91,10 +93,20 @@ def articallist(request , year , vol ,issue):
     res = {}
     res['absdata'] = absdata
     res['artical'] = artical.objects.filter(issue=issue , issue__year__year = year , issue__vol = vol)
-    res['title'] = res['artical'][0].issue
+    res['title'] = "Archives"
     print(res['artical'])
     return render(request ,'article/articallist.html' ,res)
-
+def search(request):
+    query = request.GET.get('q')
+    if query is not None :
+        absdata = artical.objects.all()
+        res = {}
+        res['absdata'] = absdata
+        res['artical'] = absdata.filter(Q(keywords__contains=query) | Q(authors__name=query)| Q(otherauthors__contains=query))
+        res['title'] = query
+        print(res['artical'])
+        return render(request ,'article/articallist.html' ,res)
+    return redirect('home')
 
 def currentissue(request):
     res = {}

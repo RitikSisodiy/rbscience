@@ -10,5 +10,6 @@ urlpatterns = [
     path('jounrals/abstractarticle/<slug:slug1>/' , views.abstractarticle , name="abstractarticle"),
     # path('addartical/' , views.addartical , name="addartical"),
     path('jounrals/abstractarticle/<slug:slug1>/<slug:download>' , views.abstractarticle , name="downloadpdf"),
+    path('search/',views.search,name="search")
     # path('abstractarticle/' , views.abstractarticle , name="abstractarticle"),
 ]

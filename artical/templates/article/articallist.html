@@ -1,7 +1,7 @@
 {% extends 'basic.html' %}
 {% load static %}
 {% block slider %}
-{% include  'headertitle.html' with headertitle="Archives" %}
+{% include  'headertitle.html' with headertitle=title %}
 {% endblock %}
 {% block body %}
 <div class="container">
@@ -12,6 +12,7 @@
     </div>
     <div class="shadow-box p-5">
         <div class="container">
+            {% if artical %}
             {% for data in artical %}
             <h6><strong><a href="{% url 'abstractarticle' data.slug %}">{{data.heading}}</a></strong></h6>
             <span>{% for d in data.authors.all %}{{d}} , {% endfor %}</span>
@@ -29,6 +30,17 @@
                 <hr>
             </div>
             {% endfor %}
+            {% else %}
+                    <center><h2>No results Found...</h2>
+                    <form>
+                        <form class="row p-5" action="{% url 'search' %}">
+                                <input type="text" name='q' placeholder="search here" style="width: 50%;">
+                                <input type="submit" value="Search">
+                        </form>
+                        
+                    </form></center>
+
+            {% endif %}
         </div>
     </div>
 </div>

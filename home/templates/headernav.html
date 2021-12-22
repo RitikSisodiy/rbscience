@@ -54,10 +54,12 @@
                 </div>
                 <div class="ts-header-text-area ts-header-button-w">
                     <div class="ts-vc_btn3-container ts-vc_btn3-inline">
-                        {% comment %} <img src="/static/msme-logo-png-7.png" width="135px" alt="" srcset=""> {% endcomment %}
-                                <img src="https://cdn.freebiesupply.com/logos/large/2x/iso-9001-certified-logo-png-transparent.png" width="110px" alt="" srcset="">
+                        {% comment %} <img src="/static/msme-logo-png-7.png" width="135px" alt="" srcset="">
+                        {% endcomment %}
+                        <img src="https://cdn.freebiesupply.com/logos/large/2x/iso-9001-certified-logo-png-transparent.png"
+                            width="110px" alt="" srcset="">
 
-                        
+
                     </div>
                 </div>
             </div>
@@ -165,43 +167,54 @@
                                         <div class="ts-search-logo"><img
                                                 src="{% static "wp-content/uploads/2018/08/logo.png" %}"
                                                 alt="Labtechco Demo7" /></div>
-                                       
+
                                     </div>
                                 </div>
-                                <div class="ts-header-icons ">
-                                   
-                                </div>
-                                 <div class="themestek-social-links-wrapper">
+                                <form class="ts-header-icons " action="{% url 'search' %}">
+                                   <span id="searchbutton" class="ts-header-icon ts-header-search-link"><a href="/#">
+                                    <input type="text" name="q" id="searchinput" placeholder="Search here" style="
+                                    transition: all 1s ease 0s;
+                                    line-height: initial;
+                                    border-radius: 18px;
+                                    opacity: 0;
+                                    width: 0px;
+                                "><i
+                                                class="ts-labtechco-icon-search-2"></i></a>
+                                           
+                                            </span>
+                                            
+                                </form>
+                                <div class="themestek-social-links-wrapper">
                                     <ul class="social-icons">
                                         {% if aboutcontact.facebook %}
                                         <li class="ts-social-facebook"><a class=" tooltip-top" target="_blank"
-                                                href="{{aboutcontact.facebook}}"
-                                                data-tooltip="Facebook"><i class="ts-labtechco-icon-facebook"></i></a>
+                                                href="{{aboutcontact.facebook}}" data-tooltip="Facebook"><i
+                                                    class="ts-labtechco-icon-facebook"></i></a>
                                         </li>
                                         {% endif %}
                                         {% if aboutcontact.instagram %}
                                         <li class="ts-social-instagram"><a class=" tooltip-top" target="_blank"
-                                                href="{{aboutcontact.instagram}}"
-                                                data-tooltip="Instagram"><i class="ts-labtechco-icon-instagram"></i></a>
+                                                href="{{aboutcontact.instagram}}" data-tooltip="Instagram"><i
+                                                    class="ts-labtechco-icon-instagram"></i></a>
                                         </li>
 
-                                         {% endif %}
+                                        {% endif %}
                                         {% if aboutcontact.linkedin %}
                                         <li class="ts-social-linkedin"><a class=" tooltip-top" target="_blank"
                                                 href="https://www.linkedin.com/in/rb-science-28376b1a4/?originalSubdomain=in"
                                                 data-tooltip="LinkedIn"><i class="ts-labtechco-icon-linkedin"></i></a>
                                         </li>
-                                         {% endif %}
+                                        {% endif %}
                                         {% if aboutcontact.fliker %}
                                         <li class="ts-social-flickr"><a class=" tooltip-top" target="_blank"
-                                                href="{{aboutcontact.fliker}}"
-                                                data-tooltip="LinkedIn"><i class="ts-labtechco-icon-ts-labtechco-icon-flickr"></i></a>
+                                                href="{{aboutcontact.fliker}}" data-tooltip="LinkedIn"><i
+                                                    class="ts-labtechco-icon-ts-labtechco-icon-flickr"></i></a>
                                         </li>
-                                         {% endif %}
+                                        {% endif %}
                                         {% if aboutcontact.twiter %}
                                         <li class="ts-social-twitter"><a class=" tooltip-top" target="_blank"
-                                                href="{{aboutcontact.twiter}}"
-                                                data-tooltip="LinkedIn"><i class="ts-labtechco-icon-twitter"></i></a>
+                                                href="{{aboutcontact.twiter}}" data-tooltip="LinkedIn"><i
+                                                    class="ts-labtechco-icon-twitter"></i></a>
                                         </li>
                                         {% endif %}
                                     </ul>
@@ -216,4 +229,21 @@
     </div>
     <!-- .site-header-main -->
 </div>
+<script>
+const search = document.getElementById("searchbutton")
+const searchinput = document.getElementById("searchinput")
+search.onclick = togglesearch
+searchinput.onblur = togglesearch
+function togglesearch(){
+    if (searchinput.style.opacity === "0") {
+    searchinput.style.display = "unset";
+    searchinput.style.width = "173px";
+    searchinput.style.opacity = 1;
+    searchinput.focus()
+  } else {
+    searchinput.style.width = "0px";
+    searchinput.style.opacity = 0;
 
+  }
+}
+</script>
