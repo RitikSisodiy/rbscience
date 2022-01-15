@@ -6,11 +6,23 @@ from django.conf import settings
 from django.shortcuts import render
 
 from rbscience.settings import INSTALLED_APPS
+
+#hide app from dashboard add name like appname.modelname
+hiddenmodel=(
+    "artical.blogviews",
+    "artical.downloadcount",
+)
+
+
+
 def appmodels(listofappname:list):
     resli = {}
     for name in listofappname:
         app_models = apps.get_app_config(name).get_models()
-        Modellist = [mod.__name__ for mod in app_models]
+        Modellist = []
+        for mod in app_models:
+            if mod.__name__ not in hiddenmodel:
+                Modellist.append(mod.__name__ )
         if len(Modellist)>0:
             resli[name] = Modellist
     return resli
@@ -31,6 +43,7 @@ appslist = []
 exclude = (
 
 )
+
 #write in string like "appname.modelname"
 showRelatedOnEditPage=(
     'gallary.Gallery',
