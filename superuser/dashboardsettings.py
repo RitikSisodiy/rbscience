@@ -21,7 +21,7 @@ def appmodels(listofappname:list):
         app_models = apps.get_app_config(name).get_models()
         Modellist = []
         for mod in app_models:
-            if mod.__name__ not in hiddenmodel:
+            if f"{name}.{mod.__name__}" not in hiddenmodel:
                 Modellist.append(mod.__name__ )
         if len(Modellist)>0:
             resli[name] = Modellist
